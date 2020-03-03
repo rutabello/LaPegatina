@@ -243,145 +243,145 @@ class Map extends React.Component {
               
               <Marker position={[50, 10]}>
                 <Popup>
-                  <p id="Germany!" className="37i9dQZEVXbJiZcmkrIHGU" onClick={this.show} >Get to know Germany's top 50!</p> 
+                  <p id="Germany!" className="37i9dQZEVXbJiZcmkrIHGU" onClick={this.show} >Click here to discover Germany's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[42, 13]}>
                 <Popup>
-                  <p id="Italy!" className="44SmkW2zYTkTxVXBTZU7In" onClick={this.show}>Get to know Italy's top 50!</p> 
+                  <p id="Italy!" className="44SmkW2zYTkTxVXBTZU7In" onClick={this.show}>Click here to discover Italy's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[46, 2 ]}>
                 <Popup>
-                  <p id="France!" className="23psvx6vUY6pmJHxE5yagM" onClick={this.show}>Get to know France's top 50!</p> 
+                  <p id="France!" className="23psvx6vUY6pmJHxE5yagM" onClick={this.show}>Click here to discover France's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[40, -3 ]}>
                 <Popup>
-                  <p id="Spain!" className="37i9dQZEVXbNFJfN1Vw8d9" onClick={this.show}>Get to know Spain's top 50!</p> 
+                  <p id="Spain!" className="37i9dQZEVXbNFJfN1Vw8d9" onClick={this.show}>Click here to discover Spain's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[53, -3 ]}>
                 <Popup>
-                  <p id="UK!" className="153yGNYdzvyCZxzDnIzNUx" onClick={this.show}>Get to know Britan top 50!</p> 
+                  <p id="UK!" className="153yGNYdzvyCZxzDnIzNUx" onClick={this.show}>Click here to discover Britan's top 50!</p> 
                 </Popup>
               </Marker>           
             
               <Marker position={[60, 17 ]}>
                 <Popup>
-                  <p id="Sweden!" className="0cv343uhXAtvjJP4Gnowuj" onClick={this.show}>Get to know Swedens top 50!</p> 
+                  <p id="Sweden!" className="0cv343uhXAtvjJP4Gnowuj" onClick={this.show}>Click here to discover Sweden's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[46, 25 ]}>
                 <Popup>
-                  <p id="Romania!" className="37i9dQZEVXbNZbJ6TZelCq" onClick={this.show}>Get to know Romanias top 50!</p> 
+                  <p id="Romania!" className="37i9dQZEVXbNZbJ6TZelCq" onClick={this.show}>Click here to discover Romania's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[61.5, 105.3 ]}>
                 <Popup>
-                  <p id="Russia!" className="1YWZENg7270nSPEm5i0mSk" onClick={this.show}>Get to know Russias top 50!</p> 
+                  <p id="Russia!" className="1YWZENg7270nSPEm5i0mSk" onClick={this.show}>Click here to discover Russia's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[47, 29]}>
                 <Popup>
-                  <p id="Moldavia!" className="4JuhvFePRTzgFA2J1zhRJg" onClick={this.show}>Get to know Moldavias top 50!</p> 
+                  <p id="Moldavia!" className="4JuhvFePRTzgFA2J1zhRJg" onClick={this.show}>Click here to discover Moldavia's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[39, 35]}>
                 <Popup>
-                  <p id="Turkey!" className="0rkeWiJ7L3BRuXDWqmgZSZ" onClick={this.show}>Get to know Turkeys top 50!</p> 
+                  <p id="Turkey!" className="0rkeWiJ7L3BRuXDWqmgZSZ" onClick={this.show}>Click here to discover Turkey's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[-25, 134]}>
                 <Popup>
-                  <p id="Australia!" className="6m3jFNfRNxNnrIhOuV7I0D" onClick={this.show}>Get to know Australias top 50!</p> 
+                  <p id="Australia!" className="6m3jFNfRNxNnrIhOuV7I0D" onClick={this.show}>Click here to discover Australia's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[21, 79]}>
                 <Popup>
-                  <p id="India!" className="37i9dQZEVXbLZ52XmnySJg" onClick={this.show}>Get to know Indias top 50!</p> 
+                  <p id="India!" className="37i9dQZEVXbLZ52XmnySJg" onClick={this.show}>Click here to discover India's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[-1.5, 22]}>
                 <Popup>
-                  <p id="Congo!" className="6OrCOUcHTeJeg0NQRlEVMK" onClick={this.show}>Get to know Congos top 50!</p> 
+                  <p id="Congo!" className="6OrCOUcHTeJeg0NQRlEVMK" onClick={this.show}>Click here to discover Congo's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[37, -96]}>
                 <Popup>
-                  <p id="USA!" className="37i9dQZF1DXbITWG1ZJKYt" onClick={this.show}>Get to know USAs top 50!</p> 
+                  <p id="USA!" className="37i9dQZF1DXbITWG1ZJKYt" onClick={this.show}>Click here to discover USA's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[-9, -75]}>
                 <Popup>
-                  <p id="Peru!" className="1U8CDNWLUL65u9g77sKCys" onClick={this.show}>Get to know Perus top 50!</p> 
+                  <p id="Peru!" className="1U8CDNWLUL65u9g77sKCys" onClick={this.show}>Click here to discover Peru's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[-1.83, -78.2]}>
                 <Popup>
-                  <p id="Ecuador!" className="5XqV4c48IyUfwNYo2XAWxKs" onClick={this.show}>Get to know Ecuador's top 50!</p> 
+                  <p id="Ecuador!" className="5XqV4c48IyUfwNYo2XAWxKs" onClick={this.show}>Click here to discover Ecuador's top 50!</p> 
                 </Popup>
               </Marker>              
                           
               <Marker position={[-38, -64]}>
                 <Popup>
-                  <p id="Argentinia!" className="37i9dQZEVXbMMy2roB9myp" onClick={this.show}>Get to know Argentinias top 50!</p> 
+                  <p id="Argentina!" className="37i9dQZEVXbMMy2roB9myp" onClick={this.show}>Click here to discover Argentina's top 50!</p> 
                 </Popup>
               </Marker>                    
                             
               <Marker position={[-14, -52]}>
                 <Popup>
-                  <p id="Brasil!" className="37i9dQZEVXbMXbN3EUUhlg" onClick={this.show}>Get to know Brasils top 50!</p> 
+                  <p id="Brasil!" className="37i9dQZEVXbMXbN3EUUhlg" onClick={this.show}>Click here to discover Brasil's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[41, 0.5]}>
                 <Popup>
-                  <p id="Catalunya!" className="2uh5yoMISpxTTPyes2mEPg" onClick={this.show}>Get to know Catalunyas top 50!</p> 
+                  <p id="Catalunya!" className="2uh5yoMISpxTTPyes2mEPg" onClick={this.show}>Click here to discover Catalunya's top 50!</p> 
                 </Popup>
               </Marker>
               
               <Marker position={[39, -8]}>
                 <Popup>
-                  <p id="Portugal!" className="6FD2g7R1tezpU8QnhJ3FsX" onClick={this.show}>Get to know Portugals top 50!</p> 
+                  <p id="Portugal!" className="6FD2g7R1tezpU8QnhJ3FsX" onClick={this.show}>Click here to discover Portugal's top 50!</p> 
                 </Popup>
               </Marker>
               
               <Marker position={[47.5, 14.5]}>
                 <Popup>
-                  <p id="Austria!" className="7r36EDSbzLnsGHtjV2qkcf" onClick={this.show}>Get to know Austrias top 50!</p> 
+                  <p id="Austria!" className="7r36EDSbzLnsGHtjV2qkcf" onClick={this.show}>Click here to discover Austria's top 50!</p> 
                 </Popup>
               </Marker>
                                   
               <Marker position={[36, 104]}>
                 <Popup>
-                  <p id="China!" className="0n9pUnDvJEIavvDfGnJqJl" onClick={this.show}>Get to know Chinas top 50!</p> 
+                  <p id="China!" className="0n9pUnDvJEIavvDfGnJqJl" onClick={this.show}>Click here to discover China's top 50!</p> 
                 </Popup>
               </Marker>
             
               <Marker position={[50, 15.4]}>
                 <Popup>
-                  <p id="Czech Republic!" className="37i9dQZEVXbIP3c3fqVrJY" onClick={this.show}>Get to know Czech Republics top 50!</p> 
+                  <p id="Czech Republic!" className="37i9dQZEVXbIP3c3fqVrJY" onClick={this.show}>Click here to discover Czech Republic's top 50!</p> 
                 </Popup>
               </Marker>
 
               <Marker position={[6.917222, 158.158889]}>
                 <Popup>
-                  <p id="Palikir!" className="37i9dQZF1DZ06evO2EUrsw" onClick={this.show}>Get to know Palikirs top 50!</p> 
+                  <p id="Palikir!" className="37i9dQZF1DZ06evO2EUrsw" onClick={this.show}>Click here to discover Palikir's top 50!</p> 
                 </Popup>
               </Marker>
             </LeafletMap>
