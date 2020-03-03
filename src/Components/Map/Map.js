@@ -221,6 +221,13 @@ class Map extends React.Component {
     })
   }
 
+  showMapHideButton = () => {
+    this.setState ({
+      showMap: true,
+      buttonClass: "hide"
+    })
+  }
+
   render() {
     return (
       <section>
@@ -441,8 +448,7 @@ class Map extends React.Component {
           </div>
           <h3><Link className="link" to="/">Out the door!</Link></h3>   
           <h2 className="instruct" id="youchoose" >{this.state.beforeGame}</h2>
-          <button className={this.state.buttonClass} onClick={this.show}>Show me the map again!</button> */}
-              <h3><Link className="link" to="/">Out the door!</Link></h3>   
+          <button className={this.state.buttonClass} onClick={() => this.showMapHideButton()}>Show me the map again!</button>
       </section>
     );
   }
