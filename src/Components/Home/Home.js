@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import BgMusic from '@react-element/bg-music';
-import sound1 from './bgsound.mp3';
+import sound from './bg_sound.mp3';
 import '../../App.css';
 import './Home.css';
 import './Button.css';
@@ -26,7 +26,7 @@ const Home = () => (
           <h3 ><Link id="btn-game" to="map" onClick={start} >Start Game</Link></h3>
           <div>
             <BgMusic
-            src={sound1}/>
+            src={sound}/>
           </div>
       </div>
  )
