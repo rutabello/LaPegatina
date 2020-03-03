@@ -1,0 +1,30 @@
+
+#mistakes {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  background: #121212;
+}
+
+.mistake {
+    font-weight: 400;
+    font-size: .8rem;
+}
+
+.list {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 14px 15px 5px;
+        color: #fff;
+        transition: all .3s ease-in-out;
+}
+
+.list:hover {
+    background: rgba(0,0,0,.7);
+    opacity: .7;
+  }
+
+.instruct  {
+  text-align:center;
+}
