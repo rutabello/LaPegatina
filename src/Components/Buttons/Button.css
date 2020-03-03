@@ -1,20 +1,19 @@
 @font-face {
-	font-family: 'Lato';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
   }
-
 .fourButtons {
-	margin-top: 15px;
-	margin-bottom: 50px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	width: 100%;
-	background: rgba(0,0,0,.7);
-		opacity: .9;
-	display: flex;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+        opacity: .9;
+    display: flex;
    flex-direction: column;
   
 }
@@ -35,69 +34,48 @@
     text-transform: uppercase;
     min-height: 4em;
 }
-
 @media (max-width:450px){
-	 .button.myButton.button{
-		
-		margin: 0.4em auto;
-	}
+     .button.myButton.button{
+        
+        margin: 0.4em auto;
+    }
 }
-
 .button {
-	flex: 25%;
-	
+    flex: 25%;
+    
 }
-
 .red {
-	background: black;
-	border:1.5px solid  #ff003c;
-	color: #ff003c;
-	border-radius: 7px;
+    background: black;
+    border:1.5px solid  #FF003C;
+    color: #FF003C;
+    border-radius: 7px;
 }
-
 .green {
-	background:black;
-	border:4px solid #31ad26;
-	color: #31ad26;
-	border-radius: 7px;
+    background:black;
+    border:4px solid #31AD26;
+    color: #31AD26;
+    border-radius: 7px;
 }
-
-	
+    
 .myButton:hover{
-	color: black!important;
-	background: #2695ff;
-	box-shadow: 0px 0px 5px #ff003c, 0px 0px 25px #ff003c, 0px 0px 50px #ff003c, 0px 0px 100px #ff003c;
+    color: black!important;
+    background: #2695FF;
+    box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); 
     
 }
-
 .myButton:active {
-	position:relative;
-	top:1px;
-	background: #2695ff;
-	box-shadow: 0px 0px 5px #ff003c, 0px 0px 25px #ff003c, 0px 0px 50px #ff003c, 0px 0px 100px #ff003c;
+    position:relative;
+    top:1px;
+    background: #2695FF;
+    box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); 
 }
-	
+    
 @media all and (max-width:30em){
-	 .myButton{
-		display:flex;
-		margin:0.4em auto;
-		flex: 25%;
-	}
-} 
-
-/* .neon {
-	color: #fff;
-	margin-top: 30%;
-	text-shadow:
-		0 0 5px rgba(0,178,255,1),
-		0 0 10px rgba(0,178,255,1),
-		0 0 20px rgba(0,178,255,1),
-		0 0 40px rgba(38,104,127,1),
-		0 0 80px rgba(38,104,127,1),
-		0 0 90px rgba(38,104,127,1),
-		0 0 100px rgba(38,104,127,1),
-		0 0 140px rgba(38,104,127,1),
-		0 0 180px rgba(38,104,127,1);
-} */
+     .myButton{
+        display:flex;
+        margin:0.4em auto;
+        flex: 25%;
+    }
+}
