@@ -20,8 +20,8 @@ Web app by Lena Kujath, Ailin Ozoln and Rut Abelló, web development students at
 
 ### Let's say thank you:
 
-To our teacher, Marc, for the patience
-To Cali, for his encouranging presence (and words)
-To the whole team of WCS for believing in us. :heart:
+* To our teacher, Marc, for the patience
+* To Cali, for his encouranging presence (and words)
+* To the whole team of WCS for believing in us. :heart:
 
 :notes: Special thanks to Bensound for the background music
