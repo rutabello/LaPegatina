@@ -26,4 +26,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # TOKEN
-/src/Utils/token.js
+/src/Components/Utils/token.js
