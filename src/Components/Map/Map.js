@@ -126,7 +126,7 @@ class Map extends React.Component {
     this.chosenSong = songName;
   }
   
-  checkCoincidence = () => {  //Checks if the user has chosen the right song or not
+  checkCoincidence = () => {  
     this.coincidence = this.state.currentSong.name === this.chosenSong
 
     if (this.coincidence !== true) { 
