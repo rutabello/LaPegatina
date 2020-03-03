@@ -422,9 +422,9 @@ class Map extends React.Component {
               })}
             </div>
             <div className="instruct">
-              <p class={this.answerCountShow ? "show" : "hide"}>Right answers: {this.state.correctAnswers}  out of {this.state.total}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>Right answers: {this.state.correctAnswers}  out of {this.state.total}</p>
             </div>
-            <div class={this.unknownSongs.length > 0 ? "show" : "hide"}>
+            <div className={this.unknownSongs.length > 0 ? "show" : "hide"}>
                 <h4 className="instruct">Learn from your mistakes</h4>
                 <ul id="mistakes" className="instruct">  
                   {this.unknownSongs.map((song) => {
