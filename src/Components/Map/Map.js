@@ -222,7 +222,7 @@ class Map extends React.Component {
   render() {
     return (
       <section>
-        <h2 className={this.state.showMap === true ? "map-title" : "hide"}>Choose a country!</h2>
+        <h2 className={this.state.showMap === true ? "map-title" : "hide"}>Choose a country to play with its music!</h2>
         <div className="map">            
           <div className={this.state.showMap === true ? "show" : "hide"}>
             <LeafletMap 
@@ -439,7 +439,7 @@ class Map extends React.Component {
           </div>
           <h3><Link className="link" to="/">Out the door!</Link></h3>   
           <h2 className="instruct" id="youchoose" >{this.state.beforeGame}</h2>
-            { /* <h3 className={this.state.showMap == true ? "hide" : "show"} id="btn-game" >Show me the map again!</h3> */}
+          <button className={this.state.showMap ? "hide" : "show"} id="btn-game" onClick={this.show}>Show me the map again!</button> */}
               <h3><Link className="link" to="/">Out the door!</Link></h3>   
       </section>
     );
