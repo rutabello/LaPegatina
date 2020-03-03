@@ -1,5 +1,6 @@
 //!!! IMPORTANT: No push to github as long as the clientId is visible in the files!
-const clientId = process.env.REACT_APP_API_KEY;
+import { TOKEN } from './token'
+const clientId = TOKEN;
 const redirectUri = 'https://happy-newton-096d15.netlify.com/'; // Have to add this to an accepted Spotify redirect URIs on the Spotify API.
 let accessToken;
 // for connection with the map: connect playlist id to the markers and save it in a const to insert it later in the 
