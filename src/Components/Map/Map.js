@@ -83,74 +83,68 @@ class Map extends React.Component {
   */
 
   getSongsToDisplay = (currentSongName) => {
+    var allSongsArr = this.spotifyObject.tracks.items.map(function (item){
+      return item.track.name
+    });
+    
+    var filteredSongsArr = allSongsArr.filter(function (song) {
+      return song !== currentSongName
+    });
 
-      var allSongsArr = this.spotifyObject.tracks.items.map(function (item){
-          return item.track.name
-      });
-      
-      var filteredSongsArr = allSongsArr.filter(function (song) {
-          return song !== currentSongName
-      });
-  
-      var shuffledFilterSongsArr = Shuffle(filteredSongsArr);
-  
-      var fourNonShuffledSongsArr = shuffledFilterSongsArr.slice(0, 3); // actually 3
-      fourNonShuffledSongsArr.push(currentSongName); // now 4
-      
-      var fourShuffledSongsArr = Shuffle(fourNonShuffledSongsArr)
-      
+    var shuffledFilterSongsArr = Shuffle(filteredSongsArr);
 
-      return fourShuffledSongsArr;
+    var fourNonShuffledSongsArr = shuffledFilterSongsArr.slice(0, 3); // actually 3
+    fourNonShuffledSongsArr.push(currentSongName); // now 4
+    
+    var fourShuffledSongsArr = Shuffle(fourNonShuffledSongsArr)
+
+    return fourShuffledSongsArr;
   }
 
   chooseSongs = () => {
-
     this.setState({
-        songNames: this.getSongsToDisplay(this.state.currentSong.name)
-  })
+      songNames: this.getSongsToDisplay(this.state.currentSong.name)
+    })
   }
 
   setNewRandomSong = () => {
-      
-      var randomSong = this.spotifyFilteredObjArr[Math.floor(Math.random()*this.spotifyFilteredObjArr.length)].track;
+    var randomSong = this.spotifyFilteredObjArr[Math.floor(Math.random()*this.spotifyFilteredObjArr.length)].track;
 
-      this.setState({
-          currentSong: {
-              preview_url: randomSong.preview_url,
-              name: randomSong.name
-          },
-          songNames: this.getSongsToDisplay(randomSong.name),
-          hideResults: true,
-          total: this.state.total +1,
-          playerState: Sound.status.STOPPED
-      });
+    this.setState({
+      currentSong: {
+        preview_url: randomSong.preview_url,
+        name: randomSong.name
+      },
+      songNames: this.getSongsToDisplay(randomSong.name),
+      hideResults: true,
+      total: this.state.total +1,
+      playerState: Sound.status.STOPPED
+    });
   }
   
   writeChosenSong = (songName) => {
-      this.chosenSong = songName;
+    this.chosenSong = songName;
   }
   
   checkCoincidence = () => {  //Checks if the user has chosen the right song or not
-      
-      this.coincidence = this.state.currentSong.name === this.chosenSong
+    this.coincidence = this.state.currentSong.name === this.chosenSong
 
-      if (this.coincidence !== true) { 
-          this.unknownSongs.push(this.state.currentSong.name)
-      }
-  
-      this.setState({
-          hideResults: false,
-          correctAnswers: this.coincidence ? (this.state.correctAnswers +1) : this.state.correctAnswers
-      })
+    if (this.coincidence !== true) { 
+      this.unknownSongs.push(this.state.currentSong.name)
+    }
+
+    this.setState({
+      hideResults: false,
+      correctAnswers: this.coincidence ? (this.state.correctAnswers +1) : this.state.correctAnswers
+    })
   }
   
   showAnswerCount = () => {
-
-      this.answerCountShow= true
+    this.answerCountShow= true
   }
   
   getSongUrl = (songName) => {
-      
+    
       var allTracksArr = this.spotifyFilteredObjArr.map((item) => { //allTracksArr is an array made of tracks (each one, in an object, and as much tracks as songs are in the playlist)
           return item.track
       })
@@ -166,23 +160,19 @@ class Map extends React.Component {
           playerState: Sound.status.PLAYING,
           playing: true,
           replayingSong: songName
-      })
-
-
-      // return this.spotifyObject.tracks.items.filter(item => item.track.name === songName)[0].preview_url This does the same as getSongUrl but with much less lines
+      }) // return this.spotifyObject.tracks.items.filter(item => item.track.name === songName)[0].preview_url This does the same as getSongUrl but with much less lines
   }
   
   stopMusic = () => {
-
-      this.setState({
-          playerState: Sound.status.STOPPED,
-          playing: false
-      })
+    this.setState({
+      playerState: Sound.status.STOPPED,
+      playing: false
+    })
   }
   
   filterRightSongsFromSpotifyObject = (spotifyObject) => {
-      this.spotifyFilteredObjArr = this.spotifyObject.tracks.items.filter(function (item) {
-      return item.track.preview_url !== null})
+    this.spotifyFilteredObjArr = this.spotifyObject.tracks.items.filter(function (item) {
+    return item.track.preview_url !== null})
   }
   
   setPlayingToFalse = () => {
@@ -195,7 +185,6 @@ class Map extends React.Component {
     this.spotifyObject = await Spotify.getPlaylist(this.state.clave);
     this.filterRightSongsFromSpotifyObject()
   }
-
             
   componentDidUpdate  = async  (prevProps, prevState) => {
     if (prevState.clave !== this.state.clave) {
