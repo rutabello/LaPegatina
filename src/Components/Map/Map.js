@@ -226,9 +226,9 @@ class Map extends React.Component {
       showMap: true,
       buttonClass: "hide",
       beforeGame: '',
+      game: "hideGame", 
     })
-
-    this.answerCountShow=false
+    
   }
 
   render() {

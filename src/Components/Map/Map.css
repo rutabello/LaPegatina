@@ -7,16 +7,13 @@
   }
 
 .map {
-    
     display: flex;
     margin-top: 1%;
     margin-left: 24%;
     margin-right: 20%;
-    
-    
-  }
+}
 
-  .forceGrayColor button {
+.forceGrayColor button {
 	border:1.5px solid  rgb(0, 89, 255);
     color: rgb(0, 89, 255)!important;
 }
@@ -26,15 +23,12 @@
 }
 
 .show p {
-
-
     font-weight: 700;
     font-size: 25px;
     color: rgb(0, 89, 255);
 }
 
 .show p:hover {
-
     cursor: pointer;
 }
 
@@ -52,10 +46,9 @@ li {
 
 .instruct {
     position: absolute;
-    
 }
 
-#youchoose{
+#youchoose {
     position: absolute;
     width: min-content;
     top: calc(20% - 25px);
@@ -70,7 +63,6 @@ li {
 }
 
 .link {
-
     color: white;
     width: 150px;
     text-decoration: none;
@@ -81,8 +73,6 @@ li {
     margin-left: 40%;
     position: fixed;
     bottom: 0;
-
-    
 }
 
 .countdown {
@@ -92,7 +82,7 @@ li {
     margin: 0 auto;
     background: #121212;
     background: rgba(0,0,0,.7);
-        opacity: .7;
+    opacity: .7;
 }
 
 .QuestionAndAnswers  {
@@ -108,10 +98,10 @@ li {
 }
 
 #mistakes {
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
-  background: #121212;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    background: #121212;
 }
 
 .mistake {
@@ -120,34 +110,31 @@ li {
 }
 
 .list {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        padding: 14px 15px 5px;
-        color: #fff;
-        transition: all .3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 14px 15px 5px;
+    color: #fff;
+    transition: all .3s ease-in-out;
 }
 
 .list:hover {
     background: rgba(0,0,0,.7);
     opacity: .7;
-  }
+}
 
-  .repeat-button {
+.repeat-button {
     margin-left: 30px;
 }
 
 .title {
-
     margin-left: 40%;
-
 }
 
 .map-title {
     font-family:sans-serif;
     text-align: center;
     font-size: 30px;
-   
 }
 
 /* MEDIA QUERIES */
@@ -156,15 +143,13 @@ li {
     #youchoose {
         display:none;
     }
+
     .countdown {
         left:50%;
     }
 
     .map {
-    
         position:absolute;
         height: calc(110vh - 50px);
-
-      }
-    
+    }
 }
