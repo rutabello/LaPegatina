@@ -32,6 +32,7 @@ class Map extends React.Component {
     gameStart: "showGame",
     map: "map",
     showMap: true,
+    showButton: false,
   
     songNames:[],
     currentSong: {
@@ -215,7 +216,8 @@ class Map extends React.Component {
       game: discover,
       showMap: disguise,
       beforeGame: start,
-      clave: newList
+      clave: newList,
+      showButton: true,
     })
   }
 
@@ -439,7 +441,7 @@ class Map extends React.Component {
           </div>
           <h3><Link className="link" to="/">Out the door!</Link></h3>   
           <h2 className="instruct" id="youchoose" >{this.state.beforeGame}</h2>
-          <button className={this.state.showMap ? "hide" : "show"} id="btn-game" onClick={this.show}>Show me the map again!</button> */}
+          <button className={this.state.showButton ? "show" : "hide"} id="btn-game" onClick={this.show}>Show me the map again!</button> */}
               <h3><Link className="link" to="/">Out the door!</Link></h3>   
       </section>
     );
