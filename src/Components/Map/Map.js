@@ -441,7 +441,7 @@ class Map extends React.Component {
           </div>
           <h3><Link className="link" to="/">Out the door!</Link></h3>   
           <h2 className="instruct" id="youchoose" >{this.state.beforeGame}</h2>
-          <button className={this.state.buttonClass} id="btn-game" onClick={this.show}>Show me the map again!</button> */}
+          <button className={this.state.buttonClass} onClick={this.show}>Show me the map again!</button> */}
               <h3><Link className="link" to="/">Out the door!</Link></h3>   
       </section>
     );
