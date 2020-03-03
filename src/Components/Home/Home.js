@@ -23,8 +23,7 @@ const Home = () => (
           <h3 className="hideGame"><Link to="/">Home</Link></h3>
          { /*<h3><Link to="quiz">Quiz</Link></h3>*/}
           <h3 ><Link id="btn-game" to="map" onClick={start} >Start Game</Link></h3>
-          <BgMusic
-          url/>
+          <BgMusic/>
       </div>
   
  
