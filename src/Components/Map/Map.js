@@ -224,7 +224,8 @@ class Map extends React.Component {
   showMapHideButton = () => {
     this.setState ({
       showMap: true,
-      buttonClass: "hide"
+      buttonClass: "hide",
+      beforeGame: ''
     })
   }
 
