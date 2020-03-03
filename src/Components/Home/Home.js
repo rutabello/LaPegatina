@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import BgMusic from '@react-element/bg-music';
+import sound1 from './bgsound.mp3';
 import '../../App.css';
 import './Home.css';
 import './Button.css';
@@ -23,10 +24,9 @@ const Home = () => (
           <h3 className="hideGame"><Link to="/">Home</Link></h3>
          { /*<h3><Link to="quiz">Quiz</Link></h3>*/}
           <h3 ><Link id="btn-game" to="map" onClick={start} >Start Game</Link></h3>
-          <BgMusic/>
+          <BgMusic
+          src={sound1}/>
       </div>
-  
- 
  )
 
-export default Home;
+ export default Home;
