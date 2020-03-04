@@ -64,6 +64,7 @@ li {
     margin-left: 45%;
     position: fixed;
     bottom: 0;
+    margin-left: 80%;
 }
 
 .countdown {
@@ -92,7 +93,7 @@ li {
     max-width: 400px;
     width: 100%;
     margin: 0 auto;
-    background: #121212;
+    /* background: #121212; */
 }
 
 .mistake {
@@ -104,7 +105,7 @@ li {
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 14px 15px 5px;
+    padding: 0 15px 5px;
     color: #fff;
     transition: all .3s ease-in-out;
 }
@@ -116,6 +117,7 @@ li {
 
 .repeat-button {
     margin-left: 30px;
+    font-size: 17px;
 }
 
 .title {
@@ -125,7 +127,7 @@ li {
 .map-title {
     font-family:sans-serif;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
 }
 
 
@@ -135,9 +137,31 @@ li {
 
 .leaflet-container {
     margin: auto;
-    height: 475px;
-    width: 662px;
+    height: 70vh;
+    width: 80%;
+
 }
+
+#backtomap {
+    margin-left: 5%;
+    position: sticky;
+    position: fixed;
+    bottom: 0;
+}
+
+#backtomap .show {
+    font-size: 25px;
+}
+
+#counter {
+    font-size: 30px;
+    margin-bottom: 10vh;
+}
+
+.show h4 {
+    font-size: 50px;
+}
+
 
 /* MEDIA QUERIES */
 

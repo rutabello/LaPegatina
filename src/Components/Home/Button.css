@@ -14,24 +14,28 @@
   padding:5px 10px;
   font-weight:600;
   position:absolute;
-  left: 73%;
+  left: 50%;
   right: 50%;
   background:rgba(0,0,0,0.2);
   box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
-  opacity:0.4
+  opacity:0.4;
+  font-size: 40px;
+  letter-spacing: 9px;
 }
   
 #btn-game:hover {
   color: #fff;
-  opacity:1
+  opacity:1;
 }
 
-#btn-div {
+/* #btn-div {
   display:block;
-  left: 78%;
-  right: 50%;
   margin:0 auto;
-}
+
+  margin-left: 40%;
+  font-size: 40px;
+  letter-spacing: 9px;
+} */
 
 @media only screen and (max-width: 750px) {
   #btn-game {

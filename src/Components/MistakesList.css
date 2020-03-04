@@ -5,12 +5,11 @@
   margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
-  background: #121212;
 }
 
 .mistake {
   font-weight: 400;
-  font-size: .8rem;
+  font-size: 20px;
 }
 
 .list {
@@ -22,9 +21,8 @@
   transition: all .3s ease-in-out;
 }
 
-.list:hover {
-  background: rgba(0,0,0,.7);
-  opacity: .7;
+#outthedoor {
+  margin-left: 80%;
 }
 
 .instruct  {

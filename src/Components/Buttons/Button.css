@@ -5,31 +5,33 @@
     src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
   }
-.fourButtons {
+
+.FourButtons {
     margin-top: 15px;
     margin-bottom: 50px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    width: 100%;
-    background: rgba(0,0,0,.7);
-        opacity: .9;
     display: flex;
-   flex-direction: column;
-  
-}
-.FourButtons {
+    flex-direction: column;
     width: 750px;
     margin: 0 auto;
+  
 }
+
+/* .FourButtons {
+    width: 750px;
+    margin: 0 auto;
+} */
+
 .button {
     cursor: pointer;
-    width: 400px;
+    width: 600px;
     display: block !important;
     height: auto;
     margin: 20px auto;
     padding: 15px 30px;
     transition: 0.2s;
-    font-size: 16px;
+    font-size: 30px;
     text-decoration: none;
     text-transform: uppercase;
     min-height: 4em;
