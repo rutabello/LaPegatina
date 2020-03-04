@@ -14,7 +14,7 @@ let audio = new Audio("https://freesound.org/data/previews/506/506053_10991815-l
 
 const Home = () => (
 
-      <div className="main">
+      <div className="main"><Link to="map" onClick={start} >
           <span className="webdev">Play  
             <span>&nbsp;Some</span>
             <span>&nbsp;With</span>
@@ -27,7 +27,7 @@ const Home = () => (
             <BgMusic
             src={sound}/>
           </div>
-      </div>
+          </Link></div>
  )
 
  export default Home;
