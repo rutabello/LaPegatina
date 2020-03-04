@@ -39,6 +39,6 @@
 
 @media only screen and (max-width: 750px) {
   #btn-game {
-    left: 52%;
+  margin: auto;
   }
 }

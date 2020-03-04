@@ -25,6 +25,7 @@ body {
   font-size: 16vw;
   text-align: center;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .main span {
@@ -170,9 +171,8 @@ body {
   }
 
   #btn-game {
-    margin-left: 40%;
-    font-size: 40px;
-    letter-spacing: 9px;
+    font-size: 16px;
+    letter-spacing: 3px;
   }
 
   .main .socod {
