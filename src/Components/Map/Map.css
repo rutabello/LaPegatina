@@ -4,10 +4,10 @@
     src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot?#iefix") format("embedded-opentype"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff2") format("woff2"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff") format("woff"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-  }
+}
 
 
-  .forceGrayColor button {
+.forceGrayColor button {
 	border:1.5px solid  rgb(0, 89, 255);
     color: rgb(0, 89, 255)!important;
 }
@@ -17,15 +17,12 @@
 }
 
 .show p {
-
-
     font-weight: 700;
     font-size: 25px;
     color: rgb(0, 89, 255);
 }
 
 .show p:hover {
-
     cursor: pointer;
 }
 
@@ -42,7 +39,7 @@ li {
 }
 
 
-#youchoose{
+#youchoose {
     position: absolute;
     width: min-content;
     top: calc(20% - 25px);
@@ -57,7 +54,6 @@ li {
 }
 
 .link {
-
     color: white;
     width: 150px;
     text-decoration: none;
@@ -68,8 +64,6 @@ li {
     margin-left: 45%;
     position: fixed;
     bottom: 0;
-
-    
 }
 
 .countdown {
@@ -79,7 +73,7 @@ li {
     margin: 0 auto;
     background: #121212;
     background: rgba(0,0,0,.7);
-        opacity: .7;
+    opacity: .7;
 }
 
 .QuestionAndAnswers  {
@@ -95,10 +89,10 @@ li {
 }
 
 #mistakes {
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
-  background: #121212;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    background: #121212;
 }
 
 .mistake {
@@ -107,41 +101,37 @@ li {
 }
 
 .list {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        padding: 14px 15px 5px;
-        color: #fff;
-        transition: all .3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 14px 15px 5px;
+    color: #fff;
+    transition: all .3s ease-in-out;
 }
 
 .list:hover {
     background: rgba(0,0,0,.7);
     opacity: .7;
-  }
+}
 
-  .repeat-button {
+.repeat-button {
     margin-left: 30px;
 }
 
 .title {
-
     margin-left: 40%;
-
 }
 
 .map-title {
     font-family:sans-serif;
     text-align: center;
     font-size: 30px;
-   
 }
 
 
 .map {
-    
     display: inline;
-  }
+}
 
 .leaflet-container {
     margin: auto;
@@ -152,22 +142,22 @@ li {
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 750px) {
+    
     #youchoose {
         display:none;
     }
+
     .countdown {
         left:50%;
     }
 
     .map {
-    
         margin: 0;
         width: auto;
-      }
+    }
     
       .leaflet-container {
-      
         height: 427px;
         width: 300px;
-      }
+    }
 }
