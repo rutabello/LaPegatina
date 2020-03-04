@@ -14,11 +14,11 @@ body {
 .main {
   display: block;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 35%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 50vw;
+  width: 31vw;
   height: auto;
   font-family: "neontubes";
   font-size: 16vw;
@@ -96,7 +96,6 @@ body {
 }
 @media screen and (min-width: 1000px) {
   .main {
-    width: 400px;
     font-size: 150px;
   }
  

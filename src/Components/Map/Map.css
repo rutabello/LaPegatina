@@ -6,15 +6,6 @@
     font-style: normal;
   }
 
-.map {
-    
-    display: flex;
-    margin-top: 1%;
-    margin-left: 24%;
-    margin-right: 20%;
-    
-    
-  }
 
   .forceGrayColor button {
 	border:1.5px solid  rgb(0, 89, 255);
@@ -50,10 +41,6 @@ li {
     margin-top: 25px;
 }
 
-.instruct {
-    position: absolute;
-    
-}
 
 #youchoose{
     position: absolute;
@@ -78,7 +65,7 @@ li {
     display: flex; 
     text-align: center;
     padding-left: 20px;
-    margin-left: 40%;
+    margin-left: 45%;
     position: fixed;
     bottom: 0;
 
@@ -150,6 +137,18 @@ li {
    
 }
 
+
+.map {
+    
+    display: inline;
+  }
+
+.leaflet-container {
+    margin: auto;
+    height: 475px;
+    width: 662px;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 750px) {
@@ -162,9 +161,13 @@ li {
 
     .map {
     
-        position:absolute;
-        height: calc(110vh - 50px);
-
+        margin: 0;
+        width: auto;
       }
     
+      .leaflet-container {
+      
+        height: 427px;
+        width: 300px;
+      }
 }
