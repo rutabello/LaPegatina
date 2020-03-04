@@ -382,7 +382,7 @@ class Map extends React.Component {
 
               <Marker position={[6.917222, 158.158889]}>
                 <Popup>
-                  <p id="Palikir!" className="37i9dQZF1DZ06evO2EUrsw" onClick={this.show}>Click here to discover Palikir's top 50!</p> 
+                  <p id="Palikir!" className="2Ih05sTUNOXlUsYbm9xHJg" onClick={this.show}>Click here to discover Palikir's top 50!</p> 
                 </Popup>
               </Marker>
             </LeafletMap>
