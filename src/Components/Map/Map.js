@@ -63,7 +63,7 @@ class Map extends React.Component {
     austria: "7r36EDSbzLnsGHtjV2qkcf",
     china: "0n9pUnDvJEIavvDfGnJqJl",
     czech: "37i9dQZEVXbIP3c3fqVrJY",
-    palikir: "37i9dQZF1DZ06evO2EUrsw",
+    palikir: "2Ih05sTUNOXlUsYbm9xHJgw",
 
 
     
