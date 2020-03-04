@@ -13,9 +13,8 @@
     letter-spacing: 1px;
     display: flex;
     flex-direction: column;
-    width: 750px;
+    width: 50%;
     margin: 0 auto;
-  
 }
 
 /* .FourButtons {
@@ -25,7 +24,7 @@
 
 .button {
     cursor: pointer;
-    width: 600px;
+    width: 100%;
     display: block !important;
     height: auto;
     margin: 20px auto;
@@ -36,6 +35,7 @@
     text-transform: uppercase;
     min-height: 4em;
 }
+
 @media (max-width:450px){
      .button.myButton.button{
         
@@ -79,5 +79,10 @@
         display:flex;
         margin:0.4em auto;
         flex: 25%;
+    }
+
+    .FourButtons {
+        width: 80%;
+        margin: 0 auto;
     }
 }

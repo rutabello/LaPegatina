@@ -130,7 +130,6 @@ li {
     font-size: 50px;
 }
 
-
 .map {
     display: inline;
 }
@@ -139,7 +138,6 @@ li {
     margin: auto;
     height: 70vh;
     width: 80%;
-
 }
 
 #backtomap {
@@ -183,5 +181,14 @@ li {
       .leaflet-container {
         height: 427px;
         width: 300px;
+    }
+
+    .show h4 {
+        font-size: 26px;
+    }
+
+    #counter {
+        font-size: 22px;
+        margin-bottom: 10vh;
     }
 }
