@@ -15,14 +15,17 @@ let audio = new Audio("https://freesound.org/data/previews/506/506053_10991815-l
 const Home = () => (
 
       <div className="main">
-          <span className="webdev">Play  
-            <span>&nbsp;Some</span>
-            <span>&nbsp;With</span>
-            </span>
-            <span className="socod">Music</span>
+          <span className="socod">Juega con 
+            {/* <span>&nbsp;La</span>
+            <span>&nbsp;Pegatina</span> */}
+          </span>
+          <span className="webdev">
+            <span>&nbsp;La pegatina</span>
+            <span>&nbsp;La pegatina</span>
+          </span>
           
           <h3 className="hideGame"><Link to="/">Home</Link></h3>
-          <h3 ><Link id="btn-game" to="map" onClick={start} >Start Game</Link></h3>
+          <h3 ><Link id="btn-game" to="map" onClick={start} >Juega!</Link></h3>
           <div>
             <BgMusic
             src={sound}/>

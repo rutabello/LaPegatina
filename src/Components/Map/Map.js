@@ -1,5 +1,4 @@
 import React from 'react'
-import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 import {Link} from 'react-router-dom';
 import '../../App.css';
 import '../Quiz/Quiz.css'
@@ -11,18 +10,17 @@ import Shuffle from '../Utils/Shuffle';
 import Spotify from '../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 import Sound from 'react-sound';
-// import Countries from '../Utils/Countries';
 
 
 class Map extends React.Component {
 
-  spotifyObject = {}
-  spotifyFilteredObjArr = []
+  spotifyObject = {} // We have the object coming from the API call, here
+  spotifyFilteredObjArr = [] //This array contains the songs coming from the spotifyObject that DO ave a preview_url
   display = ""
   chosenSong = ""
   coincidence = false
   answerCountShow= false
-  unknownSongs= []
+  unknownSongs= [] //All the songs that the user guessed wrong are pushed into this array
 
   state = {
 
@@ -38,35 +36,7 @@ class Map extends React.Component {
     currentSong: {
         preview_url: "",
         name: "",
-    },
-    clave: "37i9dQZF1DX7YCknf2jT6s",
-    german: "37i9dQZEVXbJiZcmkrIHGU",
-    spain: "37i9dQZEVXbNFJfN1Vw8d9",
-    uk: "153yGNYdzvyCZxzDnIzNUx",
-    italy: "44SmkW2zYTkTxVXBTZU7In",
-    france: "23psvx6vUY6pmJHxE5yagM",
-    sweden: "0cv343uhXAtvjJP4Gnowuj",
-    romania: "37i9dQZEVXbNZbJ6TZelCq",
-    russia: "1YWZENg7270nSPEm5i0mSk",
-    moldavia: "4JuhvFePRTzgFA2J1zhRJg",
-    turkey: "0rkeWiJ7L3BRuXDWqmgZSZ",
-    australia: "6m3jFNfRNxNnrIhOuV7I0D",
-    india: "37i9dQZEVXbLZ52XmnySJg",
-    congo: "6OrCOUcHTeJeg0NQRlEVMK",
-    usa: "37i9dQZF1DXbITWG1ZJKYt",
-    peru: "1U8CDNWLUL65u9g77sKCys",
-    ecuador: "5XqV4c48IyUfwNYo2XAWxK",
-    argentina: "37i9dQZEVXbMMy2roB9myp",
-    brasil: "37i9dQZEVXbMXbN3EUUhlg",
-    catalunya: "2uh5yoMISpxTTPyes2mEPg",
-    portugal: "6FD2g7R1tezpU8QnhJ3FsX",
-    austria: "7r36EDSbzLnsGHtjV2qkcf",
-    china: "0n9pUnDvJEIavvDfGnJqJl",
-    czech: "37i9dQZEVXbIP3c3fqVrJY",
-    palikir: "2Ih05sTUNOXlUsYbm9xHJgw",
-
-
-    
+    },  
 
     hideResults: true,
     correctAnswers: 0,
@@ -74,7 +44,9 @@ class Map extends React.Component {
     songUrl: "",
     playerState: Sound.status.PLAYING,
     playing: false,
-    replayingSong: ""
+    replayingSong: "",
+
+    clave: "37i9dQZF1DZ06evO2EUrsw",
   }
   /**
    * This fn returns an array with 4 song names randomly including the current song 
@@ -223,171 +195,7 @@ class Map extends React.Component {
   render() {
     return (
       <section>
-        <h2 className={this.state.showMap === true ? "map-title" : "hide"}>Choose a country to play with its music!</h2>
-        <div className="map">            
-          <div className={this.state.showMap === true ? "show" : "hide"}>
-            <LeafletMap 
-              center={[50, 10]}
-              zoom={4}
-              maxZoom={10}
-              attributionControl={true}
-              zoomControl={true}
-              doubleClickZoom={true}
-              scrollWheelZoom={true}
-              dragging={true}
-              animate={true}
-              easeLinearity={0.35}
-            >
-              <TileLayer
-                url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-              />
-              
-              <Marker position={[50, 10]}>
-                <Popup>
-                  <p id="Germany!" className="37i9dQZEVXbJiZcmkrIHGU" onClick={this.show} >Click here to discover Germany's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[42, 13]}>
-                <Popup>
-                  <p id="Italy!" className="44SmkW2zYTkTxVXBTZU7In" onClick={this.show}>Click here to discover Italy's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[46, 2 ]}>
-                <Popup>
-                  <p id="France!" className="23psvx6vUY6pmJHxE5yagM" onClick={this.show}>Click here to discover France's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[40, -3 ]}>
-                <Popup>
-                  <p id="Spain!" className="37i9dQZEVXbNFJfN1Vw8d9" onClick={this.show}>Click here to discover Spain's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[53, -3 ]}>
-                <Popup>
-                  <p id="UK!" className="153yGNYdzvyCZxzDnIzNUx" onClick={this.show}>Click here to discover Britan's top 50!</p> 
-                </Popup>
-              </Marker>           
-            
-              <Marker position={[60, 17 ]}>
-                <Popup>
-                  <p id="Sweden!" className="0cv343uhXAtvjJP4Gnowuj" onClick={this.show}>Click here to discover Sweden's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[46, 25 ]}>
-                <Popup>
-                  <p id="Romania!" className="37i9dQZEVXbNZbJ6TZelCq" onClick={this.show}>Click here to discover Romania's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[61.5, 105.3 ]}>
-                <Popup>
-                  <p id="Russia!" className="1YWZENg7270nSPEm5i0mSk" onClick={this.show}>Click here to discover Russia's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[47, 29]}>
-                <Popup>
-                  <p id="Moldavia!" className="4JuhvFePRTzgFA2J1zhRJg" onClick={this.show}>Click here to discover Moldavia's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[39, 35]}>
-                <Popup>
-                  <p id="Turkey!" className="0rkeWiJ7L3BRuXDWqmgZSZ" onClick={this.show}>Click here to discover Turkey's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[-25, 134]}>
-                <Popup>
-                  <p id="Australia!" className="6m3jFNfRNxNnrIhOuV7I0D" onClick={this.show}>Click here to discover Australia's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[21, 79]}>
-                <Popup>
-                  <p id="India!" className="37i9dQZEVXbLZ52XmnySJg" onClick={this.show}>Click here to discover India's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[-1.5, 22]}>
-                <Popup>
-                  <p id="Congo!" className="6OrCOUcHTeJeg0NQRlEVMK" onClick={this.show}>Click here to discover Congo's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[37, -96]}>
-                <Popup>
-                  <p id="USA!" className="37i9dQZF1DXbITWG1ZJKYt" onClick={this.show}>Click here to discover USA's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[-9, -75]}>
-                <Popup>
-                  <p id="Peru!" className="1U8CDNWLUL65u9g77sKCys" onClick={this.show}>Click here to discover Peru's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[-1.83, -78.2]}>
-                <Popup>
-                  <p id="Ecuador!" className="5XqV4c48IyUfwNYo2XAWxKs" onClick={this.show}>Click here to discover Ecuador's top 50!</p> 
-                </Popup>
-              </Marker>              
-                          
-              <Marker position={[-38, -64]}>
-                <Popup>
-                  <p id="Argentina!" className="37i9dQZEVXbMMy2roB9myp" onClick={this.show}>Click here to discover Argentina's top 50!</p> 
-                </Popup>
-              </Marker>                    
-                            
-              <Marker position={[-14, -52]}>
-                <Popup>
-                  <p id="Brasil!" className="37i9dQZEVXbMXbN3EUUhlg" onClick={this.show}>Click here to discover Brasil's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[41, 0.5]}>
-                <Popup>
-                  <p id="Catalunya!" className="2uh5yoMISpxTTPyes2mEPg" onClick={this.show}>Click here to discover Catalunya's top 50!</p> 
-                </Popup>
-              </Marker>
-              
-              <Marker position={[39, -8]}>
-                <Popup>
-                  <p id="Portugal!" className="6FD2g7R1tezpU8QnhJ3FsX" onClick={this.show}>Click here to discover Portugal's top 50!</p> 
-                </Popup>
-              </Marker>
-              
-              <Marker position={[47.5, 14.5]}>
-                <Popup>
-                  <p id="Austria!" className="7r36EDSbzLnsGHtjV2qkcf" onClick={this.show}>Click here to discover Austria's top 50!</p> 
-                </Popup>
-              </Marker>
-                                  
-              <Marker position={[36, 104]}>
-                <Popup>
-                  <p id="China!" className="0n9pUnDvJEIavvDfGnJqJl" onClick={this.show}>Click here to discover China's top 50!</p> 
-                </Popup>
-              </Marker>
-            
-              <Marker position={[50, 15.4]}>
-                <Popup>
-                  <p id="Czech Republic!" className="37i9dQZEVXbIP3c3fqVrJY" onClick={this.show}>Click here to discover Czech Republic's top 50!</p> 
-                </Popup>
-              </Marker>
-
-              <Marker position={[6.917222, 158.158889]}>
-                <Popup>
-                  <p id="Palikir!" className="2Ih05sTUNOXlUsYbm9xHJg" onClick={this.show}>Click here to discover Palikir's top 50!</p> 
-                </Popup>
-              </Marker>
-            </LeafletMap>
-          </div>
-        <div className={this.state.game}> 
+        <div className="show"> 
           <div className="QuestionAndAnswers">
             <div className="Countdown">
               <PlayerCountdown
@@ -437,7 +245,6 @@ class Map extends React.Component {
           </div>
           </div>
           <h2 className="instruct" id="youchoose">{this.state.beforeGame}</h2>
-          </div>
           <h3><Link className="link" to="/">Out the door!</Link></h3>   
           <h2 className="instruct" id="youchoose" >{this.state.beforeGame}</h2>
           <div id="backtomap">

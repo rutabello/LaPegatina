@@ -40,8 +40,8 @@ body {
 .main .webdev {
   color: #FFD9E2;
   text-shadow: 0 0 0 transparent, 0 0 10px #FF003C, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #FF003C, 0 0 100px #FF003C, 0 0 200px #FF003C, 0 0 300px #FF003C, 0 0 500px #FF003C, 0 0 1000px #FF003C;
-  -webkit-animation: blink 3s infinite alternate;
-          animation: blink 3s infinite alternate;
+  -webkit-animation: blink 1s infinite alternate;
+          animation: blink 1s infinite alternate;
 }
 
 .main .socod {

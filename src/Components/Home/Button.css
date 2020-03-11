@@ -11,7 +11,7 @@
   font-family:sans-serif;
   font-size:14px;
   width:13em;
-  padding:5px 10px;
+  padding:px 10px;
   font-weight:600;
   position:absolute;
   left: 50%;
@@ -19,8 +19,9 @@
   background:rgba(0,0,0,0.2);
   box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
   opacity:0.4;
-  font-size: 40px;
+  font-size: 25px;
   letter-spacing: 9px;
+  margin-top: 10vh;
 }
   
 #btn-game:hover {

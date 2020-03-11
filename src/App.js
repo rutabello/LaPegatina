@@ -10,42 +10,24 @@ import Home from './Components/Home/Home';
 
 class App extends React.Component {
 
-      state = {
-
-        display1: 'hideGame',
-
-        home: {
-          title: 'Play some',
-          subtitle: 'with music'
-        }
-               
-      }
+  state = {
+    display1: 'hideGame'
+  }
     
 
   render() {
-
-   
-    return (
-
-        
+    return ( 
       <div>
-      
-       <div className={this.state.display1}>
-       <Map /> 
-          </div>
-    
+        <div className={this.state.display1}>
+          <Map /> 
+        </div>
           <Switch>
-           
-          <Route exact path='/'             
-              render={props => <Home {...props} homeContent={this.state.home} />}
-              />
-      
-         <Route  path='/map'              
-              render={props => <Map {...props} />}
-              />  
+            <Route exact path='/' render={props => <Home {...props} homeContent={this.state.home} />}
+            />
+            <Route path='/map' render={props => <Map {...props} />}
+            />  
           </Switch>        
       </div>
-        
     );
   }
 }
