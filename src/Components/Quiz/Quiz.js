@@ -29,9 +29,7 @@ class Quiz extends Component {
           
         },
   
-        clave: "37i9dQZEVXbMDoHDwVN2tF",
-        german: "6HiZDoQlmYliE3RhFm4Fek",
-        world: "37i9dQZEVXbMDoHDwVN2tF",
+      
 
         hideResults: true,
         correctAnswers: 0,

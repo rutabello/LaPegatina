@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import {Link} from 'react-router-dom';
 import '../../App.css';
-import '../Quiz/Quiz.css'
+import '../Quiz/Quiz.css';
 import './Map.css';
-import '../Home/Button.css'
+import '../Home/Button.css';
 import './../MistakesList.css';
 import Button from '../Buttons/Button';
 import Shuffle from '../Utils/Shuffle';
@@ -12,26 +12,22 @@ import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 import Sound from 'react-sound';
 
 
-class Map extends React.Component {
+class Game extends React.Component {
 
-  spotifyObject = {} // We have the object coming from the API call, here
-  spotifyFilteredObjArr = [] //This array contains the songs coming from the spotifyObject that DO ave a preview_url
-  display = ""
-  chosenSong = ""
-  coincidence = false
-  answerCountShow= false
-  unknownSongs= [] //All the songs that the user guessed wrong are pushed into this array
+  // We have the object coming from the API call, here
+  spotifyObject = {}; 
+  //This array contains the songs coming from the spotifyObject that DO ave a preview_url
+  spotifyFilteredObjArr = []; 
+  //Here the actual game mechanics start
+  display = "";
+  chosenSong = "";
+  coincidence = false;
+  answerCountShow= false;
+  //All the songs that the user guessed wrong are pushed into this array
+  unknownSongs= []; 
 
   state = {
-
-    beforeGame: '',
-    startGame: "Great, you chose ",
-    game: "hideGame",
-    gameStart: "showGame",
-    map: "map",
-    showMap: true,
-    buttonClass: "hide",
-  
+ 
     songNames:[],
     currentSong: {
         preview_url: "",
@@ -46,7 +42,7 @@ class Map extends React.Component {
     playing: false,
     replayingSong: "",
 
-    clave: "37i9dQZF1DZ06evO2EUrsw",
+    playlistID: "37i9dQZF1DZ06evO2EUrsw",
   }
   /**
    * This fn returns an array with 4 song names randomly including the current song 
@@ -54,21 +50,31 @@ class Map extends React.Component {
    * @returns {array} songsToDisplay
   */
 
+  //API call to get the playlist data.
+
+ async componentDidMount() {   
+
+  this.spotifyObject = await Spotify.getPlaylist(this.state.playlistID);
+  this.filterRightSongsFromSpotifyObject();
+}
+
   getSongsToDisplay = (currentSongName) => {
-    var allSongsArr = this.spotifyObject.tracks.items.map(function (item){
-      return item.track.name
+
+      let allSongsArr = this.spotifyObject.tracks.items.map(function (item){
+      return item.track.name;
     });
     
-    var filteredSongsArr = allSongsArr.filter(function (song) {
-      return song !== currentSongName
+    let filteredSongsArr = allSongsArr.filter(function (song) {
+
+      return song !== currentSongName;
     });
 
-    var shuffledFilterSongsArr = Shuffle(filteredSongsArr);
+    let shuffledFilterSongsArr = Shuffle(filteredSongsArr);
 
-    var fourNonShuffledSongsArr = shuffledFilterSongsArr.slice(0, 3); // actually 3
+    let fourNonShuffledSongsArr = shuffledFilterSongsArr.slice(0, 3); // actually 3
     fourNonShuffledSongsArr.push(currentSongName); // now 4
     
-    var fourShuffledSongsArr = Shuffle(fourNonShuffledSongsArr)
+    let fourShuffledSongsArr = Shuffle(fourNonShuffledSongsArr)
 
     return fourShuffledSongsArr;
   }
@@ -80,7 +86,7 @@ class Map extends React.Component {
   }
 
   setNewRandomSong = () => {
-    var randomSong = this.spotifyFilteredObjArr[Math.floor(Math.random()*this.spotifyFilteredObjArr.length)].track;
+    let randomSong = this.spotifyFilteredObjArr[Math.floor(Math.random()*this.spotifyFilteredObjArr.length)].track;
 
     this.setState({
       currentSong: {
@@ -112,27 +118,36 @@ class Map extends React.Component {
   }
   
   showAnswerCount = () => {
-    this.answerCountShow= true
+    this.answerCountShow= true;
   }
   
   getSongUrl = (songName) => {
     
-      var allTracksArr = this.spotifyFilteredObjArr.map((item) => { //allTracksArr is an array made of tracks (each one, in an object, and as much tracks as songs are in the playlist)
-          return item.track
+       //allTracksArr is an array made of tracks (each one, in an object,
+      // and as much tracks as songs are in the playlist)
+      let allTracksArr = this.spotifyFilteredObjArr.map((item) => { 
+      
+          return item.track;
       })
 
-      var oneTrackArr = allTracksArr.filter((track) => {  //trackArr is an array with an only index which is an object with 2 properties: name and preview_url
-          return track.name === songName //Returns an array with the (only) object that fulfills this condition
+      //trackArr is an array with an only index which is an object with 2 properties: name and preview_url
+      
+      let oneTrackArr = allTracksArr.filter((track) => { 
+        
+        //Returns an array with the (only) object that fulfills this condition 
+          return track.name === songName 
       })
 
-      var songUrl = oneTrackArr[0].preview_url
+      let songUrl = oneTrackArr[0].preview_url;
 
       this.setState({
           songUrl: songUrl,
           playerState: Sound.status.PLAYING,
           playing: true,
           replayingSong: songName
-      }) // return this.spotifyObject.tracks.items.filter(item => item.track.name === songName)[0].preview_url This does the same as getSongUrl but with much less lines
+          // return this.spotifyObject.tracks.items.filter(item => item.track.name === songName)[0].preview_url 
+          // This does the same as getSongUrl but with much less lines
+      }) 
   }
   
   stopMusic = () => {
@@ -153,44 +168,29 @@ class Map extends React.Component {
       })
   }
   
-  async componentDidMount() {      
-    this.spotifyObject = await Spotify.getPlaylist(this.state.clave);
-    this.filterRightSongsFromSpotifyObject()
-  }
+  //since we're probably only play with one playlist we might not need the following method
+  //BUT: it could be useful for the next stages (playing with different levels/prices)
             
-  componentDidUpdate  = async  (prevProps, prevState) => {
+ /* componentDidUpdate  = async  (prevProps, prevState) => {
     if (prevState.clave !== this.state.clave) {
         
-      this.spotifyObject = await Spotify.getPlaylist(this.state.clave)
+      this.spotifyObject = await Spotify.getPlaylist(this.state.playlistID)
       this.filterRightSongsFromSpotifyObject();
     }
-  }
+  } 
 
-            
   show = (event) => {
-    let discover = this.state.gameStart;
-    let disguise = false;
-    let start = this.state.startGame + event.target.id;
+
     let newList = event.target.className; 
 
     this.setState({
-      game: discover,
-      showMap: disguise,
-      beforeGame: start,
+ 
       clave: newList,
-      buttonClass: "show",
-    })
-  }
 
-  showMapHideButton = () => {
-    this.setState ({
-      showMap: true,
-      buttonClass: "hide",
-      beforeGame: '',
-      game: "hideGame", 
     })
-    
-  }
+  }*/
+
+
 
   render() {
     return (
@@ -212,7 +212,9 @@ class Map extends React.Component {
                   <Button 
                     key={songName} 
                     printedSong={songName} 
-                    onClick={() => this.writeChosenSong(songName)}//We write it like this so the function writeChoosenSong isn't executed when the button is rendered but when the button is clicked. Different than what we're doing some lines above in the onMusicPlays, setNewRandomSong or songURL
+                    //We write it like this so the function writeChoosenSong isn't executed when the button is rendered but when the button 
+                    //is clicked. Different than what we're doing some lines above in the onMusicPlays, setNewRandomSong or songURL
+                    onClick={() => this.writeChosenSong(songName)}
                     currentSong={this.state.currentSong.name}
                   />
                 )
@@ -230,7 +232,9 @@ class Map extends React.Component {
                         <li className="mistake">{song} 
                           <button className="repeat-button" onClick={this.state.playing ? () => this.stopMusic() : () => this.getSongUrl(song)}>
                             {this.state.playing ? "Pause" : "Listen again"} 
-                          </button> {/* We write it with an arrow function instead of a 'normal' function so we can avoid an infinite loop when setting the state */}
+                          {/* We write it with an arrow function instead of a 'normal' function so we can avoid an infinite loop 
+                          when setting the state */}  
+                          </button> 
                         </li>
                       </div>
                     )
@@ -244,17 +248,17 @@ class Map extends React.Component {
             </div>
           </div>
           </div>
-          <h2 className="instruct" id="youchoose">{this.state.beforeGame}</h2>
-          <h3><Link className="link" to="/">Out the door!</Link></h3>   
-          <h2 className="instruct" id="youchoose" >{this.state.beforeGame}</h2>
-          <div id="backtomap">
-            <button className={this.state.buttonClass} onClick={() => this.showMapHideButton()}>Show me the map again!</button>
-          </div>
+        
+          <h3><Link className="link" to="/">Volver</Link></h3>   
+
+            {
+            //ALSO: intermediate button, before getting to the game needs to be removed"
+            }
       </section>
     );
   }
 }
 
-export default Map;
+export default Game;
 
 

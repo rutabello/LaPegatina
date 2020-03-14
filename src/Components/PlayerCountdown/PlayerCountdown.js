@@ -5,7 +5,6 @@ import './PlayerCountdown.css'
 const SONG_TIMER_DURATION = 10;
 
 
-
 class PlayerCountdown extends Component {
 
   // Properties
@@ -16,26 +15,28 @@ class PlayerCountdown extends Component {
     uniqueKey: Date.now()
   }
 
-
   exampleRef = React.createRef(); // Create the ref
   countdownIsDisplayed = false
-
- 
 
   // Methods
   playMusicStartTimer = () => {
 
     this.countdownIsDisplayed = true;
 
-    this.props.showAnswerCount(); //This makes the answer counter appear only when you've started playing the game and not before
+    //This makes the answer counter appear only when you've started playing the game and not before
+    this.props.showAnswerCount(); 
 
     this.props.setNewRandomSong();
 
     this.setState({
-      uniqueKey: Date.now(), //This makes the countdown start counting when the new state is set (on play clicked) instead of when the page is loaded
+      //This makes the countdown start counting when the new state is set (on play clicked) instead of when 
+       //the page is loaded
+      uniqueKey: Date.now(), 
+     
       playStatus: Sound.status.PLAYING,
       isPlaying: true,
-      playClicked: true //This makes the 'play' button disappear once you click on it
+      //This makes the 'play' button disappear once you click on it
+      playClicked: true 
     })
 
     setTimeout(() => {
@@ -68,7 +69,7 @@ class PlayerCountdown extends Component {
   }
 
 
-  // Render
+  
   render () {
     return (
       <div>
@@ -102,7 +103,7 @@ class PlayerCountdown extends Component {
 
 export default PlayerCountdown;
 
-
+//Put the information below in a README.md file later!
 
 // Circle Countdown Info https://www.npmjs.com/package/react-countdown-circle-timer
 
