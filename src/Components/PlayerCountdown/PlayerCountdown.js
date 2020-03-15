@@ -61,7 +61,7 @@ class PlayerCountdown extends Component {
     return (
       <div className="timer">
         <div className="value">{value}</div>
-        <div className="text">seconds</div>
+        <div className="text">segundos</div>
       </div>
     );
   }

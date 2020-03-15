@@ -1,11 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import '../../App.css';
-import '../Quiz/Quiz.css';
-import './Map.css';
-import '../Home/Button.css';
-import './../MistakesList.css';
-import Button from '../Buttons/Button';
+import './Game.css';
+import Button from '../Button/Button';
 import Shuffle from '../Utils/Shuffle';
 import Spotify from '../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
@@ -123,31 +120,29 @@ class Game extends React.Component {
   
   getSongUrl = (songName) => {
     
-       //allTracksArr is an array made of tracks (each one, in an object,
-      // and as much tracks as songs are in the playlist)
-      let allTracksArr = this.spotifyFilteredObjArr.map((item) => { 
-      
-          return item.track;
-      })
+    //allTracksArr is an array made of tracks (each one, in an object,
+    // and as much tracks as songs are in the playlist)
+    let allTracksArr = this.spotifyFilteredObjArr.map((item) => { 
+      return item.track;
+    })
 
-      //trackArr is an array with an only index which is an object with 2 properties: name and preview_url
-      
-      let oneTrackArr = allTracksArr.filter((track) => { 
+    //trackArr is an array with an only index which is an object with 2 properties: name and preview_url
+    
+    let oneTrackArr = allTracksArr.filter((track) => { 
+      //Returns an array with the (only) object that fulfills this condition 
+      return track.name === songName 
+    })
 
-        //Returns an array with the (only) object that fulfills this condition 
-          return track.name === songName 
-      })
+    let songUrl = oneTrackArr[0].preview_url;
 
-      let songUrl = oneTrackArr[0].preview_url;
-
-      this.setState({
-          songUrl: songUrl,
-          playerState: Sound.status.PLAYING,
-          playing: true,
-          replayingSong: songName
-          // return this.spotifyObject.tracks.items.filter(item => item.track.name === songName)[0].preview_url 
-          // This does the same as getSongUrl but with much less lines
-      }) 
+    this.setState({
+      songUrl: songUrl,
+      playerState: Sound.status.PLAYING,
+      playing: true,
+      replayingSong: songName
+      // return this.spotifyObject.tracks.items.filter(item => item.track.name === songName)[0].preview_url 
+      // This does the same as getSongUrl but with much less lines
+    }) 
   }
   
   stopMusic = () => {
@@ -163,9 +158,9 @@ class Game extends React.Component {
   }
   
   setPlayingToFalse = () => {
-      this.setState({
-          playing: false
-      })
+    this.setState({
+      playing: false
+    })
   }
   
   //since we're probably only play with one playlist we might not need the following method
@@ -219,22 +214,23 @@ class Game extends React.Component {
               })}
             </div>
             <div id="counter" className="instruct">
-              <p className={this.answerCountShow ? "show" : "hide"}>Right answers: {this.state.correctAnswers}  out of {this.state.total}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>Respuestas correctas: {this.state.correctAnswers}  de {this.state.total}</p>
             </div>
             <div className={this.unknownSongs.length > 0 ? "show" : "hide"}>
-                <h4 className="instruct">Learn from your mistakes</h4>
+                <h4 className="instruct">Aprende de tus errores:</h4>
                 <ul id="mistakes" className="instruct">  
                   {this.unknownSongs.map((song) => {
                     return (
-                      <div className="list">
-                        <li className="mistake">{song} 
+                        <li className="mistake-list">
+                          <div className="song-name">
+                            {song} 
+                          </div>
                           <button className="repeat-button" onClick={this.state.playing ? () => this.stopMusic() : () => this.getSongUrl(song)}>
-                            {this.state.playing ? "Pause" : "Listen again"} 
+                            {this.state.playing ? "Pausa" : "Vuelve a escucharla"} 
                           {/* We write it with an arrow function instead of a 'normal' function so we can avoid an infinite loop 
                           when setting the state */}  
                           </button> 
                         </li>
-                      </div>
                     )
                   })}
                 </ul>
@@ -247,7 +243,7 @@ class Game extends React.Component {
           </div>
           </div>
         
-          <h3><Link className="link" to="/">Volver</Link></h3>   
+          <h3><Link className="link" to="/">Volver al inicio</Link></h3>   
 
             {
             //ALSO: intermediate button, before getting to the game needs to be removed"

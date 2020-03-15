@@ -6,7 +6,6 @@
     font-style: normal;
 }
 
-
 .forceGrayColor button {
 	border:1.5px solid  rgb(0, 89, 255);
     color: rgb(0, 89, 255)!important;
@@ -34,25 +33,6 @@ li {
     list-style: none;
 }
 
-.countdown {
-    margin-top: 25px;
-}
-
-
-#youchoose {
-    position: absolute;
-    width: min-content;
-    top: calc(20% - 25px);
-    right: calc(80% - 40px);
-    font-family: "neontubes";
-    font-size: 50px;
-    text-align: center;
-    color: #ffd9e2;
-    text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c;
-    -webkit-animation: blink 3s infinite alternate;
-            animation: blink 3s infinite alternate;
-}
-
 .link {
     color: white;
     width: 150px;
@@ -61,20 +41,15 @@ li {
     display: flex; 
     text-align: center;
     padding-left: 20px;
-    margin-left: 45%;
     position: fixed;
-    bottom: 0;
-    margin-left: 80%;
+    top: 0;
+    opacity: .7;
 }
 
-.countdown {
-    margin-top: 25px;
+.Countdown {
     max-width: 300px;
     width: 100%;
-    margin: 0 auto;
-    background: #121212;
-    background: rgba(0,0,0,.7);
-    opacity: .7;
+    margin: 30px auto 20px;
 }
 
 .QuestionAndAnswers  {
@@ -83,72 +58,14 @@ li {
     margin:0
 }
 
-
-#mis-title {
-    justify-content: space-between;
-    padding: 15px 15px;
-}
-
-#mistakes {
-    max-width: 400px;
-    width: 100%;
-    margin: 0 auto;
-    /* background: #121212; */
-}
-
-.mistake {
-    font-weight: 400;
-    font-size: .8rem;
-}
-
-.list {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 0 15px 5px;
-    color: #fff;
-    transition: all .3s ease-in-out;
-}
-
 .list:hover {
     background: rgba(0,0,0,.7);
     opacity: .7;
 }
 
 .repeat-button {
-    margin-left: 30px;
-    font-size: 17px;
-}
-
-.title {
-    margin-left: 40%;
-}
-
-.map-title {
-    font-family:sans-serif;
-    text-align: center;
-    font-size: 50px;
-}
-
-.map {
-    display: inline;
-}
-
-.leaflet-container {
-    margin: auto;
-    height: 70vh;
-    width: 80%;
-}
-
-#backtomap {
-    margin-left: 5%;
-    position: sticky;
-    position: fixed;
-    bottom: 0;
-}
-
-#backtomap .show {
-    font-size: 25px;
+    margin-left: 20px;
+    font-size: 14px;
 }
 
 #counter {
@@ -157,30 +74,54 @@ li {
 }
 
 .show h4 {
-    font-size: 50px;
+    font-size: 28px;
+    margin-bottom: 0px;
 }
+
+/* Mistakes list css: */
+
+#mistakes {
+    max-width: 80%;
+    width: 100%;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-bottom: 50px;
+  }
+  
+  .song-name {
+    font-weight: 400;
+    font-size:1.3rem;
+    text-align: left;
+    display: inline;
+    min-width: 75%;
+  }
+  
+  .mistake-list {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    color: #fff;
+    transition: all .3s ease-in-out;
+    margin-bottom: 20px;
+  }
+  
+  #outthedoor {
+    margin-left: 80%;
+  }
+  
+  .instruct  {
+    text-align:center;
+  }
 
 
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 750px) {
-    
-    #youchoose {
-        display:none;
-    }
 
-    .countdown {
+    .Countdown {
         left:50%;
-    }
-
-    .map {
-        margin: 0;
-        width: auto;
-    }
-    
-      .leaflet-container {
-        height: 427px;
-        width: 300px;
     }
 
     .show h4 {
