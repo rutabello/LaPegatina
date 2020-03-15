@@ -133,7 +133,7 @@ class Game extends React.Component {
       //trackArr is an array with an only index which is an object with 2 properties: name and preview_url
       
       let oneTrackArr = allTracksArr.filter((track) => { 
-        
+
         //Returns an array with the (only) object that fulfills this condition 
           return track.name === songName 
       })
@@ -189,8 +189,6 @@ class Game extends React.Component {
 
     })
   }*/
-
-
 
   render() {
     return (

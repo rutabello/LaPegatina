@@ -12,7 +12,7 @@ let audio = new Audio("https://freesound.org/data/previews/506/506053_10991815-l
     audio.play();
   }
 
-const Home = () => (
+const Home = (props) => (
 
       <div className="main">
           <span className="socod">Juega con 
@@ -24,7 +24,7 @@ const Home = () => (
           
          { <h3 className="hideGame"><Link to="/">Home</Link></h3>
          }
-          <h3 ><Link id="btn-game" to="game" onClick={start} >Juega!</Link></h3>
+          <h3 ><Link id="btn-game" to="game" onClick={props.start} >Juega!</Link></h3>
           <div>
           { //Will we still use background music?
           /* <BgMusic

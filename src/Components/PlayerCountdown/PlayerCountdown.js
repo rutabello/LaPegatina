@@ -1,7 +1,9 @@
+import Home from '../Home/Home';
 import React, {Component} from 'react';
 import Sound from 'react-sound';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
-import './PlayerCountdown.css'
+import './PlayerCountdown.css';
+
 const SONG_TIMER_DURATION = 10;
 
 
@@ -15,7 +17,8 @@ class PlayerCountdown extends Component {
     uniqueKey: Date.now()
   }
 
-  exampleRef = React.createRef(); // Create the ref
+  // Create the ref
+  exampleRef = React.createRef(); 
   countdownIsDisplayed = false
 
   // Methods
@@ -38,6 +41,8 @@ class PlayerCountdown extends Component {
       //This makes the 'play' button disappear once you click on it
       playClicked: true 
     })
+
+    //sets the length and specifics of the timer
 
     setTimeout(() => {
 
@@ -67,9 +72,7 @@ class PlayerCountdown extends Component {
       playStatus: Sound.status.STOPPED
     })
   }
-
-
-  
+//id="play-button"
   render () {
     return (
       <div>
@@ -77,7 +80,7 @@ class PlayerCountdown extends Component {
         {
           this.state.playClicked
             ? null
-            : <button id="play-button" onClick={this.playMusicStartTimer}>Play</button>
+            : <Home start={this.playMusicStartTimer}/>
         }
 
         <Sound 
