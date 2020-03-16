@@ -66,6 +66,8 @@ li {
 .repeat-button {
     margin-left: 20px;
     font-size: 14px;
+    max-width: 140px;
+    min-width: 140px;
 }
 
 #counter {
@@ -74,7 +76,7 @@ li {
 }
 
 .show h4 {
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 0px;
 }
 
@@ -95,7 +97,7 @@ li {
     font-size:1.3rem;
     text-align: left;
     display: inline;
-    min-width: 75%;
+    min-width: 80%;
   }
   
   .mistake-list {
@@ -105,10 +107,8 @@ li {
     color: #fff;
     transition: all .3s ease-in-out;
     margin-bottom: 20px;
-  }
-  
-  #outthedoor {
-    margin-left: 80%;
+    align-items: flex-start;
+    justify-content: space-between;
   }
   
   .instruct  {
@@ -128,8 +128,20 @@ li {
         font-size: 26px;
     }
 
+    .show p {
+        font-size: 19px;
+    }
+
     #counter {
         font-size: 22px;
-        margin-bottom: 10vh;
+        margin-bottom: 5vh;
+    }
+
+    .song-name {
+        font-weight: 400;
+        font-size:1rem;
+        text-align: left;
+        display: inline;
+        min-width: 35%;
     }
 }

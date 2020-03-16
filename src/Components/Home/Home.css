@@ -79,8 +79,18 @@ body {
 @media only screen and (max-width: 750px) {
   #btn-game {
   margin: auto;
+  font-size: 4vw;
+  }
+
+  .playWith {
+    font-size: 13vw;
+  }
+
+  .laPegatina {
+    font-size: 13vw;
   }
 }
+
 
 /* Not used for now */
 /* .webdev span:nth-child(2) {
