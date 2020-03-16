@@ -8,28 +8,16 @@ import Home from './Components/Home/Home';
 
 class App extends React.Component {
 
-  state = {
-    display: 'hideGame'
-  }
-    
-
   render() {
     return ( 
       <div>
-        <div className={this.state.display}>
-          <Game /> 
-        </div>
-          <Switch>
-            <Route exact path='/' render={props => <Home {...props} homeContent={this.state.home} />}
-            />
-            <Route path='/game' render={props => <Game {...props} />}
-            />  
-          </Switch>        
+        <Switch>
+          <Route exact path='/' render={props => <Home {...props} />} />
+          <Route path='/game' render={props => <Game {...props} />} />          
+        </Switch>        
       </div>
     );
   }
 }
 
-
 export default App;
-

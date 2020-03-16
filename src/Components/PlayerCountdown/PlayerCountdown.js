@@ -1,11 +1,9 @@
-import Home from '../Home/Home';
 import React, {Component} from 'react';
 import Sound from 'react-sound';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import './PlayerCountdown.css';
 
 const SONG_TIMER_DURATION = 10;
-
 
 class PlayerCountdown extends Component {
 
@@ -17,8 +15,6 @@ class PlayerCountdown extends Component {
     uniqueKey: Date.now()
   }
 
-  // Create the ref
-  exampleRef = React.createRef(); 
   countdownIsDisplayed = false
 
   // Methods
@@ -72,17 +68,14 @@ class PlayerCountdown extends Component {
       playStatus: Sound.status.STOPPED
     })
   }
-//id="play-button"
+
+  componentDidMount() {
+    this.playMusicStartTimer();
+  }
+
   render () {
     return (
       <div>
-
-        {
-          this.state.playClicked
-            ? null
-            : <Home start={this.playMusicStartTimer}/>
-        }
-
         <Sound 
           url={this.props.songURL}
           playStatus={this.state.playStatus}

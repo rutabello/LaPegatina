@@ -16,7 +16,6 @@ class Game extends React.Component {
   //This array contains the songs coming from the spotifyObject that DO ave a preview_url
   spotifyFilteredObjArr = []; 
   //Here the actual game mechanics start
-  display = "";
   chosenSong = "";
   coincidence = false;
   answerCountShow= false;
@@ -41,23 +40,22 @@ class Game extends React.Component {
 
     playlistID: "37i9dQZF1DZ06evO2EUrsw",
   }
+
+  //API call to get the playlist data.
+  async componentDidMount() {   
+    this.spotifyObject = await Spotify.getPlaylist(this.state.playlistID);
+    this.filterRightSongsFromSpotifyObject();
+    this.setNewRandomSong();
+  }
+
   /**
    * This fn returns an array with 4 song names randomly including the current song 
    * @param {string} currentSong - name of the current song playing
    * @returns {array} songsToDisplay
   */
-
-  //API call to get the playlist data.
-
- async componentDidMount() {   
-
-  this.spotifyObject = await Spotify.getPlaylist(this.state.playlistID);
-  this.filterRightSongsFromSpotifyObject();
-}
-
   getSongsToDisplay = (currentSongName) => {
 
-      let allSongsArr = this.spotifyObject.tracks.items.map(function (item){
+    let allSongsArr = this.spotifyObject.tracks.items.map(function (item){
       return item.track.name;
     });
     
@@ -83,6 +81,11 @@ class Game extends React.Component {
   }
 
   setNewRandomSong = () => {
+
+    if (this.spotifyFilteredObjArr.length === 0) {
+      return
+    }
+
     let randomSong = this.spotifyFilteredObjArr[Math.floor(Math.random()*this.spotifyFilteredObjArr.length)].track;
 
     this.setState({
@@ -166,7 +169,7 @@ class Game extends React.Component {
   //since we're probably only play with one playlist we might not need the following method
   //BUT: it could be useful for the next stages (playing with different levels/prices)
             
- /* componentDidUpdate  = async  (prevProps, prevState) => {
+  /* componentDidUpdate  = async  (prevProps, prevState) => {
     if (prevState.clave !== this.state.clave) {
         
       this.spotifyObject = await Spotify.getPlaylist(this.state.playlistID)
@@ -221,7 +224,7 @@ class Game extends React.Component {
                 <ul id="mistakes" className="instruct">  
                   {this.unknownSongs.map((song) => {
                     return (
-                        <li className="mistake-list">
+                        <li key={song} className="mistake-list">
                           <div className="song-name">
                             {song} 
                           </div>
@@ -241,18 +244,16 @@ class Game extends React.Component {
                 />
             </div>
           </div>
-          </div>
+        </div>
         
-          <h3><Link className="link" to="/">Volver al inicio</Link></h3>   
+        <h3><Link className="link" to="/">Volver al inicio</Link></h3>   
 
-            {
-            //ALSO: intermediate button, before getting to the game needs to be removed"
-            }
+        {
+          //ALSO: intermediate button, before getting to the game needs to be removed"
+        }
       </section>
     );
   }
 }
 
 export default Game;
-
-

@@ -19,7 +19,7 @@ const Home = (props) => (
       <p className="playWith">Juega con</p>
       <p className="laPegatina">La pegatina</p>
 
-      <Link id="btn-game" to="game" onClick={props.start} >Juega!</Link>
+      <Link id="btn-game" to="game">Juega!</Link>
 
       <div>
         {
