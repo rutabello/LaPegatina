@@ -14,7 +14,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={props => <Home {...props} />} />
           <Route path='/game' render={props => <Game {...props} />} />          
-        </Switch>        
+        </Switch> 
+        <div className="sharethis-inline-follow-buttons"></div>     
       </div>
     );
   }

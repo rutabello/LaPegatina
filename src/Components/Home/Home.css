@@ -7,8 +7,7 @@
 }
 
 body {
-  background: rgb(135, 135, 189) url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg) no-repeat center center fixed;
-  background-size:cover;
+  background: url(../../Pictures/background_img_left.png) left top no-repeat,url(../../Pictures/background_img_right.png) right top no-repeat #1a1b39;
   margin:0
 }
 
@@ -27,7 +26,8 @@ body {
 }
 
 .playWith {
-  font-size: 8vw;
+  font-family: 'Satisfy', cursive;
+  font-size: 5vw;
   margin: 0;
   color: #D4EAFF;
   text-shadow: 0 0 0 transparent, 0 0 10px #2695FF, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695FF, 0 0 100px #2695FF, 0 0 200px #2695FF, 0 0 300px #2695FF, 0 0 500px #2695FF;
@@ -35,13 +35,11 @@ body {
 }
 
 .laPegatina {
-  font-size: 12vw;
-  margin: 0;
-  color: #FFD9E2;
-  text-shadow: 0 0 0 transparent, 0 0 10px #FF003C, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #FF003C, 0 0 100px #FF003C, 0 0 200px #FF003C, 0 0 300px #FF003C, 0 0 500px #FF003C, 0 0 1000px #FF003C;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  height: 300px;
   animation: fadeEffect 3s linear infinite;
   opacity: 1;
-  margin-bottom: 110px;
 }
 
 /* Start game button */
@@ -56,13 +54,15 @@ body {
   font-size: 2vw;
   padding: 10px 30px;
   font-weight: 600;
-  background: rgba(0,0,0,0.2);
+  background: rgb(26, 27, 57);
   box-shadow: 0 0 0px 3px rgba(0,0,0,0.2);
-  opacity: 0.4;
+  opacity: 0.6;
   letter-spacing: 3px;
+  margin:  5px 0 5px 0;
+  display: block;
 }
 
-#btn-game:hover {
+.btn-game:hover {
   color: #fff;
   opacity: 1;
 }
@@ -77,9 +77,11 @@ body {
 } */
 
 @media only screen and (max-width: 750px) {
-  #btn-game {
+  .btn-game {
   margin: auto;
   font-size: 4vw;
+  display: block;
+  margin-bottom: 5px;
   }
 
   .playWith {
@@ -87,7 +89,7 @@ body {
   }
 
   .laPegatina {
-    font-size: 13vw;
+    height: 150px;
   }
 }
 

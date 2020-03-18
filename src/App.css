@@ -7,3 +7,20 @@
 
   display: block;
 }
+
+.sharethis-inline-follow-buttons {
+  position: fixed;
+  bottom: 0px;
+  padding-bottom: 10px;
+  background-color: rgb(49, 44, 113);
+  width: 100%;
+}
+
+@media only screen and (max-width: 750px) {
+  .sharethis-inline-follow-buttons {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    padding-bottom: 10px;
+  }
+}

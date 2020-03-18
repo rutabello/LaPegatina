@@ -219,6 +219,9 @@ class Game extends React.Component {
             <div id="counter" className="instruct">
               <p className={this.answerCountShow ? "show" : "hide"}>Respuestas correctas: {this.state.correctAnswers}  de {this.state.total}</p>
             </div>
+            
+            <div class="sharethis-inline-share-buttons"></div>
+            
             <div className={this.unknownSongs.length > 0 ? "show" : "hide"}>
                 <h4 className="instruct">Aprende de tus errores:</h4>
                 <ul id="mistakes" className="instruct">  

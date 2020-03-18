@@ -9,6 +9,7 @@
 .forceGrayColor button {
 	border:1.5px solid  rgb(0, 89, 255);
     color: rgb(0, 89, 255)!important;
+    background-color: transparent;
 }
 
 .show {
@@ -47,15 +48,15 @@ li {
 }
 
 .Countdown {
-    max-width: 300px;
     width: 100%;
-    margin: 30px auto 20px;
+    margin: 0px auto 20px;
 }
 
 .QuestionAndAnswers  {
-    background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)  no-repeat center center fixed;
-    background-size:cover;
-    margin:0
+    background: url(../../Pictures/background_img_left.png) left top no-repeat,url(../../Pictures/background_img_right.png) right top no-repeat #1a1b39;
+    margin: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.7455357142857143) 0%, rgba(255,255,255,0) 100%);
 }
 
 .list:hover {
@@ -85,22 +86,22 @@ li {
 #mistakes {
     max-width: 80%;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-right: auto;
     margin-left: auto;
     padding-left: 0;
     padding-bottom: 50px;
-  }
+}
   
-  .song-name {
+.song-name {
     font-weight: 400;
     font-size:1.3rem;
     text-align: left;
     display: inline;
     min-width: 80%;
-  }
+}
   
-  .mistake-list {
+.mistake-list {
     display: flex;
     flex-direction: row;
     padding: 0;
@@ -109,23 +110,36 @@ li {
     margin-bottom: 20px;
     align-items: flex-start;
     justify-content: space-between;
-  }
+}
   
-  .instruct  {
-    text-align:center;
-  }
+.instruct  {
+    text-align: center;
+}
+
+.instruct p {
+    color: white;
+}
+
+
+/* SOCIAL MEDIA BUTTONS */
+
 
 
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 750px) {
 
+    .QuestionAndAnswers {
+        background: rgb(0,0,0);
+        background: linear-gradient(180deg, rgba(0,0,0,0.7455357142857143) 0%, rgba(255,255,255,0) 100%);
+    }
+
     .Countdown {
         left:50%;
     }
 
     .show h4 {
-        font-size: 26px;
+        font-size: 19px;
     }
 
     .show p {
@@ -134,7 +148,7 @@ li {
 
     #counter {
         font-size: 22px;
-        margin-bottom: 5vh;
+        margin-bottom: 14px;
     }
 
     .song-name {
@@ -143,5 +157,41 @@ li {
         text-align: left;
         display: inline;
         min-width: 35%;
+    }
+
+    #st-1 .st-btn {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: opacity 0.2s ease-in, top 0.2s ease-in;
+    -ms-transition: opacity 0.2s ease-in, top 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in, top 0.2s ease-in;
+    -webkit-transition: opacity 0.2s ease-in, top 0.2s ease-in;
+    transition: opacity 0.2s ease-in, top 0.2s ease-in;
+    -moz-border-radius: 26px;
+    -webkit-border-radius: 26px;
+    border-radius: 26px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    margin-right: 8px;
+    padding: 0 12px;
+    position: relative;
+    text-align: center;
+    top: 0;
+    vertical-align: top;
+    white-space: nowrap;
+    }
+
+    .link {
+        width: 70px;
+        padding-left: 5px;
+        font-size: 10px;
+    }
+
+    #mistakes {
+        margin-top: 14px;
     }
 }
