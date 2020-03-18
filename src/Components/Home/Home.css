@@ -46,7 +46,7 @@ body {
 
 /* Start game button */
 
-#btn-game {
+.btn-game {
   color: #fff;
   border: 2px solid;
   border-radius: 3px;

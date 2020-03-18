@@ -19,8 +19,8 @@ const Home = (props) => (
       <p className="playWith">Juega con</p>
       <p className="laPegatina">La pegatina</p>
 
-      <Link id="btn-game" to="game">Juega!</Link>
-
+      <Link className="btn-game" to="game">Juega con La Pegatina!</Link>
+      <a className="btn-game" href="https://playwith.es">Juega con música de todo el mundo</a>
       <div>
         {
           //Will we still use background music?
