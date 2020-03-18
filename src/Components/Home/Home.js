@@ -7,9 +7,6 @@ import './Home.css';
 
 // let audio = new Audio("https://freesound.org/data/previews/506/506053_10991815-lq.mp3");
 
-// const start = () => {
-//   audio.play();
-// }
 
 const Home = (props) => (
   <div className="container">
@@ -19,7 +16,21 @@ const Home = (props) => (
       <p className="playWith">Juega con</p>
       <p className="laPegatina">La pegatina</p>
 
-      <Link id="btn-game" to="game">Juega!</Link>
+      <Link 
+        id="btn-game"
+        to="/game"
+        onClick={() => {sessionStorage.selectedPlaylistId = "37i9dQZF1DZ06evO2EUrsw"}}
+      >
+        Juega con La Pegatina!
+      </Link>
+
+      <Link 
+        id="btn-game"
+        to="/game"
+        onClick={() => {sessionStorage.selectedPlaylistId = "4kCRwBU4lLcXZZrapYOEcL"}}
+      >
+        Juega con otra lista
+      </Link>
 
       <div>
         {

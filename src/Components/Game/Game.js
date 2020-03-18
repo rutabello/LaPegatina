@@ -38,12 +38,15 @@ class Game extends React.Component {
     playing: false,
     replayingSong: "",
 
+    // Default playlist
     playlistID: "37i9dQZF1DZ06evO2EUrsw",
   }
 
   //API call to get the playlist data.
-  async componentDidMount() {   
-    this.spotifyObject = await Spotify.getPlaylist(this.state.playlistID);
+  async componentDidMount() {
+
+    this.spotifyObject = await Spotify.getPlaylist(sessionStorage.selectedPlaylistId || this.state.playlistID);
+    
     this.filterRightSongsFromSpotifyObject();
     this.setNewRandomSong();
   }

@@ -4,10 +4,7 @@ import {Switch, Route} from 'react-router-dom';
 import Game from './Components/Game/Game';
 import Home from './Components/Home/Home';
 
-//packages used: react router, react sound, leaflet, leaflet react, 
-
 class App extends React.Component {
-
   render() {
     return ( 
       <div>
