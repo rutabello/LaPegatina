@@ -61,7 +61,7 @@ class Game extends React.Component {
     hideResults: true,
     correctAnswers: 0,
     total: 0,
-    score: "",
+    score: 0,
     songUrl: "",
     playerState: Sound.status.PLAYING,
     playing: false,
@@ -142,7 +142,8 @@ class Game extends React.Component {
 
     this.setState({
       hideResults: false,
-      correctAnswers: this.coincidence ? (this.state.correctAnswers +1) : this.state.correctAnswers
+      correctAnswers: this.coincidence ? (this.state.correctAnswers +1) : this.state.correctAnswers,
+      score: this.coincidence ? (this.state.score +10) : this.state.score
     })
   }
   
@@ -247,6 +248,8 @@ class Game extends React.Component {
             </div>
             <div id="counter" className="instruct">
               <p className={this.answerCountShow ? "show" : "hide"}>Respuestas correctas: {this.state.correctAnswers}  de {this.state.total}</p>
+              <br/>
+              <p className={this.answerCountShow ? "show" : "hide"}>Puntos: {this.state.score}</p>
             </div>
             
             <div class="sharethis-inline-share-buttons"></div>
@@ -341,7 +344,7 @@ class Game extends React.Component {
 
             <TwitterShareButton
               url={this.shareurl}
-              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
+              title={`He jugado con las canciones de @LaPegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
               className="Demo_some-network__share-button"
             >
               <TwitterIcon size={50} round />
