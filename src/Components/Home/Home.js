@@ -18,7 +18,7 @@ const Home = (props) => (
       <h3 className="hideGame"><Link to="/">Home</Link></h3>
 
       <p className="playWith">Juega con</p>
-      <img src={logo} alt="La Pegatina logo" className="laPegatina" />
+      <img src={logo} alt="" className="laPegatina" />
 
       <Link className="btn-game" to="game">Juega con La Pegatina!</Link>
       <a className="btn-game" href="https://playwith.es">Juega con música de todo el mundo</a>
