@@ -51,7 +51,7 @@ class PlayerCountdown extends Component {
 
   renderTime = value => {
     if (value === 0) {
-      return <button className="next-button" onClick={this.playMusicStartTimer}>>></button>;
+      return <button className="next-button" onClick={this.playMusicStartTimer}>Otra!</button>;
     }
 
     return (

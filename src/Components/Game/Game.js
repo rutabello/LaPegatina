@@ -7,7 +7,31 @@ import Shuffle from '../Utils/Shuffle';
 import Spotify from '../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 import Sound from 'react-sound';
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  LinkedinShareButton,
+  PinterestShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "react-share";
 
+import {
+  EmailIcon,
+  FacebookIcon,
+  LinkedinIcon,
+  PinterestIcon,
+  RedditIcon,
+  TelegramIcon,
+  TumblrIcon,
+  TwitterIcon,
+  WhatsappIcon,
+} from "react-share";
+
+import arrow from '../../Pictures/arrow_left.svg'
 
 class Game extends React.Component {
 
@@ -22,6 +46,10 @@ class Game extends React.Component {
   //All the songs that the user guessed wrong are pushed into this array
   unknownSongs= []; 
 
+  shareurl="https://playwith.es";
+
+  socialIconSize=33;
+
   state = {
  
     songNames:[],
@@ -33,6 +61,7 @@ class Game extends React.Component {
     hideResults: true,
     correctAnswers: 0,
     total: 0,
+    score: "",
     songUrl: "",
     playerState: Sound.status.PLAYING,
     playing: false,
@@ -248,12 +277,85 @@ class Game extends React.Component {
             </div>
           </div>
         </div>
-        
-        <h3><Link className="link" to="/">Volver al inicio</Link></h3>   
+        <h3><Link className="link" to="/">Volver al inicio</Link></h3> 
+        <div id="media-share-buttons">
+          <div className="arrow">
+            <img src={arrow} alt=""/>
+          </div>
+          <div className="share-buttons">
+            <EmailShareButton 
+            url={this.shareurl} 
+            title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
+            className="Demo_some-network__share-button"
+            >
+              <EmailIcon size={50} round />
+            </EmailShareButton>
 
-        {
-          //ALSO: intermediate button, before getting to the game needs to be removed"
-        }
+            <FacebookShareButton 
+              url={this.shareurl} 
+              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
+              className="Demo_some-network__share-button"
+            >
+              <FacebookIcon size={50} round />
+            </FacebookShareButton>
+
+            <LinkedinShareButton 
+              url={this.shareurl}
+              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
+              className="Demo_some-network__share-button"
+            >
+              <LinkedinIcon size={50} round />
+            </LinkedinShareButton>
+
+            <PinterestShareButton 
+              url={this.shareurl} 
+              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
+              className="Demo_some-network__share-button"
+            >
+              <PinterestIcon size={50} round />
+            </PinterestShareButton>
+
+            <RedditShareButton 
+              url={this.shareurl} 
+              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
+              className="Demo_some-network__share-button"
+            >
+              <RedditIcon size={50} round />
+            </RedditShareButton>
+
+            <TelegramShareButton 
+              url={this.shareurl} 
+              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
+              className="Demo_some-network__share-button"
+            >
+              <TelegramIcon size={50} round />
+            </TelegramShareButton>
+
+            <TumblrShareButton 
+              url={this.shareurl} 
+              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
+              className="Demo_some-network__share-button"
+            >
+              <TumblrIcon size={50} round />
+            </TumblrShareButton>
+
+            <TwitterShareButton
+              url={this.shareurl}
+              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
+              className="Demo_some-network__share-button"
+            >
+              <TwitterIcon size={50} round />
+            </TwitterShareButton>
+
+            <WhatsappShareButton 
+              url={this.shareurl} 
+              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
+              className="Demo_some-network__share-button"
+            >
+              <WhatsappIcon size={50} round />
+            </WhatsappShareButton>
+          </div>
+        </div>  
       </section>
     );
   }
