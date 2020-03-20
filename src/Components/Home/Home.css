@@ -45,43 +45,39 @@ body {
 /* Start game button */
 
 .btn-game {
-  color: #fff;
-  border: 2px solid;
-  border-radius: 3px;
+	box-shadow:inset 0px 0px 15px 3px #9fb4f2;
+	background:linear-gradient(to bottom, #302c71 5%, #2b2761 100%);
+	background-color:#302c71;
+	border-radius:24px;
+	border:1px solid #545180;
+	cursor:pointer;
+	color:#ffffff;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #283966;
+  
   text-align: center;
-  text-decoration: none;
   font-family: sans-serif;
   font-size: 2vw;
   padding: 10px 30px;
   font-weight: 600;
-  background: rgb(26, 27, 57);
-  box-shadow: 0 0 0px 3px rgba(0,0,0,0.2);
   opacity: 0.6;
   letter-spacing: 3px;
-  margin:  5px 0 5px 0;
+  margin:  5px 0 15px 0;
   display: block;
-}
+}       
+
 
 .btn-game:hover {
   color: #fff;
   opacity: 1;
 }
 
-/* #btn-div {
-  display:block;
-  margin:0 auto;
-
-  margin-left: 40%;
-  font-size: 40px;
-  letter-spacing: 9px;
-} */
-
 @media only screen and (max-width: 750px) {
   .btn-game {
   margin: auto;
   font-size: 4vw;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   }
 
   .playWith {
