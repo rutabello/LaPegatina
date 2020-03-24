@@ -1,16 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import BgMusic from '@react-element/bg-music';
-// import sound from './bg_sound.mp3';
 import '../../App.css';
 import './Home.css';
-import logo from '../../Pictures/logo_la_pegatina_2018.png'
-
-// let audio = new Audio("https://freesound.org/data/previews/506/506053_10991815-lq.mp3");
-
-// const start = () => {
-//   audio.play();
-// }
+import logo from '../../Pictures/logo_la_pegatina_2018.png';
+import SocialMedia from '../SocialMedia/SocialMedia';
 
 const Home = (props) => (
   <div className="container">
@@ -22,13 +15,6 @@ const Home = (props) => (
 
       <Link className="btn-game" to="game">Juega con La Pegatina!</Link>
       <a className="btn-game" href="https://playwith.es">Juega con música de todo el mundo</a>
-      <div>
-        {
-          //Will we still use background music?
-          /* <BgMusic
-            src={sound}/> */
-        }
-      </div>
     </div>
   </div>
 )

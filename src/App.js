@@ -3,6 +3,8 @@ import './App.css';
 import {Switch, Route} from 'react-router-dom';
 import Game from './Components/Game/Game';
 import Home from './Components/Home/Home';
+import SocialMedia from './Components/SocialMedia/SocialMedia';
+
 
 //packages used: react router, react sound, leaflet, leaflet react, 
 
@@ -15,7 +17,9 @@ class App extends React.Component {
           <Route exact path='/' render={props => <Home {...props} />} />
           <Route path='/game' render={props => <Game {...props} />} />          
         </Switch> 
-        <div className="sharethis-inline-follow-buttons"></div>     
+        <div className="social-media-follow-buttons">
+          <SocialMedia />
+        </div>
       </div>
     );
   }
