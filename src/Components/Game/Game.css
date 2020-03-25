@@ -6,6 +6,7 @@
     font-style: normal;
 }
 
+
 .forceGrayColor button {
 	border:1.5px solid  rgb(0, 89, 255);
     color: rgb(0, 89, 255) !important;
@@ -75,6 +76,8 @@ li {
     font-size: 14px;
     max-width: 140px;
     min-width: 140px;
+    color: #766dca;
+    border-color: #766dca;
 }
 
 #counter {
@@ -85,6 +88,7 @@ li {
 .show h4 {
     font-size: 24px;
     margin-bottom: 0px;
+    color: #766dca;
 }
 
 /* Mistakes list css: */
@@ -105,6 +109,7 @@ li {
     text-align: left;
     display: inline;
     min-width: 80%;
+    color: #766dca;
 }
   
 .mistake-list {
@@ -116,6 +121,7 @@ li {
     margin-bottom: 20px;
     align-items: flex-start;
     justify-content: space-between;
+    color: #766dca;
 }
   
 .instruct  {
@@ -123,7 +129,7 @@ li {
 }
 
 .instruct p {
-    color: white;
+    color: #766dca;
 }
 
 
@@ -224,7 +230,7 @@ li {
     .link {
         width: 70px;
         padding-left: 5px;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     #mistakes {

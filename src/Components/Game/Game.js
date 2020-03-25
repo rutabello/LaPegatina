@@ -117,6 +117,8 @@ class Game extends React.Component {
 
     let randomSong = this.spotifyFilteredObjArr[Math.floor(Math.random()*this.spotifyFilteredObjArr.length)].track;
 
+    this.spotifyFilteredObjArr = this.spotifyFilteredObjArr.filter(song => song.track.id !== randomSong.id)
+
     this.setState({
       currentSong: {
         preview_url: randomSong.preview_url,

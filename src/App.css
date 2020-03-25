@@ -49,6 +49,17 @@ p {
   color: rgb(118, 109, 202);
 }
 
+.no-text-decoration {
+  text-decoration: none;
+  color: #766dca;
+  text-decoration-line: underline;
+}
+
+.made-by {
+  font-size: 8px;
+  margin-bottom: 0px;
+}
+
 
 @media only screen and (max-width: 750px) {
   .social-media-follow-buttons {
