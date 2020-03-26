@@ -36,7 +36,7 @@ class Game extends React.Component {
   //All the songs that the user guessed wrong are pushed into this array
   unknownSongs= []; 
 
-  shareurl="https://juegaconlapegatina.netlify.com/";
+  shareurl="https://dreamy-bhabha-0a01ef.netlify.com";
 
   socialIconSize=33;
 
