@@ -10,11 +10,6 @@ import Sound from 'react-sound';
 import {
   EmailShareButton,
   FacebookShareButton,
-  LinkedinShareButton,
-  PinterestShareButton,
-  RedditShareButton,
-  TelegramShareButton,
-  TumblrShareButton,
   TwitterShareButton,
   WhatsappShareButton,
 } from "react-share";
@@ -22,11 +17,6 @@ import {
 import {
   EmailIcon,
   FacebookIcon,
-  LinkedinIcon,
-  PinterestIcon,
-  RedditIcon,
-  TelegramIcon,
-  TumblrIcon,
   TwitterIcon,
   WhatsappIcon,
 } from "react-share";
@@ -254,7 +244,7 @@ class Game extends React.Component {
               <p className={this.answerCountShow ? "show" : "hide"}>Puntos: {this.state.score}</p>
             </div>
             
-            <div class="sharethis-inline-share-buttons"></div>
+            <div className="sharethis-inline-share-buttons"></div>
             
             <div className={this.unknownSongs.length > 0 ? "show" : "hide"}>
                 <h4 className="instruct">Aprende de tus errores:</h4>
@@ -303,46 +293,6 @@ class Game extends React.Component {
             >
               <FacebookIcon size={50} round />
             </FacebookShareButton>
-
-            <LinkedinShareButton 
-              url={this.shareurl}
-              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
-              className="Demo_some-network__share-button"
-            >
-              <LinkedinIcon size={50} round />
-            </LinkedinShareButton>
-
-            <PinterestShareButton 
-              url={this.shareurl} 
-              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
-              className="Demo_some-network__share-button"
-            >
-              <PinterestIcon size={50} round />
-            </PinterestShareButton>
-
-            <RedditShareButton 
-              url={this.shareurl} 
-              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
-              className="Demo_some-network__share-button"
-            >
-              <RedditIcon size={50} round />
-            </RedditShareButton>
-
-            <TelegramShareButton 
-              url={this.shareurl} 
-              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
-              className="Demo_some-network__share-button"
-            >
-              <TelegramIcon size={50} round />
-            </TelegramShareButton>
-
-            <TumblrShareButton 
-              url={this.shareurl} 
-              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
-              className="Demo_some-network__share-button"
-            >
-              <TumblrIcon size={50} round />
-            </TumblrShareButton>
 
             <TwitterShareButton
               url={this.shareurl}

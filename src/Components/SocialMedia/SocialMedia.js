@@ -22,7 +22,7 @@ const SocialMedia = () => {
                     <li> <a href="https://www.tiktok.com/@lapegatina" target="_blank" rel='noreferrer noopener'><img className="social-icon" src={tiktok} alt="tiktok"></img></a></li>
                 </ul>
             </nav>
-            <Link to="/team"><p className="made-by no-text-decoration">Hecho con <span class="heart">❤</span> por Wild Code School Team</p></Link>
+            <Link to="/team"><p className="made-by no-text-decoration">Hecho con <span>❤</span> por Wild Code School Team</p></Link>
         </div>
     )
 };
