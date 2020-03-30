@@ -6,7 +6,7 @@ import Home from './Components/Home/Home';
 import Instagram from './Components/Instagram/Instagram'
 import SocialMedia from './Components/SocialMedia/SocialMedia';
 import Team from './Components/Team/Team';
-
+import YTGame from './Components/Youtube/YTGame/YTGame'
 
 //packages used: react router, react sound, leaflet, leaflet react, 
 
@@ -20,6 +20,7 @@ class App extends React.Component {
           <Route path='/game' render={props => <Game {...props} />} />   
           <Route path='/team' render={props => <Team {...props} />} />
           <Route path='/instagram' render={props => <Instagram {...props} />} />
+          <Route path='/youtube' render={props => <YTGame {...props} />} />
         </Switch> 
         <div className="social-media-follow-buttons">
           <SocialMedia />
