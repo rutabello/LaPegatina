@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Sound from 'react-sound';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import './PlayerCountdown.css';
+import texts from '../../Components/texts.json';
 
 const SONG_TIMER_DURATION = 10;
 
@@ -51,7 +52,7 @@ class PlayerCountdown extends Component {
 
   renderTime = value => {
     if (value === 0) {
-      return <button className="next-button" onClick={this.playMusicStartTimer}>Otra!</button>;
+      return <button className="next-button" onClick={this.playMusicStartTimer}>{texts[this.props.language].newSong}</button>;
     }
 
     return (

@@ -7,6 +7,7 @@ import Shuffle from '../Utils/Shuffle';
 import Spotify from '../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 import Sound from 'react-sound';
+import texts from '../../Components/texts.json';
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -217,6 +218,7 @@ class Game extends React.Component {
           <div className="QuestionAndAnswers">
             <div className="Countdown">
               <PlayerCountdown
+                language={this.props.language}
                 onMusicPlays={this.chooseSongs}
                 setNewRandomSong={this.setNewRandomSong}
                 songURL={this.state.currentSong.preview_url} 
@@ -239,7 +241,7 @@ class Game extends React.Component {
               })}
             </div>
             <div id="counter" className="instruct">
-              <p className={this.answerCountShow ? "show" : "hide"}>Respuestas correctas: {this.state.correctAnswers}  de {this.state.total}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].correctAnswers} {this.state.correctAnswers} {texts[this.props.language].outofText} {this.state.total}</p>
               <br/>
               <p className={this.answerCountShow ? "show" : "hide"}>Puntos: {this.state.score}</p>
             </div>

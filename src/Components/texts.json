@@ -1,0 +1,41 @@
+{
+    "catalan" : {
+        "languageButton": "Tria un idioma",
+        "playwithTitle": "Juga amb",
+        "playWithButton": "Juga amb La Pegatina",
+        "allmusicButton": "Juga amb música de tot el món",
+        "newSong": "MÉS",
+        "correctAnswers": "Respostes correctes: ",
+        "outofText": "de"
+    },
+
+    "spanish" : {
+        "languageButton": "Escoge un idioma",
+        "playwithTitle": "Juega con",
+        "playWithButton": "Juega con La Pegatina",
+        "allmusicButton": "Juega con música de todo el mundo",
+        "newSong": "OTRA",
+        "correctAnswers": "Respuestas correctas: ",
+        "outofText": "de"
+    },
+
+    "english" : {
+        "languageButton": "Choose a language",
+        "playwithTitle": "Play with",
+        "playWithButton": "Play with La Pegatina",
+        "allmusicButton": "Play with music from all around the world",
+        "newSong": "MORE",
+        "correctAnswers": "Correct answers: ",
+        "outofText": "out of"
+    },
+
+    "french": {
+        "languageButton": "Choisissez une langue",
+        "playwithTitle": "Joue avec",
+        "playWithButton": "Jouer avec La Pegatina",
+        "allmusicButton": "Jouer avec de la musique du monde",
+        "newSong": "AUTRE",
+        "correctAnswers": "Réponses correctes: ",
+        "outofText": "sur"
+    }
+}
