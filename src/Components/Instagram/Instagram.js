@@ -87,7 +87,7 @@ class Instagram extends Component {
                             <img src={randomImageSrc} alt="" />
                         </div>
                     </div>
-
+                    <h1>Dónde tomamos esta foto?</h1>
                     {locationOptions.map((option, index) => {
                         return (
                             <ButtonIG value={option} currentLocation={this.state.randomImageLocation} addToCounter={this.addOneToCounter} key={index} setRandomImageAndLocations={this.setRandomImageAndLocations}

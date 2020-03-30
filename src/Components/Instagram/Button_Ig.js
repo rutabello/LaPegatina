@@ -13,7 +13,7 @@ const ButtonIG = (props) => {
     }
 
     return (
-        <button onClick={()=> checkRightOrWrong()}>
+        <button className="instagram-game-button" onClick={()=> checkRightOrWrong()}>
             {props.value}
         </button>
     )
