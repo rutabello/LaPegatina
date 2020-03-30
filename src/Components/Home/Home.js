@@ -8,7 +8,7 @@ import SocialMedia from '../SocialMedia/SocialMedia';
 const Home = (props) => (
   <div className="container">
     <div className="main">
-      <h3 className="hideGame"><Link to="/">Home</Link></h3>
+     { /*<h3 className="hideGame"><Link to="/">Home</Link></h3>*/}
 
       <p className="playWith">Juega con</p>
       <img src={logo} alt="" className="laPegatina" />

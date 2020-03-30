@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
 import facebook from './icons/icon_2019_Facebook.svg';
 import twitter from './icons/icon_2019_Twitter.svg';
 import instagram from './icons/icon_2019_Instagram.svg';

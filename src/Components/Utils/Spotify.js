@@ -1,14 +1,13 @@
 //!!! IMPORTANT: No push to github as long as the clientId is visible in the files!
 // import { TOKEN } from './token'
-const clientId = "5a36a3d1f9bc4712b321e760813bb8f6";
+const clientId = "";
 // const redirectUri = 'http://playwith.es'; 
 const redirectUri = 'http://localhost:3000/game';
-
 let accessToken;
-// for connection with the map: connect playlist id to the markers and save it in a const to insert it later in the 
-// getplaylist() method.
+
 
 const Spotify = {
+
 
   getaccessToken () {
     if (accessToken){
@@ -22,7 +21,8 @@ const Spotify = {
       accessToken = accessTokenMatch[1];
       const expiresIn = Number(expiresInMatch[1]);
       window.setTimeout(() => accessToken = '', expiresIn * 1000);
-      window.history.pushState('Access Token', null, '/'); // This clears the parameters, allowing me to grab a new access token when it expires.
+      // This clears the parameters, allowing me to grab a new access token when it expires.
+      window.history.pushState('Access Token', null, '/'); 
       return accessToken ;
     
     } else {
@@ -31,8 +31,8 @@ const Spotify = {
     }
   },
 
-  getPlaylist(country) {
-    let ID = country;
+  getPlaylist(list) {
+    let ID = list;
     const accessToken = Spotify.getaccessToken();                   
     const headers = { Authorization: `Bearer ${accessToken}` };
 
@@ -42,12 +42,35 @@ const Spotify = {
     });
   },
 
-  changeID () {
-    let country = "6HiZDoQlmYliE3RhFm4Fek"
-    this.setState({
-      playlistID: country,
-    })
-  }     
+
+  savePlaylist(name, trackUris) {
+    if (!name || !trackUris.length) {
+      return;
+    }
+
+    const accessToken = Spotify.getaccessToken();
+    const headers = { Authorization: `Bearer ${accessToken}` };
+    let userId;
+
+    return fetch('https://api.spotify.com/v1/me', {headers: headers}
+    ).then(response => response.json()
+    ).then(jsonResponse => {
+      userId = jsonResponse.id;
+      return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
+        headers: headers,
+        method: 'POST',
+        body: JSON.stringify({name: name})
+      }).then(response => response.json()
+      ).then(jsonResponse => {
+        const playlistId = jsonResponse.id;
+        return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
+          headers: headers,
+          method: 'POST',
+          body: JSON.stringify({uris: trackUris})
+        });
+      });
+    });
+  }
 }
  
 // This way you can access the returned object. "collaborative" is just the first property that appears,

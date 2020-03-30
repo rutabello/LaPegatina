@@ -35,9 +35,9 @@ import arrow from '../../Pictures/arrow_left.svg'
 
 class Game extends React.Component {
 
-  // We have the object coming from the API call, here
+  // We have the object coming from the API call here with ALL the retrieved songs
   spotifyObject = {}; 
-  //This array contains the songs coming from the spotifyObject that DO ave a preview_url
+  //This array contains the songs coming from the spotifyObject that DO have a preview_url
   spotifyFilteredObjArr = []; 
   //Here the actual game mechanics start
   chosenSong = "";
@@ -52,10 +52,12 @@ class Game extends React.Component {
 
   state = {
  
-    songNames:[],
+    songNames: [],
     currentSong: {
         preview_url: "",
         name: "",
+        uri: "",
+        album: ""
     },  
 
     hideResults: true,
@@ -66,8 +68,16 @@ class Game extends React.Component {
     playerState: Sound.status.PLAYING,
     playing: false,
     replayingSong: "",
-
+    
+    //create a playlist array to save the chosen tracks from the user
+    playlistTracks : [],
+    noTracks: true,
+    songList: [],
+    playlistName: "Mis favoritos",
     playlistID: "37i9dQZF1DZ06evO2EUrsw",
+    addedSong: false,
+    buttonText: "Ponle en tu playlist!",
+    buttonText2: "Ya ésta en tú lista!"
   }
 
   //API call to get the playlist data.
@@ -75,6 +85,7 @@ class Game extends React.Component {
     this.spotifyObject = await Spotify.getPlaylist(this.state.playlistID);
     this.filterRightSongsFromSpotifyObject();
     this.setNewRandomSong();
+    console.log(this.spotifyObject)
   }
 
   /**
@@ -98,7 +109,7 @@ class Game extends React.Component {
     let fourNonShuffledSongsArr = shuffledFilterSongsArr.slice(0, 3); // actually 3
     fourNonShuffledSongsArr.push(currentSongName); // now 4
     
-    let fourShuffledSongsArr = Shuffle(fourNonShuffledSongsArr)
+    let fourShuffledSongsArr = Shuffle(fourNonShuffledSongsArr);
 
     return fourShuffledSongsArr;
   }
@@ -122,8 +133,12 @@ class Game extends React.Component {
     this.setState({
       currentSong: {
         preview_url: randomSong.preview_url,
-        name: randomSong.name
+        name: randomSong.name,
+        uri: randomSong.uri,
+        album: randomSong.album.name
+
       },
+      
       songNames: this.getSongsToDisplay(randomSong.name),
       hideResults: true,
       total: this.state.total +1,
@@ -135,19 +150,6 @@ class Game extends React.Component {
     this.chosenSong = songName;
   }
   
-  checkCoincidence = () => {  
-    this.coincidence = this.state.currentSong.name === this.chosenSong
-
-    if (this.coincidence !== true) { 
-      this.unknownSongs.push(this.state.currentSong.name)
-    }
-
-    this.setState({
-      hideResults: false,
-      correctAnswers: this.coincidence ? (this.state.correctAnswers +1) : this.state.correctAnswers,
-      score: this.coincidence ? (this.state.score +10) : this.state.score
-    })
-  }
   
   showAnswerCount = () => {
     this.answerCountShow= true;
@@ -165,7 +167,7 @@ class Game extends React.Component {
     
     let oneTrackArr = allTracksArr.filter((track) => { 
       //Returns an array with the (only) object that fulfills this condition 
-      return track.name === songName 
+      return track.name === songName;
     })
 
     let songUrl = oneTrackArr[0].preview_url;
@@ -190,12 +192,84 @@ class Game extends React.Component {
   filterRightSongsFromSpotifyObject = (spotifyObject) => {
     this.spotifyFilteredObjArr = this.spotifyObject.tracks.items.filter(function (item) {
     return item.track.preview_url !== null})
+    console.log(this.spotifyFilteredObjArr)
   }
   
   setPlayingToFalse = () => {
     this.setState({
       playing: false
     })
+  }
+
+  checkCoincidence = () => {  
+    this.coincidence = this.state.currentSong.name === this.chosenSong;
+
+    if (this.coincidence !== true) { 
+      this.unknownSongs.push(this.state.currentSong)
+    }
+
+    this.setState({
+      hideResults: false,
+      correctAnswers: this.coincidence ? (this.state.correctAnswers +1) : this.state.correctAnswers,
+      score: this.coincidence ? (this.state.score +10) : this.state.score,
+      listIsEmpty: this.coincidence ? (this.state.listIsEmpty) : false
+    })
+
+    console.log(this.unknownSongs)
+  }
+
+  addTrack = (track) => {
+
+    const songIndex = track.target.id;
+    const selectedSong = this.unknownSongs[songIndex];
+
+   let mySongs = [...this.state.playlistTracks];
+   mySongs.push(selectedSong);
+
+   this.setState({
+
+     playlistTracks: mySongs,
+     noTracks: false,
+     addedSong: true
+   }) 
+ }
+
+   removeTrack = (track) => {
+
+    let newTracks = [...this.state.playlistTracks];    
+    let index = track.target.id;
+
+     newTracks.splice(index, 1);
+
+     this.setState({
+       playlistTracks: newTracks
+      }); 
+
+ 
+}
+
+updatePlaylistName = (name) => {
+
+  let newName = name.target.value;
+
+  this.setState({
+    playlistName: newName
+  });
+}
+
+  savePlaylist = () => {
+
+    const trackUris = this.state.playlistTracks.map(track => track.uri);
+
+    Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
+
+      this.setState({
+
+        playlistName: 'Pegatinas Best',
+        playlistTracks: [],
+        
+      });
+    });
   }
   
   //since we're probably only play with one playlist we might not need the following method
@@ -226,6 +300,7 @@ class Game extends React.Component {
         <div className="show"> 
           <div className="QuestionAndAnswers">
             <div className="Countdown">
+              
               <PlayerCountdown
                 onMusicPlays={this.chooseSongs}
                 setNewRandomSong={this.setNewRandomSong}
@@ -248,40 +323,72 @@ class Game extends React.Component {
                 )
               })}
             </div>
+            {
+              //
+            }
+      
+
+
+
             <div id="counter" className="instruct">
-              <p className={this.answerCountShow ? "show" : "hide"}>Respuestas correctas: {this.state.correctAnswers}  de {this.state.total}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>Respuestas correctas: {this.state.correctAnswers} de {this.state.total}</p>
               <br/>
               <p className={this.answerCountShow ? "show" : "hide"}>Puntos: {this.state.score}</p>
-            </div>
-            
+            </div>           
             <div class="sharethis-inline-share-buttons"></div>
             
             <div className={this.unknownSongs.length > 0 ? "show" : "hide"}>
                 <h4 className="instruct">Aprende de tus errores:</h4>
                 <ul id="mistakes" className="instruct">  
-                  {this.unknownSongs.map((song) => {
+                  {this.unknownSongs.map((song, index) => {
                     return (
-                        <li key={song} className="mistake-list">
+                        <li key = {index} id={index} className = "mistake-list">
                           <div className="song-name">
-                            {song} 
+                            {song.name} ({song.album})
                           </div>
-                          <button className="repeat-button" onClick={this.state.playing ? () => this.stopMusic() : () => this.getSongUrl(song)}>
-                            {this.state.playing ? "Pausa" : "Vuelve a escucharla"} 
                           {/* We write it with an arrow function instead of a 'normal' function so we can avoid an infinite loop 
                           when setting the state */}  
+                          <button className="repeat-button" onClick = {this.state.playing ? () => this.stopMusic() 
+                            : () => this.getSongUrl(song)}>
+                            {this.state.playing ? "Pausa" : "Vuelve a escucharla"}                        
                           </button> 
+                          <button id={index} onClick={this.addTrack} className="repeat-button">{this.state.buttonText}</button>
                         </li>
                     )
                   })}
                 </ul>
+                <input id="playlistName" className="repeat-button" onChange={this.updatePlaylistName} defaultValue={this.state.playlistName} />
+                <button id="playlistSave" className="repeat-button" onClick={this.savePlaylist}>Save Playlist</button>
+                <div className="playlist-spotify">
+              
+          {
+                   this.state.noTracks
+                   ? <p>Elige canciónes para tu nueva lista!</p>
+                   : this.state.playlistTracks.map((selected, index) => (
+                     <div key={index} id={index}>   
+
+                       <p> {selected.name}</p>
+                       <p> ({selected.album})</p>                       
+                       <button className="remove-button" onClick={this.removeTrack}>-</button>
+                       
+                       <hr/>                    
+                     </div>
+                   )
+                 )
+                   }
+          
+          </div>
+
                 <Sound 
                   url={this.state.songUrl}
                   playStatus={this.state.playerState}
                   autoLoad
                 />
             </div>
+          
           </div>
         </div>
+        
         <h3><Link className="link" to="/">Volver al inicio</Link></h3> 
         <div id="media-share-buttons">
           <div className="arrow">

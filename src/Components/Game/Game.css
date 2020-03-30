@@ -78,6 +78,12 @@ li {
     min-width: 140px;
     color: #766dca;
     border-color: #766dca;
+    padding: 10px;
+}
+
+#playlistName {
+
+    margin-left: 45%;
 }
 
 #counter {
@@ -165,6 +171,28 @@ li {
 .arrow img {
     width: 50px;
     height: 50px;
+}
+
+.playlist-spotify{
+
+    cursor: pointer;
+    width: 10rem;
+    padding: .77rem 0;
+    border: 2px solid #766dca;
+    border-width: 0px;
+    margin-top: 1.27rem;
+    color: #766dca;
+    border-color: #766dca;
+    color: #fff;
+    font-weight: 200;
+    margin-left: 45%;
+    margin-bottom: 100px;
+    font-size: 15px;
+}
+
+.playlist-spotify p {
+
+    color: #766dca;
 }
 
 /* MEDIA QUERIES */
