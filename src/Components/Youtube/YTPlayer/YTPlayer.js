@@ -22,9 +22,8 @@ class YTPlayer extends Component {
           return 'data'
         } 
       }
-    }
-   
-    )}
+    })
+}
 
 
 VideoOnPlay=(event)=>{
