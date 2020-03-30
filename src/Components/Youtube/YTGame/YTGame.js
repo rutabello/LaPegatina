@@ -4,10 +4,11 @@ import '../YTGame/YTGame.css';
 
 function YTGame() {
   return (
-    <div>
+    <div className='yt-all'>
+     <div className='cover-title'>
+    </div>
     <div className="yt-player">
       <YTPlayer  videoId= 'NFSyl3pwa-A' />
-      
     </div>
     </div>
   )
