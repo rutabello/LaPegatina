@@ -53,7 +53,7 @@ class App extends React.Component {
           <Route path='/instagram' render={props => <Instagram language={this.state.selectedLanguage} {...props} />} />
         </Switch> 
         <div className="social-media-follow-buttons">
-          <SocialMedia />
+          <SocialMedia language={this.state.selectedLanguage}/>
         </div>
       </div>
     );

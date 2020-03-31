@@ -6,7 +6,18 @@
         "allmusicButton": "Juga amb música de tot el món",
         "newSong": "MÉS",
         "correctAnswers": "Respostes correctes: ",
-        "outofText": "de"
+        "outofText": "de",
+        "pointsText": "Punts: ",
+        "listenedSongs": "Cançons que has escoltat: ",
+        "backToStart": "Torna a l'inici",
+        "pauseText": "Pausa",
+        "listenAgain": "Torna a escoltar-la",
+        "instagramQuestion": "On vam fer aquesta foto?",
+        "endText": "Has arribat al final!",
+        "secondsText": "segons",
+        "followUs": "Segueix-nos a...",
+        "madeWithText": "Fet amb ",
+        "byText": " per l'equip de Wild Code School"
     },
 
     "spanish" : {
@@ -16,7 +27,18 @@
         "allmusicButton": "Juega con música de todo el mundo",
         "newSong": "OTRA",
         "correctAnswers": "Respuestas correctas: ",
-        "outofText": "de"
+        "outofText": "de",
+        "pointsText": "Puntos: ",
+        "listenedSongs": "Canciones que has escuchado: ",
+        "backToStart": "Vuelve al inicio",
+        "pauseText": "Pausa",
+        "listenAgain": "Vuelve a escucharla",
+        "instagramQuestion": "Dónde tomamos esta foto?",
+        "endText": "Has llegado al final!",
+        "secondsText": "segundos",
+        "followUs": "Síguenos en...",
+        "madeWithText": "Hecho con ",
+        "byText": " por el equipo de Wild Code School"
     },
 
     "english" : {
@@ -26,16 +48,38 @@
         "allmusicButton": "Play with music from all around the world",
         "newSong": "MORE",
         "correctAnswers": "Correct answers: ",
-        "outofText": "out of"
+        "outofText": "out of",
+        "pointsText": "Points: ",
+        "listenedSongs": "Songs you have listened: ",
+        "backToStart": "Back to the start",
+        "pauseText": "Pause",
+        "listenAgain": "Listen again",
+        "instagramQuestion": "Where did we took this picture?",
+        "endText": "You've reached the end!",
+        "secondsText": "seconds",
+        "followUs": "Follow us on...",
+        "madeWithText": "Made with ",
+        "byText": " by Wild Code School team"
     },
 
     "french": {
         "languageButton": "Choisissez une langue",
         "playwithTitle": "Joue avec",
         "playWithButton": "Jouer avec La Pegatina",
-        "allmusicButton": "Jouer avec de la musique du monde",
+        "allmusicButton": "Jouer avec la musique du monde",
         "newSong": "AUTRE",
         "correctAnswers": "Réponses correctes: ",
-        "outofText": "sur"
+        "outofText": "sur",
+        "pointsText": "Points: ",
+        "listenedSongs": "Chansons que vous avez écoutées: ",
+        "backToStart": "Retour au début",
+        "pauseText": "Pause",
+        "listenAgain": "Écoutez encore",
+        "instagramQuestion": "Où avons-nous pris cette photo?",
+        "endText": "Vous avez atteint la fin!",
+        "secondsText": "secondes",
+        "followUs": "Suivez-nous sur...",
+        "madeWithText": "Fait avec ",
+        "byText": " par Wild Code School équipe"
     }
 }

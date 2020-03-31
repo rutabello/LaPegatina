@@ -243,11 +243,11 @@ class Game extends React.Component {
             <div id="counter" className="instruct">
               <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].correctAnswers} {this.state.correctAnswers} {texts[this.props.language].outofText} {this.state.total}</p>
               <br/>
-              <p className={this.answerCountShow ? "show" : "hide"}>Puntos: {this.state.score}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].pointsText} {this.state.score}</p>
             </div>
             
             <div className={this.unknownSongs.length > 0 ? "show" : "hide"}>
-                <h4 className="instruct">Aprende de tus errores:</h4>
+                <h4 className="instruct">{texts[this.props.language].listenedSongs}</h4>
                 <ul id="mistakes" className="instruct">  
                   {this.unknownSongs.map((song) => {
                     return (
@@ -256,7 +256,7 @@ class Game extends React.Component {
                             {song} 
                           </div>
                           <button className="repeat-button" onClick={this.state.playing ? () => this.stopMusic() : () => this.getSongUrl(song)}>
-                            {this.state.playing ? "Pausa" : "Vuelve a escucharla"} 
+                            {this.state.playing ? texts[this.props.language].pauseText : texts[this.props.language].listenAgain} 
                           {/* We write it with an arrow function instead of a 'normal' function so we can avoid an infinite loop 
                           when setting the state */}  
                           </button> 
@@ -272,7 +272,7 @@ class Game extends React.Component {
             </div>
           </div>
         </div>
-        <h3><Link className="link" to="/">Volver al inicio</Link></h3> 
+        <h3><Link className="link" to="/">{texts[this.props.language].backToStart}</Link></h3> 
         <div id="media-share-buttons">
           <div className="arrow">
             <img src={arrow} alt=""/>
