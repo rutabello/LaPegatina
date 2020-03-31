@@ -63,8 +63,12 @@ class Instagram extends Component {
     async componentDidMount() {
     
         const response = await fetch('https://www.instagram.com/bestvacations/?__a=1');
+        // const response = await fetch('https://www.instagram.com/travelandleisure/?__a=1');
+        // const response = await fetch('https://www.instagram.com/lapegatina/?__a=1');
     
         const data = await response.json();
+
+        console.log(data)
 
         const info = data.graphql.user
 
