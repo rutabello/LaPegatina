@@ -7,7 +7,6 @@ const Team = () => {
         <div className="the-team">
             <p>Lena Kujath</p>
             <p>Alexandrina Serediuc</p>
-            <p>Macarena Mariani</p>
             <p>Ruth Abelló</p>
         </div>
     )
