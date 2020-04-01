@@ -75,7 +75,6 @@ console.log(fourShuffledSongsTitles)
         controls: 0,//the control not displayed
         // mute: 1,// this mutes automaticly the video(in combination with the hidden control, the user can't unmute)
         loop:1,
-        fs:0,
         start: 20,//from where the video starts(at 20 s in case the title is at the beginning)
         // end: 90,
         rel: 0 //getting only related videos from the channel

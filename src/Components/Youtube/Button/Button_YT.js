@@ -16,10 +16,10 @@ const ButtonYT = (props) => {
     const isCorrect = props.displayedSong === props.currentSong;
 
     return (
-        <button className='myButton button' 
+        <button className='myButtonYT buttonYT' 
         onClick={props.onClick}>
         {/* className={"myButton button " + (isCorrect ? "green" : "red")} > */}
-              <span className='titleColor' >{props.displayedSong}</span> 
+              <span className='titleColorYT' >{props.displayedSong}</span> 
         </button>
     )
 };
