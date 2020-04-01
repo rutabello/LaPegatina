@@ -1,21 +1,4 @@
-@font-face {
-    font-family: 'Barlow';
-    font-style: normal;
-    
-    /* changed the font from 400 to 200 */
-    font-weight: 200;
-    src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.googleapis.com/css?family=Barlow&display=swap') format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
 
-.FourButtons {
-    /* text-transform: uppercase; */
-    letter-spacing: 1px;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 0 auto;
-}
 .titleColorYT{
     color:#f1c500;
     font-family: 'Barlow';
@@ -25,16 +8,14 @@
 }
 .buttonYT {
     cursor: pointer;
-    width: 100%;
+    width: 60%;
     display: block !important;
     height: auto;
-    margin: 20px auto;
-    padding: 15px 30px;
-    transition: 0.2s;
+    margin: 15px auto;
+    padding: 10px 25px;
     font-size: 20px;
     text-decoration: none;
-    /* text-transform: uppercase; */
-    min-height: 4em;
+    min-height: 5em;
     border-radius: 25px;
 }
 
@@ -70,21 +51,21 @@
 .myButtonYT:hover {
     /* color: black!important; */
     background: transparent;
-    box-shadow: 0px 0px 5px greenyellow, 0px 0px 25px grey;
+    box-shadow: 0px 0px 5px grey, 0px 0px 25px grey;
     /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);  */
 }
 
 .myButtonYT:active {
     position:relative;
-    top:1px;
-    background: transparent;
+    /* top:1px; */
+    background: #312c71;
     /* box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C; */
     /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);  */
 }
 
 .myButtonYT:focus {
-    outline-color: white;
-    box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C;
+    /* outline-color: white; */
+    box-shadow: 0px 0px 5px orange, 0px 0px 25px orange;
 }
 
 @media all and (max-width:30em) {
