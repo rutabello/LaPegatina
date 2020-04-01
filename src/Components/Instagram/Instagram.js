@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Shuffle from '../Utils/Shuffle'
 import ButtonIG from './Button_Ig';
+import texts from '../../Components/texts.json';
 
 import './Instagram.css';
 
@@ -72,6 +73,8 @@ class Instagram extends Component {
 
         const info = data.graphql.user
 
+        console.log("PACO", info)
+
         this.cleanApiResponse(info)
 
         this.setRandomImageAndLocations()
@@ -91,7 +94,7 @@ class Instagram extends Component {
                             <img src={randomImageSrc} alt="" />
                         </div>
                     </div>
-                    <h1>Dónde tomamos esta foto?</h1>
+                    <h1>{texts[this.props.language].instagramQuestion}</h1>
                     {locationOptions.map((option, index) => {
                         return (
                             <ButtonIG value={option} currentLocation={this.state.randomImageLocation} addToCounter={this.addOneToCounter} key={index} setRandomImageAndLocations={this.setRandomImageAndLocations}
@@ -99,7 +102,7 @@ class Instagram extends Component {
                             </ButtonIG>
                         )
                     })}
-                    <p>Respuestas correctas: {this.counter}</p>
+                    <p>{texts[this.props.language].correctAnswers} {this.counter}</p>
                 </div>
             )
         } else {

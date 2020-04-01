@@ -7,6 +7,7 @@ import Shuffle from '../Utils/Shuffle';
 import Spotify from '../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 import Sound from 'react-sound';
+import texts from '../../Components/texts.json';
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -217,6 +218,7 @@ class Game extends React.Component {
           <div className="QuestionAndAnswers">
             <div className="Countdown">
               <PlayerCountdown
+                language={this.props.language}
                 onMusicPlays={this.chooseSongs}
                 setNewRandomSong={this.setNewRandomSong}
                 songURL={this.state.currentSong.preview_url} 
@@ -239,13 +241,13 @@ class Game extends React.Component {
               })}
             </div>
             <div id="counter" className="instruct">
-              <p className={this.answerCountShow ? "show" : "hide"}>Respuestas correctas: {this.state.correctAnswers}  de {this.state.total}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].correctAnswers} {this.state.correctAnswers} {texts[this.props.language].outofText} {this.state.total}</p>
               <br/>
-              <p className={this.answerCountShow ? "show" : "hide"}>Puntos: {this.state.score}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].pointsText} {this.state.score}</p>
             </div>
             
             <div className={this.unknownSongs.length > 0 ? "show" : "hide"}>
-                <h4 className="instruct">Aprende de tus errores:</h4>
+                <h4 className="instruct">{texts[this.props.language].listenedSongs}</h4>
                 <ul id="mistakes" className="instruct">  
                   {this.unknownSongs.map((song) => {
                     return (
@@ -254,7 +256,7 @@ class Game extends React.Component {
                             {song} 
                           </div>
                           <button className="repeat-button" onClick={this.state.playing ? () => this.stopMusic() : () => this.getSongUrl(song)}>
-                            {this.state.playing ? "Pausa" : "Vuelve a escucharla"} 
+                            {this.state.playing ? texts[this.props.language].pauseText : texts[this.props.language].listenAgain} 
                           {/* We write it with an arrow function instead of a 'normal' function so we can avoid an infinite loop 
                           when setting the state */}  
                           </button> 
@@ -270,7 +272,7 @@ class Game extends React.Component {
             </div>
           </div>
         </div>
-        <h3><Link className="link" to="/">Volver al inicio</Link></h3> 
+        <h3><Link className="link" to="/">{texts[this.props.language].backToStart}</Link></h3> 
         <div id="media-share-buttons">
           <div className="arrow">
             <img src={arrow} alt=""/>
