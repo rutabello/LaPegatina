@@ -54,11 +54,7 @@ componentDidMount() {
 const suffledArraySongTitles =  Shuffle(arraySongTitles)
 const fourNonShuffledSongsTitles = suffledArraySongTitles.slice(0, 3); // actually 3
  console.log(fourNonShuffledSongsTitles)
-// // fourNonShuffledSongsTitles.push(currentSongName); // now 4
 
-//  const fourShuffledSongsTitles = Shuffle(fourNonShuffledSongsTitles)
-// console.log(fourShuffledSongsTitles)
-  // return fourNonShuffledSongsTitles;
   this.setState({
     fourNonShuffledSongsTitles:fourNonShuffledSongsTitles
   })

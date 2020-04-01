@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import Button from '../Button/Button_YT';
-import Shuffle from '../../Utils/Shuffle'
+import Shuffle from '../../Utils/Shuffle';
+import '../YTPlayer/YTPlayer.css'
 
 // console.log(props.det) 
 class YTPlayer extends Component {
   state ={
     data : {},
     title: '',
+    videoUrl: '',
     isMuted: true,
     fourShuffledSongsTitles:[],
     fourNonShuffledSongsTitles:[]
@@ -18,6 +20,7 @@ class YTPlayer extends Component {
     console.log (event.target)
     console.log (event.target.playerInfo)
     console.log (event.target.playerInfo.videoData.title)
+    console.log(event.target.playerInfo.videoUrl)
     // access to player in all event handlers via event.target
     // event.target.playVideo();
     event.target.seekTo(20)//plays the video at 10s, in case the video has the name of the song at the start
@@ -46,7 +49,8 @@ VideoOnPlay=(event)=>{
     // player.seekTo(20)
     // alert(event.target.playerInfo.videoData.title)
     this.setState({
-      title:event.target.playerInfo.videoData.title
+      title:event.target.playerInfo.videoData.title,
+      videoUrl:event.target.playerInfo.videoUrl
   })
   // store the array with 3 random titels in a const
 const threeTitlesArr= this.props.det    
@@ -62,9 +66,24 @@ this.setState({
 console.log(fourShuffledSongsTitles)
 }
 
-  writeChosenSong = (songTitle) => {
-    this.state.title = songTitle;
-  }
+// getVideoUrl = (link) => {
+//   return link 
+//   ? 
+//   <button href={link} target="_blank" >
+//   <span >Pàgina oficial</span> 
+//  </button>
+//   : ""
+// }
+  // unmute=()=>{
+  //   if (this.state.title ===this.displayedSong){
+  //     alert('true')
+  //     this.setState({
+  //       isMuted:false
+  //     })
+  //   }
+
+  // }
+
   render() {
     const opts = {
       height: '390',
@@ -98,11 +117,15 @@ console.log(fourShuffledSongsTitles)
         /></div>
       
       <p>Hello {this.state.title}</p>
+      {/* the button that redirect on the yt page */}
+      <button className='btn-see-video' onClick={()=> window.open(this.state.videoUrl, "_blank")}>
+      <span className= 'text-btn-see-video'>See full video on Youtube</span></button>
       {this.state.fourShuffledSongsTitles.map((songTitle) => {
                 return (
                   <Button  
+                 
                     displayedSong={songTitle}
-                    onClick={() => this.writeChosenSong(songTitle)}
+                   
                     currentSong={this.state.title}
                   />)})}
       </div>
