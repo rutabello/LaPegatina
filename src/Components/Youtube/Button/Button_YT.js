@@ -13,11 +13,15 @@ import '../Button/Button_YT.css';
 // export default ButtonYT;
 const ButtonYT = (props) => {
     console.log (props)
-    const isCorrect = props.displayedSong === props.currentSong;
-
+const checkIt = (event)=>{   
+    if (props.displayedSong === props.currentSong) {
+alert('You are right')
+    }
+}  
     return (
         <button className='myButtonYT buttonYT' 
-        onClick={props.onClick}>
+        onClick={()=> checkIt()}>
+       
         {/* className={"myButton button " + (isCorrect ? "green" : "red")} > */}
               <span className='titleColorYT' >{props.displayedSong}</span> 
         </button>
