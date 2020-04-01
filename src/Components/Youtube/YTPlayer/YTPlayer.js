@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';//npm package
+import ButtonYT from '../Button/Button_YT'
 
 class YTPlayer extends Component {
   state ={
@@ -59,7 +60,9 @@ VideoOnPlay=(event)=>{
           onPlay={this.VideoOnPlay}
           // onPause={this.VideoOnPlay}
         />
+
       <p>Song Title: {this.state.data.info}</p>
+      <ButtonYT title={this.state.data.info} />
       </div>
     );
 
