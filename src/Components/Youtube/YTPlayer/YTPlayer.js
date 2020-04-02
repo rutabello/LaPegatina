@@ -8,11 +8,13 @@ import '../YTPlayer/YTPlayer.css'
 class YTPlayer extends Component {
   state ={
     data : {},
+    player:'',
     title: '',
     videoUrl: '',
     isMuted: true,
     fourShuffledSongsTitles:[],
-    fourNonShuffledSongsTitles:[]
+    fourNonShuffledSongsTitles:[],
+
   }
 
   VideoOnReady=(event)=>{
@@ -25,6 +27,10 @@ class YTPlayer extends Component {
     // event.target.playVideo();
     event.target.seekTo(20)//plays the video at 10s, in case the video has the name of the song at the start
     event.target.mute()
+    this.setState({
+      player:event.target
+    })
+
     //that prints in consolecthe name of the song
     // this.setState({
     //   data :{
@@ -35,11 +41,7 @@ class YTPlayer extends Component {
     //   }
     // })
   //  console.log(this.state.data)
-    }
-  //   this.sendButtonSelection = e => {
-  //     this.setState({buttonSelection: e.target.value});
-  //     console.log(e.target.value);
-  // };
+  }
 VideoOnPlay=(event)=>{
     // access to player in all event handlers via event.target
     // const player = event.target
@@ -66,23 +68,12 @@ this.setState({
 console.log(fourShuffledSongsTitles)
 }
 
-// getVideoUrl = (link) => {
-//   return link 
-//   ? 
-//   <button href={link} target="_blank" >
-//   <span >Pàgina oficial</span> 
-//  </button>
-//   : ""
-// }
-  // unmute=()=>{
-  //   if (this.state.title ===this.displayedSong){
-  //     alert('true')
-  //     this.setState({
-  //       isMuted:false
-  //     })
-  //   }
 
-  // }
+unmuteVideo =()=>{
+  this.state.player.unMute()
+ 
+}
+
 
   render() {
     const opts = {
@@ -123,9 +114,9 @@ console.log(fourShuffledSongsTitles)
       {this.state.fourShuffledSongsTitles.map((songTitle) => {
                 return (
                   <Button  
-                 
+                    unmute={this.unmuteVideo}
+                    key={songTitle}
                     displayedSong={songTitle}
-                   
                     currentSong={this.state.title}
                   />)})}
       </div>

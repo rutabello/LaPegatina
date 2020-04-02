@@ -70,7 +70,7 @@ render(){
     </div>
     <div className="yt-player">
       <YTPlayer det={this.state.fourNonShuffledSongsTitles} videoId= {this.state.randomVideoId}/> 
-     {/* <Button title={this.state.currentSongTitle} onClick={this.unMute}/> */}
+    
 
     </div>
     </div>
