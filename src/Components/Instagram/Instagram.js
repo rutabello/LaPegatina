@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Shuffle from '../Utils/Shuffle'
 import ButtonIG from './Button_Ig';
-import texts from '../../Components/texts.json';
+import texts from '../../texts.json';
 
 import './Instagram.css';
 

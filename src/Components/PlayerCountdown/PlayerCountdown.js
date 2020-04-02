@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import Sound from 'react-sound';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import './PlayerCountdown.css';
-import texts from '../../Components/texts.json';
+import texts from '../../texts.json';
 
-const SONG_TIMER_DURATION = 2;
+const SONG_TIMER_DURATION = 15;
 
 class PlayerCountdown extends Component {
 
@@ -58,7 +58,7 @@ class PlayerCountdown extends Component {
     return (
       <div className="timer">
         <div className="value">{value}</div>
-        <div className="text">{texts[this.props.language].secondsText}</div>
+        {/* <div className="text">{texts[this.props.language].secondsText}</div> */}
       </div>
     );
   }
@@ -90,7 +90,7 @@ class PlayerCountdown extends Component {
             durationSeconds={SONG_TIMER_DURATION}
             colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
             renderTime={this.renderTime}
-            size={120}
+            size={90}
           />
         </div>
       </div>

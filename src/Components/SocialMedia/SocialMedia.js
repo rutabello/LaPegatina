@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import texts from '../../Components/texts.json'
+import texts from '../../texts.json'
 
 import facebook from './icons/icon_2019_Facebook.svg';
 import twitter from './icons/icon_2019_Twitter.svg';

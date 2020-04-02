@@ -8,15 +8,16 @@
 
 
 .forceGrayColor button {
-	border:1.5px solid  rgb(0, 89, 255);
-    color: rgb(0, 89, 255) !important;
-    background-color: transparent;
+    opacity: 70%;
+	border:1.5px solid  gray;
+    color:  white !important;
+    background-color: gray;
     box-shadow: none;
 }
 
 .forceGrayColor button:focus {
-    box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C !important;
-    border:1.5px solid  rgb(0, 89, 255) !important;
+    background-color: orange !important;
+    border:1.5px solid white !important;
 }
 
 .show {
@@ -24,7 +25,8 @@
 }
 
 .show p {
-    font-weight: 700;
+    font-family: sans-serif;
+    font-weight: 600;
     font-size: 25px;
     color: rgb(0, 89, 255);
 }
@@ -41,22 +43,9 @@ li {
     list-style: none;
 }
 
-.link {
-    color: white;
-    width: 150px;
-    text-decoration: none;
-    border: 1px solid white;
-    display: flex; 
-    text-align: center;
-    padding-left: 20px;
-    position: fixed;
-    top: 0;
-    opacity: .7;
-}
-
 .Countdown {
     width: 100%;
-    margin: 0px auto 20px;
+    margin: 0px auto 10px;
 }
 
 .QuestionAndAnswers  {
@@ -65,6 +54,7 @@ li {
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,0.7455357142857143) 0%, rgba(255,255,255,0) 100%);
     padding-bottom: 80px;
+    padding-top: 15px; /* Depending on the language bar */
 }
 
 .list:hover {
@@ -83,7 +73,7 @@ li {
 
 #counter {
     font-size: 30px;
-    margin-bottom: 10vh;
+    margin-top: 1vh;
 }
 
 .show h4 {
@@ -131,10 +121,7 @@ li {
 
 .instruct p {
     color: #766dca;
-}
-
-.main {
-    margin-bottom: 36px;
+    font-size: 18px;
 }
 
 
@@ -186,17 +173,9 @@ li {
         left:50%;
     }
 
-    .show h4 {
-        font-size: 19px;
-    }
-
-    .show p {
-        font-size: 19px;
-    }
-
     #counter {
-        font-size: 22px;
-        margin-bottom: 14px;
+        font-size: 15px;
+        margin-top: 20px;
     }
 
     .song-name {
@@ -207,7 +186,11 @@ li {
         min-width: 35%;
     }
 
-    #st-1 .st-btn {
+    .instruct p {
+        font-size: 14px;
+    }
+
+    /* #st-1 .st-btn {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -231,15 +214,14 @@ li {
     top: 0;
     vertical-align: top;
     white-space: nowrap;
-    }
-
-    .link {
-        width: 70px;
-        padding-left: 5px;
-        font-size: 14px;
-    }
+    } */
 
     #mistakes {
         margin-top: 14px;
+    }
+
+    .arrow img {
+        width: 40px;
+        height: 40px;
     }
 }
