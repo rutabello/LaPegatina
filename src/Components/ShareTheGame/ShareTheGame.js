@@ -20,7 +20,7 @@ import sharebtn from '../../Pictures/noun_Share_89624.png';
 const shareurl =  "https://juegaconlapegatinaenpruebas.netlify.com";
 
 
-const shareTheGame = (props) => {
+const ShareTheGame = (props) => {
 
   const { score } = props;
 
@@ -28,7 +28,6 @@ const shareTheGame = (props) => {
     <div id="media-share-buttons">
       
       <div className="arrow">
-        {/* TODO: change this for share icon */}
         <img src={sharebtn} alt=""/>
       </div>
 
@@ -69,4 +68,4 @@ const shareTheGame = (props) => {
   )
 }
 
-export default shareTheGame;
+export default ShareTheGame;

@@ -190,32 +190,6 @@ li {
         font-size: 14px;
     }
 
-    /* #st-1 .st-btn {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -moz-transition: opacity 0.2s ease-in, top 0.2s ease-in;
-    -ms-transition: opacity 0.2s ease-in, top 0.2s ease-in;
-    -o-transition: opacity 0.2s ease-in, top 0.2s ease-in;
-    -webkit-transition: opacity 0.2s ease-in, top 0.2s ease-in;
-    transition: opacity 0.2s ease-in, top 0.2s ease-in;
-    -moz-border-radius: 26px;
-    -webkit-border-radius: 26px;
-    border-radius: 26px;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    height: 48px;
-    line-height: 48px;
-    margin-right: 8px;
-    padding: 0 12px;
-    position: relative;
-    text-align: center;
-    top: 0;
-    vertical-align: top;
-    white-space: nowrap;
-    } */
-
     #mistakes {
         margin-top: 14px;
     }

@@ -7,11 +7,11 @@ import twitter from './icons/icon_2019_Twitter.svg';
 import instagram from './icons/icon_2019_Instagram.svg';
 import youtube from './icons/icon_2019_YouTube.svg';
 import spotify from './icons/icon_2019_Spotify.svg';
-import tiktok from './icons/icon_2019_TikTok.png';
+import tiktok from './icons/icon_2019_TikTok.svg';
 
 const SocialMedia = (props) => {
     return (
-        <div className="peu_xarxessocials">
+        <div className="social-media-follow-footer">
             <p>{texts[props.language].followUs}</p>
             <nav>
                 <ul>
