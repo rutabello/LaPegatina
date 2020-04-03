@@ -27,7 +27,7 @@
     text-decoration: none;
     text-transform: capitalize;
     min-height: 4em;
-    opacity: 70%;
+    opacity: .7;
     font-weight: 600;
     font-family: sans-serif;
 }
