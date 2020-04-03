@@ -8,7 +8,7 @@
 
 
 .forceGrayColor button {
-    opacity: 70%;
+    opacity: .7;
 	border:1.5px solid  gray;
     color:  white !important;
     background-color: gray;
