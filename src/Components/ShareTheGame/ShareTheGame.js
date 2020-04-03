@@ -28,7 +28,7 @@ const ShareTheGame = (props) => {
     <div id="media-share-buttons">
       
       <div className="arrow">
-        <img src={sharebtn} alt=""/>
+        <img src={sharebtn} alt="share icon"/>
       </div>
 
       <div className="share-buttons">

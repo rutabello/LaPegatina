@@ -91,7 +91,7 @@ class Instagram extends Component {
                 <div className="imageAndLocationsContainer">
                     <div className="imageDisplayedContainer">
                         <div className="imageDisplayed">
-                            <img src={randomImageSrc} alt="" />
+                            <img src={randomImageSrc} alt="radom capture from the user's instagram feed" />
                         </div>
                     </div>
                     <h1>{texts[this.props.language].instagramQuestion}</h1>
