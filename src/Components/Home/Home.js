@@ -11,7 +11,7 @@ const Home = (props) => (
       <h3 className="hideGame"><Link to="/">Home</Link></h3>
 
       <p className="playWith">{texts[props.language].playwithTitle}</p>
-      <img src={logo} alt="" className="laPegatina" />
+      <img src={logo} alt="la pegatina logo" className="laPegatina" />
 
       <Link className="btn-game" to="game">{texts[props.language].playWithButton}</Link>
       <a className="btn-game" href="https://playwith.es">{texts[props.language].allmusicButton}</a>
