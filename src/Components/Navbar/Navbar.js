@@ -56,6 +56,7 @@ class Navbar extends React.Component {
           <div className="dropdown-content">
             {languagesAvailable.map((lang) => (
               <img
+                key={lang.flag}
                 src={lang.flag}
                 onClick={() => this.setLanguage(lang.language, lang.flag)}
                 alt={lang.language}

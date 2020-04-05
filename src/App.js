@@ -9,6 +9,7 @@ import Team from './Components/Team/Team';
 import Navbar from './Components/Navbar/Navbar';
 
 import './App.css';
+import ListenedSongs from './Components/ListenedSongs/ListenedSongs';
 
 
 class App extends React.Component {
@@ -36,6 +37,7 @@ class App extends React.Component {
           <Route path='/game' render={props => <Game language={selectedLanguage} {...props} />} />   
           <Route path='/team' render={props => <Team language={selectedLanguage} {...props} />} />
           <Route path='/instagram' render={props => <Instagram language={selectedLanguage} {...props} />} />
+          <Route parth='/listenedsongs' render={props => <ListenedSongs language={selectedLanguage} {...props} />} />
         </Switch> 
         
         <div className="social-media-follow-buttons">
