@@ -37,7 +37,7 @@ const ShareTheGame = (props) => {
         title={`He jugado con las canciones de La Pegatina y he hecho ${score} puntos. ¿Me superas?`}
         className="Demo_some-network__share-button"
         >
-          <EmailIcon size={50} round />
+          <EmailIcon size={45} round />
         </EmailShareButton>
 
         <FacebookShareButton 
@@ -45,7 +45,7 @@ const ShareTheGame = (props) => {
           title={`He jugado con las canciones de La Pegatina y he hecho ${score} puntos. ¿Me superas?`}
           className="Demo_some-network__share-button"
         >
-          <FacebookIcon size={50} round />
+          <FacebookIcon size={45} round />
         </FacebookShareButton>
 
         <TwitterShareButton
@@ -53,7 +53,7 @@ const ShareTheGame = (props) => {
           title={`He jugado con las canciones de @LaPegatina y he hecho ${score} puntos. ¿Me superas?`}
           className="Demo_some-network__share-button"
         >
-          <TwitterIcon size={50} round />
+          <TwitterIcon size={45} round />
         </TwitterShareButton>
 
         <WhatsappShareButton 
@@ -61,7 +61,7 @@ const ShareTheGame = (props) => {
           title={`He jugado con las canciones de La Pegatina y he hecho ${score} puntos. ¿Me superas?`}
           className="Demo_some-network__share-button"
         >
-          <WhatsappIcon size={50} round />
+          <WhatsappIcon size={45} round />
         </WhatsappShareButton>
       </div>
     </div>

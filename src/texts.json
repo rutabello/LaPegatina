@@ -17,7 +17,12 @@
         "secondsText": "segons",
         "followUs": "Segueix-nos a...",
         "madeWithText": "Fet amb ",
-        "byText": " per l'equip de Wild Code School"
+        "byText": " per l'equip de Wild Code School",
+
+        "shareTheSongButton": "Comparteix-la",
+        "whereToShareText" : "On vols compartir-la?",
+        "songSharedText" : "M'ha agradat molt aquesta cançó de La Pegatina. Escolta-la",
+        "doneText": "Fet!"
     },
 
     "spanish" : {
@@ -38,7 +43,12 @@
         "secondsText": "segundos",
         "followUs": "Síguenos en...",
         "madeWithText": "Hecho con ",
-        "byText": " por el equipo de Wild Code School"
+        "byText": " por el equipo de Wild Code School",
+
+        "shareTheSongButton": "Compártela",
+        "whereToShareText" : "Dónde quieres compartirla?",
+        "songSharedText" : "Me ha gustado mucho esta canción de La Pegatina. Escúchala:",
+        "doneText": "Hecho!"
     },
 
     "english" : {
@@ -59,7 +69,12 @@
         "secondsText": "seconds",
         "followUs": "Follow us on...",
         "madeWithText": "Made with ",
-        "byText": " by Wild Code School team"
+        "byText": " by Wild Code School team",
+
+        "shareTheSongButton": "Share it",
+        "whereToShareText" : "Where do you want to share it?",
+        "songSharedText" : "I really enjoyed this song from La Pegatina. Listen to it:",
+        "doneText": "Done!"
     },
 
     "french": {
@@ -80,6 +95,11 @@
         "secondsText": "secondes",
         "followUs": "Suivez-nous sur...",
         "madeWithText": "Fait avec ",
-        "byText": " par Wild Code School équipe"
+        "byText": " par Wild Code School équipe",
+
+        "shareTheSongButton": "Partagez-le",
+        "whereToShareText" : "Où voulez-vous le partager?",
+        "songSharedText" : "J'ai vraiment apprécié cette chanson de La Pegatina. Écoute lea",
+        "doneText": "Fait!"
     }
 }

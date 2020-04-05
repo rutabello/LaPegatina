@@ -9,7 +9,7 @@ import ShareTheGame from '../ShareTheGame/ShareTheGame';
 import Sound from 'react-sound';
 import texts from '../../texts.json';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 class Game extends React.Component {
 
@@ -211,31 +211,6 @@ class Game extends React.Component {
               <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].pointsText} {this.state.score}</p>
             </div>
             
-            {/* <div className={this.unknownSongs.length > 0 ? "show" : "hide"}>
-                <h4 className="instruct">{texts[this.props.language].listenedSongs}</h4>
-                <ul id="mistakes" className="instruct">  
-                  {this.unknownSongs.map((song) => {
-                    const url= song.uri
-                    return (
-                        <li key={song.uri} className="mistake-list">
-                          <div className="song-name">
-                            {song.name} 
-                          </div>
-                          <a href={url}>{song.uri}</a>
-                          <button className="repeat-button" onClick={this.state.playing ? () => this.stopMusic() : () => this.getSongUrl(song)}>
-                            {this.state.playing ? texts[this.props.language].pauseText : texts[this.props.language].listenAgain} 
-                          </button> 
-                        </li>
-                    )
-                  })}
-                </ul>
-                <Sound 
-                  url={this.state.songUrl}
-                  playStatus={this.state.playerState}
-                  autoLoad
-                />
-            </div> */}
-            {/* <Link to="/listenedsongs"><p>Listened songs</p></Link> */}
             <ListenedSongs unknownSongs={this.unknownSongs} language={this.props.language} url={this.state.songUrl} playStatus={this.state.playerState} onClick={this.state.playing} />
           </div>
         </div>  

@@ -13,19 +13,24 @@
     font-size:1.3rem;
     text-align: left;
     display: inline;
-    min-width: 80%;
+    min-width: 50%;
     color: #766dca;
 }
   
 .mistake-list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 0;
     color: #fff;
     transition: all .3s ease-in-out;
     margin-bottom: 20px;
     align-items: flex-start;
     justify-content: space-between;
+    color: #766dca;
+}
+
+.mistake-list a {
+    text-decoration: none;
     color: #766dca;
 }
 
@@ -46,6 +51,33 @@
     color: #766dca;
     border-color: #766dca;
 } */
+
+/* MODAL CSS */
+
+.btn-primary {
+    background-color: #766dca;
+    border-color: #766dca;
+    min-width: 30%;
+}
+
+.btn-primary:hover {
+    background-color: rgb(49, 44, 113);
+    border-color: rgb(49, 44, 113);
+}
+
+.btn-primary:focus {
+    background-color: rgb(49, 44, 113);
+    border-color: rgb(49, 44, 113);
+    box-shadow: 0 0 0 0.2rem rgb(49, 44, 113);
+}
+
+.btn-primary:active {
+    background-color: rgb(49, 44, 113);
+    border-color: rgb(49, 44, 113);
+    box-shadow: 0 0 0 0.2rem rgb(49, 44, 113);
+}
+
+
 
 @media only screen and (max-width: 750px) {
 

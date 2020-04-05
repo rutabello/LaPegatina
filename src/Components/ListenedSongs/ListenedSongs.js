@@ -1,7 +1,21 @@
 import React, {Component} from 'react';
-import Sound from 'react-sound';
+// import Sound from 'react-sound';
 import texts from '../../texts.json';
 import './ListenedSongs.css';
+
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    TwitterShareButton,
+    WhatsappShareButton,
+  } from "react-share";
+  
+  import {
+    EmailIcon,
+    FacebookIcon,
+    TwitterIcon,
+    WhatsappIcon,
+  } from "react-share";
 
 
 class ListenedSongs extends Component {
@@ -21,18 +35,77 @@ class ListenedSongs extends Component {
                             {song.name} 
                             </div>
                             <a href={url}>{song.uri}</a>
-                            <button className="repeat-button" onClick={this.props.onClick ? () => this.props.stopMusic() : () => this.props.getSongUrl(song)}>
+
+
+                            {/* <-- Button trigger modal --> */}
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            {texts[this.props.language].shareTheSongButton}
+                            </button>
+
+                            {/* <-- Modal --> */}
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">{texts[this.props.language].whereToShareText}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <EmailShareButton 
+                                    url={song.uri} 
+                                    title={texts[this.props.language].songShareText}
+                                    className="Demo_some-network__share-button"
+                                    >
+                                    <EmailIcon size={50} round />
+                                    </EmailShareButton>
+
+                                    <FacebookShareButton 
+                                    url={song.uri} 
+                                    title={texts[this.props.language].songSharedText}
+                                    className="Demo_some-network__share-button"
+                                    >
+                                    <FacebookIcon size={50} round />
+                                    </FacebookShareButton>
+
+                                    <TwitterShareButton
+                                    url={song.uri}
+                                    title={texts[this.props.language].songSharedText}
+                                    className="Demo_some-network__share-button"
+                                    >
+                                    <TwitterIcon size={50} round />
+                                    </TwitterShareButton>
+
+                                    <WhatsappShareButton 
+                                    url={song.uri} 
+                                    title={texts[this.props.language].songSharedText}
+                                    className="Demo_some-network__share-button"
+                                    >
+                                    <WhatsappIcon size={50} round />
+                                    </WhatsappShareButton>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">{texts[this.props.language].doneText}</button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+
+
+
+                            {/* <button className="repeat-button" onClick={this.props.onClick ? () => this.props.stopMusic() : () => this.props.getSongUrl(song)}>
                             {this.props.onClick ? texts[this.props.language].pauseText : texts[this.props.language].listenAgain} 
-                            </button> 
+                            </button>  */}
                         </li>
                     )
                     })}
                 </ul>
-                <Sound 
+                {/* <Sound 
                     url={this.props.songUrl}
                     playStatus={this.props.playerState}
                     autoLoad={this.props.autoLoad}
-                />
+                /> */}
             </div>
             : <p>No songs</p>
         )

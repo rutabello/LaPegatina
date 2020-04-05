@@ -62,14 +62,14 @@ li {
     opacity: .7;
 }
 
-.repeat-button {
+/* .repeat-button {
     margin-left: 20px;
     font-size: 14px;
     max-width: 140px;
     min-width: 140px;
     color: #766dca;
     border-color: #766dca;
-}
+} */
 
 #counter {
     font-size: 30px;
@@ -84,7 +84,7 @@ li {
 
 /* Mistakes list css: */
 
-#mistakes {
+/* #mistakes {
     max-width: 80%;
     width: 100%;
     margin-top: 30px;
@@ -122,7 +122,7 @@ li {
 .instruct p {
     color: #766dca;
     font-size: 18px;
-}
+} */
 
 
 /* SOCIAL MEDIA BUTTONS */
@@ -132,7 +132,7 @@ li {
     width: auto;
     position: fixed;
     top: 0px;
-    right: -50px;
+    right: -45px;
     display: flex;
     transition: all .35s linear;
 }
