@@ -14,8 +14,10 @@ import ListenedSongs from './Components/ListenedSongs/ListenedSongs';
 
 class App extends React.Component {
 
+  language = localStorage.getItem('selectedLanguage');
+
   state = {
-    selectedLanguage: 'spanish',
+    selectedLanguage: this.language,
   }
 
   setLanguage = (lang) => {
@@ -31,19 +33,17 @@ class App extends React.Component {
 
     const { selectedLanguage } = this.state;
 
-    var language = localStorage.getItem('selectedLanguage');
-
     return (
 
       <div>
-        <Navbar onChangeLanguage={this.setLanguage} />
+        <Navbar onChangeLanguage={this.setLanguage} language={this.language} />
 
         <Switch>
-          <Route exact path='/' render={props => <Home language={language} {...props} />} />
-          <Route path='/game' render={props => <Game language={language} {...props} />} />   
-          <Route path='/team' render={props => <Team language={language} {...props} />} />
-          <Route path='/instagram' render={props => <Instagram language={language} {...props} />} />
-          <Route parth='/listenedsongs' render={props => <ListenedSongs language={language} {...props} />} />
+          <Route exact path='/' render={props => <Home language={this.language} {...props} />} />
+          <Route path='/game' render={props => <Game language={this.language} {...props} />} />   
+          <Route path='/team' render={props => <Team language={this.language} {...props} />} />
+          <Route path='/instagram' render={props => <Instagram language={this.language} {...props} />} />
+          <Route parth='/listenedsongs' render={props => <ListenedSongs language={this.language} {...props} />} />
         </Switch> 
         
         <div className="social-media-follow-buttons">

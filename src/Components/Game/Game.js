@@ -24,6 +24,9 @@ class Game extends React.Component {
   //All the songs that the user guessed wrong are pushed into this array
   unknownSongs= []; 
 
+  selectedLanguage = localStorage.getItem('selectedLanguage');
+
+
   state = {
  
     songNames:[],
@@ -183,7 +186,7 @@ class Game extends React.Component {
           <div className="QuestionAndAnswers">
             <div className="Countdown">
               <PlayerCountdown
-                language={this.props.language}
+                language={this.selectedLanguage}
                 onMusicPlays={this.chooseSongs}
                 setNewRandomSong={this.setNewRandomSong}
                 songURL={this.state.currentSong.preview_url} 
@@ -206,12 +209,12 @@ class Game extends React.Component {
               })}
             </div>
             <div id="counter" className="instruct">
-              <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].correctAnswers} {this.state.correctAnswers} {texts[this.props.language].outofText} {this.state.total}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.selectedLanguage].correctAnswers} {this.state.correctAnswers} {texts[this.props.language].outofText} {this.state.total}</p>
               <br/>
-              <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].pointsText} {this.state.score}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.selectedLanguage].pointsText} {this.state.score}</p>
             </div>
             
-            <ListenedSongs unknownSongs={this.unknownSongs} language={this.props.language} url={this.state.songUrl} playStatus={this.state.playerState} onClick={this.state.playing} />
+            <ListenedSongs unknownSongs={this.unknownSongs} language={this.selectedLanguage} url={this.state.songUrl} playStatus={this.state.playerState} onClick={this.state.playing} />
           </div>
         </div>  
       </section>
