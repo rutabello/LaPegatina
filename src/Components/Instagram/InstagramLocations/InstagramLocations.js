@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import Shuffle from '../Utils/Shuffle'
-import ButtonIG from './Button_Ig';
-import texts from '../../texts.json';
+import Shuffle from '../../Utils/Shuffle'
+import ButtonIG from './ButtonIgLocations';
+import texts from '../../../texts.json';
 
-import './Instagram.css';
+import './InstagramLocations.css';
 
 class Instagram extends Component {
 
@@ -33,7 +33,7 @@ class Instagram extends Component {
 
         this.apiResultLength = result.length
 
-        console.log('llargaria', result.length)
+        console.log("array a state amb el que torna api call", images)
     }
 
     //Takes off the first element of the array resulting in cleanApiResponse (called result) and takes the next 3 elements
@@ -64,28 +64,19 @@ class Instagram extends Component {
         this.counter = this.counter+1
     }
 
-    // async componentDidMount() {
+
+    // 'https://codeofaninja.com/tools/find-instagram-user-id'
     
-    //     const response = await fetch('https://www.instagram.com/bestvacations/?__a=1');
-    //     // const response = await fetch('https://www.instagram.com/travelandleisure/?__a=1');
-    //     // const response = await fetch('https://www.instagram.com/lapegatina/?__a=1');
-    
-    //     const data = await response.json();
+    // profileId= '178522459';
+    // //bestvacations ID
 
-    //     console.log(data)
 
-    //     const info = data.graphql.user
+    // profileId = '42596988';
+    //cuore ID
 
-    //     console.log("PACO", info)
+    profileId='32402644';
+    //Rut's ID
 
-    //     this.cleanApiResponse(info)
-
-    //     this.setRandomImageAndLocations()
-
-    // };
-
-    profileId= '178522459';
-    //bestvacations ID
     
     // profileId = '10934686';
     //LaPegatina ID
@@ -95,7 +86,6 @@ class Instagram extends Component {
         fetch(`https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables={"id":"${this.profileId}","first":${this.numberOfPosts}}`)
           .then(res => res.json())
           .then(data => this.setState({ data: data.data.user.edge_owner_to_timeline_media.edges }))
-
           .then(() => this.cleanApiResponse())
           .then(() => this.setRandomImageAndLocations())
     }
@@ -107,26 +97,31 @@ class Instagram extends Component {
 
         if (this.attempts < this.apiResultLength) {
             return (
-                <div className="imageAndLocationsContainer">
-                    <div className="imageDisplayedContainer">
-                        <div className="imageDisplayed">
-                            <img src={randomImageSrc} alt="radom capture from the user's instagram feed" />
-                        </div>
-                    </div>
+                <div className="instagram-game">
+                    <div className="imageAndLocationsContainer">
                     <h1>{texts[this.props.language].instagramQuestion}</h1>
-                    {locationOptions.map((option, index) => {
-                        return (
-                            <ButtonIG value={option} currentLocation={this.state.randomImageLocation} addToCounter={this.addOneToCounter} key={index} setRandomImageAndLocations={this.setRandomImageAndLocations}
-                            >
-                            </ButtonIG>
-                        )
-                    })}
-                    <p>{texts[this.props.language].correctAnswers} {this.counter}</p>
+                        <div className="imageDisplayedContainer">
+                            <div className="imageDisplayed">
+                                <img src={randomImageSrc} alt="radom capture from the user's instagram feed" />
+                            </div>
+                        </div>
+                        
+                        {locationOptions.map((option, index) => {
+                            return (
+                                <div key={index} className="instagram-location-buttons">
+                                    <ButtonIG value={option} currentLocation={this.state.randomImageLocation} addToCounter={this.addOneToCounter} key={index} setRandomImageAndLocations={this.setRandomImageAndLocations}
+                                    >
+                                    </ButtonIG>
+                                </div>
+                            )
+                        })}
+                        <p>{texts[this.props.language].correctAnswers} {this.counter}</p>
+                    </div>
                 </div>
             )
         } else {
             return (
-                <h1>Has llegado al final!</h1>
+                <h1>Has llegado al final! Ahora prueba de jugar con La Pegatina en Spotify o en Youtube</h1>
             )
         }
     }

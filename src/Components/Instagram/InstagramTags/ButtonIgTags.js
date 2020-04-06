@@ -1,5 +1,5 @@
 import React from 'react';
-import './Button_Ig.css';
+import './ButtonIgTags.css';
 
 const ButtonIG = (props) => {
 
@@ -8,7 +8,7 @@ const ButtonIG = (props) => {
             props.addToCounter();
         }
         
-        props.setRandomImageAndLocations();
+        props.setRandomImageAndTags();
         
     }
 
