@@ -12,6 +12,7 @@ class InstagramLocationsGame extends Component {
         randomImageLocation: "",
         locationOptions: [],
         data: [],
+        gameStatus: "loading"
     }
 
     attempts= 0;
@@ -55,6 +56,7 @@ class InstagramLocationsGame extends Component {
             randomImageSrc: firstElement.src,
             randomImageLocation: firstElement.location,
             locationOptions: threeRandomPlusCorrectLocationArr,
+            gameStatus: 'playing'
         })
 
         this.attempts = this.attempts+1
@@ -83,6 +85,7 @@ class InstagramLocationsGame extends Component {
     numberOfPosts = '200000';
 
     componentDidMount() {
+        
         fetch(`https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables={"id":"${this.profileId}","first":${this.numberOfPosts}}`)
           .then(res => res.json())
           .then(data => this.setState({ data: data.data.user.edge_owner_to_timeline_media.edges }))
@@ -95,7 +98,15 @@ class InstagramLocationsGame extends Component {
 
         const { randomImageSrc, locationOptions } = this.state;
 
-        if (this.attempts < this.apiResultLength) {
+        if (this.state.gameStatus === "loading") {
+            return (
+                <div className="loading">
+                    <p>Loading...</p>
+                </div>
+            )
+        }
+
+        if (this.state.gameStatus==="playing") {
             return (
                 <div className="instagram-game">
                     <div className="imageAndLocationsContainer">

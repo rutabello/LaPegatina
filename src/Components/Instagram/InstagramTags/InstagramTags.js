@@ -11,6 +11,7 @@ class InstagramTagsGame extends Component {
         randomImageTags: "",
         tagsOptions: [],
         data: [],
+        gameStatus: "loading"
     }
 
     attempts= 0;
@@ -59,6 +60,7 @@ class InstagramTagsGame extends Component {
             randomImageSrc: firstElement.src,
             randomImageTags: firstElement.tags.map((tag) => tag),
             tagsOptions: threeRandomPlusCorrectTagsArr,
+            gameStatus: 'playing'
         })
 
         this.attempts = this.attempts+1
@@ -91,8 +93,16 @@ class InstagramTagsGame extends Component {
     render () {
 
         const { randomImageSrc, tagsOptions } = this.state;
+        
+        if (this.state.gameStatus === "loading") {
+            return (
+                <div className="loading">
+                    <p>Loading...</p>
+                </div>
+            )
+        }
 
-        if (this.attempts < this.apiResultLength) {
+        if (this.state.gameStatus==="playing") {
             return (
                 <div className="instagram-game">
                     <div className="imageAndLocationsContainer">
