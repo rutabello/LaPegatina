@@ -1,10 +1,127 @@
-.imageDisplayedContainer {
+.imageAndLocationsContainer h1 {
+    color: #766dca;;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+.imageAndLocationsContainer p {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 100px 0 50px 0;
 }
 
 .imageDisplayed {
-    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.imageDisplayed img {
+    max-height: 55vh;
+}
+
+.instagram-location-buttons {
+    display: flex;
+    justify-content: space-evenly;
+
+    flex: 25% 1;
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    font-size: 20px;
+    text-transform: capitalize;   
+}
+
+.instagram-option-button {
+    box-shadow: inset 0px 0px 15px 3px #9fb4f2;
+    background: linear-gradient(to bottom, #302c71 5%, #2b2761 100%);
+    background-color: #302c71;
+    border-radius: 24px;
+    border: 1px solid #545180;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #283966;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin: 5px 5px ;
+    display: flex;
+}
+
+.instagram-option-button:focus {
+    outline: none;
+}
+ 
+.instagram-game-button {
+    border: 0;
+    font-size: 17px;
+    padding: 5px 15px;
+}
+
+.instagram-game-button:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 750px) {
+
+    .instagram-game {
+        height: 82vh;
+    }
+
+    .imageAndLocationsContainer h1 {
+        margin-bottom: 0;
+        margin-top: 0;
+        font-size: 20px;
+        font-weight: 800px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: rgba(0, 0, 0, .8);
+    }
+
+    .imageAndLocationsContainer p {
+        background-color: rgba(0, 0, 0, .8);
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .imageDisplayed {
+        display: flex;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, .8);
+    }
+
+    .imageDisplayed img {
+        max-height: 45vh;
+        opacity: 1;
+    }
+
+    .instagram-location-buttons {
+        display: flex;
+        justify-content: space-evenly;
+        flex: 25% 1;
+        width: 100%;
+        height: auto;
+        font-size: 20px;
+        text-transform: capitalize;
+        background-color: rgba(0, 0, 0, .8);
+        padding: 10px;
+        flex-wrap: wrap;
+        margin: 0;
+        max-height: 30vh;
+    }
+
+    .instagram-option-button {
+        flex-basis: 39%;
+        justify-content: center;
+    }
+
+    .instagram-game-button {
+        font-size: 14px;
+        padding: 3px 6px;
+    }
+
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+
+
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -13,7 +15,8 @@ import {
   WhatsappIcon,
 } from "react-share";
 
-import '../Game/Game.css';
+import './ShareTheGame.css';
+
 // import arrow from '../../Pictures/arrow_left.svg';
 import sharebtn from '../../Pictures/noun_Share_89624.png';
 

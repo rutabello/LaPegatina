@@ -22,20 +22,22 @@ class ListenedSongs extends Component {
 
     render () {
 
+        // let myURI = 'spotify:album:27ftYHLeunzcSzb33Wk1hf';
+        // let myURL = myURI.replace(/:/g, "/").replace("spotify", "https:*//open.spotify.com");
+
         return (
             this.props.unknownSongs ? 
             <div>
                 <h4 className="instruct">{texts[this.props.language].listenedSongs}</h4>
                 <ul id="mistakes" className="instruct">  
                     {this.props.unknownSongs.map((song) => {
-                    const url= song.uri
+                    const url= song.uri.replace(/:/g, "/").replace("spotify", "https://open.spotify.com")
+                    console.log('uuuuuuuuuu', url)
                     return (
                         <li key={song.uri} className="mistake-list">
                             <div className="song-name">
                             {song.name} 
                             </div>
-                            <a href={url}>{song.uri}</a>
-
 
                             {/* <-- Button trigger modal --> */}
                             <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -53,36 +55,37 @@ class ListenedSongs extends Component {
                                     </button>
                                 </div>
                                 <div className="modal-body">
+        
                                     <EmailShareButton 
-                                    url={song.uri} 
+                                    url={url} 
                                     title={texts[this.props.language].songShareText}
                                     className="Demo_some-network__share-button"
                                     >
-                                    <EmailIcon size={50} round />
+                                    <EmailIcon size={45} round />
                                     </EmailShareButton>
 
                                     <FacebookShareButton 
-                                    url={song.uri} 
+                                    url={url} 
                                     title={texts[this.props.language].songSharedText}
                                     className="Demo_some-network__share-button"
                                     >
-                                    <FacebookIcon size={50} round />
+                                    <FacebookIcon size={45} round />
                                     </FacebookShareButton>
 
                                     <TwitterShareButton
-                                    url={song.uri}
+                                    url={url}
                                     title={texts[this.props.language].songSharedText}
                                     className="Demo_some-network__share-button"
                                     >
-                                    <TwitterIcon size={50} round />
+                                    <TwitterIcon size={45} round />
                                     </TwitterShareButton>
 
                                     <WhatsappShareButton 
-                                    url={song.uri} 
+                                    url={url} 
                                     title={texts[this.props.language].songSharedText}
                                     className="Demo_some-network__share-button"
                                     >
-                                    <WhatsappIcon size={50} round />
+                                    <WhatsappIcon size={45} round />
                                     </WhatsappShareButton>
                                 </div>
                                 <div className="modal-footer">

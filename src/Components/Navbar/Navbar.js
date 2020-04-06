@@ -32,10 +32,6 @@ class Navbar extends React.Component {
       selectedFlag: flag,
     })
 
-    localStorage.setItem('selectedLanguage', lang);
-
-    console.log(localStorage)
-
     // Notify the parent that the language has been updated
     this.props.onChangeLanguage(lang);
   }
