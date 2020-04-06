@@ -16,6 +16,7 @@ import {
 } from "react-share";
 
 import './ShareTheGame.css';
+
 // import arrow from '../../Pictures/arrow_left.svg';
 import sharebtn from '../../Pictures/noun_Share_89624.png';
 

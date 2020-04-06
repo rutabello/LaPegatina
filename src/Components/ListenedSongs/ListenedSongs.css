@@ -103,7 +103,7 @@
     .song-name {
         font-weight: 400;
         font-size: 14px;
-        text-align: left;
+        text-align: center;
         display: inline;
         min-width: 35%;
     }

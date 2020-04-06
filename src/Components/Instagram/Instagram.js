@@ -11,6 +11,7 @@ class Instagram extends Component {
         randomImageSrc: "",
         randomImageLocation: "",
         locationOptions: [],
+        data: [],
     }
 
     attempts= 0;
@@ -20,8 +21,8 @@ class Instagram extends Component {
 
 
    //Cleans the object retrieved from the api and leaves an array of objects that just have the image source for the picture and the image location
-    cleanApiResponse = (apiResponse) => {
-        const images = apiResponse.edge_owner_to_timeline_media.edges.filter(img => img.node.location !== null)
+    cleanApiResponse = () => {
+        const images = this.state.data.filter(img => img.node.location !== null)
 
         const result = images.map((image) => ({
             src: image.node.thumbnail_resources[4].src,
@@ -31,6 +32,8 @@ class Instagram extends Component {
         this.apiCleanedResult = result;
 
         this.apiResultLength = result.length
+
+        console.log('llargaria', result.length)
     }
 
     //Takes off the first element of the array resulting in cleanApiResponse (called result) and takes the next 3 elements
@@ -61,25 +64,41 @@ class Instagram extends Component {
         this.counter = this.counter+1
     }
 
-    async componentDidMount() {
+    // async componentDidMount() {
     
-        const response = await fetch('https://www.instagram.com/bestvacations/?__a=1');
-        // const response = await fetch('https://www.instagram.com/travelandleisure/?__a=1');
-        // const response = await fetch('https://www.instagram.com/lapegatina/?__a=1');
+    //     const response = await fetch('https://www.instagram.com/bestvacations/?__a=1');
+    //     // const response = await fetch('https://www.instagram.com/travelandleisure/?__a=1');
+    //     // const response = await fetch('https://www.instagram.com/lapegatina/?__a=1');
     
-        const data = await response.json();
+    //     const data = await response.json();
 
-        console.log(data)
+    //     console.log(data)
 
-        const info = data.graphql.user
+    //     const info = data.graphql.user
 
-        console.log("PACO", info)
+    //     console.log("PACO", info)
 
-        this.cleanApiResponse(info)
+    //     this.cleanApiResponse(info)
 
-        this.setRandomImageAndLocations()
+    //     this.setRandomImageAndLocations()
 
-    };
+    // };
+
+    profileId= '178522459';
+    //bestvacations ID
+    
+    // profileId = '10934686';
+    //LaPegatina ID
+    numberOfPosts = '200000';
+
+    componentDidMount() {
+        fetch(`https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables={"id":"${this.profileId}","first":${this.numberOfPosts}}`)
+          .then(res => res.json())
+          .then(data => this.setState({ data: data.data.user.edge_owner_to_timeline_media.edges }))
+
+          .then(() => this.cleanApiResponse())
+          .then(() => this.setRandomImageAndLocations())
+    }
 
 
     render () {
