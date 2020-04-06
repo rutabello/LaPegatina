@@ -106,7 +106,7 @@ unmuteVideo =()=>{
     console.log ({videoId})
  
     return (
-      <div>
+      <div className='thegame'>
       <div>  
       <YouTube
           videoId={videoId}

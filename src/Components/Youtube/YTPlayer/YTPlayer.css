@@ -16,3 +16,6 @@ font-style: normal;
 font-weight: 200;
 src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.googleapis.com/css?family=Barlow&display=swap') format('woff2');
 }
+.thegame{
+    margin-bottom: 15vh;
+}
