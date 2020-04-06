@@ -10,8 +10,8 @@
   
 .song-name {
     font-weight: 400;
-    font-size:1.3rem;
-    text-align: left;
+    font-size: 16px;
+    text-align: center;
     display: inline;
     min-width: 50%;
     color: #766dca;
@@ -24,8 +24,8 @@
     color: #fff;
     transition: all .3s ease-in-out;
     margin-bottom: 20px;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     color: #766dca;
 }
 
@@ -41,6 +41,18 @@
 .instruct p {
     color: #766dca;
     font-size: 18px;
+}
+ 
+#counter {
+    font-size: 30px;
+    margin-top: 1vh;
+}
+
+.show h4 {
+    margin-top: 30px;
+    font-size: 19px;
+    margin-bottom: 0px;
+    color: #766dca;
 }
 
 /* .repeat-button {
@@ -58,6 +70,7 @@
     background-color: #766dca;
     border-color: #766dca;
     min-width: 30%;
+    margin-top: 6px;
 }
 
 .btn-primary:hover {
@@ -77,19 +90,40 @@
     box-shadow: 0 0 0 0.2rem rgb(49, 44, 113);
 }
 
+.modal-body {
+    display: flex;
+    justify-content: space-around;
+}
+
 
 
 @media only screen and (max-width: 750px) {
 
     .song-name {
         font-weight: 400;
-        font-size:1rem;
+        font-size: 14px;
         text-align: left;
         display: inline;
         min-width: 35%;
     }
 
+    .mistake-list a {
+        font-size: 14px;
+    }
+
     .instruct p {
         font-size: 14px;
+    }
+
+    .show h4 {
+        font-size: 14px;
+        margin-top: 20px;
+        /* margin-bottom:20px; */
+        color: #766dca;
+    }
+
+    .btn-primary {
+        padding: 4px 10px;
+        margin-top: 4px;
     }
 }

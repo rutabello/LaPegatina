@@ -22,28 +22,22 @@ class App extends React.Component {
     this.setState ({
       selectedLanguage: lang
     })
-
-    localStorage.setItem('selectedLanguage', lang);
-
   }
 
   render() {
 
     const { selectedLanguage } = this.state;
 
-    var language = localStorage.getItem('selectedLanguage');
-
     return (
-
       <div>
         <Navbar onChangeLanguage={this.setLanguage} />
 
         <Switch>
-          <Route exact path='/' render={props => <Home language={language} {...props} />} />
-          <Route path='/game' render={props => <Game language={language} {...props} />} />   
-          <Route path='/team' render={props => <Team language={language} {...props} />} />
-          <Route path='/instagram' render={props => <Instagram language={language} {...props} />} />
-          <Route parth='/listenedsongs' render={props => <ListenedSongs language={language} {...props} />} />
+          <Route exact path='/' render={props => <Home language={selectedLanguage} {...props} />} />
+          <Route path='/game' render={props => <Game language={selectedLanguage} {...props} />} />   
+          <Route path='/team' render={props => <Team language={selectedLanguage} {...props} />} />
+          <Route path='/instagram' render={props => <Instagram language={selectedLanguage} {...props} />} />
+          <Route parth='/listenedsongs' render={props => <ListenedSongs language={selectedLanguage} {...props} />} />
         </Switch> 
         
         <div className="social-media-follow-buttons">

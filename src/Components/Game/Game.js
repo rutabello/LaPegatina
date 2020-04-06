@@ -209,6 +209,7 @@ class Game extends React.Component {
               <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].correctAnswers} {this.state.correctAnswers} {texts[this.props.language].outofText} {this.state.total}</p>
               <br/>
               <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].pointsText} {this.state.score}</p>
+              <hr></hr>
             </div>
             
             <ListenedSongs unknownSongs={this.unknownSongs} language={this.props.language} url={this.state.songUrl} playStatus={this.state.playerState} onClick={this.state.playing} />
