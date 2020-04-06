@@ -68,10 +68,12 @@ render(){
     <div className='yt-all'>
     <div className='cover-title'><span className='instuctionsYT'>CLICK ON THE RIGHT ANSWEAR!</span>
     </div>
+
+
     <div className="yt-player">
       <YTPlayer det={this.state.fourNonShuffledSongsTitles} videoId= {this.state.randomVideoId}/> 
     
-
+      
     </div>
     </div>
   )

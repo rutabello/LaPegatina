@@ -14,6 +14,7 @@ class YTPlayer extends Component {
     isMuted: true,
     fourShuffledSongsTitles:[],
     fourNonShuffledSongsTitles:[],
+    showButtons: true
 
   }
 
@@ -41,7 +42,11 @@ class YTPlayer extends Component {
     //   }
     // })
   //  console.log(this.state.data)
-  }
+    }
+  //   this.sendButtonSelection = e => {
+  //     this.setState({buttonSelection: e.target.value});
+  //     console.log(e.target.value);
+  // };
 VideoOnPlay=(event)=>{
     // access to player in all event handlers via event.target
     // const player = event.target
@@ -71,7 +76,10 @@ console.log(fourShuffledSongsTitles)
 
 unmuteVideo =()=>{
   this.state.player.unMute()
- 
+  this.setState({
+    showButtons:false
+  })
+
 }
 
 
@@ -111,14 +119,16 @@ unmuteVideo =()=>{
       {/* the button that redirect on the yt page */}
       <button className='btn-see-video' onClick={()=> window.open(this.state.videoUrl, "_blank")}>
       <span className= 'text-btn-see-video'>See full video on Youtube</span></button>
-      {this.state.fourShuffledSongsTitles.map((songTitle) => {
+      {this.state.showButtons 
+      ? this.state.fourShuffledSongsTitles.map((songTitle) => {
                 return (
                   <Button  
                     unmute={this.unmuteVideo}
-                    key={songTitle}
+                    key={songTitle} 
                     displayedSong={songTitle}
                     currentSong={this.state.title}
-                  />)})}
+                  />)})
+      : <h1>Hello</h1> }
       </div>
     );
 
