@@ -3,7 +3,9 @@ import Shuffle from '../../Utils/Shuffle'
 import ButtonIgLocations from './ButtonIgLocations';
 import texts from '../../../texts.json';
 
-import './InstagramLocations.css';
+import '../../Instagram/Instagram.css';
+
+import Loading from '../../Utils/Loading/Loading';
 
 class InstagramLocationsGame extends Component {
 
@@ -60,6 +62,12 @@ class InstagramLocationsGame extends Component {
         })
 
         this.attempts = this.attempts+1
+
+        if(this.attempts === this.apiResultLength) {
+            this.setState ({
+                gameStatus: "gameOver"
+            })
+        }
     }
 
     addOneToCounter = () => {
@@ -101,7 +109,7 @@ class InstagramLocationsGame extends Component {
         if (this.state.gameStatus === "loading") {
             return (
                 <div className="loading">
-                    <p>Loading...</p>
+                    <Loading/>
                 </div>
             )
         }
@@ -131,9 +139,9 @@ class InstagramLocationsGame extends Component {
                     </div>
                 </div>
             )
-        } else {
+        } if (this.state.gameStatus==="gameOver") {
             return (
-                <h1>Has llegado al final! Ahora prueba de jugar con La Pegatina en Spotify o en Youtube</h1>
+                <h1>Has llegado al final! Ahora prueba jugar con La Pegatina en Spotify o en Youtube</h1>
             )
         }
     }

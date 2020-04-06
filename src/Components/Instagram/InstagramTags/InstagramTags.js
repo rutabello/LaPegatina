@@ -3,6 +3,7 @@ import Shuffle from '../../Utils/Shuffle'
 import ButtonIgTags from '../InstagramTags/ButtonIgTags';
 import texts from '../../../texts.json';
 
+import Loading from '../../Utils/Loading/Loading';
 
 class InstagramTagsGame extends Component {
 
@@ -64,6 +65,12 @@ class InstagramTagsGame extends Component {
         })
 
         this.attempts = this.attempts+1
+
+        if(this.attempts === this.apiResultLength) {
+            this.setState ({
+                gameStatus: "gameOver"
+            })
+        }
     }
 
     addOneToCounter = () => {
@@ -97,7 +104,7 @@ class InstagramTagsGame extends Component {
         if (this.state.gameStatus === "loading") {
             return (
                 <div className="loading">
-                    <p>Loading...</p>
+                    <Loading/>
                 </div>
             )
         }
@@ -132,9 +139,9 @@ class InstagramTagsGame extends Component {
                     </div>
                 </div>
             )
-        } else {
+        } if (this.state.gameStatus==="gameOver") {
             return (
-                <h1>Has llegado al final! Ahora prueba de jugar con La Pegatina en Spotify o en Youtube</h1>
+                <h1>Has llegado al final! Ahora prueba jugar con La Pegatina en Spotify o en Youtube</h1>
             )
         }
     }
