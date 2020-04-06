@@ -11,6 +11,7 @@
 .song-name {
     font-weight: 400;
     font-size: 16px;
+    font-family: sans-serif;
     text-align: center;
     display: inline;
     min-width: 50%;
@@ -107,6 +108,15 @@
         min-width: 35%;
     }
 
+    #counter {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    #mistakes {
+        margin-top: 14px;
+    }
+
     .mistake-list a {
         font-size: 14px;
     }
@@ -126,4 +136,6 @@
         padding: 4px 10px;
         margin-top: 4px;
     }
+
+
 }
