@@ -1,10 +1,13 @@
 import React from 'react';
-import './ButtonIgTags.css';
 
-const ButtonIG = (props) => {
+const ButtonIgTags = (props) => {
 
     function checkRightOrWrong (event) {
-        if (props.value === props.currentLocation) {
+        
+        console.log(props.value, props.currentTags)
+
+        if (props.value === props.currentTags) {
+            
             props.addToCounter();
         }
         
@@ -19,4 +22,4 @@ const ButtonIG = (props) => {
     )
 };
 
-export default ButtonIG;
+export default ButtonIgTags;

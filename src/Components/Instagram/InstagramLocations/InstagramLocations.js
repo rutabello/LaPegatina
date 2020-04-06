@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Shuffle from '../../Utils/Shuffle'
-import ButtonIG from './ButtonIgLocations';
+import ButtonIgLocations from './ButtonIgLocations';
 import texts from '../../../texts.json';
 
 import './InstagramLocations.css';
 
-class Instagram extends Component {
+class InstagramLocationsGame extends Component {
 
     state = {
         randomImageSrc: "",
@@ -105,16 +105,17 @@ class Instagram extends Component {
                                 <img src={randomImageSrc} alt="radom capture from the user's instagram feed" />
                             </div>
                         </div>
-                        
-                        {locationOptions.map((option, index) => {
-                            return (
-                                <div key={index} className="instagram-location-buttons">
-                                    <ButtonIG value={option} currentLocation={this.state.randomImageLocation} addToCounter={this.addOneToCounter} key={index} setRandomImageAndLocations={this.setRandomImageAndLocations}
-                                    >
-                                    </ButtonIG>
-                                </div>
-                            )
-                        })}
+                        <div className="instagram-location-buttons">
+                            {locationOptions.map((option, index) => {
+                                return (
+                                    <div key={index} className="instagram-option-button">
+                                        <ButtonIgLocations value={option} currentLocation={this.state.randomImageLocation} addToCounter={this.addOneToCounter} key={index} setRandomImageAndLocations={this.setRandomImageAndLocations}
+                                        >
+                                        </ButtonIgLocations>
+                                    </div>
+                                )
+                            })}
+                        </div>
                         <p>{texts[this.props.language].correctAnswers} {this.counter}</p>
                     </div>
                 </div>
@@ -128,5 +129,5 @@ class Instagram extends Component {
 
 }
 
-export default Instagram;
+export default InstagramLocationsGame;
 

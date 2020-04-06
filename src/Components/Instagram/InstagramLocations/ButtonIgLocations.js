@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ButtonIG = (props) => {
+const ButtonIgLocations = (props) => {
 
     function checkRightOrWrong (event) {
         if (props.value === props.currentLocation) {
@@ -18,4 +18,4 @@ const ButtonIG = (props) => {
     )
 };
 
-export default ButtonIG;
+export default ButtonIgLocations;

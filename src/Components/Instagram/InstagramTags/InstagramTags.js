@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import Shuffle from '../../Utils/Shuffle'
-import ButtonIG from '../InstagramTags/ButtonIgTags';
+import ButtonIgTags from '../InstagramTags/ButtonIgTags';
 import texts from '../../../texts.json';
 
-import './InstagramTags.css';
 
-class Instagram extends Component {
+class InstagramTagsGame extends Component {
 
     state = {
         randomImageSrc: "",
@@ -22,7 +21,9 @@ class Instagram extends Component {
 
    //Cleans the object retrieved from the api and leaves an array of objects that just have the image source for the picture and the image location
     cleanApiResponse = () => {
-        const images = this.state.data.filter(img => img.node.edge_media_to_tagged_user.edges !== null)
+        const images = this.state.data.filter(img => img.node.edge_media_to_tagged_user.edges.length !== 0)
+
+        console.log("images", images)
 
         const result = images.map((image) => ({
             src: image.node.thumbnail_resources[4].src,
@@ -67,12 +68,16 @@ class Instagram extends Component {
         this.counter = this.counter+1
     }
 
+    formatOptions = (arrayOfTaggedPeople) => {
+        return arrayOfTaggedPeople.map((person) => `@${person}`).join(', ')
+    }
+
     // profileId = '42596988';
     //cuore ID
 
     profileId='32402644';
     //Rut's ID
-    numberOfPosts = '10';
+    numberOfPosts = '275';
 
     componentDidMount() {
         fetch(`https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables={"id":"${this.profileId}","first":${this.numberOfPosts}}`)
@@ -98,15 +103,21 @@ class Instagram extends Component {
                             </div>
                         </div>
                         
-                        {tagsOptions.map((option, index) => {
-                            return (
-                                <div key={index} className="instagram-location-buttons">
-                                    <ButtonIG value={option} currentTags={this.state.randomImageTags} addToCounter={this.addOneToCounter} key={index} setRandomImageAndTags={this.setRandomImageAndTags}
-                                    >
-                                    </ButtonIG>
-                                </div>
-                            )
-                        })}
+                        <div className="instagram-location-buttons">
+                            {tagsOptions.map((option, index) => {
+                                return (
+                                    <div key={index} className="instagram-option-button">
+                                        <ButtonIgTags
+                                            value={this.formatOptions(option)}
+                                            currentTags={this.formatOptions(this.state.randomImageTags)}
+                                            addToCounter={this.addOneToCounter}
+                                            key={index}
+                                            setRandomImageAndTags={this.setRandomImageAndTags}
+                                        />
+                                    </div>
+                                )
+                            })}
+                        </div>
                         <p>{texts[this.props.language].correctAnswers} {this.counter}</p>
                     </div>
                 </div>
@@ -120,5 +131,5 @@ class Instagram extends Component {
 
 }
 
-export default Instagram;
+export default InstagramTagsGame;
 
