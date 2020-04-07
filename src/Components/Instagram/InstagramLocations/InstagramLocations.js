@@ -90,7 +90,7 @@ class InstagramLocationsGame extends Component {
     
     // profileId = '10934686';
     //LaPegatina ID
-    numberOfPosts = '200000';
+    numberOfPosts = '40';
 
     componentDidMount() {
         

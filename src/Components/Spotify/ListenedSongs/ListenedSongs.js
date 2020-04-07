@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 // import Sound from 'react-sound';
-import texts from '../../texts.json';
+import texts from '../../../texts.json';
 import './ListenedSongs.css';
 
 import {
