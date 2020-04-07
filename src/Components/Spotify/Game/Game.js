@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../App.css';
+import '../../../App.css';
 import './Game.css';
 import Button from '../Button/Button';
 import Shuffle from '../../Utils/Shuffle';
@@ -7,7 +7,7 @@ import Spotify from '../../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import Sound from 'react-sound';
-import texts from '../../texts.json';
+import texts from '../../../texts.json';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
 // import {Link} from 'react-router-dom';
 

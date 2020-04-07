@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 
-import Game from './Components/Game/Game';
+import Game from './Components/Spotify/Game/Game';
 import Home from './Components/Home/Home';
 import InstagramLocationsGame from './Components/Instagram/InstagramLocations/InstagramLocations';
 import InstagramTagsGame from './Components/Instagram/InstagramTags/InstagramTags'
@@ -10,7 +10,7 @@ import Team from './Components/Team/Team';
 import Navbar from './Components/Navbar/Navbar';
 
 import './App.css';
-import ListenedSongs from './Components/ListenedSongs/ListenedSongs';
+import ListenedSongs from './Components/Spotify/ListenedSongs/ListenedSongs';
 
 
 class App extends React.Component {
