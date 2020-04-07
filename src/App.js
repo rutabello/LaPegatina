@@ -25,6 +25,8 @@ class App extends React.Component {
     this.setState ({
       selectedLanguage: lang
     })
+
+    localStorage.setItem('selectedLanguage', lang)
   }
 
   render() {
@@ -33,12 +35,12 @@ class App extends React.Component {
 
     return (
       <div>
-        <Navbar onChangeLanguage={this.setLanguage} language={this.language} />
+        <Navbar onChangeLanguage={this.setLanguage} language={selectedLanguage} />
 
         <Switch>
-          <Route exact path='/' render={props => <Home language={this.language} {...props} />} />
-          <Route path='/game' render={props => <Game language={this.language} {...props} />} />   
-          <Route path='/team' render={props => <Team language={this.language} {...props} />} />
+          <Route exact path='/' render={props => <Home language={selectedLanguage} {...props} />} />
+          <Route path='/game' render={props => <Game language={selectedLanguage} {...props} />} />   
+          <Route path='/team' render={props => <Team language={selectedLanguage} {...props} />} />
           
           {/* <Route exact path='/' render={props => <Home language={selectedLanguage} {...props} />} />
           <Route path='/game' render={props => <Game language={selectedLanguage} {...props} />} />   
