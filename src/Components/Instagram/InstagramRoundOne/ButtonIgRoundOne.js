@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ButtonIgTags = (props) => {
+const ButtonIgRoundOne = (props) => {
 
     function checkRightOrWrong (event) {
         
@@ -22,4 +22,4 @@ const ButtonIgTags = (props) => {
     )
 };
 
-export default ButtonIgTags;
+export default ButtonIgRoundOne;

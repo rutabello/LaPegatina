@@ -13,8 +13,12 @@ const Home = (props) => (
       <p className="playWith">{texts[props.language].playwithTitle}</p>
       <img src={logo} alt="la pegatina logo" className="laPegatina" />
 
-      <Link className="btn-game" to="game">{texts[props.language].playWithButton}</Link>
-      <a className="btn-game" href="https://playwith.es">{texts[props.language].allmusicButton}</a>
+      <div className="home-play-buttons">
+        <Link className="btn-game" to="spotifyroundone">{texts[props.language].spotifyPlayWithButton}</Link>
+        <Link className="btn-game" to="youtuberoundone">{texts[props.language].youtubePlayWithButton}</Link>
+        <Link className="btn-game" to="instagramroundone">{texts[props.language].instagramPlayWithButton}</Link>
+        <a className="btn-game" href="https://playwith.es">{texts[props.language].allmusicButton}</a>
+      </div>
     </div>
   </div>
 )

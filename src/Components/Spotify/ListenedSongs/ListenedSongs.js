@@ -23,7 +23,7 @@ class ListenedSongs extends Component {
     render () {
         
         return (
-            this.props.unknownSongs ? 
+
             <div>
                 <h4 className="instruct">{texts[this.props.language].listenedSongs}</h4>
                 <ul id="mistakes" className="instruct">  
@@ -107,7 +107,6 @@ class ListenedSongs extends Component {
                     autoLoad={this.props.autoLoad}
                 /> */}
             </div>
-            : <p>No songs</p>
         )
     }
 };

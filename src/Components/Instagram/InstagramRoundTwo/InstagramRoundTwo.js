@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import Shuffle from '../../Utils/Shuffle'
-import ButtonIgLocations from './ButtonIgLocations';
+import ButtonIgRoundTwo from './ButtonIgLocations';
 import texts from '../../../texts.json';
+import GameEnded from '../../GameEnded/GameEnded';
 
 import '../../Instagram/Instagram.css';
 
 import Loading from '../../Utils/Loading/Loading';
 
-class InstagramLocationsGame extends Component {
+class InstagramRoundTwo extends Component {
 
     state = {
         randomImageSrc: "",
@@ -122,9 +123,9 @@ class InstagramLocationsGame extends Component {
                             {locationOptions.map((option, index) => {
                                 return (
                                     <div key={index} className="instagram-option-button">
-                                        <ButtonIgLocations value={option} currentLocation={this.state.randomImageLocation} addToCounter={this.addOneToCounter} key={index} setRandomImageAndLocations={this.setRandomImageAndLocations}
+                                        <ButtonIgRoundTwo value={option} currentLocation={this.state.randomImageLocation} addToCounter={this.addOneToCounter} key={index} setRandomImageAndLocations={this.setRandomImageAndLocations}
                                         >
-                                        </ButtonIgLocations>
+                                        </ButtonIgRoundTwo>
                                     </div>
                                 )
                             })}
@@ -135,12 +136,12 @@ class InstagramLocationsGame extends Component {
             )
         } if (this.state.gameStatus==="gameOver") {
             return (
-                <h1>Has llegado al final! Ahora prueba jugar con La Pegatina en Spotify o en Youtube</h1>
+                <GameEnded />
             )
         }
     }
 
 }
 
-export default InstagramLocationsGame;
+export default InstagramRoundTwo;
 

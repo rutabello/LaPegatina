@@ -1,16 +1,17 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
-
-import Game from './Components/Spotify/Game/Game';
+import { Switch, Route } from 'react-router-dom';
+import SpotifyRoundOne from './Components/Spotify/SpotifyRoundOne/SpotifyRoundOne';
 import Home from './Components/Home/Home';
-import InstagramLocationsGame from './Components/Instagram/InstagramLocations/InstagramLocations';
-import InstagramTagsGame from './Components/Instagram/InstagramTags/InstagramTags'
+import InstagramRoundTwo from './Components/Instagram/InstagramRoundTwo/InstagramRoundTwo';
+import InstagramRoundOne from './Components/Instagram/InstagramRoundOne/InstagramRoundOne'
 import SocialMedia from './Components/SocialMedia/SocialMedia';
 import Team from './Components/Team/Team';
 import Navbar from './Components/Navbar/Navbar';
-
-import './App.css';
+import YoutubeRoundOne from './Components/Youtube/YoutubeRoundOne/YoutubeRoundOne';
+import YoutubeRoundTwo from './Components/Youtube/YoutubeRoundTwo/YoutubeRoundTwo';
 import ListenedSongs from './Components/Spotify/ListenedSongs/ListenedSongs';
+import './App.css';
+
 
 
 class App extends React.Component {
@@ -20,7 +21,7 @@ class App extends React.Component {
   }
 
   setLanguage = (lang) => {
-    this.setState ({
+    this.setState({
       selectedLanguage: lang
     })
   }
@@ -35,15 +36,17 @@ class App extends React.Component {
 
         <Switch>
           <Route exact path='/' render={props => <Home language={selectedLanguage} {...props} />} />
-          <Route path='/game' render={props => <Game language={selectedLanguage} {...props} />} />   
+          <Route path='/spotifyroundone' render={props => <SpotifyRoundOne language={selectedLanguage} {...props} />} />
+          <Route path='/listenedsongs' render={props => <ListenedSongs language={selectedLanguage} {...props} />} />
           <Route path='/team' render={props => <Team language={selectedLanguage} {...props} />} />
-          <Route path='/instagramlocations' render={props => <InstagramLocationsGame language={selectedLanguage} {...props} />} />
-          <Route path='/instagramtags' render={props => <InstagramTagsGame language={selectedLanguage} {...props} />} />
-          <Route parth='/listenedsongs' render={props => <ListenedSongs language={selectedLanguage} {...props} />} />
-        </Switch> 
-        
+          <Route path='/instagramroundone' render={props => <InstagramRoundOne language={selectedLanguage} {...props} />} />
+          <Route path='/instagramroundtwo' render={props => <InstagramRoundTwo language={selectedLanguage} {...props} />} />
+          <Route path='/youtuberoundone' render={props => <YoutubeRoundOne language={selectedLanguage} {...props} />} />
+          <Route path='/youtuberoundtwo' render={props => <YoutubeRoundTwo language={selectedLanguage} {...props} />} />
+        </Switch>
+
         <div className="social-media-follow-buttons">
-          <SocialMedia language={selectedLanguage}/>
+          <SocialMedia language={selectedLanguage} />
         </div>
       </div>
     );

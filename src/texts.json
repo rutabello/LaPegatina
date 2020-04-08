@@ -2,7 +2,9 @@
     "catalan" : {
         "languageButton": "Tria un idioma",
         "playwithTitle": "Juga amb",
-        "playWithButton": "Juga amb La Pegatina",
+        "spotifyPlayWithButton": "Juga amb La Pegatina a Spotify",
+        "instagramPlayWithButton": "Juga amb La Pegatina a Instagram",
+        "youtubePlayWithButton": "Juga amb La Pegatina a YouTube",
         "allmusicButton": "Juga amb música de tot el món",
         "newSong": "+",
         "correctAnswers": "Respostes correctes: ",
@@ -31,7 +33,9 @@
     "spanish" : {
         "languageButton": "Escoge un idioma",
         "playwithTitle": "Juega con",
-        "playWithButton": "Juega con La Pegatina",
+        "spotifyPlayWithButton": "Juega con La Pegatina en Spotify",
+        "instagramPlayWithButton": "Juega con La Pegatina en Instagram",
+        "youtubePlayWithButton": "Juega con La Pegatina en YouTube",
         "allmusicButton": "Juega con música de todo el mundo",
         "newSong": "+",
         "correctAnswers": "Respuestas correctas: ",
@@ -58,7 +62,9 @@
     "english" : {
         "languageButton": "Choose a language",
         "playwithTitle": "Play with",
-        "playWithButton": "Play with La Pegatina",
+        "spotifyPlayWithButton": "Play ewith La Pegatina on Spotify",
+        "instagramPlayWithButton": "Play with La Pegatina on Instagram",
+        "youtubePlayWithButton": "JPlay with La Pegatina on YouTube",
         "allmusicButton": "Play with music from all around the world",
         "newSong": "+",
         "correctAnswers": "Correct answers: ",
@@ -85,7 +91,9 @@
     "french": {
         "languageButton": "Choisissez une langue",
         "playwithTitle": "Joue avec",
-        "playWithButton": "Jouer avec La Pegatina",
+        "spotifyPlayWithButton": "Jouer avec La Pegatina sur Spotify",
+        "instagramPlayWithButton": "Jouer avec La Pegatina sur Instagram",
+        "youtubePlayWithButton": "Jouer avec La Pegatina sur YouTube",
         "allmusicButton": "Jouer avec la musique du monde",
         "newSong": "+",
         "correctAnswers": "Réponses correctes: ",

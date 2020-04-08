@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../App.css';
-import './Game.css';
+import '../Spotify.css';
 import Button from '../Button/Button';
 import Shuffle from '../../Utils/Shuffle';
 import Spotify from '../../Utils/Spotify';
@@ -11,7 +11,7 @@ import texts from '../../../texts.json';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
 // import {Link} from 'react-router-dom';
 
-class Game extends React.Component {
+class SpotifyRoundTwo extends React.Component {
 
   // We have the object coming from the API call, here
   spotifyObject = {}; 
@@ -220,4 +220,4 @@ class Game extends React.Component {
   }
 }
 
-export default Game;
+export default SpotifyRoundTwo;

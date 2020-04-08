@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import Shuffle from '../../Utils/Shuffle'
-import ButtonIgTags from '../InstagramTags/ButtonIgTags';
+import ButtonIgRoundOne from './ButtonIgRoundOne';
 import texts from '../../../texts.json';
 import {Link} from 'react-router-dom';
 import Loading from '../../Utils/Loading/Loading';
+import Register from '../../Register/Register';
 
-class InstagramTagsGame extends Component {
+class InstagramRoundOne extends Component {
 
     state = {
         randomImageSrc: "",
@@ -124,7 +125,7 @@ class InstagramTagsGame extends Component {
                             {tagsOptions.map((option, index) => {
                                 return (
                                     <div key={index} className="instagram-option-button">
-                                        <ButtonIgTags
+                                        <ButtonIgRoundOne
                                             value={this.formatOptions(option)}
                                             currentTags={this.formatOptions(this.state.randomImageTags)}
                                             addToCounter={this.addOneToCounter}
@@ -142,8 +143,13 @@ class InstagramTagsGame extends Component {
         } if (this.state.gameStatus==="gameOver") {
             return (
                 <div>
-                    <h1>Has llegado al final! Ahora prueba jugar con La Pegatina en Spotify o en Youtube</h1>
-                    <Link to="instagramlocations">Juega una segunda ronda</Link>
+                    {/* {this.context.state.name ? */}
+                    <div>
+                        <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
+                        <Link to="instagramroundtwo">Juega una segunda ronda</Link>
+                    </div>
+                    {/* : <Register/>
+                    } */}
                 </div>
             )
         }
@@ -151,5 +157,5 @@ class InstagramTagsGame extends Component {
 
 }
 
-export default InstagramTagsGame;
+export default InstagramRoundOne;
 
