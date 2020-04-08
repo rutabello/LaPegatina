@@ -21,10 +21,7 @@ import {
 class ListenedSongs extends Component {
 
     render () {
-
-        // let myURI = 'spotify:album:27ftYHLeunzcSzb33Wk1hf';
-        // let myURL = myURI.replace(/:/g, "/").replace("spotify", "https:*//open.spotify.com");
-
+        
         return (
             this.props.unknownSongs ? 
             <div>

@@ -77,20 +77,14 @@ class InstagramLocationsGame extends Component {
 
     // 'https://codeofaninja.com/tools/find-instagram-user-id'
     
-    // profileId= '178522459';
-    // //bestvacations ID
 
-
-    // profileId = '42596988';
-    //cuore ID
-
-    profileId='32402644';
+    // profileId='32402644';
     //Rut's ID
 
     
-    // profileId = '10934686';
+    profileId = '10934686';
     //LaPegatina ID
-    numberOfPosts = '40';
+    numberOfPosts = '100';
 
     componentDidMount() {
         

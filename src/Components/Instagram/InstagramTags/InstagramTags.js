@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Shuffle from '../../Utils/Shuffle'
 import ButtonIgTags from '../InstagramTags/ButtonIgTags';
 import texts from '../../../texts.json';
-
+import {Link} from 'react-router-dom';
 import Loading from '../../Utils/Loading/Loading';
 
 class InstagramTagsGame extends Component {
@@ -141,7 +141,10 @@ class InstagramTagsGame extends Component {
             )
         } if (this.state.gameStatus==="gameOver") {
             return (
-                <h1>Has llegado al final! Ahora prueba jugar con La Pegatina en Spotify o en Youtube</h1>
+                <div>
+                    <h1>Has llegado al final! Ahora prueba jugar con La Pegatina en Spotify o en Youtube</h1>
+                    <Link to="instagramlocations">Juega una segunda ronda</Link>
+                </div>
             )
         }
     }
