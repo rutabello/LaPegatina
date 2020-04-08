@@ -5,7 +5,7 @@ const getPlayListItems = async playlistID => {
     const result = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems`, {
       params: {
         part: 'id,snippet',
-        maxResults: 10,
+        maxResults: 20,
         playlistId:'OLAK5uy_ld3vZ36EzClyLc6C4ZSFtdDN6PLDqQEUk',
         key: KEY
       }

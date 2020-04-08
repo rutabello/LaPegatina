@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import Button from '../Button/Button_YT';
 import Shuffle from '../../Utils/Shuffle';
-import '../YTPlayer/YTPlayer.css'
+import '../YTPlayer/YTPlayer.css';
+import QuizYT from '../QuizYT/QuizYT';
+import YTCountdown from '../YTCountdown/YTCountdown'
 
 // console.log(props.det) 
 class YTPlayer extends Component {
@@ -74,6 +76,7 @@ console.log(fourShuffledSongsTitles)
 }
 
 
+
 unmuteVideo =()=>{
   this.state.player.unMute()
   this.setState({
@@ -118,7 +121,7 @@ unmuteVideo =()=>{
       <p>Hello {this.state.title}</p>
       {/* the button that redirect on the yt page */}
       <button className='btn-see-video' onClick={()=> window.open(this.state.videoUrl, "_blank")}>
-      <span className= 'text-btn-see-video'>See full video on Youtube</span></button>
+       <span className= 'text-btn-see-video'>See full video on Youtube</span></button>
       {this.state.showButtons 
       ? this.state.fourShuffledSongsTitles.map((songTitle) => {
                 return (
@@ -128,7 +131,7 @@ unmuteVideo =()=>{
                     displayedSong={songTitle}
                     currentSong={this.state.title}
                   />)})
-      : <h1>Hello</h1> }
+      : <YTCountdown /> }
       </div>
     );
 
@@ -137,3 +140,4 @@ unmuteVideo =()=>{
 
 
 export default YTPlayer;
+// <QuizYT url={this.state.videoUrl}
