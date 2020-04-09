@@ -12,7 +12,7 @@ class YoutubeRoundTwo extends Component {
         return (
             <div>
                 <p>YouTube second round component will go here</p>
-                <GameEnded />
+                <GameEnded currentGame={"youtube"}/>
             </div>
         )
     }

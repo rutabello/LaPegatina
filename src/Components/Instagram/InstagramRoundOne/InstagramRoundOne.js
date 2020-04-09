@@ -140,21 +140,19 @@ class InstagramRoundOne extends Component {
                     </div>
                 </div>
             )
-        } if (this.state.gameStatus==="gameOver") {
+        } if (this.state.gameStatus==="gameOver" & this.state.name !== undefined) {
             return (
                 <div>
-                    {/* {this.context.state.name ? */}
-                    <div>
-                        <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
-                        <Link to="instagramroundtwo">Juega una segunda ronda</Link>
-                    </div>
-                    {/* : <Register/>
-                    } */}
+                    <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
+                    <Link to="instagramroundtwo">Juega una segunda ronda</Link>
                 </div>
+            )
+        } else {
+            return (
+                <Register currentGame={"instagram"}/>
             )
         }
     }
-
 }
 
 export default InstagramRoundOne;

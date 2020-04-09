@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 // import Sound from 'react-sound';
 import texts from '../../../texts.json';
 import './ListenedSongs.css';
+import {Link} from 'react-router-dom';
+import Register from '../../Register/Register'
 
 import {
     EmailShareButton,
@@ -106,6 +108,10 @@ class ListenedSongs extends Component {
                     playStatus={this.props.playerState}
                     autoLoad={this.props.autoLoad}
                 /> */}
+                {this.props.name !== undefined 
+                ? <Link to='spotifyRoundTwo'>Go to Spotify round two</Link>
+                : <Register currentGame={"spotify"}/>
+                }
             </div>
         )
     }

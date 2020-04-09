@@ -10,6 +10,7 @@ import Sound from 'react-sound';
 import texts from '../../../texts.json';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
 // import {Link} from 'react-router-dom';
+// import Register from '../../Register/Register'
 
 class SpotifyRoundOne extends React.Component {
 
@@ -216,7 +217,12 @@ class SpotifyRoundOne extends React.Component {
               
             </div>
           </div>  
-        : <ListenedSongs unknownSongs={this.unknownSongs} language={this.props.language} url={this.state.songUrl} playStatus={this.state.playerState} onClick={this.state.playing} score={this.state.score} />
+        : <ListenedSongs username={this.state.name} unknownSongs={this.unknownSongs} language={this.props.language} url={this.state.songUrl} playStatus={this.state.playerState} onClick={this.state.playing} score={this.state.score} />
+        }
+          {/* {this.state.name !== undefined ?
+              <Link to='spotifyRoundTwo'>Go to Spotify round two</Link>
+            : <Register />
+          } */}
         }
       </section>
     );

@@ -136,7 +136,7 @@ class InstagramRoundTwo extends Component {
             )
         } if (this.state.gameStatus==="gameOver") {
             return (
-                <GameEnded />
+                <GameEnded currentGame={"instagram"}/>
             )
         }
     }
