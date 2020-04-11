@@ -10,6 +10,8 @@ import spanish from '../../Pictures/bandera_spanish_small.png';
 import english from '../../Pictures/bandera_english_small.png';
 import french from '../../Pictures/bandera_french_small.png';
 
+import userbtn from '../../Pictures/user45.png'
+
 const languagesAvailable = [
   {language: 'catalan', flag: catalan},
   {language: 'spanish', flag: spanish},
@@ -63,6 +65,11 @@ class Navbar extends React.Component {
               />)
             )}
           </div>
+        </div>
+        <div>
+          <Link className="user-profile" to="/">
+            <img src={userbtn} alt='user-profile' />
+          </Link> 
         </div>
       </nav> 
     )
