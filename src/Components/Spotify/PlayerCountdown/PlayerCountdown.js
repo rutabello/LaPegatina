@@ -4,7 +4,7 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import './PlayerCountdown.css';
 import texts from '../../../texts.json';
 
-const SONG_TIMER_DURATION = 1;
+const SONG_TIMER_DURATION = 3;
 
 class PlayerCountdown extends Component {
 
@@ -32,7 +32,6 @@ class PlayerCountdown extends Component {
       //This makes the countdown start counting when the new state is set (on play clicked) instead of when 
        //the page is loaded
       uniqueKey: Date.now(), 
-     
       playStatus: Sound.status.PLAYING,
       isPlaying: true,
       //This makes the 'play' button disappear once you click on it
@@ -83,7 +82,7 @@ class PlayerCountdown extends Component {
           autoLoad
         />
 
-        <div className={this.countdownIsDisplayed? "show" : "hide"}>
+        <div className={this.countdownIsDisplayed ? "show" : "hide"}>
           <CountdownCircleTimer
             key={this.state.uniqueKey}
             isPlaying={this.state.isPlaying}
