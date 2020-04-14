@@ -1,0 +1,33 @@
+.user-profile-c{
+     width: 500px;
+    margin: 0 auto;
+    text-align: left; 
+    justify-content: center;
+    
+}
+.FormUser {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .FormUser h1 {
+    text-align: center;
+  }
+  
+  .FormUser .form-data {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+  }
+  
+  .FormUser .form-data label {
+    display: inline-block;
+    width: 75px;
+    margin-right: 10px;
+    text-align: right;
+  }
+  
+  .FormUser .form-data input:not([type="submit"]) {
+    flex-grow: 1;
+  }

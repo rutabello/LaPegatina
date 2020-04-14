@@ -67,7 +67,7 @@ class Navbar extends React.Component {
           </div>
         </div>
         <div>
-          <Link className="user-profile" to="/">
+          <Link className="user-profile" to="/user">
             <img src={userbtn} alt='user-profile' />
           </Link> 
         </div>

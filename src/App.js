@@ -10,6 +10,8 @@ import Navbar from './Components/Navbar/Navbar';
 import YoutubeRoundOne from './Components/Youtube/YoutubeRoundOne/YoutubeRoundOne';
 import YoutubeRoundTwo from './Components/Youtube/YoutubeRoundTwo/YoutubeRoundTwo';
 import ListenedSongs from './Components/Spotify/ListenedSongs/ListenedSongs';
+import User from './Components/Register/User/User';
+import MyProvider from './context/MyProvider'
 import './App.css';
 
 
@@ -31,6 +33,7 @@ class App extends React.Component {
     const { selectedLanguage } = this.state;
 
     return (
+      <MyProvider>
       <div>
         <Navbar onChangeLanguage={this.setLanguage} />
 
@@ -43,12 +46,14 @@ class App extends React.Component {
           <Route path='/instagramroundtwo' render={props => <InstagramRoundTwo language={selectedLanguage} {...props} />} />
           <Route path='/youtuberoundone' render={props => <YoutubeRoundOne language={selectedLanguage} {...props} />} />
           <Route path='/youtuberoundtwo' render={props => <YoutubeRoundTwo language={selectedLanguage} {...props} />} />
+          <Route path='/user' render={props => <User language={selectedLanguage} {...props} />} />
         </Switch>
 
         <div className="social-media-follow-buttons">
           <SocialMedia language={selectedLanguage} />
         </div>
       </div>
+      </MyProvider>
     );
   }
 }

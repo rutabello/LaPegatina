@@ -9,6 +9,7 @@ const Home = (props) => (
   <div className="container">
     <div className="main">
       <h3 className="hideGame"><Link to="/">Home</Link></h3>
+      
 
       <p className="playWith">{texts[props.language].playwithTitle}</p>
       <img src={logo} alt="la pegatina logo" className="laPegatina" />

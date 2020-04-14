@@ -110,7 +110,7 @@ class ListenedSongs extends Component {
                 /> */}
                 {this.props.name !== undefined 
                 ? <Link to='spotifyRoundTwo'>Go to Spotify round two</Link>
-                : <Register currentGame={"spotify"}/>
+                : <Register currentGame={"spotify"} score={this.props.score}/>
                 }
             </div>
         )
