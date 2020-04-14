@@ -6,14 +6,20 @@ import {Link} from 'react-router-dom';
 import Loading from '../../Utils/Loading/Loading';
 import Register from '../../Register/Register';
 
+import '../../Instagram/Instagram.css';
+
 class InstagramRoundOne extends Component {
+
+    NUMBER_OF_ATTEMPTS = 6
+    oficial_number_of_attempts = this.NUMBER_OF_ATTEMPTS-1
 
     state = {
         randomImageSrc: "",
         randomImageTags: "",
         tagsOptions: [],
         data: [],
-        gameStatus: "loading"
+        gameStatus: "loading",
+        userClicked: false,
     }
 
     attempts= 0;
@@ -26,19 +32,14 @@ class InstagramRoundOne extends Component {
     cleanApiResponse = () => {
         const images = this.state.data.filter(img => img.node.edge_media_to_tagged_user.edges.length !== 0)
 
-        console.log("images", images)
-
         const result = images.map((image) => ({
             src: image.node.thumbnail_resources[4].src,
             tags: image.node.edge_media_to_tagged_user.edges.map((edge) => edge.node.user.username)
         }))
 
         this.apiCleanedResult = result;
-        console.log("api clean result", this.apiCleanedResult)
 
         this.apiResultLength = result.length
-
-        console.log('llargaria', images)
     }
 
     //Takes off the first element of the array resulting in cleanApiResponse (called result) and takes the next 3 elements
@@ -47,8 +48,6 @@ class InstagramRoundOne extends Component {
         Shuffle(this.apiCleanedResult)
 
         const firstElement = this.apiCleanedResult.shift();
-
-        console.log("firstElement", firstElement)
 
         const imagesObjArr = this.apiCleanedResult.slice(0, 3);
 
@@ -62,12 +61,14 @@ class InstagramRoundOne extends Component {
             randomImageSrc: firstElement.src,
             randomImageTags: firstElement.tags.map((tag) => tag),
             tagsOptions: threeRandomPlusCorrectTagsArr,
-            gameStatus: 'playing'
+            gameStatus: 'playing',
+            userClicked: false,
         })
 
         this.attempts = this.attempts+1
 
-        if(this.attempts === this.apiResultLength) {
+        // if(this.attempts === this.apiResultLength) {
+        if(this.attempts === this.NUMBER_OF_ATTEMPTS) {
             this.setState ({
                 gameStatus: "gameOver"
             })
@@ -76,6 +77,12 @@ class InstagramRoundOne extends Component {
 
     addOneToCounter = () => {
         this.counter = this.counter+1
+    }
+
+    userHasClicked = () => {
+        this.setState({
+            userClicked: true
+        })
     }
 
     formatOptions = (arrayOfTaggedPeople) => {
@@ -100,7 +107,7 @@ class InstagramRoundOne extends Component {
 
     render () {
 
-        const { randomImageSrc, tagsOptions } = this.state;
+        const { randomImageSrc, tagsOptions, userClicked } = this.state;
         
         if (this.state.gameStatus === "loading") {
             return (
@@ -131,12 +138,14 @@ class InstagramRoundOne extends Component {
                                             addToCounter={this.addOneToCounter}
                                             key={index}
                                             setRandomImageAndTags={this.setRandomImageAndTags}
+                                            userClicked={userClicked}
+                                            userHasClicked={this.userHasClicked}
                                         />
                                     </div>
                                 )
                             })}
                         </div>
-                        <p>{texts[this.props.language].correctAnswers} {this.counter}</p>
+                        <p>{texts[this.props.language].correctAnswers} {this.counter} / {this.oficial_number_of_attempts}</p>
                     </div>
                 </div>
             )

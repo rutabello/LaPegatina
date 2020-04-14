@@ -1,21 +1,25 @@
 import React, {Component} from 'react';
 import Shuffle from '../../Utils/Shuffle'
-import ButtonIgRoundTwo from './ButtonIgLocations';
+import ButtonIgRoundTwo from './ButtonIgRoundTwo';
 import texts from '../../../texts.json';
+import Loading from '../../Utils/Loading/Loading';
 import GameEnded from '../../GameEnded/GameEnded';
 
 import '../../Instagram/Instagram.css';
 
-import Loading from '../../Utils/Loading/Loading';
 
 class InstagramRoundTwo extends Component {
+
+    NUMBER_OF_ATTEMPTS = 6
+    oficial_number_of_attempts = this.NUMBER_OF_ATTEMPTS-1
 
     state = {
         randomImageSrc: "",
         randomImageLocation: "",
         locationOptions: [],
         data: [],
-        gameStatus: "loading"
+        gameStatus: "loading", 
+        userClicked: false,
     }
 
     attempts= 0;
@@ -36,8 +40,6 @@ class InstagramRoundTwo extends Component {
         this.apiCleanedResult = result;
 
         this.apiResultLength = result.length
-
-        console.log("array a state amb el que torna api call", images)
     }
 
     //Takes off the first element of the array resulting in cleanApiResponse (called result) and takes the next 3 elements
@@ -59,12 +61,14 @@ class InstagramRoundTwo extends Component {
             randomImageSrc: firstElement.src,
             randomImageLocation: firstElement.location,
             locationOptions: threeRandomPlusCorrectLocationArr,
-            gameStatus: 'playing'
+            gameStatus: 'playing', 
+            userClicked: false,
         })
 
         this.attempts = this.attempts+1
 
-        if(this.attempts === this.apiResultLength) {
+        // if(this.attempts === this.apiResultLength) {
+        if(this.attempts === this.NUMBER_OF_ATTEMPTS) {
             this.setState ({
                 gameStatus: "gameOver"
             })
@@ -73,6 +77,12 @@ class InstagramRoundTwo extends Component {
 
     addOneToCounter = () => {
         this.counter = this.counter+1
+    }
+
+    userHasClicked = () => {
+        this.setState({
+            userClicked: true
+        })
     }
 
 
@@ -99,7 +109,7 @@ class InstagramRoundTwo extends Component {
 
     render () {
 
-        const { randomImageSrc, locationOptions } = this.state;
+        const { randomImageSrc, locationOptions, userClicked } = this.state;
 
         if (this.state.gameStatus === "loading") {
             return (
@@ -123,14 +133,20 @@ class InstagramRoundTwo extends Component {
                             {locationOptions.map((option, index) => {
                                 return (
                                     <div key={index} className="instagram-option-button">
-                                        <ButtonIgRoundTwo value={option} currentLocation={this.state.randomImageLocation} addToCounter={this.addOneToCounter} key={index} setRandomImageAndLocations={this.setRandomImageAndLocations}
-                                        >
-                                        </ButtonIgRoundTwo>
+                                        <ButtonIgRoundTwo 
+                                            value={option} 
+                                            currentLocation={this.state.randomImageLocation} 
+                                            addToCounter={this.addOneToCounter} 
+                                            key={index} 
+                                            setRandomImageAndLocations={this.setRandomImageAndLocations}
+                                            userClicked={userClicked}
+                                            userHasClicked={this.userHasClicked}
+                                        />
                                     </div>
                                 )
                             })}
                         </div>
-                        <p>{texts[this.props.language].correctAnswers} {this.counter}</p>
+                        <p>{texts[this.props.language].correctAnswers} {this.counter} / {this.oficial_number_of_attempts}</p>
                     </div>
                 </div>
             )
