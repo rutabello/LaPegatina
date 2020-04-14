@@ -89,11 +89,11 @@ class InstagramRoundOne extends Component {
         return arrayOfTaggedPeople.map((person) => `@${person}`).join(', ')
     }
 
-    // profileId = '42596988';
-    //cuore ID
-
-    profileId='32402644';
+    // profileId='32402644';
     //Rut's ID
+
+    profileId = '10934686';
+    //LaPegatina ID
     numberOfPosts = '275';
 
     componentDidMount() {
