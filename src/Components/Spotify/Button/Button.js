@@ -1,35 +1,41 @@
-import React, {useState} from 'react';
-import './Button.css'
+import React, { useState } from 'react';
+import './Button.css';
 
-const Button = (props) => {
+const Button = ({ printedSong, currentSong, onClick }) => {
 
-    const [hasBeenClicked, makeButtonClicked] = useState(false)
+    const [hasBeenClicked, makeButtonClicked] = useState(false);
 
-    const isCorrect = props.printedSong === props.currentSong;
+    const isCorrect = printedSong === currentSong;
 
     const onClickHandler = () => {
-        makeButtonClicked(true)
+        makeButtonClicked(true);
 
-        props.onClick()
+        onClick();
+    };
+
+    let colorClass = 'colorClass';
+
+    if (isCorrect === true) {
+        colorClass = 'green';
     }
 
-    var colorClass = 'colorClass'
-    
-    if (isCorrect === true) {
-        colorClass = "green"
-    } else if (isCorrect === false && hasBeenClicked === true) {
-        colorClass = "red"
-    } else if (isCorrect === false && hasBeenClicked === false){ 
-        colorClass = "gray"
+    if (isCorrect === false && hasBeenClicked === true) {
+        colorClass = 'red';
+    }
+
+    if (isCorrect === false && hasBeenClicked === false) {
+        colorClass = 'gray';
     }
 
     return (
-        <button 
-            onClick={onClickHandler} 
-            className={"myButton button " + colorClass}>
-                {props.printedSong}
+        <button
+            type="button"
+            onClick={onClickHandler}
+            className={`myButton button ${colorClass}`}
+        >
+            {printedSong}
         </button>
-    )
+    );
 };
 
 
