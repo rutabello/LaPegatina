@@ -1,29 +1,17 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import '../../App.css';
-import './Game.css';
+import '../../../App.css';
+import '../Spotify.css';
 import Button from '../Button/Button';
-import Shuffle from '../Utils/Shuffle';
-import Spotify from '../Utils/Spotify';
+import Shuffle from '../../Utils/Shuffle';
+import Spotify from '../../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
+import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import Sound from 'react-sound';
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-} from "react-share";
+import texts from '../../../texts.json';
+import ListenedSongs from '../ListenedSongs/ListenedSongs';
+// import {Link} from 'react-router-dom';
 
-import {
-  EmailIcon,
-  FacebookIcon,
-  TwitterIcon,
-  WhatsappIcon,
-} from "react-share";
-
-import arrow from '../../Pictures/arrow_left.svg'
-
-class Game extends React.Component {
+class SpotifyRoundTwo extends React.Component {
 
   // We have the object coming from the API call, here
   spotifyObject = {}; 
@@ -36,16 +24,13 @@ class Game extends React.Component {
   //All the songs that the user guessed wrong are pushed into this array
   unknownSongs= []; 
 
-  shareurl="https://dreamy-bhabha-0a01ef.netlify.com";
-
-  socialIconSize=33;
-
   state = {
  
     songNames:[],
     currentSong: {
         preview_url: "",
         name: "",
+        uri: "",
     },  
 
     hideResults: true,
@@ -112,7 +97,8 @@ class Game extends React.Component {
     this.setState({
       currentSong: {
         preview_url: randomSong.preview_url,
-        name: randomSong.name
+        name: randomSong.name,
+        uri: randomSong.uri
       },
       songNames: this.getSongsToDisplay(randomSong.name),
       hideResults: true,
@@ -128,9 +114,7 @@ class Game extends React.Component {
   checkCoincidence = () => {  
     this.coincidence = this.state.currentSong.name === this.chosenSong
 
-    if (this.coincidence !== true) { 
-      this.unknownSongs.push(this.state.currentSong.name)
-    }
+    this.unknownSongs.push(this.state.currentSong)
 
     this.setState({
       hideResults: false,
@@ -188,35 +172,18 @@ class Game extends React.Component {
     })
   }
   
-  //since we're probably only play with one playlist we might not need the following method
-  //BUT: it could be useful for the next stages (playing with different levels/prices)
-            
-  /* componentDidUpdate  = async  (prevProps, prevState) => {
-    if (prevState.clave !== this.state.clave) {
-        
-      this.spotifyObject = await Spotify.getPlaylist(this.state.playlistID)
-      this.filterRightSongsFromSpotifyObject();
-    }
-  } 
-
-  show = (event) => {
-
-    let newList = event.target.className; 
-
-    this.setState({
- 
-      clave: newList,
-
-    })
-  }*/
 
   render() {
     return (
       <section>
+        
+        <ShareTheGame score={this.state.score} />
+        
         <div className="show"> 
           <div className="QuestionAndAnswers">
             <div className="Countdown">
               <PlayerCountdown
+                language={this.props.language}
                 onMusicPlays={this.chooseSongs}
                 setNewRandomSong={this.setNewRandomSong}
                 songURL={this.state.currentSong.preview_url} 
@@ -239,74 +206,13 @@ class Game extends React.Component {
               })}
             </div>
             <div id="counter" className="instruct">
-              <p className={this.answerCountShow ? "show" : "hide"}>Respuestas correctas: {this.state.correctAnswers}  de {this.state.total}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].correctAnswers} {this.state.correctAnswers} {texts[this.props.language].outofText} {this.state.total}</p>
               <br/>
-              <p className={this.answerCountShow ? "show" : "hide"}>Puntos: {this.state.score}</p>
+              <p className={this.answerCountShow ? "show" : "hide"}>{texts[this.props.language].pointsText} {this.state.score}</p>
+              <hr></hr>
             </div>
             
-            <div className={this.unknownSongs.length > 0 ? "show" : "hide"}>
-                <h4 className="instruct">Aprende de tus errores:</h4>
-                <ul id="mistakes" className="instruct">  
-                  {this.unknownSongs.map((song) => {
-                    return (
-                        <li key={song} className="mistake-list">
-                          <div className="song-name">
-                            {song} 
-                          </div>
-                          <button className="repeat-button" onClick={this.state.playing ? () => this.stopMusic() : () => this.getSongUrl(song)}>
-                            {this.state.playing ? "Pausa" : "Vuelve a escucharla"} 
-                          {/* We write it with an arrow function instead of a 'normal' function so we can avoid an infinite loop 
-                          when setting the state */}  
-                          </button> 
-                        </li>
-                    )
-                  })}
-                </ul>
-                <Sound 
-                  url={this.state.songUrl}
-                  playStatus={this.state.playerState}
-                  autoLoad
-                />
-            </div>
-          </div>
-        </div>
-        <h3><Link className="link" to="/">Volver al inicio</Link></h3> 
-        <div id="media-share-buttons">
-          <div className="arrow">
-            <img src={arrow} alt=""/>
-          </div>
-          <div className="share-buttons">
-            <EmailShareButton 
-            url={this.shareurl} 
-            title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
-            className="Demo_some-network__share-button"
-            >
-              <EmailIcon size={50} round />
-            </EmailShareButton>
-
-            <FacebookShareButton 
-              url={this.shareurl} 
-              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
-              className="Demo_some-network__share-button"
-            >
-              <FacebookIcon size={50} round />
-            </FacebookShareButton>
-
-            <TwitterShareButton
-              url={this.shareurl}
-              title={`He jugado con las canciones de @LaPegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
-              className="Demo_some-network__share-button"
-            >
-              <TwitterIcon size={50} round />
-            </TwitterShareButton>
-
-            <WhatsappShareButton 
-              url={this.shareurl} 
-              title={`He jugado con las canciones de La Pegatina y he hecho ${this.state.score} puntos. ¿Me superas?`}
-              className="Demo_some-network__share-button"
-            >
-              <WhatsappIcon size={50} round />
-            </WhatsappShareButton>
+            <ListenedSongs unknownSongs={this.unknownSongs} language={this.props.language} url={this.state.songUrl} playStatus={this.state.playerState} onClick={this.state.playing} />
           </div>
         </div>  
       </section>
@@ -314,4 +220,4 @@ class Game extends React.Component {
   }
 }
 
-export default Game;
+export default SpotifyRoundTwo;

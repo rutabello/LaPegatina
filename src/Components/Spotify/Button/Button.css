@@ -7,7 +7,7 @@
 }
 
 .FourButtons {
-    text-transform: uppercase;
+    text-transform: capitalize; 
     letter-spacing: 1px;
     display: flex;
     flex-direction: column;
@@ -16,69 +16,70 @@
 }
 
 .button {
+    flex: 25%;
     cursor: pointer;
     width: 100%;
     display: block !important;
     height: auto;
-    margin: 20px auto;
-    padding: 15px 30px;
+    margin: 10px auto;
     transition: 0.2s;
     font-size: 20px;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     min-height: 4em;
+    opacity: .7;
+    font-weight: 600;
+    font-family: sans-serif;
 }
 
 button {
     background-color: transparent;
 }
 
-@media (max-width:450px) {
-     .button.myButton.button{
-        margin: 0.4em auto;
-    }
-}
-
-.button {
-    flex: 25%;
-}
-
 .red {
-    background: transparent;
-    border:1.5px solid  #FF003C;
-    color: #FF003C;
+    background: #ff0045;
+    border:1.5px solid  #ff0045;
+    color: white;
     border-radius: 7px;
 }
 
 .green, .myButton.green:focus {
-    background:transparent;
-    border:4px solid #31AD26;
-    color: #31AD26;
+    background:#00806f;
+    border:4px solid #00806f;
+    color: white;
     border-radius: 7px;
-    box-shadow: 0px 0px 5px #31AD26, 0px 0px 25px #31AD26, 0px 0px 50px #31AD26, 0px 0px 100px #31AD26;
+}
+
+.gray {
+    background:gray;
+    border:4px solid black;
+    color: white;
+    border-radius: 7px;
 }
 
 .myButton:hover {
     /* color: black!important; */
     background: transparent;
-    box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C;
+    /* box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C; */
     /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);  */
 }
 
 .myButton:active {
     position:relative;
     top:1px;
-    background: transparent;
+    background-color: orange;
     /* box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C; */
     /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);  */
 }
 
 .myButton:focus {
+    outline: solid;
     outline-color: white;
-    box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C;
+    /* box-shadow: 0px 0px 5px orange, 0px 0px 25px orange, 0px 0px 50px orange, 0px 0px 100px orange; */
+
 }
 
-@media all and (max-width:30em) {
+@media all and (max-width:450px) {
     .myButton {
         display:flex;
         margin:0.4em auto;
@@ -88,5 +89,14 @@ button {
     .FourButtons {
         width: 75%;
         margin: 0 auto;
+    }
+
+    .button {
+        font-weight: 600;
+        font-size: 17px;
+    }
+
+     .button.myButton.button{
+        margin: 0.4em auto;
     }
 }

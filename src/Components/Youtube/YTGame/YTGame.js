@@ -66,7 +66,7 @@ const fourNonShuffledSongsTitles = suffledArraySongTitles.slice(0, 3); // actual
 render(){
   return (
     <div className='yt-all'>
-    <div className='cover-title'><span className='instuctionsYT'>CLICK ON THE RIGHT ANSWEAR!</span>
+    <div className='cover-title'><span className='instuctionsYT'></span>
     </div>
 
 

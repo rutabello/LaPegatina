@@ -1,0 +1,141 @@
+#mistakes {
+    max-width: 80%;
+    width: 100%;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-bottom: 50px;
+}
+  
+.song-name {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-align: center;
+    display: inline;
+    min-width: 50%;
+    color: #766dca;
+}
+  
+.mistake-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    color: #fff;
+    transition: all .3s ease-in-out;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    color: #766dca;
+}
+
+.mistake-list a {
+    text-decoration: none;
+    color: #766dca;
+}
+
+.instruct  {
+    text-align: center;
+}
+
+.instruct p {
+    color: #766dca;
+    font-size: 18px;
+}
+ 
+#counter {
+    font-size: 30px;
+    margin-top: 1vh;
+}
+
+.show h4 {
+    margin-top: 30px;
+    font-size: 19px;
+    margin-bottom: 0px;
+    color: #766dca;
+}
+
+/* .repeat-button {
+    margin-left: 20px;
+    font-size: 14px;
+    max-width: 140px;
+    min-width: 140px;
+    color: #766dca;
+    border-color: #766dca;
+} */
+
+/* MODAL CSS */
+
+.btn-primary {
+    background-color: #766dca;
+    border-color: #766dca;
+    min-width: 30%;
+    margin-top: 6px;
+}
+
+.btn-primary:hover {
+    background-color: rgb(49, 44, 113);
+    border-color: rgb(49, 44, 113);
+}
+
+.btn-primary:focus {
+    background-color: rgb(49, 44, 113);
+    border-color: rgb(49, 44, 113);
+    box-shadow: 0 0 0 0.2rem rgb(49, 44, 113);
+}
+
+.btn-primary:active {
+    background-color: rgb(49, 44, 113);
+    border-color: rgb(49, 44, 113);
+    box-shadow: 0 0 0 0.2rem rgb(49, 44, 113);
+}
+
+.modal-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+@media only screen and (max-width: 750px) {
+
+    .song-name {
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        display: inline;
+        min-width: 35%;
+    }
+
+    #counter {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    #mistakes {
+        margin-top: 14px;
+    }
+
+    .mistake-list a {
+        font-size: 14px;
+    }
+
+    .instruct p {
+        font-size: 14px;
+    }
+
+    .show h4 {
+        font-size: 14px;
+        margin-top: 20px;
+        /* margin-bottom:20px; */
+        color: #766dca;
+    }
+
+    .btn-primary {
+        padding: 4px 10px;
+        margin-top: 4px;
+    }
+
+
+}

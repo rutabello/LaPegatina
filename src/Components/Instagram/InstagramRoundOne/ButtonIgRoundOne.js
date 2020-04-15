@@ -1,14 +1,17 @@
 import React from 'react';
-import './Button_Ig.css';
 
-const ButtonIG = (props) => {
+const ButtonIgRoundOne = (props) => {
 
     function checkRightOrWrong (event) {
-        if (props.value === props.currentLocation) {
+        
+        console.log(props.value, props.currentTags)
+
+        if (props.value === props.currentTags) {
+            
             props.addToCounter();
         }
         
-        props.setRandomImageAndLocations();
+        props.setRandomImageAndTags();
         
     }
 
@@ -19,4 +22,4 @@ const ButtonIG = (props) => {
     )
 };
 
-export default ButtonIG;
+export default ButtonIgRoundOne;

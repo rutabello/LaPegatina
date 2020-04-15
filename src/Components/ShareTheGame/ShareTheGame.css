@@ -1,0 +1,64 @@
+/* SOCIAL MEDIA BUTTONS */
+
+#media-share-buttons {
+    height: auto;
+    width: auto;
+    position: fixed;
+    top: 0px;
+    right: -45px;
+    display: flex;
+    transition: all .35s linear;
+}
+
+#media-share-buttons:hover {
+    right: 0px;
+}
+
+/* #media-share-buttons:hover .QuestionAndAnwers{
+    right: 45px;
+} */
+
+#media-share-buttons:hover .arrow img {
+    transform: rotate(180deg);
+}
+
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.share-buttons button:focus {
+    outline: none;
+}
+
+.arrow img {
+    width: 50px;
+    height: 50px;
+}
+
+
+.Demo_some-network__share-button {
+    margin: 0 0 4px 0;
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 750px) {
+
+    .arrow img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .share-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .Demo_some-network__share-button {
+        margin: 2px 0 2px 0;
+    }
+}

@@ -1,0 +1,105 @@
+nav {
+    background-color: rgb(49, 44, 113);
+}
+  
+#topnavbar {
+    display: flex;
+    height: 6vh;
+    align-items: center;
+}
+  
+.backToStart img {
+    margin-left: 15px;
+    width: 33px;
+}
+  
+/* Language Dropdown */
+/* Dropdown Button */
+.dropbtn {
+    width: 100%;
+    color: #766dca;
+    margin-right: 16px;
+    font-size: 16px;
+    border: none;
+    font-family: sans-serif;
+    font-weight: 600;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+}
+
+.dropbtn img {
+    display: inline-block;
+    width: 13px;
+    margin: 5px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.language-dropdown {
+    position: relative;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    width: 100%;
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    /* justify-content: center; */
+    padding-top: 6px;
+    padding-left: 16px;
+}
+
+.dropdown-content img {
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+/* Show the dropdown menu on hover */
+.language-dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+    display: flex;
+}
+
+
+/* Link to home */
+.link {
+    color: white;
+    width: 150px;
+    text-decoration: none;
+    border: 1px solid white;
+    display: flex; 
+    text-align: center;
+    padding-left: 20px;
+    position: fixed;
+    top: 0;
+    opacity: .7;
+}
+
+@media only screen and (max-width: 750px) {
+    .link {
+        width: 70px;
+        padding-left: 5px;
+        font-size: 14px;
+    }
+
+    .backToStart img {
+        width: 27px;
+        margin-left: 8px;
+    }
+
+    .dropbtn {
+        font-size: 12px;
+        margin-right: 10px;
+    }
+
+    .dropbtn img {
+        width: 10px;
+        margin: 5px;
+    }
+}

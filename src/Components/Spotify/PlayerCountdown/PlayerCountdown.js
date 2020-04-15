@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Sound from 'react-sound';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import './PlayerCountdown.css';
+import texts from '../../../texts.json';
 
-const SONG_TIMER_DURATION = 10;
+const SONG_TIMER_DURATION = 3;
 
 class PlayerCountdown extends Component {
 
@@ -31,7 +32,6 @@ class PlayerCountdown extends Component {
       //This makes the countdown start counting when the new state is set (on play clicked) instead of when 
        //the page is loaded
       uniqueKey: Date.now(), 
-     
       playStatus: Sound.status.PLAYING,
       isPlaying: true,
       //This makes the 'play' button disappear once you click on it
@@ -51,13 +51,13 @@ class PlayerCountdown extends Component {
 
   renderTime = value => {
     if (value === 0) {
-      return <button className="next-button" onClick={this.playMusicStartTimer}>Otra!</button>;
+      return <button className="next-button" onClick={this.playMusicStartTimer}>{texts[this.props.language].newSong}</button>;
     }
 
     return (
       <div className="timer">
         <div className="value">{value}</div>
-        <div className="text">segundos</div>
+        {/* <div className="text">{texts[this.props.language].secondsText}</div> */}
       </div>
     );
   }
@@ -82,14 +82,14 @@ class PlayerCountdown extends Component {
           autoLoad
         />
 
-        <div className={this.countdownIsDisplayed? "show" : "hide"}>
+        <div className={this.countdownIsDisplayed ? "show" : "hide"}>
           <CountdownCircleTimer
             key={this.state.uniqueKey}
             isPlaying={this.state.isPlaying}
             durationSeconds={SONG_TIMER_DURATION}
             colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
             renderTime={this.renderTime}
-            size={120}
+            size={90}
           />
         </div>
       </div>
