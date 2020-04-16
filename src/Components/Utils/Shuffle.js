@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-plusplus */
 function Shuffle(a) {
     let j;
     let x;

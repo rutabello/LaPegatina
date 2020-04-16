@@ -34,7 +34,8 @@ class InstagramRoundTwo extends Component {
     apiResultLength = 0
 
 
-    // Cleans the object retrieved from the api and leaves an array of objects that just have the image source for the picture and the image location
+    // Cleans the object retrieved from the api and leaves an array of objects that just
+    // have the image source for the picture and the image location
     cleanApiResponse = () => {
 
         const { data } = this.state;
@@ -62,7 +63,10 @@ class InstagramRoundTwo extends Component {
 
         const threeLocationsArr = imagesObjArr.map((imageObj) => imageObj.location);
 
-        threeLocationsArr.push(firstElement.location); // Cuando hacemos el push, el mismo array, con el mismo nombre, pasa de tener 3 elementos a tener 4. Si igualamos esta array a una constante, no estaríamos guardando la array de 4 elementos resultante sinó que guardaríamos el resultado del push, que sería soplo el número 4, tantos como elementos tiene dentro la array
+        threeLocationsArr.push(firstElement.location); // Cuando hacemos el push, el mismo array, con el mismo nombre,
+        // pasa de tener 3 elementos a tener 4. Si igualamos esta array a una constante, no estaríamos guardando
+        // la array de 4 elementos resultante sinó que guardaríamos el resultado del push, que sería soplo el
+        // número 4, tantos como elementos tiene dentro la array
 
         const threeRandomPlusCorrectLocationArr = Shuffle(threeLocationsArr);
 
@@ -100,7 +104,8 @@ class InstagramRoundTwo extends Component {
             gameStatus: 'loading',
         });
 
-        fetch(`https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables={"id":"${memberId}","first":${this.numberOfPosts}}`)
+        fetch(`https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables=
+        {"id":"${memberId}","first":${this.numberOfPosts}}`)
             .then((res) => res.json())
             .then((data) => this.setState({ data: data.data.user.edge_owner_to_timeline_media.edges }))
             .then(() => this.cleanApiResponse())

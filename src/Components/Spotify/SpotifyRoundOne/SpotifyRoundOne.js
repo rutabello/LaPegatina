@@ -60,7 +60,7 @@ class SpotifyRoundOne extends React.Component {
   }
 
   /**
-   * This fn returns an array with 4 song names randomly including the current song 
+   * This fn returns an array with 4 song names randomly including the current song
    * @param {string} currentSong - name of the current song playing
    * @returns {array} songsToDisplay
   */
@@ -154,7 +154,7 @@ getSongUrl = (songName) => {
         songUrl,
         playerState: Sound.status.PLAYING,
         playing: true,
-        // return this.spotifyObject.tracks.items.filter(item => item.track.name === songName)[0].preview_url 
+        // return this.spotifyObject.tracks.items.filter(item => item.track.name === songName)[0].preview_url
         // This does the same as getSongUrl but with much less lines
     });
 }
@@ -166,7 +166,7 @@ stopMusic = () => {
     });
 }
 
-filterRightSongsFromSpotifyObject = (spotifyObject) => {
+filterRightSongsFromSpotifyObject = () => {
     this.spotifyFilteredObjArr = this.spotifyObject.tracks.items.filter((item) => item.track.preview_url !== null);
 }
 
@@ -186,9 +186,9 @@ render() {
     return (
         <section>
             <ShareTheGame score={score} />
-            {total < 11
+            {total < 2
                 ? (
-                    <div className="show"> 
+                    <div className="show">
                         <div className="QuestionAndAnswers">
                             <div className="Countdown">
                                 <PlayerCountdown
@@ -205,8 +205,9 @@ render() {
                                     <Button
                                         key={songName}
                                         printedSong={songName}
-                                        // We write it like this so the function writeChoosenSong isn't executed when the button is rendered but when the button
-                                        // is clicked. Different than what we're doing some lines above in the onMusicPlays, setNewRandomSong or songURL
+                                        // We write it like this so the function writeChoosenSong isn't executed when the button is
+                                        // rendered but when the button is clicked. Different than what we're doing some lines
+                                        // above in the onMusicPlays, setNewRandomSong or songURL
                                         onClick={() => this.writeChosenSong(songName)}
                                         currentSong={currentSong.name}
                                     />
@@ -229,7 +230,17 @@ render() {
                         </div>
                     </div>
                 )
-                : <ListenedSongs username={name} unknownSongs={this.unknownSongs} language={language} url={songUrl} playStatus={playerState} onClick={playing} score={score} />}
+                : (
+                    <ListenedSongs
+                        username={name}
+                        unknownSongs={this.unknownSongs}
+                        language={language}
+                        url={songUrl}
+                        playStatus={playerState}
+                        onClick={playing}
+                        score={score}
+                    />
+                )}
             {/* {name !== undefined
                 ? <Link to='spotifyRoundTwo'>Go to Spotify round two</Link>
                 : <Register />

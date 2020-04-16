@@ -5,11 +5,11 @@ import './Home.css';
 import logo from '../../Pictures/logo_la_pegatina_2018.png';
 import texts from '../../texts.json';
 
-const printName = ({ name }) => {
-    // const { name } = user;
-    // const name = user.name
-    console.log(name);
-};
+// const printName = ({ name }) => {
+//     // const { name } = user;
+//     // const name = user.name
+//     console.log(name);
+// };
 
 const Home = ({ language }) => (
     <div className="container">

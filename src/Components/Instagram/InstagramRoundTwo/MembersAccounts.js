@@ -55,7 +55,10 @@ class members extends Component {
     ]
 
     setSelectedMemberId = (id) => {
-        this.props.setSelectedMemberId(id)
+
+        const { setSelectedMemberId } = this.props;
+
+        setSelectedMemberId(id);
 
         // this.setState({}, () => {
         //     this.props.history.push({

@@ -41,7 +41,7 @@ const ButtonIgRoundOne = (props) => {
     return (
         <button
             type="button"
-            className={`instagram-game-button ${colorClass} ${classGreen}`} 
+            className={`instagram-game-button ${colorClass} ${classGreen}`}
             onClick={checkRightOrWrong}
         >
             {value}

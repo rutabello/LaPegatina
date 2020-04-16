@@ -32,7 +32,7 @@ const ButtonIgRoundTwo = (props) => {
         }, ANSWERS_TIME_DISPLAYED * 1000);
     };
 
-    const { value, currentLocation, userClicked} = props;
+    const { value, currentLocation, userClicked } = props;
 
     const classGreen = (value === currentLocation) && userClicked
         ? 'solutionGreen'

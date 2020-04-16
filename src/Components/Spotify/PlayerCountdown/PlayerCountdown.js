@@ -4,7 +4,7 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import './PlayerCountdown.css';
 import texts from '../../../texts.json';
 
-const SONG_TIMER_DURATION = 13;
+const SONG_TIMER_DURATION = 1;
 
 class PlayerCountdown extends Component {
 

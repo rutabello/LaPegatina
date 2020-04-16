@@ -28,7 +28,14 @@ const ListenedSongs = ({ name, language, unknownSongs }) => (
                         </button>
 
                         {/* <-- Modal --> */}
-                        <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div
+                            className="modal fade"
+                            id="exampleModalCenter"
+                            tabIndex="-1"
+                            role="dialog"
+                            aria-labelledby="exampleModalCenterTitle"
+                            aria-hidden="true"
+                        >
                             <div className="modal-dialog modal-dialog-centered" role="document">
                                 <div className="modal-content">
                                     <div className="modal-header">
@@ -84,17 +91,19 @@ const ListenedSongs = ({ name, language, unknownSongs }) => (
                                         </WhatsappShareButton>
                                     </div>
                                     <div className="modal-footer">
-                                        <button type="button" className="btn btn-primary" data-dismiss="modal">{texts[language].doneText}</button>
+                                        <button type="button" className="btn btn-primary" data-dismiss="modal">
+                                            {texts[language].doneText}
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
 
-
-                    {/* <button className="repeat-button" onClick={this.props.onClick ? () => this.props.stopMusic() : () => this.props.getSongUrl(song)}>
-                    {this.props.onClick ? texts[this.props.language].pauseText : texts[this.props.language].listenAgain} 
-                    </button>  */}
+                        {/* <button className="repeat-button" onClick={this.props.onClick ? () => this.props.stopMusic()
+                        : () => this.props.getSongUrl(song)}>
+                        {this.props.onClick ? texts[this.props.language].pauseText : texts[this.props.language].listenAgain}
+                        </button>  */}
                     </li>
                 );
             })}

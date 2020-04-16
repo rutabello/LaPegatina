@@ -7,7 +7,7 @@ import texts from '../../texts.json';
 import './Navbar.css';
 
 import homebtn from '../../Pictures/home45.png';
-import catalan from '../../Pictures/bandera_catalan_small.png'
+import catalan from '../../Pictures/bandera_catalan_small.png';
 import spanish from '../../Pictures/bandera_spanish_small.png';
 import english from '../../Pictures/bandera_english_small.png';
 import french from '../../Pictures/bandera_french_small.png';

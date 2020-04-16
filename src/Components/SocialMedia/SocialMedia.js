@@ -15,22 +15,34 @@ const SocialMedia = ({ language }) => (
         <nav>
             <ul>
                 <li>
-                    <a href="https://www.facebook.com/lapegatina?ref=ts" target="_blank" rel="noreferrer noopener"><img className="social-icon" src={facebook} alt="facebook" /></a>
+                    <a href="https://www.facebook.com/lapegatina?ref=ts" target="_blank" rel="noreferrer noopener">
+                        <img className="social-icon" src={facebook} alt="facebook" />
+                    </a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/lapegatina" target="_blank" rel="noreferrer noopener"><img className="social-icon" src={twitter} alt="twitter" /></a>
+                    <a href="https://twitter.com/lapegatina" target="_blank" rel="noreferrer noopener">
+                        <img className="social-icon" src={twitter} alt="twitter" />
+                    </a>
                 </li>
                 <li>
-                    <a href="https://instagram.com/lapegatina" target="_blank" rel="noreferrer noopener"><img className="social-icon" src={instagram} alt="instagram" /></a>
+                    <a href="https://instagram.com/lapegatina" target="_blank" rel="noreferrer noopener">
+                        <img className="social-icon" src={instagram} alt="instagram" />
+                    </a>
                 </li>
                 <li>
-                    <a href="https://www.youtube.com/lapegatinatv" target="_blank" rel="noreferrer noopener"><img className="social-icon" src={youtube} alt="youtube" /></a>
+                    <a href="https://www.youtube.com/lapegatinatv" target="_blank" rel="noreferrer noopener">
+                        <img className="social-icon" src={youtube} alt="youtube" />
+                    </a>
                 </li>
                 <li>
-                    <a href="https://open.spotify.com/artist/4xvB67czbtvemGVXGa81oK" target="_blank" rel="noreferrer noopener"><img className="social-icon" src={spotify} alt="youtube" /></a>
+                    <a href="https://open.spotify.com/artist/4xvB67czbtvemGVXGa81oK" target="_blank" rel="noreferrer noopener">
+                        <img className="social-icon" src={spotify} alt="youtube" />
+                    </a>
                 </li>
                 <li>
-                    <a href="https://www.tiktok.com/@lapegatina" target="_blank" rel="noreferrer noopener"><img className="social-icon" src={tiktok} alt="tiktok" /></a>
+                    <a href="https://www.tiktok.com/@lapegatina" target="_blank" rel="noreferrer noopener">
+                        <img className="social-icon" src={tiktok} alt="tiktok" />
+                    </a>
                 </li>
             </ul>
         </nav>
