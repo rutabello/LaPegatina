@@ -5,8 +5,9 @@ import Shuffle from '../../Utils/Shuffle';
 import '../YTPlayer/YTPlayer.css';
 import QuizYT from '../QuizYT/QuizYT';
 import YTCountdown from '../YTCountdown/YTCountdown'
-
-// console.log(props.det) 
+// let info=props.info
+// // console.log(props.det) 
+// console.log(info)
 class YTPlayer extends Component {
   state ={
     data : {},
@@ -62,6 +63,9 @@ VideoOnPlay=(event)=>{
       videoUrl:event.target.playerInfo.videoUrl
   })
   // store the array with 3 random titels in a const
+  const info=this.props.info
+// console.log(props.det) 
+console.log(info)
 const threeTitlesArr= this.props.det    
 console.log(threeTitlesArr)   
 //push inside the name of the title that is playing now 
@@ -131,7 +135,9 @@ unmuteVideo =()=>{
                     displayedSong={songTitle}
                     currentSong={this.state.title}
                   />)})
-      : <YTCountdown /> }
+    //  /* : <YTCountdown questions={this.props.questions}/> } */}
+      : <QuizYT questions={this.props.questions} printedAnswer={this.props.questions[0].answers}/> }
+
       </div>
     );
 

@@ -13,7 +13,9 @@ state ={
   randomVideoId:'',
   playlistItemsArr: [],
   currentSongTitle:'',
-  fourNonShuffledSongsTitles:[]
+  fourNonShuffledSongsTitles:[],
+  questions:[],
+  answers:[]
 }
 
 componentDidMount=()=> {
@@ -29,7 +31,12 @@ let newdata= JSON.parse(json)
     data: newdata
 })
 console.log(this.state.data)
-console.log (newdata)
+// console.log (this.state.data)
+//this is the question
+// console.log (newdata[0].question1.q)
+
+// console.log (newdata[2].question2)
+
 
 
   const arrayPlaylist=[];
@@ -40,14 +47,30 @@ console.log (newdata)
     return arrayPlaylist
   })
   console.log(arrayPlaylist)
+  // 
+
 
   // create the random from one videoid
 const randomVideoId = arrayPlaylist[Math.floor(Math.random()*arrayPlaylist.length)]
 this.setState({randomVideoId:randomVideoId,
+  questions:newdata[arrayPlaylist.indexOf(randomVideoId)].questions,
+  
 // currentSongTitle:
 })
 console.log(randomVideoId)
 // console.log(currentSongTitle)
+console.log(arrayPlaylist.indexOf(randomVideoId))
+// setting the state for the questions block that are related to the video
+console.log(newdata[arrayPlaylist.indexOf(randomVideoId)].questions)
+
+// const excludeAfterIndex = arrayPlaylist.indexOf(randomVideoId);
+// newdata.reduce((mappedArray, item, index) => {
+//   if (index === excludeAfterIndex) { // Whatever range condition you want
+//     this.state.mappedArray.push(item.questions[index]);
+//   }
+
+//   return mappedArray;
+// }, []);
 
 //create the array with the title of the songs for the button shuffle(tu put in other buttons)
  const arraySongTitles=[];
@@ -81,9 +104,10 @@ render(){
 
 
     <div className="yt-player">
-      <YTPlayer det={this.state.fourNonShuffledSongsTitles} videoId= {this.state.randomVideoId}/> 
+       <YTPlayer det={this.state.fourNonShuffledSongsTitles} 
+      videoId= {this.state.randomVideoId} info={this.state.data} 
+      questions={this.state.questions}/>  
     
-      
     </div>
     </div>
   )
