@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './GameEnded.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class GameEnded extends Component {
 
@@ -8,8 +8,11 @@ class GameEnded extends Component {
 
     }
 
-    render () {
-        if (this.props.currentGame === "spotify") {
+    render() {
+
+        const { currentGame } = this.props;
+
+        if (currentGame === 'spotify') {
             return (
                 <div>
                     <p>This game ends here. You can now play with</p>
@@ -18,28 +21,33 @@ class GameEnded extends Component {
                     <br />
                     <Link to="youtuberoundone">YouTube</Link>
                 </div>
-            )
-        } else if (this.props.currentGame === "youtube") {
-            return (
-                <div>
-                    <p>This game ends here. You can now play with</p>
-                    <br />
-                    <Link to="spotifyroundone">Spotify</Link>
-                    <br />
-                    <Link to="instagramroundone">Instagram</Link>
-                </div>
-            )
-        } else if (this.props.currentGame === "instagram") {
-            return (
-                <div>
-                    <p>This game ends here. You can now play with</p>
-                    <br />
-                    <Link to="spotifyroundone">Spotify</Link>
-                    <br />
-                    <Link to="youtuberoundone">YouTube</Link>
-                </div>
-            )
+            );
         }
+
+        if (currentGame === 'youtube') {
+            return (
+                <div>
+                    <p>This game ends here. You can now play with</p>
+                    <br />
+                    <Link to="spotifyroundone">Spotify</Link>
+                    <br />
+                    <Link to="instagramroundone">Instagram</Link>
+                </div>
+            );
+        }
+
+        if (currentGame === 'instagram') {
+            return (
+                <div>
+                    <p>This game ends here. You can now play with</p>
+                    <br />
+                    <Link to="spotifyroundone">Spotify</Link>
+                    <br />
+                    <Link to="youtuberoundone">YouTube</Link>
+                </div>
+            );
+        }
+        return null;
     }
 }
 

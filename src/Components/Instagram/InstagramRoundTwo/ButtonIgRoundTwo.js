@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
-const ButtonIgRoundOne = (props) => {
-
-    const { value, currentTags, userClicked } = props;
+const ButtonIgRoundTwo = (props) => {
 
     const [colorClass, setColorClass] = useState('gray');
 
@@ -19,7 +17,7 @@ const ButtonIgRoundOne = (props) => {
         // set userClicked to true, so next buttons clicked will do nothing
         props.userHasClicked();
 
-        if (props.value === props.currentTags) {
+        if (props.value === props.currentLocation) {
 
             setColorClass('green');
             props.addToCounter();
@@ -30,11 +28,13 @@ const ButtonIgRoundOne = (props) => {
 
         setTimeout(() => {
             setColorClass('gray');
-            props.setRandomImageAndTags();
+            props.setRandomImageAndLocations();
         }, ANSWERS_TIME_DISPLAYED * 1000);
     };
 
-    const classGreen = (value === currentTags) && userClicked
+    const { value, currentLocation, userClicked } = props;
+
+    const classGreen = (value === currentLocation) && userClicked
         ? 'solutionGreen'
         : '';
 
@@ -49,4 +49,4 @@ const ButtonIgRoundOne = (props) => {
     );
 };
 
-export default ButtonIgRoundOne;
+export default ButtonIgRoundTwo;
