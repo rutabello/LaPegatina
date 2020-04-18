@@ -5,7 +5,7 @@ import texts from '../../../texts.json';
 import {Link} from 'react-router-dom';
 import Loading from '../../Utils/Loading/Loading';
 import Register from '../../Register/Register';
-import Score from '../../Score/Score';
+
 
 
 class InstagramRoundOne extends Component {
@@ -153,7 +153,6 @@ class InstagramRoundOne extends Component {
             return (
                 <div>
                 <Register currentGame={"instagram"} score={this.counter} />
-                <Score score={this.counter} />
                 </div>
             )
         }

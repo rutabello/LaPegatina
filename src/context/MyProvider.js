@@ -7,8 +7,7 @@ class MyProvider extends Component {
     name: 'Sandra Serediuc',
     username: "Alecsundra",
     age: 20,
-    score: 0,
-    points: ' '
+    points: 0
 
   }
 
@@ -18,8 +17,8 @@ class MyProvider extends Component {
       <MyContext.Provider value={{
         state: this.state,
         //   addPoints: function(points) { this.state.score += points; }
-        addPoints: () => this.setState({
-          score: this.state.score +10
+        addPoints: (points) => this.setState({
+          points: this.state.points + points
         
         })
       }}>

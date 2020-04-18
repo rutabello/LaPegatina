@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import UserForm from './UserForm/UserForm'
 import UserPofile from "./UserProfile/UserProfile";
 import './User.css';
-import Score from '../../Score/Score'
 class User extends Component {
   state={
   }
@@ -11,7 +10,6 @@ class User extends Component {
   render() {
     return (
       <div>
-      <Score score={this.props.location.state.score} />
       {/* <h6>Score:{this.props.location.state.score}</h6> */}
         <div className='user-profile-c'>
          <UserPofile />

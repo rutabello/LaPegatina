@@ -9,9 +9,9 @@ import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import Sound from 'react-sound';
 import texts from '../../../texts.json';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
+import {MyContext} from '../../../context/MyProvider'
 // import {Link} from 'react-router-dom';
 // import Register from '../../Register/Register'
-import Score from '../../Score/Score'
 
 class SpotifyRoundOne extends React.Component {
 
@@ -219,8 +219,10 @@ class SpotifyRoundOne extends React.Component {
             </div>
           </div>  
            :
-         <div><ListenedSongs username={this.state.name} unknownSongs={this.unknownSongs} language={this.props.language} url={this.state.songUrl} playStatus={this.state.playerState} onClick={this.state.playing} score={this.state.score} />
-        <Score score={this.state.score}/></div>
+         <div><ListenedSongs username={this.state.name} 
+         unknownSongs={this.unknownSongs} language={this.props.language} url={this.state.songUrl} playStatus={this.state.playerState} 
+         onClick={this.state.playing}  />
+        </div>
         }
 
           {/* {this.state.name !== undefined ?

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Register.css';
 import {Link} from 'react-router-dom';
-import Score from '../Score/Score'
 
 class Register extends Component {
 
@@ -17,10 +16,7 @@ class Register extends Component {
                     <p>Register form goes here</p>
                     {/* <p>{this.props.score}</p> */}
                     {/* <Link to='/user'>Click to keep the points</Link> */}
-                    <Link to={{
-      pathname: '/user',
-       state: { score: this.state.score }
-    }}>Click to keep the points</Link>
+                    <Link to='/user'>Click to keep the points</Link>
                     <Link to="spotifyRoundTwo">Send and go to Spotify second round</Link>
                 </div>
             )               
