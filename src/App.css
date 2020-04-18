@@ -8,7 +8,7 @@
 }
 
 .social-media-follow-buttons {
-  /* position: fixed; */
+  position: fixed;
   bottom: 0px;
   padding-bottom: 10px;
   background-color: rgb(49, 44, 113);
