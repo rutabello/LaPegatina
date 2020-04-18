@@ -136,7 +136,11 @@ unmuteVideo =()=>{
                     currentSong={this.state.title}
                   />)})
     //  /* : <YTCountdown questions={this.props.questions}/> } */}
-      : <QuizYT questions={this.props.questions} printedAnswer={this.props.questions[0].answers}/> }
+      : <QuizYT questions={this.props.questions} 
+      stopPlaying={this.props.stopPlaying}
+displayedAnswer={this.props.questions[0].answers[0]}
+
+      /> }
 
       </div>
     );

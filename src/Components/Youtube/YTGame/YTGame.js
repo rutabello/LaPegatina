@@ -106,7 +106,7 @@ render(){
     <div className="yt-player">
        <YTPlayer det={this.state.fourNonShuffledSongsTitles} 
       videoId= {this.state.randomVideoId} info={this.state.data} 
-      questions={this.state.questions}/>  
+      questions={this.state.questions} stopPlaying={this.props.stopPlaying}/>  
     
     </div>
     </div>
