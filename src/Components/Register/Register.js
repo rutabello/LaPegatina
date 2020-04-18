@@ -11,11 +11,12 @@ class Register extends Component {
     render() {
 
         const { currentGame } = this.props;
-
+        
         if (currentGame === 'spotify') {
             return (
                 <div>
                     <p>Register form goes here</p>
+                    
                     {/* <p>{this.props.score}</p> */}
                     {/* <Link to='/user'>Click to keep the points</Link> */}
                     <Link to='/user'>Click to keep the points</Link>

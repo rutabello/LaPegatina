@@ -187,7 +187,7 @@ render() {
     return (
         <section>
             <ShareTheGame score={score} />
-            {total < 2
+            {total < 8
                 ? (
                     <div className="show">
                         <div className="QuestionAndAnswers">

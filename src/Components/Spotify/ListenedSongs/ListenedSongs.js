@@ -6,12 +6,15 @@ import { EmailShareButton, FacebookShareButton,
 // import Sound from 'react-sound';
 import texts from '../../../texts.json';
 import './ListenedSongs.css';
-
+import { MyContext } from '../../../context/MyProvider'
 import Register from '../../Register/Register';
 
-
-const ListenedSongs = ({ name, language, unknownSongs }) => (
+const ListenedSongs = ({ name, language, unknownSongs,score }) => (
+  
+    <MyContext.Consumer>
+{(context)=>(
     <div>
+    <button onClick= {()=>context.addPoints(score)}>Add the score </button>
         <h4 className="instruct">{texts[language].listenedSongs}</h4>
         <ul id="mistakes" className="instruct">
             {unknownSongs.map((song) => {
@@ -112,6 +115,8 @@ const ListenedSongs = ({ name, language, unknownSongs }) => (
             ? <Link to="spotifyRoundTwo">Go to Spotify round two</Link>
             : <Register currentGame="spotify" />}
     </div>
+)}
+   </MyContext.Consumer>
 );
 
 export default ListenedSongs;

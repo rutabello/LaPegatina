@@ -15,7 +15,7 @@ class User extends Component {
          <UserPofile />
          </div>
          <div>
-         <UserForm />
+         {/* <UserForm /> */}
          </div>
          </div>
     );
