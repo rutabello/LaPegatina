@@ -24,7 +24,7 @@ class YoutubeRoundOne extends Component {
             return (
                 <div>
                     {/* <p>Sandra's YouTube Round One component will go here</p> */}
-                    <YTGame />
+                    <YTGame stopPlaying={this.stopPlaying} />
                     <button onClick={()=>this.stopPlaying()}>Finish round</button>
                     <button onClick={()=>this.registerUser()}>Register user</button>
                 </div>
