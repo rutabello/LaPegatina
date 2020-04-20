@@ -12,7 +12,7 @@ import Register from '../../Register/Register';
 
 const ListenedSongs = ({ name, language, unknownSongs, score }) => (
     <div>
-        <h2 className="instruct">{texts[language].score.replace('%v1', score)}</h2>
+        <h2 className="instruct">{texts[language].score.replace('%points', score)}</h2>
         <h4 className="instruct">{texts[language].listenedSongs}</h4>
         <ul id="mistakes" className="instruct">
             {unknownSongs.map((song) => {
