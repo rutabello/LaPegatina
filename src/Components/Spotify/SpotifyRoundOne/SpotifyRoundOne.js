@@ -129,7 +129,7 @@ checkCoincidence = () => {
     this.setState({
         hideResults: false,
         correctAnswers: this.coincidence ? (correctAnswers + 1) : correctAnswers,
-        score: this.coincidence ? (score + 10) : score,
+        score: this.coincidence ? (score + 100) : score,
     });
 }
 
@@ -186,7 +186,7 @@ render() {
     return (
         <section>
             <ShareTheGame score={score} />
-            {total < 2
+            {total < 5
                 ? (
                     <div className="show">
                         <div className="QuestionAndAnswers">
