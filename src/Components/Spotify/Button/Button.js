@@ -8,12 +8,14 @@ const Button = ({ printedSong, currentSong, onClick }) => {
     const isCorrect = printedSong === currentSong;
 
     const onClickHandler = () => {
+
         makeButtonClicked(true);
 
         onClick();
     };
 
     let colorClass = 'colorClass';
+
 
     if (isCorrect === true) {
         colorClass = 'green';
