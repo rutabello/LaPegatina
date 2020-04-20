@@ -30,6 +30,10 @@ class SpotifyRoundOne extends React.Component {
   // All the songs that the user guessed wrong are pushed into this array
   unknownSongs= [];
 
+  NUMBER_OF_SONGS_TO_PLAY_WITH = 3
+
+  // OFFICIAL_NUMBER_OF_SONGS_TO_PLAY_WITH = this.NUMBER_OF_SONGS_TO_PLAY_WITH - 1
+
   state = {
 
       songNames: [],
@@ -41,12 +45,12 @@ class SpotifyRoundOne extends React.Component {
 
       hideResults: true,
       correctAnswers: 0,
-      total: 0,
       score: 0,
       songUrl: '',
       playerState: Sound.status.PLAYING,
       playing: false,
       playlistID: '37i9dQZF1DZ06evO2EUrsw',
+      currentAttempt: 0,
   }
 
   // API call to get the playlist data.
@@ -91,9 +95,18 @@ chooseSongs = () => {
 
 setNewRandomSong = () => {
 
-    const { total } = this.state;
+    const { currentAttempt } = this.state;
 
     if (this.spotifyFilteredObjArr.length === 0) {
+
+        return;
+    }
+
+    if (currentAttempt >= this.NUMBER_OF_SONGS_TO_PLAY_WITH) {
+        this.setState({
+            currentAttempt: currentAttempt + 1,
+        });
+
         return;
     }
 
@@ -109,8 +122,8 @@ setNewRandomSong = () => {
         },
         songNames: this.getSongsToDisplay(randomSong.name),
         hideResults: true,
-        total: total + 1,
         playerState: Sound.status.STOPPED,
+        currentAttempt: currentAttempt + 1,
     });
 }
 
@@ -119,6 +132,12 @@ writeChosenSong = (songName) => {
 }
 
 checkCoincidence = () => {
+
+    const { currentAttempt } = this.state;
+
+    if (currentAttempt > this.NUMBER_OF_SONGS_TO_PLAY_WITH) {
+        return;
+    }
 
     const { currentSong, correctAnswers, score } = this.state;
 
@@ -179,14 +198,14 @@ setPlayingToFalse = () => {
 
 render() {
 
-    const { score, total, currentSong, hideResults, songNames, name, songUrl, correctAnswers, playerState, playing } = this.state;
+    const { score, currentSong, hideResults, songNames, name, songUrl, playerState, playing, currentAttempt } = this.state;
 
     const { language } = this.props;
 
     return (
         <section>
             <ShareTheGame score={score} />
-            {total < 5
+            {currentAttempt <= this.NUMBER_OF_SONGS_TO_PLAY_WITH
                 ? (
                     <div className="show">
                         <div className="QuestionAndAnswers">
@@ -215,16 +234,16 @@ render() {
                             </div>
                             <div id="counter" className="instruct">
                                 <p className={this.answerCountShow ? 'show' : 'hide'}>
-                                    {texts[language].correctAnswers}
-                                    {correctAnswers}
+                                    {texts[language].attempts}
+                                    {currentAttempt}
                                     {texts[language].outofText}
-                                    {total}
+                                    {this.NUMBER_OF_SONGS_TO_PLAY_WITH}
                                 </p>
                                 <br />
-                                <p className={this.answerCountShow ? 'show' : 'hide'}>
+                                {/* <p className={this.answerCountShow ? 'show' : 'hide'}>
                                     {texts[language].pointsText}
                                     {score}
-                                </p>
+                                </p> */}
                                 <hr />
                             </div>
                         </div>
