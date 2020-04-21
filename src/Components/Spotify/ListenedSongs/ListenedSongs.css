@@ -41,12 +41,7 @@
 
 .instruct p {
     color: #766dca;
-    font-size: 18px;
-}
- 
-#counter {
-    font-size: 30px;
-    margin-top: 1vh;
+    font-size: 22px;
 }
 
 .show h4 {
@@ -110,7 +105,6 @@
 
     #counter {
         font-size: 15px;
-        margin-top: 20px;
     }
 
     #mistakes {
@@ -118,10 +112,6 @@
     }
 
     .mistake-list a {
-        font-size: 14px;
-    }
-
-    .instruct p {
         font-size: 14px;
     }
 

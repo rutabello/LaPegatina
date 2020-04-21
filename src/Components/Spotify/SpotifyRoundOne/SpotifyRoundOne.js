@@ -9,7 +9,7 @@ import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import texts from '../../../texts.json';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
-import {MyContext} from '../../../context/MyProvider'
+import next from '../../../Pictures/skip-forwards-bw.gif';
 // import {Link} from 'react-router-dom';
 // import Register from '../../Register/Register'
 
@@ -218,6 +218,8 @@ render() {
                                     songURL={currentSong.preview_url}
                                     coincidence={this.checkCoincidence}
                                     showAnswerCount={this.showAnswerCount}
+                                    currentAttempt={currentAttempt}
+                                    totalAttempts={this.NUMBER_OF_SONGS_TO_PLAY_WITH}
                                 />
                             </div>
                             <div className={`FourButtons ${hideResults ? 'forceGrayColor' : ''}`}>
@@ -235,9 +237,10 @@ render() {
                             </div>
                             <div id="counter" className="instruct">
                                 <p className={this.answerCountShow ? 'show' : 'hide'}>
-                                    {texts[language].attempts}
+                                    {/* {texts[language].attempts} */}
                                     {currentAttempt}
-                                    {texts[language].outofText}
+                                    {' / '}
+                                    {/* {texts[language].outofText} */}
                                     {this.NUMBER_OF_SONGS_TO_PLAY_WITH}
                                 </p>
                                 <br />
