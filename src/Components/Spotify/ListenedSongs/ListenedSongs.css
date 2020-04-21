@@ -5,7 +5,7 @@
     margin-right: auto;
     margin-left: auto;
     padding-left: 0;
-    padding-bottom: 50px;
+    padding-bottom: 8px;
 }
   
 .song-name {
@@ -71,7 +71,7 @@
     background-color: #766dca;
     border-color: #766dca;
     min-width: 30%;
-    margin-top: 6px;
+    /* margin-top: 6px; */
 }
 
 .btn-primary:hover {

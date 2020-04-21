@@ -10,7 +10,7 @@ import '../Instagram.css';
 
 class InstagramRoundTwo extends Component {
 
-    NUMBER_OF_ATTEMPTS = 6
+    NUMBER_OF_ATTEMPTS = 2
 
     OFICIAL_NUMBER_OF_ATTEMPTS = this.NUMBER_OF_ATTEMPTS - 1
 
@@ -80,8 +80,8 @@ class InstagramRoundTwo extends Component {
 
         this.attempts += 1;
 
-        if (this.attempts === this.apiResultLength) {
-        // if(this.attempts === this.NUMBER_OF_ATTEMPTS) {
+        // if (this.attempts === this.apiResultLength) {
+        if (this.attempts === this.NUMBER_OF_ATTEMPTS) {
             this.setState({
                 gameStatus: 'gameOver',
             });
@@ -95,6 +95,12 @@ class InstagramRoundTwo extends Component {
     userHasClicked = () => {
         this.setState({
             userClicked: true,
+        });
+    }
+
+    chooseAgain = () => {
+        this.setState({
+            gameStatus: 'choosing',
         });
     }
 
@@ -186,7 +192,7 @@ class InstagramRoundTwo extends Component {
 
         if (gameStatus === 'gameOver') {
             return (
-                <GameEnded currentGame="instagram" />
+                <GameEnded changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
             );
         }
 

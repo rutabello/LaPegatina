@@ -1,10 +1,12 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
 import Sound from 'react-sound';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import './PlayerCountdown.css';
-import texts from '../../../texts.json';
+// import texts from '../../../texts.json';
+import next from '../../../Pictures/skip-forwards-bw.gif';
 
-const SONG_TIMER_DURATION = 1;
+const SONG_TIMER_DURATION = 3;
 
 class PlayerCountdown extends Component {
 
@@ -56,10 +58,12 @@ class PlayerCountdown extends Component {
 
   renderTime = (value) => {
 
-      const { language } = this.props;
+      //   const { language } = this.props;
 
       if (value === 0) {
-          return <button type="button" className="next-button" onClick={this.playMusicStartTimer}>{texts[language].newSong}</button>;
+          // return <button type="button" className="next-button" onClick={this.playMusicStartTimer}>{texts[language].newSong}</button>;
+          // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+          return <img src={next} alt="next" type="button" className="next-button" onClick={this.playMusicStartTimer} />;
       }
 
       return (

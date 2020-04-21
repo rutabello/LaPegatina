@@ -33,10 +33,17 @@ render() {
 
     return (
         <div>
-            <Navbar onChangeLanguage={this.setLanguage} />
-
             <Switch>
-                <Route exact path="/" render={(props) => <Home language={selectedLanguage} {...props} />} />
+                <Route
+                    exact
+                    path="/"
+                    render={(props) => (
+                        <div>
+                            <Navbar onChangeLanguage={this.setLanguage} />
+                            <Home language={selectedLanguage} {...props} />
+                        </div>
+                    )}
+                />
                 <Route path="/spotifyroundone" render={(props) => <SpotifyRoundOne language={selectedLanguage} {...props} />} />
                 <Route path="/listenedsongs" render={(props) => <ListenedSongs language={selectedLanguage} {...props} />} />
                 <Route path="/team" render={(props) => <Team language={selectedLanguage} {...props} />} />

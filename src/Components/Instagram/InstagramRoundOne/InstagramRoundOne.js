@@ -160,7 +160,7 @@ class InstagramRoundOne extends Component {
                             {texts[language].correctAnswers}
                             {this.counter}
                             /
-                            {this.oficial_number_of_attempts}
+                            {this.OFICIAL_NUMBER_OF_ATTEMPTS}
                         </p>
                     </div>
                 </div>
