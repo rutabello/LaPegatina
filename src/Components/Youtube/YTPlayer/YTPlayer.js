@@ -12,12 +12,13 @@ class YTPlayer extends Component {
   state ={
     data : {},
     player:'',
-    title: '',
+    title: "",
     videoUrl: '',
     isMuted: true,
     fourShuffledSongsTitles:[],
     fourNonShuffledSongsTitles:[],
-    showButtons: true
+    showButtons: true,
+  
 
   }
 
@@ -59,8 +60,10 @@ VideoOnPlay=(event)=>{
     // player.seekTo(20)
     // alert(event.target.playerInfo.videoData.title)
     this.setState({
-      title:event.target.playerInfo.videoData.title,
-      videoUrl:event.target.playerInfo.videoUrl
+      // title:event.target.playerInfo.videoData.title,
+      videoUrl:event.target.playerInfo.videoUrl,
+      // passing the title props to be written the same way
+      title:this.props.title
   })
   // store the array with 3 random titels in a const
   const info=this.props.info
@@ -92,8 +95,10 @@ unmuteVideo =()=>{
 
   render() {
     const opts = {
-      height: '390',
-      width: '640',
+      height: '315',
+      width: '560',
+      // 560/315
+      // default 640 h-390
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
         modestbranding: 1,//not big yt branding
@@ -114,20 +119,22 @@ unmuteVideo =()=>{
  
     return (
       <div className='thegame'>
-      <div>  
-      <YouTube
+      <div className='theYTPlayer'>  
+      <YouTube 
           videoId={videoId}
           opts={opts}
           onReady={this.VideoOnReady}
           onPlay={this.VideoOnPlay}
-        /></div>
+        />
+        </div>
       
-      <p>Hello {this.state.title}</p>
+      {/* <p>Hello {this.state.title}</p> */}
       {/* the button that redirect on the yt page */}
-      <button className='btn-see-video' onClick={()=> window.open(this.state.videoUrl, "_blank")}>
-       <span className= 'text-btn-see-video'>See full video on Youtube</span></button>
+      {/* <button className='btn-see-video' onClick={()=> window.open(this.state.videoUrl, "_blank")}> */}
+       {/* <span className= 'text-btn-see-video'>See full video on Youtube</span></button> */}
       {this.state.showButtons 
-      ? this.state.fourShuffledSongsTitles.map((songTitle) => {
+      ? <div className='btn-4-YT'>
+      {this.state.fourShuffledSongsTitles.map((songTitle) => {
                 return (
                   <Button  
                     unmute={this.unmuteVideo}
@@ -135,11 +142,10 @@ unmuteVideo =()=>{
                     displayedSong={songTitle}
                     currentSong={this.state.title}
                   />)})
+      }</div>
     //  /* : <YTCountdown questions={this.props.questions}/> } */}
-      : <QuizYT questions={this.props.questions} 
+      : <QuizYT   questions={this.props.questions} 
       stopPlaying={this.props.stopPlaying}
-displayedAnswer={this.props.questions[0].answers[0]}
-
       /> }
 
       </div>

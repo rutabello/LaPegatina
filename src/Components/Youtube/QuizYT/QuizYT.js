@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Shuffle from '../../Utils/Shuffle'
-import { render } from '@testing-library/react';
+
 
 class QuizYT extends Component {
 
@@ -8,58 +8,59 @@ state={
     questions:this.props.questions,
     index: 0,
     gameStatus: "playing",
-    // correctAnswer:this.props.displayedAnswer
-   
+    correctAnswer:this.props.questions[0].answers[0],
+    points: 0,
+    counter: 0
+    // clicked: false
 }
-
-
+// function the is passing to the next question{by increasing the index} and adding points for the right ones
 toNext=()=>{
-
-    if(this.state.questions){
+    // if(this.state.index > this.state.counter){
+        if(this.state.index < 4){
+        console.log (this.state.index)
     this.setState({
-        index:this.state.index+1
+        index:this.state.index+1,
+        correctAnswer: this.state.questions[this.state.index+1].answers[0],
+        points: this.state.points + 1000,
+        // counter: this.state.counter+1
     })
        }else {
          this.props.stopPlaying()
          }
 }
-    // console.log(props.questions)
-    // console.log(props.questions[0].answers[0])
-    
-checkIf = (e)=>{ 
-    // let answer= this.state.questions[this.state.index].answers[0]
-     let an=e.target.value  
-       console.log(an);  
-    //    only with 2 equals works
-         if (an == this.state.questions[this.state.index].answers[0]) {
-    alert('yes')   
+// checking if the button pressed is the right answer, 
+// the right answer is always the first anwer from the object array
+// and only if it's right it goes to the next question
+checkIf = (e)=>{  
+  let displayedAnswer = e.target.value
+  console.log (displayedAnswer)
+    if (displayedAnswer == this.state.correctAnswer) {
+    this.toNext()   
+    }  
 }
-
-}
-// now we have tthe alert only when you clik the firs button and it goes to the next question, 
-// after at the end is still undefined question, if you change to array lenght it works , but it gives you only one quastion out of 3
-// COMBINE BOTH FUNCTIONS, 
-// CHECK THE BUTTON VALUE NOT THE ID
 // IF CONDITION FOR THE GAME ENDING
 
    render(){
     return (
         <div className="the-yt-quiz">
-            <h2>{this.state.questions[this.state.index].question}</h2>
+        <div className="quiz-text">
+            <h4>{this.state.questions[this.state.index].question}</h4>
+            <h6>Score:{this.state.points}</h6>
+            </div>
+            <div className ="btn-4-YT">
            {Shuffle(this.state.questions[this.state.index].answers).map((item,index) =>
-            <button value={item} onClick={(e)=>{ this.checkIf(e); this.toNext() }} 
+            <button value={item} onClick={(e)=> this.checkIf(e)} 
              key= {index}
             className='myButtonYT buttonYT' >
                   <span className='titleColorYT'>{item}</span> 
 
         </button>
            )}
-           
+           </div>
         </div>
-    )
+        )
+    }
 }
-}
-// displayedAnswer ={item} 
 
 
 export default QuizYT; 

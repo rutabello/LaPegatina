@@ -18,4 +18,15 @@ src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.google
 }
 .thegame{
     margin-bottom: 15vh;
+    justify-content: center;
 }
+
+.theYTPlayer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+  
+

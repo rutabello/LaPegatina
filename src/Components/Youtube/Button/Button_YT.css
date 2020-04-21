@@ -11,19 +11,21 @@
     width: 60%;
     display: block !important;
     height: auto;
-    margin: 15px auto;
-    padding: 10px 25px;
+    margin: 5px auto;
+    padding: 5px 15px;
     font-size: 20px;
     text-decoration: none;
     min-height: 5em;
     border-radius: 25px;
+    /* margin-right: 20vh; */
+    margin-top: 2vh
 }
 
 .buttonYT {
     background-color: transparent;
 }
 
-@media (max-width:450px) {
+@media (max-width:700px) {
      .buttonYT.myButtonYT.buttonYT{
         margin: 0.4em auto;
     }
@@ -73,10 +75,22 @@
         display:flex;
         margin:0.4em auto;
         flex: 25%;
+        flex-basis: 39%;
+        justify-content: center
     }
 
-    .FourButtons {
+    .btn-4-YT{
         width: 75%;
         margin: 0 auto;
     }
+}
+.btn-4-YT{
+    display: flex;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    flex-wrap: wrap;
+    /* height: 25vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
+    margin-bottom: 5vh; */
 }

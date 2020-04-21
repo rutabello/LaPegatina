@@ -15,7 +15,8 @@ state ={
   currentSongTitle:'',
   fourNonShuffledSongsTitles:[],
   questions:[],
-  answers:[]
+  answers:[],
+  currentTitle: ''
 }
 
 componentDidMount=()=> {
@@ -54,7 +55,7 @@ console.log(this.state.data)
 const randomVideoId = arrayPlaylist[Math.floor(Math.random()*arrayPlaylist.length)]
 this.setState({randomVideoId:randomVideoId,
   questions:newdata[arrayPlaylist.indexOf(randomVideoId)].questions,
-  
+  currentTitle:newdata[arrayPlaylist.indexOf(randomVideoId)].title
 // currentSongTitle:
 })
 console.log(randomVideoId)
@@ -62,15 +63,8 @@ console.log(randomVideoId)
 console.log(arrayPlaylist.indexOf(randomVideoId))
 // setting the state for the questions block that are related to the video
 console.log(newdata[arrayPlaylist.indexOf(randomVideoId)].questions)
+console.log(newdata[arrayPlaylist.indexOf(randomVideoId)].title)
 
-// const excludeAfterIndex = arrayPlaylist.indexOf(randomVideoId);
-// newdata.reduce((mappedArray, item, index) => {
-//   if (index === excludeAfterIndex) { // Whatever range condition you want
-//     this.state.mappedArray.push(item.questions[index]);
-//   }
-
-//   return mappedArray;
-// }, []);
 
 //create the array with the title of the songs for the button shuffle(tu put in other buttons)
  const arraySongTitles=[];
@@ -78,6 +72,10 @@ console.log(newdata[arrayPlaylist.indexOf(randomVideoId)].questions)
    arraySongTitles.push(element.title)
      return arraySongTitles
    })
+        console.log(arraySongTitles)
+        // removed from the array the title of the song that is playing so it wont dublicate in the buttons
+        const removed = arraySongTitles.splice(arrayPlaylist.indexOf(randomVideoId), 1)
+        console.log (removed)
         console.log(arraySongTitles)
         //shuffle function that reorganize the order of the song title
 const suffledArraySongTitles =  Shuffle(arraySongTitles)
@@ -106,6 +104,7 @@ render(){
     <div className="yt-player">
        <YTPlayer det={this.state.fourNonShuffledSongsTitles} 
       videoId= {this.state.randomVideoId} info={this.state.data} 
+      title= {this.state.currentTitle}
       questions={this.state.questions} stopPlaying={this.props.stopPlaying}/>  
     
     </div>

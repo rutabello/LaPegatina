@@ -1,15 +1,19 @@
 .cover-title{
-      width: 100%;
-      height: 10vh;
-      background-color: #312c71;
+      width: 100em;
+      height: 8vh;
+      /* background-color: #312c71;
+       */
+       background-color: black;
       margin: 0 auto;
       position: absolute;
     }
 .yt-player {
         display:flex;
         margin: 0 auto;
+        justify-content: center;
+      
       } 
-.yt-all {
+/* .yt-all {
     display:flex;
     margin-bottom: 15vh;
-}         
+}          */
