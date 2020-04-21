@@ -27,3 +27,6 @@ yarn-error.log*
 
 # TOKEN
 /src/Components/Utils/token.js
+
+#YTKey
+/src/Components/Youtube/Api/KeyYT.js

@@ -6,6 +6,7 @@ import InstagramRoundTwo from './Components/Instagram/InstagramRoundTwo/Instagra
 import InstagramRoundOne from './Components/Instagram/InstagramRoundOne/InstagramRoundOne';
 import SocialMedia from './Components/SocialMedia/SocialMedia';
 import Team from './Components/Team/Team';
+import YTGame from './Components/Youtube/YTGame/YTGame'
 import Navbar from './Components/Navbar/Navbar';
 import YoutubeRoundOne from './Components/Youtube/YoutubeRoundOne/YoutubeRoundOne';
 import YoutubeRoundTwo from './Components/Youtube/YoutubeRoundTwo/YoutubeRoundTwo';
