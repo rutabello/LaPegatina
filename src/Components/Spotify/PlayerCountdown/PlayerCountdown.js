@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
 import Sound from 'react-sound';
@@ -5,8 +7,9 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import './PlayerCountdown.css';
 // import texts from '../../../texts.json';
 import next from '../../../Pictures/skip-forwards-bw.gif';
+import next2 from '../../../Pictures/next2.gif';
 
-const SONG_TIMER_DURATION = 3;
+const SONG_TIMER_DURATION = 1;
 
 class PlayerCountdown extends Component {
 
@@ -59,11 +62,16 @@ class PlayerCountdown extends Component {
   renderTime = (value) => {
 
       //   const { language } = this.props;
+      const { currentAttempt, totalAttempts } = this.props;
 
-      if (value === 0) {
+      if (value === 0 && currentAttempt < totalAttempts) {
           // return <button type="button" className="next-button" onClick={this.playMusicStartTimer}>{texts[language].newSong}</button>;
           // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-          return <img src={next} alt="next" type="button" className="next-button" onClick={this.playMusicStartTimer} />;
+          return (
+              <div id="next-button" onClick={this.playMusicStartTimer}>
+                  <img src={next2} alt="next" type="button" className="next-button" />
+              </div>
+          );
       }
 
       return (
