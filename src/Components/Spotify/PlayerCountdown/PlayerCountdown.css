@@ -37,11 +37,12 @@
 }
 
 .next-button {
-  border: none;
+  border: solid 11px black;
   font-size: 26px;
   text-decoration: none;
   text-transform: capitalize;
   background-color: transparent;
+  border-radius: 35px;
 }
 
 .next-button:hover {
