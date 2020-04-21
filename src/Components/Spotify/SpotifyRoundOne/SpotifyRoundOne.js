@@ -6,10 +6,8 @@ import Button from '../Button/Button';
 import Shuffle from '../../Utils/Shuffle';
 import Spotify from '../../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
-import ShareTheGame from '../../ShareTheGame/ShareTheGame';
-import texts from '../../../texts.json';
+// import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
-import next from '../../../Pictures/skip-forwards-bw.gif';
 // import {Link} from 'react-router-dom';
 // import Register from '../../Register/Register'
 
@@ -205,7 +203,7 @@ render() {
 
     return (
         <section>
-            <ShareTheGame score={score} />
+            {/* <ShareTheGame score={score} /> */}
             {currentAttempt <= this.NUMBER_OF_SONGS_TO_PLAY_WITH
                 ? (
                     <div className="show">
