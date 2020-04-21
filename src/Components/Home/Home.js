@@ -19,7 +19,7 @@ const Home = ({ language }) => (
                 <Link className="btn-game" to="spotifyroundone">{texts[language].spotifyPlayWithButton}</Link>
                 <Link className="btn-game" to="youtuberoundone">{texts[language].youtubePlayWithButton}</Link>
                 <Link className="btn-game" to="instagramroundone">{texts[language].instagramPlayWithButton}</Link>
-                <a className="btn-game" href="https://playwith.es">{texts[language].allmusicButton}</a>
+                {/* <a className="btn-game" href="https://playwith.es">{texts[language].allmusicButton}</a> */}
             </div>
         </div>
     </div>
