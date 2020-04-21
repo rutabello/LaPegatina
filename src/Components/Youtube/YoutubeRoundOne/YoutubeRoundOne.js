@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../Youtube.css';
 import { Link } from 'react-router-dom';
 import Register from '../../Register/Register';
-import YTGame from '../YTGame/YTGame'
+import YTGame from '../YTGame/YTGame';
 
 class YoutubeRoundOne extends Component {
 
