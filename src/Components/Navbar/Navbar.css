@@ -104,7 +104,11 @@ nav {
     }
 }
 .user-profile img {
-    /* margin-left:500px; */
+    margin-right:5vh;
     width:30px;
    
+}
+.space {
+    flex:3;
+    
 }
