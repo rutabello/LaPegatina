@@ -7,7 +7,8 @@ class MyProvider extends Component {
     name: 'Sandra Serediuc',
     username: "Alecsundra",
     age: 20,
-    points: 0
+    points: 0,
+    activePanel: "login"
 
   }
 
@@ -20,7 +21,16 @@ class MyProvider extends Component {
         addPoints: (points) => this.setState({
           points: this.state.points + points
         
-        })
+        }),
+        // login sign up switch
+            activePanel: this.state.activePanel,
+            actions: {
+              handlePanelSwitch: newPanel => {
+                this.setState({
+                  activePanel: newPanel
+                })
+              }
+            }
       }}>
         {this.props.children}
       </MyContext.Provider>
