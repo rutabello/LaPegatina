@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { EmailShareButton, FacebookShareButton,
@@ -6,116 +7,211 @@ import { EmailShareButton, FacebookShareButton,
 // import Sound from 'react-sound';
 import texts from '../../../texts.json';
 import './ListenedSongs.css';
-import { MyContext } from '../../../context/MyProvider'
-import Register from '../../Register/Register';
 
-const ListenedSongs = ({ name, language, unknownSongs,score }) => (
-  
+// import Register from '../../Register/Register';
+import { MyContext } from '../../../context/MyProvider'
+const shareurl = 'https://juegaconlapegatinaenpruebas.netlify.com';
+
+const ListenedSongs = ({ name, language, unknownSongs, score }) => (
     <MyContext.Consumer>
 {(context)=>(
     <div>
-    <h2 className="instruct">{texts[language].score.replace('%points', score)}</h2>
-    <Link to="user"><button onClick= {()=>context.addPoints(score)}>Add the score </button></Link>
+        <h2 className="instruct">{texts[language].score.replace('%points', score)}</h2>
+        <Link to="user"><button onClick= {()=>context.addPoints(score)}>Add the score and keep playing </button></Link>
 
-        <h4 className="instruct">{texts[language].listenedSongs}</h4>
-        <ul id="mistakes" className="instruct">
-            {unknownSongs.map((song) => {
-                const url = song.uri.replace(/:/g, '/').replace('spotify', 'https://open.spotify.com');
-                return (
-                    <li key={song.uri} className="mistake-list">
-                        <div className="song-name">
-                            {song.name}
-                        </div>
+        <button
+            type="button"
+            className="btn btn-primary"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+        >
+            {texts[language].shareSongs}
+        </button>
 
-                        {/* <-- Button trigger modal --> */}
-                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                            {texts[language].shareTheSongButton}
+        <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="sharesongs">{texts[language].shareSongs}</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
                         </button>
+                    </div>
+                    <div className="modal-body">
+                        <ul id="mistakes" className="instruct">
+                            {unknownSongs.map((song) => {
+                                const url = song.uri.replace(/:/g, '/').replace('spotify', 'https://open.spotify.com');
+                                return (
+                                    <li key={song.uri} className="mistake-list">
+                                        <div className="song-name">
+                                            {song.name}
+                                        </div>
 
-                        {/* <-- Modal --> */}
-                        <div
-                            className="modal fade"
-                            id="exampleModalCenter"
-                            tabIndex="-1"
-                            role="dialog"
-                            aria-labelledby="exampleModalCenterTitle"
-                            aria-hidden="true"
-                        >
-                            <div className="modal-dialog modal-dialog-centered" role="document">
-                                <div className="modal-content">
-                                    <div className="modal-header">
-                                        <h5 className="modal-title" id="exampleModalCenterTitle">{texts[language].whereToShareText}</h5>
-                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
+                                        {/* <-- Button trigger modal --> */}
+                                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#sharethissong">
+                                            {texts[language].shareTheSongButton}
                                         </button>
-                                    </div>
-                                    <div className="modal-body">
 
-                                        <EmailShareButton
-                                            url={url}
-                                            title={texts[language].songShareText}
-                                            className="Demo_some-network__share-button"
+                                        {/* <-- Modal --> */}
+                                        <div
+                                            className="modal fade"
+                                            id="sharethissong"
+                                            tabIndex="-1"
+                                            role="dialog"
+                                            aria-labelledby="exampleModalCenterTitle"
+                                            aria-hidden="true"
                                         >
-                                            <EmailIcon
-                                                size={45}
-                                                round
-                                            />
-                                        </EmailShareButton>
+                                            <div className="modal-dialog modal-dialog-centered" role="document">
+                                                <div className="modal-content">
+                                                    <div className="modal-header">
+                                                        <h5 className="modal-title" id="sharesongs">{texts[language].whereToShareText}</h5>
+                                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div className="modal-body">
 
-                                        <FacebookShareButton
-                                            url={url}
-                                            title={texts[language].songSharedText}
-                                            className="Demo_some-network__share-button"
-                                        >
-                                            <FacebookIcon
-                                                size={45}
-                                                round
-                                            />
-                                        </FacebookShareButton>
+                                                        <EmailShareButton
+                                                            url={url}
+                                                            title={texts[language].songShareText}
+                                                            className="Demo_some-network__share-button"
+                                                        >
+                                                            <EmailIcon
+                                                                size={45}
+                                                                round
+                                                            />
+                                                        </EmailShareButton>
 
-                                        <TwitterShareButton
-                                            url={url}
-                                            title={texts[language].songSharedText}
-                                            className="Demo_some-network__share-button"
-                                        >
-                                            <TwitterIcon
-                                                size={45}
-                                                round
-                                            />
-                                        </TwitterShareButton>
+                                                        <FacebookShareButton
+                                                            url={url}
+                                                            title={texts[language].songSharedText}
+                                                            className="Demo_some-network__share-button"
+                                                        >
+                                                            <FacebookIcon
+                                                                size={45}
+                                                                round
+                                                            />
+                                                        </FacebookShareButton>
 
-                                        <WhatsappShareButton
-                                            url={url}
-                                            title={texts[language].songSharedText}
-                                            className="Demo_some-network__share-button"
-                                        >
-                                            <WhatsappIcon
-                                                size={45}
-                                                round
-                                            />
-                                        </WhatsappShareButton>
-                                    </div>
-                                    <div className="modal-footer">
-                                        <button type="button" className="btn btn-primary" data-dismiss="modal">
-                                            {texts[language].doneText}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                                                        <TwitterShareButton
+                                                            url={url}
+                                                            title={texts[language].songSharedText}
+                                                            className="Demo_some-network__share-button"
+                                                        >
+                                                            <TwitterIcon
+                                                                size={45}
+                                                                round
+                                                            />
+                                                        </TwitterShareButton>
+
+                                                        <WhatsappShareButton
+                                                            url={url}
+                                                            title={texts[language].songSharedText}
+                                                            className="Demo_some-network__share-button"
+                                                        >
+                                                            <WhatsappIcon
+                                                                size={45}
+                                                                round
+                                                            />
+                                                        </WhatsappShareButton>
+                                                    </div>
+                                                    <div className="modal-footer">
+                                                        <button type="button" className="btn btn-primary" data-dismiss="modal">
+                                                            {texts[language].doneText}
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        {/* <button className="repeat-button" onClick={this.props.onClick ? () => this.props.stopMusic()
+                                        : () => this.props.getSongUrl(song)}>
+                                        {this.props.onClick ? texts[this.props.language].pauseText : texts[this.props.language].listenAgain}
+                                        </button>  */}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-primary" data-dismiss="modal">{texts[language].doneText}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {/* <!-- Button trigger modal --> */}
+        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#sharepoints">
+            {texts[language].sharePoints}
+        </button>
+
+        {/* <!-- Modal --> */}
+        <div className="modal fade" id="sharepoints" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalCenterTitle">{texts[language].sharePoints}</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div className="modal-body">
+                        <div className="share-buttons">
+                            <EmailShareButton
+                                url={shareurl}
+                                title={`He jugado con las canciones de La Pegatina y he hecho ${score} puntos. ¿Me superas?`}
+                                className="Demo_some-network__share-button"
+                            >
+                                <EmailIcon
+                                    size={45}
+                                    round
+                                />
+                            </EmailShareButton>
+
+                            <FacebookShareButton
+                                url={shareurl}
+                                title={`He jugado con las canciones de La Pegatina y he hecho ${score} puntos. ¿Me superas?`}
+                                className="Demo_some-network__share-button"
+                            >
+                                <FacebookIcon
+                                    size={45}
+                                    round
+                                />
+                            </FacebookShareButton>
+
+                            <TwitterShareButton
+                                url={shareurl}
+                                title={`He jugado con las canciones de @LaPegatina y he hecho ${score} puntos. ¿Me superas?`}
+                                className="Demo_some-network__share-button"
+                            >
+                                <TwitterIcon
+                                    size={45}
+                                    round
+                                />
+                            </TwitterShareButton>
+
+                            <WhatsappShareButton
+                                url={shareurl}
+                                title={`He jugado con las canciones de La Pegatina y he hecho ${score} puntos. ¿Me superas?`}
+                                className="Demo_some-network__share-button"
+                            >
+                                <WhatsappIcon size={45} round />
+                            </WhatsappShareButton>
                         </div>
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-primary" data-dismiss="modal">{texts[language].doneText}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-                        {/* <button className="repeat-button" onClick={this.props.onClick ? () => this.props.stopMusic()
-                        : () => this.props.getSongUrl(song)}>
-                        {this.props.onClick ? texts[this.props.language].pauseText : texts[this.props.language].listenAgain}
-                        </button>  */}
-                    </li>
-                );
-            })}
-        </ul>
-        {name !== undefined
+        {/* {name !== undefined
             ? <Link to="spotifyRoundTwo">Go to Spotify round two</Link>
-            : <Register currentGame="spotify" />}
+            : <Register currentGame="spotify" />} */}
+
     </div>
 )}
    </MyContext.Consumer>

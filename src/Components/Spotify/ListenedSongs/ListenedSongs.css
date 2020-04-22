@@ -91,6 +91,9 @@
     justify-content: space-around;
 }
 
+.modal-title {
+    color: rgb(49, 44, 113)!important;
+}
 
 
 @media only screen and (max-width: 750px) {

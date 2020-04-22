@@ -85,7 +85,11 @@ li {
 
 .share-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+.share-buttons button {
+    margin: 0 5px;
 }
 
 .share-buttons button:focus {

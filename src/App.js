@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import SpotifyRoundOne from './Components/Spotify/SpotifyRoundOne/SpotifyRoundOne';
+import SpotifyRoundTwo from './Components/Spotify/SpotifyRoundTwo/SpotifyRoundTwo';
 import Home from './Components/Home/Home';
 import InstagramRoundTwo from './Components/Instagram/InstagramRoundTwo/InstagramRoundTwo';
 import InstagramRoundOne from './Components/Instagram/InstagramRoundOne/InstagramRoundOne';
@@ -48,6 +49,7 @@ render() {
                     )}
                 />
                 <Route path="/spotifyroundone" render={(props) => <SpotifyRoundOne language={selectedLanguage} {...props} />} />
+                <Route path="/spotifyroundtwo" render={(props) => <SpotifyRoundTwo language={selectedLanguage} {...props }/>}/>
                 <Route path="/listenedsongs" render={(props) => <ListenedSongs language={selectedLanguage} {...props} />} />
                 <Route path="/team" render={(props) => <Team language={selectedLanguage} {...props} />} />
                 <Route path="/instagramroundone" render={(props) => <InstagramRoundOne language={selectedLanguage} {...props} />} />

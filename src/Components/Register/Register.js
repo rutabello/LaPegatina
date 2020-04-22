@@ -1,34 +1,53 @@
 import React, { Component } from 'react';
 import './Register.css';
 import { Link } from 'react-router-dom';
+import '../Home/Home.css';
+
+
 
 class Register extends Component {
 
     state= {
 
+     link: "hide"
+
     }
 
-    render() {
+    showLink = () => {
+
+        this.setState({
+
+            link: "showIt"
+        })
+    }
+
+    
+
+    render (props) {
 
         const { currentGame } = this.props;
         
         if (currentGame === 'spotify') {
             return (
                 <div>
-                    <p>Register form goes here</p>
-                    
-                    {/* <p>{this.props.score}</p> */}
-                    {/* <Link to='/user'>Click to keep the points</Link> */}
-                    <Link to='/user'>Click to keep the points</Link>
-                    <Link to="spotifyRoundTwo">Send and go to Spotify second round</Link>
+
+                     <div className={this.state.link}>  
+                     <h1 className="playWith title">Eso es ronda 2</h1>             
+                 <Link className="playWith" to="spotifyRoundTwo">Start</Link> 
+                    </div>
+                 <button onClick={this.showLink}>Send and go to spotify Second Round</button>
                 </div>
             );
         }
 
         if (currentGame === 'youtube') {
             return (
-                <div>
-                    <Link to="youtubeRoundTwo">Send and go to YouTube second round</Link>
+                <div>       
+                      <div className={this.state.link}>  
+                      <h1 className="playWith">Eso es ronda 2</h1>         
+                    <Link  to="youtubeRoundTwo">Start</Link>
+                    </div> 
+                    <button onClick={this.showLink}>Send and go to Youtube Second Round</button>
                 </div>
             );
         }
@@ -36,7 +55,13 @@ class Register extends Component {
         if (currentGame === 'instagram') {
             return (
                 <div>
-                    <Link to="instagramRoundTwo">Send and go to Instagram second round</Link>
+
+                   <div className={this.state.link}>  
+                    <h1 className="playWith">Eso es ronda 2</h1>         
+                    <Link  to="instagramRoundTwo">Start</Link>
+                    </div> 
+                    <button onClick={this.showLink}>Send and go to Instagram Second Round</button>
+                   
                 </div>
             );
         }
