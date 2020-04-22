@@ -9,8 +9,7 @@ import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import texts from '../../../texts.json';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
-// import {Link} from 'react-router-dom';
-// import Register from '../../Register/Register'
+
 
 class SpotifyRoundOne extends React.Component {
 

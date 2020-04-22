@@ -1,0 +1,29 @@
+.title {
+
+    color: white;
+    text-decoration: none;
+    margin-top: 240px;
+}
+
+.screen 
+
+    {
+        position: absolute;
+        padding:0;
+        margin:0;
+    
+        top:0;
+        left:0;
+    
+        width: 100%;
+        height: 100%;
+        background-color: black; 
+        
+        /*background:rgba(255,255,255,0.5); */
+    }
+
+    .btns {
+
+        display: flex;
+        border-radius: 30%;
+    }
