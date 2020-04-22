@@ -80,7 +80,7 @@ class Navbar extends React.Component {
             <img src={userbtn} alt='user-profile' />
           </Link> 
           </div>
-          <div>
+          <div className='nav-username'>
               <p>UserName: , score:</p>
           </div>
             </nav>

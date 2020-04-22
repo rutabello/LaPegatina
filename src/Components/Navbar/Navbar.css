@@ -104,11 +104,16 @@ nav {
     }
 }
 .user-profile img {
-    margin-right:5vh;
+    margin-right:2vh;
     width:30px;
    
 }
 .space {
     flex:3;
     
+}
+.nav-username {
+    margin-right: 5vh;
+    font-weight: bold;
+    font-size:18px
 }
