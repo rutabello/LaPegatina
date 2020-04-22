@@ -55,7 +55,8 @@ class InstagramRoundOne extends Component {
 
         const { data } = this.state;
 
-        const images = data.filter((img) => img.node.edge_media_to_tagged_user.edges.length !== 0);
+        const images = data.filter((img) => img.node.edge_media_to_tagged_user.edges.length !== 0
+            && img.node.edge_media_to_tagged_user.edges.length < 5);
 
         const result = images.map((image) => ({
             src: image.node.thumbnail_resources[4].src,
@@ -160,7 +161,7 @@ class InstagramRoundOne extends Component {
                             {texts[language].correctAnswers}
                             {this.counter}
                             /
-                            {this.oficial_number_of_attempts}
+                            {this.OFICIAL_NUMBER_OF_ATTEMPTS}
                         </p>
                     </div>
                 </div>

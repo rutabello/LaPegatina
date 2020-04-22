@@ -5,11 +5,6 @@ import logo from '../../Pictures/logo_la_pegatina_2018.png';
 import texts from '../../texts.json';
 import Rounds from '../Rounds/Rounds';
 
-// const printName = ({ name }) => {
-//     // const { name } = user;
-//     // const name = user.name
-//     console.log(name);
-// };
 
 const Home = ({ language }) => (
 

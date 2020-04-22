@@ -42,6 +42,7 @@
   text-decoration: none;
   text-transform: capitalize;
   background-color: transparent;
+  border-radius: 35px;
 }
 
 .next-button:hover {
@@ -83,5 +84,20 @@
 #play-button:hover {
   background-color: rgba(0, 33, 66, 0.9);
 }
-    
-  
+
+#next-button {
+  bottom: 16vh;
+  position: fixed;
+  background-color: #312C71;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 750px) {
+  #next-button {
+    width: 80%;
+    bottom: 16vh;
+  }
+}

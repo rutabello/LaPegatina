@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './GameEnded.css';
 import { Link } from 'react-router-dom';
+import texts from '../../texts.json';
 
 class GameEnded extends Component {
 
@@ -10,12 +11,12 @@ class GameEnded extends Component {
 
     render() {
 
-        const { currentGame } = this.props;
+        const { currentGame, language, changeBandMember } = this.props;
 
         if (currentGame === 'spotify') {
             return (
                 <div>
-                    <p>This game ends here. You can now play with</p>
+                    <p>{texts[language].gameEnded}</p>
                     <br />
                     <Link to="instagramroundone">Instagram</Link>
                     <br />
@@ -44,6 +45,9 @@ class GameEnded extends Component {
                     <Link to="spotifyroundone">Spotify</Link>
                     <br />
                     <Link to="youtuberoundone">YouTube</Link>
+                    <br />
+                    {/* <Link to="instagramroundtwo">{texts[language].changeBandMember}</Link> */}
+                    <button onClick={this.props.changeBandMember} type="button">{texts[language].changeBandMember}</button>
                 </div>
             );
         }

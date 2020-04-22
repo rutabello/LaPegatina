@@ -6,8 +6,7 @@ import Button from '../Button/Button';
 import Shuffle from '../../Utils/Shuffle';
 import Spotify from '../../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
-import ShareTheGame from '../../ShareTheGame/ShareTheGame';
-import texts from '../../../texts.json';
+// import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
 
 
@@ -29,6 +28,10 @@ class SpotifyRoundOne extends React.Component {
   // All the songs that the user guessed wrong are pushed into this array
   unknownSongs= [];
 
+  NUMBER_OF_SONGS_TO_PLAY_WITH = 3
+
+  // OFFICIAL_NUMBER_OF_SONGS_TO_PLAY_WITH = this.NUMBER_OF_SONGS_TO_PLAY_WITH - 1
+
   state = {
 
       songNames: [],
@@ -40,12 +43,12 @@ class SpotifyRoundOne extends React.Component {
 
       hideResults: true,
       correctAnswers: 0,
-      total: 0,
       score: 0,
       songUrl: '',
       playerState: Sound.status.PLAYING,
       playing: false,
       playlistID: '37i9dQZF1DZ06evO2EUrsw',
+      currentAttempt: 0,
   }
 
   // API call to get the playlist data.
@@ -90,9 +93,18 @@ chooseSongs = () => {
 
 setNewRandomSong = () => {
 
-    const { total } = this.state;
+    const { currentAttempt } = this.state;
 
     if (this.spotifyFilteredObjArr.length === 0) {
+
+        return;
+    }
+
+    if (currentAttempt >= this.NUMBER_OF_SONGS_TO_PLAY_WITH) {
+        this.setState({
+            currentAttempt: currentAttempt + 1,
+        });
+
         return;
     }
 
@@ -108,8 +120,8 @@ setNewRandomSong = () => {
         },
         songNames: this.getSongsToDisplay(randomSong.name),
         hideResults: true,
-        total: total + 1,
         playerState: Sound.status.STOPPED,
+        currentAttempt: currentAttempt + 1,
     });
 }
 
@@ -118,6 +130,12 @@ writeChosenSong = (songName) => {
 }
 
 checkCoincidence = () => {
+
+    const { currentAttempt } = this.state;
+
+    if (currentAttempt > this.NUMBER_OF_SONGS_TO_PLAY_WITH) {
+        return;
+    }
 
     const { currentSong, correctAnswers, score } = this.state;
 
@@ -128,7 +146,7 @@ checkCoincidence = () => {
     this.setState({
         hideResults: false,
         correctAnswers: this.coincidence ? (correctAnswers + 1) : correctAnswers,
-        score: this.coincidence ? (score + 10) : score,
+        score: this.coincidence ? (score + 100) : score,
     });
 }
 
@@ -178,14 +196,14 @@ setPlayingToFalse = () => {
 
 render() {
 
-    const { score, total, currentSong, hideResults, songNames, name, songUrl, correctAnswers, playerState, playing } = this.state;
+    const { score, currentSong, hideResults, songNames, name, songUrl, playerState, playing, currentAttempt } = this.state;
 
     const { language } = this.props;
 
     return (
         <section>
-            <ShareTheGame score={score} />
-            {total < 2
+            {/* <ShareTheGame score={score} /> */}
+            {currentAttempt <= this.NUMBER_OF_SONGS_TO_PLAY_WITH
                 ? (
                     <div className="show">
                         <div className="QuestionAndAnswers">
@@ -197,6 +215,8 @@ render() {
                                     songURL={currentSong.preview_url}
                                     coincidence={this.checkCoincidence}
                                     showAnswerCount={this.showAnswerCount}
+                                    currentAttempt={currentAttempt}
+                                    totalAttempts={this.NUMBER_OF_SONGS_TO_PLAY_WITH}
                                 />
                             </div>
                             <div className={`FourButtons ${hideResults ? 'forceGrayColor' : ''}`}>
@@ -214,16 +234,17 @@ render() {
                             </div>
                             <div id="counter" className="instruct">
                                 <p className={this.answerCountShow ? 'show' : 'hide'}>
-                                    {texts[language].correctAnswers}
-                                    {correctAnswers}
-                                    {texts[language].outofText}
-                                    {total}
+                                    {/* {texts[language].attempts} */}
+                                    {currentAttempt}
+                                    {' / '}
+                                    {/* {texts[language].outofText} */}
+                                    {this.NUMBER_OF_SONGS_TO_PLAY_WITH}
                                 </p>
                                 <br />
-                                <p className={this.answerCountShow ? 'show' : 'hide'}>
+                                {/* <p className={this.answerCountShow ? 'show' : 'hide'}>
                                     {texts[language].pointsText}
                                     {score}
-                                </p>
+                                </p> */}
                                 <hr />
                             </div>
                         </div>

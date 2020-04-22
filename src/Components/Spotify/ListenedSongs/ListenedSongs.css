@@ -5,7 +5,7 @@
     margin-right: auto;
     margin-left: auto;
     padding-left: 0;
-    padding-bottom: 50px;
+    padding-bottom: 8px;
 }
   
 .song-name {
@@ -41,12 +41,7 @@
 
 .instruct p {
     color: #766dca;
-    font-size: 18px;
-}
- 
-#counter {
-    font-size: 30px;
-    margin-top: 1vh;
+    font-size: 22px;
 }
 
 .show h4 {
@@ -71,7 +66,7 @@
     background-color: #766dca;
     border-color: #766dca;
     min-width: 30%;
-    margin-top: 6px;
+    /* margin-top: 6px; */
 }
 
 .btn-primary:hover {
@@ -96,6 +91,9 @@
     justify-content: space-around;
 }
 
+.modal-title {
+    color: rgb(49, 44, 113)!important;
+}
 
 
 @media only screen and (max-width: 750px) {
@@ -110,7 +108,6 @@
 
     #counter {
         font-size: 15px;
-        margin-top: 20px;
     }
 
     #mistakes {
@@ -118,10 +115,6 @@
     }
 
     .mistake-list a {
-        font-size: 14px;
-    }
-
-    .instruct p {
         font-size: 14px;
     }
 

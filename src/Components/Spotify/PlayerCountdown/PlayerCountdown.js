@@ -1,113 +1,135 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import Sound from 'react-sound';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import './PlayerCountdown.css';
-import texts from '../../../texts.json';
+// import texts from '../../../texts.json';
+import next2 from '../../../Pictures/next2.gif';
 
 const SONG_TIMER_DURATION = 1;
 
 class PlayerCountdown extends Component {
 
-  // Properties
-  state = {
-      playStatus: Sound.status.STOPPED,
-      isPlaying: false,
-      uniqueKey: Date.now(),
-  }
+    // Properties
+    state = {
+        playStatus: Sound.status.STOPPED,
+        isPlaying: false,
+        uniqueKey: Date.now(),
+    }
 
-  countdownIsDisplayed = false
+    countdownIsDisplayed = false
 
-  // Methods
+    // Methods
 
-  componentDidMount() {
-      this.playMusicStartTimer();
-  }
+    componentDidMount() {
 
-  playMusicStartTimer = () => {
+        this.playMusicStartTimer();
+    }
 
-      const { showAnswerCount, setNewRandomSong, coincidence } = this.props;
+    playMusicStartTimer = () => {
 
-      this.countdownIsDisplayed = true;
+        const { showAnswerCount, setNewRandomSong, coincidence } = this.props;
 
-      // This makes the answer counter appear only when you've started playing the game and not before
-      showAnswerCount();
+        this.countdownIsDisplayed = true;
 
-      setNewRandomSong();
+        // This makes the answer counter appear only when you've started playing the game and not before
+        showAnswerCount();
 
-      this.setState({
-      // This makes the countdown start counting when the new state is set (on play clicked) instead of when
-      // the page is loaded
-          uniqueKey: Date.now(),
-          playStatus: Sound.status.PLAYING,
-          isPlaying: true,
-      // This makes the 'play' button disappear once you click on it
-      });
+        setNewRandomSong();
 
-      // sets the length and specifics of the timer
+        this.setState({
+        // This makes the countdown start counting when the new state is set (on play clicked) instead of when
+        // the page is loaded
+            uniqueKey: Date.now(),
+            playStatus: Sound.status.PLAYING,
+            isPlaying: true,
+        // This makes the 'play' button disappear once you click on it
+        });
 
-      setTimeout(() => {
+        // sets the length and specifics of the timer
 
-          this.stopMusic();
+        setTimeout(() => {
 
-          coincidence();
+            this.stopMusic();
 
-      }, SONG_TIMER_DURATION * 1000);
-  }
+            coincidence();
 
-  renderTime = (value) => {
+        }, SONG_TIMER_DURATION * 1000);
+    }
 
-      const { language } = this.props;
+    renderTime = (value) => {
 
-      if (value === 0) {
-          return <button type="button" className="next-button" onClick={this.playMusicStartTimer}>{texts[language].newSong}</button>;
-      }
+        //   const { language } = this.props;
+        const { currentAttempt, totalAttempts } = this.props;
 
-      return (
-          <div className="timer">
-              <div className="value">{value}</div>
-              {/* <div className="text">{texts[this.props.language].secondsText}</div> */}
-          </div>
-      );
-  }
+        // const { history } = this.props;
 
-  stopMusic = () => {
+        if (value === 0 && currentAttempt < totalAttempts) {
+        // return <button type="button" className="next-button" onClick={this.playMusicStartTimer}>{texts[language].newSong}</button>;
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+            return (
+                <div id="next-button" onClick={this.playMusicStartTimer}>
+                    <img src={next2} alt="next" type="button" className="next-button" />
+                </div>
+            );
+        }
 
-      this.setState({
-          playStatus: Sound.status.STOPPED,
-      });
-  }
+        if (value === 0 && currentAttempt === totalAttempts) {
+            setTimeout(() => {
+                // history.push('/listenedsongs');
+                this.playMusicStartTimer();
+            }, 3000);
+        }
+
+        return (
+            <div className="timer">
+                <div className="value">{value}</div>
+                {/* <div className="text">{texts[this.props.language].secondsText}</div> */}
+            </div>
+        );
+    }
+
+    stopMusic = () => {
+
+        this.setState({
+            playStatus: Sound.status.STOPPED,
+        });
+    }
 
 
-  render() {
+    render() {
 
-      const { songURL } = this.props;
+        const { songURL } = this.props;
 
-      const { playStatus, uniqueKey, isPlaying } = this.state;
+        const { playStatus, uniqueKey, isPlaying } = this.state;
 
-      return (
-          <div>
-              <Sound
-                  url={songURL}
-                  playStatus={playStatus}
-                  autoLoad
-              />
+        return (
+            <div>
+                <Sound
+                    url={songURL}
+                    playStatus={playStatus}
+                    autoLoad
+                />
 
-              <div className={this.countdownIsDisplayed ? 'show' : 'hide'}>
-                  <CountdownCircleTimer
-                      key={uniqueKey}
-                      isPlaying={isPlaying}
-                      durationSeconds={SONG_TIMER_DURATION}
-                      colors={[['#004777', 0.33], ['#F7B801', 0.33], ['#A30000']]}
-                      renderTime={this.renderTime}
-                      size={90}
-                  />
-              </div>
-          </div>
-      );
-  }
+                <div className={this.countdownIsDisplayed ? 'show' : 'hide'}>
+                    <CountdownCircleTimer
+                        key={uniqueKey}
+                        isPlaying={isPlaying}
+                        durationSeconds={SONG_TIMER_DURATION}
+                        colors={[['#004777', 0.33], ['#F7B801', 0.33], ['#A30000']]}
+                        renderTime={this.renderTime}
+                        size={90}
+                    />
+                </div>
+            </div>
+        );
+    }
 }
 
-export default PlayerCountdown;
+export default withRouter(PlayerCountdown);
 
 // Put the information below in a README.md file later!
 

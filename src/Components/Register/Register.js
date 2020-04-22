@@ -21,7 +21,7 @@ class Register extends Component {
         })
     }
 
-    //add button
+    
 
     render (props) {
 

@@ -7,6 +7,7 @@ import InstagramRoundTwo from './Components/Instagram/InstagramRoundTwo/Instagra
 import InstagramRoundOne from './Components/Instagram/InstagramRoundOne/InstagramRoundOne';
 import SocialMedia from './Components/SocialMedia/SocialMedia';
 import Team from './Components/Team/Team';
+import YTGame from './Components/Youtube/YTGame/YTGame'
 import Navbar from './Components/Navbar/Navbar';
 import YoutubeRoundOne from './Components/Youtube/YoutubeRoundOne/YoutubeRoundOne';
 import YoutubeRoundTwo from './Components/Youtube/YoutubeRoundTwo/YoutubeRoundTwo';
@@ -33,10 +34,17 @@ render() {
 
     return (
         <div>
-            <Navbar onChangeLanguage={this.setLanguage} />
-
             <Switch>
-                <Route exact path="/" render={(props) => <Home language={selectedLanguage} {...props} />} />
+                <Route
+                    exact
+                    path="/"
+                    render={(props) => (
+                        <div>
+                            <Navbar onChangeLanguage={this.setLanguage} />
+                            <Home language={selectedLanguage} {...props} />
+                        </div>
+                    )}
+                />
                 <Route path="/spotifyroundone" render={(props) => <SpotifyRoundOne language={selectedLanguage} {...props} />} />
                 <Route path="/spotifyroundtwo" render={(props) => <SpotifyRoundTwo language={selectedLanguage} {...props }/>}/>
                 <Route path="/listenedsongs" render={(props) => <ListenedSongs language={selectedLanguage} {...props} />} />
