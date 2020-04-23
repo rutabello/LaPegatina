@@ -3,8 +3,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import {MyContext} from '../../context/MyProvider'
-import UserForm from '../Register/User/UserForm/UserForm'
+import { MyContext } from '../../context/MyProvider';
+import UserForm from '../Register/User/UserForm/UserForm';
 
 import texts from '../../texts.json';
 import './Navbar.css';
@@ -15,7 +15,7 @@ import spanish from '../../Pictures/bandera_spanish_small.png';
 import english from '../../Pictures/bandera_english_small.png';
 import french from '../../Pictures/bandera_french_small.png';
 
-import userbtn from '../../Pictures/user45.png'
+import userbtn from '../../Pictures/user45.png';
 
 const languagesAvailable = [
     { language: 'catalan', flag: catalan },
@@ -26,7 +26,6 @@ const languagesAvailable = [
 
 
 class Navbar extends React.Component {
-    
 
     state = {
         selectedLanguage: 'spanish',
@@ -46,11 +45,11 @@ class Navbar extends React.Component {
         // Notify the parent that the language has been updated
         onChangeLanguage(lang);
     }
-    
+
 
     render() {
         const { selectedLanguage, selectedFlag } = this.state;
-        
+
         return (
             <nav id="topnavbar">
                 <div>
@@ -58,7 +57,6 @@ class Navbar extends React.Component {
                         <img src={homebtn} alt="home button" />
                     </Link>
                 </div>
-               
                 <div className="language-dropdown">
                     <button
                         type="button"
@@ -79,24 +77,29 @@ class Navbar extends React.Component {
                         ))}
                     </div>
                 </div>
-                <div className='space' />
-
+                <div className="space" />
                 <div>
-                <Link className="user-profile" to="/user">
-            <img src={userbtn} alt='user-profile' />
-          </Link> 
-          </div>
-          <div className='nav-username'>
-          <MyContext.Consumer>
-            {(context)=>(
-                context.state.name 
-                ?
-                <p>{context.state.username} {context.state.points} puntos</p>
-                : 
-                <UserForm mainpage='navbar'/>
-)}
-</MyContext.Consumer>
-          </div>
+                    <Link className="user-profile" to="/user">
+                        <img src={userbtn} alt="user profile" />
+                    </Link>
+                </div>
+                <div className="nav-username">
+                    <MyContext.Consumer>
+                        {(context) => (
+                            context.state.name
+                                ? (
+                                    <p>
+                                        {context.state.username}
+                                        {' '}
+                                        {context.state.points}
+                                        {' '}
+                                        puntos
+                                    </p>
+                                )
+                                : <UserForm mainpage="navbar" />
+                        )}
+                    </MyContext.Consumer>
+                </div>
             </nav>
         );
     }

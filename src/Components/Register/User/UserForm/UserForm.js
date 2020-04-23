@@ -1,186 +1,189 @@
-import React, { Component } from "react";
-import {MyContext} from '../../../../context/MyProvider'
+import React from 'react';
 import SignUp from './Signup';
-import Login from './Login'
-import Panel from './Panel'
+import Login from './Login';
+import Panel from './Panel';
 import FormPanel from './FormPanel';
-import MyProvider from '../../../../context/MyProvider'
-import './UserForm.css'
+import MyProvider from '../../../../context/MyProvider';
+import './UserForm.css';
 
-class UserForm extends Component {
-  // constructor(props) {
-  //   super(props);
+const UserForm = ({ mainpage }) => (
+// constructor(props) {
+//   super(props);
 
-  //   this.state = {
-  //       lastname: '',
-  //       firstname: '',
-  //       email: '',
-  //       notLogged: true,
-  //     };
+    //   this.state = {
+    //       lastname: '',
+    //       firstname: '',
+    //       email: '',
+    //       notLogged: true,
+    //     };
 
-  //   this.onChange = this.onChange.bind(this);
-  //   this.onClick = this.onClick.bind(this);
-  //   this.submitForm = this.submitForm.bind(this);
-  //   this.apiURL = this.apiURL.bind(this);
-  // }
-  // apiURL() {
-  //   const url = "";
-  //   const config = {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify(this.state)
-  //   };
+    //   this.onChange = this.onChange.bind(this);
+    //   this.onClick = this.onClick.bind(this);
+    //   this.submitForm = this.submitForm.bind(this);
+    //   this.apiURL = this.apiURL.bind(this);
+    // }
+    // apiURL() {
+    //   const url = "";
+    //   const config = {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify(this.state)
+    //   };
 
-  //   fetch(url, config)
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       if (res.error) {
-  //         alert(res.error);
-  //       } else {
-  //         alert(`Benvingut! Los puntos son guardados!`);
-  //       }
-  //     })
-  //     .catch(e => {
-  //       console.error(e);
-  //       alert("Prova otra vez");
-  //     });
-  // }
-  // onChange(e) {
-  //   this.setState({
-  //     [e.target.name]: e.target.value
-  //   });
-  // }
-  // onClick(e) {
-  //   this.apiURL();
-  // }
-  // submitForm(e) {
-  //   e.preventDefault();
-  //   this.setState({
-  //     notLogged:false
-  //   })
-  // }
-  render() {
-    return (
-      this.props.mainpage
-        ?
-      <div>
-      <button type="button" className="btn btn-primary" 
-      data-toggle="modal" data-target="#sharethissong">
-          Register to save the points
-      </button>
-            <div
-              className="modal fade"
-                  id="sharethissong"
-                  id="sharethissong"
-                  tabIndex="-1"
-                  role="dialog"
-                  aria-labelledby="exampleModalCenterTitle"
-                  aria-hidden="true"
-                  >
-                <div className="modal-dialog modal-dialog-centered" role="document">
-                  <div className="modal-content">
-                      <div className="modal-header">
-                        <h5 className="modal-title" id="sharesongs">Welcome, keep playing!</h5>
-                          <button type="button" className="close" 
-                          data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                           </button>
+    //   fetch(url, config)
+    //     .then(res => res.json())
+    //     .then(res => {
+    //       if (res.error) {
+    //         alert(res.error);
+    //       } else {
+    //         alert(`Benvingut! Los puntos son guardados!`);
+    //       }
+    //     })
+    //     .catch(e => {
+    //       console.error(e);
+    //       alert("Prova otra vez");
+    //     });
+    // }
+    // onChange(e) {
+    //   this.setState({
+    //     [e.target.name]: e.target.value
+    //   });
+    // }
+    // onClick(e) {
+    //   this.apiURL();
+    // }
+    // submitForm(e) {
+    //   e.preventDefault();
+    //   this.setState({
+    //     notLogged:false
+    //   })
+    // }
+
+
+    mainpage
+        ? (
+            <div>
+                <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#sharethissong"
+                >
+                    Register to save the points
+                </button>
+                <div
+                    className="modal fade"
+                    id="sharethissong"
+                    tabIndex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true"
+                >
+                    <div
+                        className="modal-dialog modal-dialog-centered"
+                        role="document"
+                    >
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="sharesongs">Welcome, keep playing!</h5>
+                                <button
+                                    type="button"
+                                    className="close"
+                                    data-dismiss="modal"
+                                    aria-label="Close"
+                                >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body" />
+                            <div className="form-wrap">
+                                <MyProvider>
+                                    <div className="tabs">
+                                        <Panel id="login">
+                                            <h2 className="login-tab">Login</h2>
+                                        </Panel>
+                                        <Panel id="signup">
+                                            <h2 className="signup-tab">Sign Up</h2>
+                                        </Panel>
+                                    </div>
+
+                                    <FormPanel isActive="login">
+                                        <Login />
+                                    </FormPanel>
+
+                                    <FormPanel isActive="signup">
+                                        <SignUp />
+                                    </FormPanel>
+                                </MyProvider>
+                            </div>
+                            );
                         </div>
-              <div className="modal-body"></div>
-        <div className="form-wrap">
-      <MyProvider>
-        <div className="tabs">
-          <Panel id="login">
-            <h2 className="login-tab">Login</h2>
-          </Panel>
-          <Panel id="signup">
-            <h2 className="signup-tab">Sign Up</h2>
-          </Panel>
-        </div>
+                    </div>
+                </div>
+            </div>
+        )
+        : (
+            <div>
+                <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#sharethissong"
+                >
+                    Keep playing, go to round two
+                </button>
+                <div
+                    className="modal fade"
+                    id="sharethissong"
+                    tabIndex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true"
+                >
+                    <div
+                        className="modal-dialog modal-dialog-centered"
+                        role="document"
+                    >
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="sharesongs">Welcome, keep playing!</h5>
+                                <button
+                                    type="button"
+                                    className="close"
+                                    data-dismiss="modal"
+                                    aria-label="Close"
+                                >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body" />
+                            <div className="form-wrap">
+                                <MyProvider>
+                                    <div className="tabs">
+                                        <Panel id="login">
+                                            <h2 className="login-tab">Login</h2>
+                                        </Panel>
+                                        <Panel id="signup">
+                                            <h2 className="signup-tab">Sign Up</h2>
+                                        </Panel>
+                                    </div>
 
-        <FormPanel isActive="login">
-          <Login />
-        </FormPanel>
+                                    <FormPanel isActive="login">
+                                        <Login />
+                                    </FormPanel>
 
-        <FormPanel isActive="signup">
-          <SignUp />
-        </FormPanel>
-      </MyProvider>
-    </div>
-  );
-};
-{/* <div className="modal-footer">
-  <button type="button" className="btn btn-primary" data-dismiss="modal">
-    cerar
-  </button> */}
-      {/* </div> */}
-  </div>
-         </div>
-    </div>
-          </div>                                  
-     :
-     <div>
-     <button type="button" className="btn btn-primary" 
-     data-toggle="modal" data-target="#sharethissong">
-         Keep playing, go to round two
-     </button>
-           <div
-             className="modal fade"
-                 id="sharethissong"
-                 id="sharethissong"
-                 tabIndex="-1"
-                 role="dialog"
-                 aria-labelledby="exampleModalCenterTitle"
-                 aria-hidden="true"
-                 >
-               <div className="modal-dialog modal-dialog-centered" role="document">
-                 <div className="modal-content">
-                     <div className="modal-header">
-                       <h5 className="modal-title" id="sharesongs">Welcome, keep playing!</h5>
-                         <button type="button" className="close" 
-                         data-dismiss="modal" aria-label="Close">
-                             <span aria-hidden="true">&times;</span>
-                          </button>
-                       </div>
-             <div className="modal-body"></div>
-       <div className="form-wrap">
-     <MyProvider>
-       <div className="tabs">
-         <Panel id="login">
-           <h2 className="login-tab">Login</h2>
-         </Panel>
-         <Panel id="signup">
-           <h2 className="signup-tab">Sign Up</h2>
-         </Panel>
-       </div>
+                                    <FormPanel isActive="signup">
+                                        <SignUp />
+                                    </FormPanel>
+                                </MyProvider>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+);
 
-       <FormPanel isActive="login">
-         <Login />
-       </FormPanel>
-
-       <FormPanel isActive="signup">
-         <SignUp />
-       </FormPanel>
-     </MyProvider>
-   </div>
- );
-};
-{/* <div className="modal-footer">
- <button type="button" className="btn btn-primary" data-dismiss="modal">
-   cerar
- </button> */}
-     {/* </div> */}
- </div>
-        </div>
-   </div>
-         </div>                                               
-    )
-  }
-}
 export default UserForm;
-
-
-                                      
-                                                    

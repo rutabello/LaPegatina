@@ -6,27 +6,27 @@ import texts from '../../texts.json';
 import Rounds from '../Rounds/Rounds';
 
 
-//all the links to the first games are in Rounds.js now
-//the links to the second Rounds in Register.js
+// all the links to the first games are in Rounds.js now
+// the links to the second Rounds in Register.js
 
 const Home = ({ language }) => (
 
-  
     <div className="container">
-      <div className="main">
-  
-        <p className="playWith">{texts[language].playwithTitle}</p>
-        <img src={logo} alt="la pegatina logo" className="laPegatina" />
-  
-        <div className="home-play-buttons">
-          <p ><Rounds languageSpotify={texts[language].spotifyPlayWithButton} languageYoutube={texts[language].youtubePlayWithButton}
-          languageInstagram={texts[language].instagramPlayWithButton} languageWorld={texts[language].allmusicButton} /></p>
+        <div className="main">
+            <p className="playWith">{texts[language].playwithTitle}</p>
+            <img src={logo} alt="la pegatina logo" className="laPegatina" />
+            <div className="home-play-buttons">
+                <p>
+                    <Rounds
+                        languageSpotify={texts[language].spotifyPlayWithButton}
+                        languageYoutube={texts[language].youtubePlayWithButton}
+                        languageInstagram={texts[language].instagramPlayWithButton}
+                        languageWorld={texts[language].allmusicButton}
+                    />
+                </p>
+            </div>
         </div>
-      </div>
     </div>
-  )
-  
-  export default Home;
+);
 
-
-
+export default Home;
