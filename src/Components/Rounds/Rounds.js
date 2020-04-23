@@ -39,7 +39,8 @@ class Rounds extends React.Component {
 
     this.setState({
       youtube: youStart,
-      page: start
+      page: start,
+      button: "hideGame"
     })
 
   }
@@ -51,7 +52,8 @@ class Rounds extends React.Component {
 
     this.setState({
       instagram: instaStart,
-      page: start
+      page: start,
+      button: "hideGame"
     })
   }
 
@@ -70,7 +72,6 @@ class Rounds extends React.Component {
       <Link className={this.state.spotify || this.state.youtube ?  "hideGame" : 'title'}   to="instagramroundone">start</Link>
        
     </div>
-           
           <div className="home-play-buttons">
             <button className={this.state.button} onClick={this.startSpotify}>{this.props.languageSpotify}</button>
             <button className={this.state.button}  onClick={this.startYoutube}>{this.props.languageYoutube}</button>
