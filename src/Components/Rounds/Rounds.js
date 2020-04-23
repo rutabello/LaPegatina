@@ -11,6 +11,7 @@ class Rounds extends React.Component {
     ronda1 : "Eso es ronda 1",
     ronda2 : "Eso es ronda 2",
     page: "hideGame",
+    button: "btn-game",
     spotify: false,
     youtube: false,
     instagram: false,
@@ -25,7 +26,8 @@ class Rounds extends React.Component {
 
     this.setState({
       spotify: spotStart,
-      page: start
+      page: start,
+      button: "hideGame"
     })
 
   }
@@ -68,13 +70,12 @@ class Rounds extends React.Component {
       <Link className={this.state.spotify || this.state.youtube ?  "hideGame" : 'title'}   to="instagramroundone">start</Link>
        
     </div>
-       
-       
-          <div className="btns">
-            <button  onClick={this.startSpotify}>{this.props.languageSpotify}</button>
-            <button  onClick={this.startYoutube}>{this.props.languageYoutube}</button>
-            <button  onClick={this.startInsta} >{this.props.languageInstagram}</button>
-            <button >  <a className="title" href="https://playwith.es">{this.props.languageWorld}</a></button>
+           
+          <div className="home-play-buttons">
+            <button className={this.state.button} onClick={this.startSpotify}>{this.props.languageSpotify}</button>
+            <button className={this.state.button}  onClick={this.startYoutube}>{this.props.languageYoutube}</button>
+            <button className={this.state.button}  onClick={this.startInsta} >{this.props.languageInstagram}</button>
+          {/*<button >  <a className="title" href="https://playwith.es">{this.props.languageWorld}</a></button>*/}
                       
             </div>
    </div>

@@ -6,6 +6,9 @@ import texts from '../../texts.json';
 import Rounds from '../Rounds/Rounds';
 
 
+//all the links to the first games are in Rounds.js now
+//the links to the second Rounds in Register.js
+
 const Home = ({ language }) => (
 
   
@@ -24,5 +27,6 @@ const Home = ({ language }) => (
   )
   
   export default Home;
+
 
 
