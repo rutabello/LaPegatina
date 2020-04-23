@@ -2,25 +2,20 @@ import React, { Component } from 'react';
 import './GameEnded.css';
 import { Link } from 'react-router-dom';
 import texts from '../../texts.json';
+import  {MyContext} from '../../context/MyProvider';
 
-class GameEnded extends Component {
+const GameEnded = ({ currentGame, language, changeBandMember , points})=>(
 
-    state= {
-
-    }
-
-    render() {
-
-        const { currentGame, language, changeBandMember } = this.props;
-
+<MyContext.Consumer>
+{(context) => {
         if (currentGame === 'spotify') {
             return (
                 <div>
-                    <p>{texts[language].gameEnded}</p>
+                    <p>{texts[language].gameEnded}</p> 
                     <br />
-                    <Link to="instagramroundone">Instagram</Link>
+                    <Link to="instagramroundone"><button onClick= {()=>context.addPoints(points)}>Instagram</button></Link>
                     <br />
-                    <Link to="youtuberoundone">YouTube</Link>
+                    <Link to="youtuberoundone"><button onClick= {()=>context.addPoints(points)}>YouTube</button></Link>
                 </div>
             );
         }
@@ -29,10 +24,11 @@ class GameEnded extends Component {
             return (
                 <div>
                     <p>This game ends here. You can now play with</p>
+    
                     <br />
-                    <Link to="spotifyroundone">Spotify</Link>
+                    <Link to="spotifyroundone"><button onClick= {()=>context.addPoints(points)}>Spotify</button></Link>
                     <br />
-                    <Link to="instagramroundone">Instagram</Link>
+                    <Link to="instagramroundone"><button onClick= {()=>context.addPoints(points)}>Instagram</button></Link>
                 </div>
             );
         }
@@ -42,17 +38,21 @@ class GameEnded extends Component {
                 <div>
                     <p>This game ends here. You can now play with</p>
                     <br />
-                    <Link to="spotifyroundone">Spotify</Link>
+                    <Link to="spotifyroundone"><button onClick= {()=>context.addPoints(points)}>Spotify</button></Link>
                     <br />
-                    <Link to="youtuberoundone">YouTube</Link>
+                    <Link to="youtuberoundone"><button onClick= {()=>context.addPoints(points)}>YouTube</button></Link>
                     <br />
                     {/* <Link to="instagramroundtwo">{texts[language].changeBandMember}</Link> */}
-                    <button onClick={this.props.changeBandMember} type="button">{texts[language].changeBandMember}</button>
+                    <button onClick={changeBandMember} type="button">{texts[language].changeBandMember}</button>
                 </div>
             );
         }
-        return null;
-    }
-}
+        return null;      
+
+}}
+    </MyContext.Consumer>
+    
+)
+
 
 export default GameEnded;
