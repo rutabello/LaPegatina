@@ -26,7 +26,23 @@ src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.google
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-
 }
-  
+.quiz-text {
+    margin-top: 1em
+}
+@media all and (max-width:30em){
+.quiz-text {
+    width: 65%;
+        margin: 0 auto;
+        margin-top: 1em
+}
+.theYTPlayer iframe {
+    top:0;
+    left: 0;
+    width: 50vh;
+    height: 40vh;
+    display: block;
+    
+}
+}
 
