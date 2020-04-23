@@ -3,6 +3,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import {MyContext} from '../../context/MyProvider'
+import UserForm from '../Register/User/UserForm/UserForm'
+
 import texts from '../../texts.json';
 import './Navbar.css';
 
@@ -23,10 +26,12 @@ const languagesAvailable = [
 
 
 class Navbar extends React.Component {
+    
 
     state = {
         selectedLanguage: 'spanish',
         selectedFlag: spanish,
+
     }
 
     setLanguage = (lang, flag) => {
@@ -41,10 +46,11 @@ class Navbar extends React.Component {
         // Notify the parent that the language has been updated
         onChangeLanguage(lang);
     }
+    
 
     render() {
         const { selectedLanguage, selectedFlag } = this.state;
-
+        
         return (
             <nav id="topnavbar">
                 <div>
@@ -81,7 +87,15 @@ class Navbar extends React.Component {
           </Link> 
           </div>
           <div className='nav-username'>
-              <p>UserName: , score:</p>
+          <MyContext.Consumer>
+            {(context)=>(
+                context.state.name 
+                ?
+                <p>{context.state.username} {context.state.points} puntos</p>
+                : 
+                <UserForm />
+)}
+</MyContext.Consumer>
           </div>
             </nav>
         );

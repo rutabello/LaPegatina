@@ -5,6 +5,7 @@ import Login from './Login'
 import Panel from './Panel'
 import FormPanel from './FormPanel';
 import MyProvider from '../../../../context/MyProvider'
+import './UserForm.css'
 
 class UserForm extends Component {
   // constructor(props) {
@@ -108,15 +109,15 @@ class UserForm extends Component {
     </div>
   );
 };
-<div className="modal-footer">
-                                                        <button type="button" className="btn btn-primary" data-dismiss="modal">
-                                                            cerar
-                                                        </button>
-                                                        </div>
-                                                        </div>
-                                                        </div>
-                                                        </div>
-                                                        </div>                                  
+{/* <div className="modal-footer">
+  <button type="button" className="btn btn-primary" data-dismiss="modal">
+    cerar
+  </button> */}
+      {/* </div> */}
+  </div>
+         </div>
+    </div>
+          </div>                                  
                                                     
     )
   }

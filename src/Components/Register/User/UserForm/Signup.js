@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 
 const SignUp = () => {
     return (
-      <React.Fragment>
+      <Fragment>
         <div id="signup-tab-content" className="active tabs-content">
           <form className="signup-form" action="" method="post">
             <input
@@ -26,7 +26,7 @@ const SignUp = () => {
             <input type="submit" className="button" value="Sign Up" />
           </form>
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   };
   export default SignUp
