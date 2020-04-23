@@ -192,7 +192,7 @@ class InstagramRoundTwo extends Component {
 
         if (gameStatus === 'gameOver') {
             return (
-                <GameEnded changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
+                <GameEnded  points ={this.counter} changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
             );
         }
 

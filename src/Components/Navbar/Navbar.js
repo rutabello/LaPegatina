@@ -93,7 +93,7 @@ class Navbar extends React.Component {
                 ?
                 <p>{context.state.username} {context.state.points} puntos</p>
                 : 
-                <UserForm />
+                <UserForm mainpage='navbar'/>
 )}
 </MyContext.Consumer>
           </div>

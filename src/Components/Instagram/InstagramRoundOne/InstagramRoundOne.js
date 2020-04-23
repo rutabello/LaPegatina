@@ -7,6 +7,8 @@ import texts from '../../../texts.json';
 import Loading from '../../Utils/Loading/Loading';
 import Register from '../../Register/Register';
 
+import {MyContext} from '../../../context/MyProvider'
+import UserForm from '../../Register/User/UserForm/UserForm'
 import '../Instagram.css';
 
 class InstagramRoundOne extends Component {
@@ -167,20 +169,34 @@ class InstagramRoundOne extends Component {
                 </div>
             );
         }
-
-        if (gameStatus === 'gameOver' && name !== undefined) {
+        if (gameStatus === 'gameOver') {
             return (
-                <div>
-                    <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
-                    <Link to="instagramroundtwo">Juega una segunda ronda</Link>
+        <MyContext.Consumer>
+        {(context)=>(
+            <div>
+            <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
+                {context.state.name ?
+                    <Link to="instagramroundtwo"><button onClick= {()=>context.addPoints(this.counter)}>Juega una segunda ronda</button></Link>
+                :
+                <UserForm />
+                }
                 </div>
-            );
-        }
+        )}
+        </MyContext.Consumer>
+            )}
+        // if (gameStatus === 'gameOver' && name !== undefined) {
+        //     return (
+        //         <div>
+        //             <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
+        //             <Link to="instagramroundtwo">Juega una segunda ronda</Link>
+        //         </div>
+        //     );
+        // }
 
-        return (
-            <Register currentGame="instagram" />
-        );
-    }
+        // return (
+        //     <Register currentGame="instagram" />
+        // );
+    }          
 }
 
 

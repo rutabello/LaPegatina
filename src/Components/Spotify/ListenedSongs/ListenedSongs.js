@@ -7,6 +7,7 @@ import { EmailShareButton, FacebookShareButton,
 // import Sound from 'react-sound';
 import texts from '../../../texts.json';
 import './ListenedSongs.css';
+import UserForm from '../../Register/User/UserForm/UserForm'
 
 // import Register from '../../Register/Register';
 import { MyContext } from '../../../context/MyProvider'
@@ -17,8 +18,11 @@ const ListenedSongs = ({ name, language, unknownSongs, score }) => (
 {(context)=>(
     <div>
         <h2 className="instruct">{texts[language].score.replace('%points', score)}</h2>
-        <Link to="user"><button onClick= {()=>context.addPoints(score)}>Add the score and keep playing </button></Link>
-
+        {context.state.name ?
+        <Link to="spotifyRoundTwo"><button onClick= {()=>context.addPoints(score)}>Add the score and keep playing </button></Link>
+        :
+        <UserForm  />
+        }
         <button
             type="button"
             className="btn btn-primary"
