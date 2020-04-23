@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Shuffle from '../../Utils/Shuffle';
@@ -5,10 +6,10 @@ import ButtonIgRoundOne from './ButtonIgRoundOne';
 import texts from '../../../texts.json';
 
 import Loading from '../../Utils/Loading/Loading';
-import Register from '../../Register/Register';
+// import Register from '../../Register/Register';
 
-import {MyContext} from '../../../context/MyProvider'
-import UserForm from '../../Register/User/UserForm/UserForm'
+import { MyContext } from '../../../context/MyProvider';
+import UserForm from '../../Register/User/UserForm/UserForm';
 import '../Instagram.css';
 
 class InstagramRoundOne extends Component {
@@ -123,7 +124,7 @@ class InstagramRoundOne extends Component {
 
         const { language } = this.props;
 
-        const { randomImageSrc, tagsOptions, userClicked, gameStatus, randomImageTags, name } = this.state;
+        const { randomImageSrc, tagsOptions, userClicked, gameStatus, randomImageTags } = this.state;
 
         if (gameStatus === 'loading') {
             return (
@@ -169,21 +170,21 @@ class InstagramRoundOne extends Component {
                 </div>
             );
         }
+
         if (gameStatus === 'gameOver') {
             return (
-        <MyContext.Consumer>
-        {(context)=>(
-            <div>
-            <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
-                {context.state.name ?
-                    <Link to="instagramroundtwo"><button onClick= {()=>context.addPoints(this.counter)}>Juega una segunda ronda</button></Link>
-                :
-                <UserForm />
-                }
-                </div>
-        )}
-        </MyContext.Consumer>
-            )}
+                <MyContext.Consumer>
+                    {(context) => (
+                        <div>
+                            <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
+                            {context.state.name
+                                ? <Link to="instagramroundtwo"><button type="button" onClick={() => context.addPoints(this.counter)}>Juega una segunda ronda</button></Link>
+                                : <UserForm />}
+                        </div>
+                    )}
+                </MyContext.Consumer>
+            );
+        }
         // if (gameStatus === 'gameOver' && name !== undefined) {
         //     return (
         //         <div>
@@ -196,7 +197,8 @@ class InstagramRoundOne extends Component {
         // return (
         //     <Register currentGame="instagram" />
         // );
-    }          
+        return null;
+    }
 }
 
 
