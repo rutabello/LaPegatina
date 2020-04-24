@@ -51,7 +51,7 @@ class Navbar extends React.Component {
         return (
             <nav id="topnavbar">
                 <div>
-                    {pagein === "home"
+                    {pagein === 'home'
                         ? <div />
                         : (
                             <Link className="backToStart" to="/">

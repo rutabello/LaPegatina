@@ -7,8 +7,18 @@
     color: #4FDA8C;
 }  */
 
+.navbar-btn {
+  border: none;
+}
+
+.navbar-btn:focus {
+  border: none;
+  outline: none!important;
+
+}
+
 input {
-  font: 16px/26px 
+  font: 16px/26px
  }
 
 /* body {
@@ -37,17 +47,17 @@ input {
         cursor: pointer
 }
 .tabs h2 a.active {
-          background-color: #fff; 
+          background-color: #fff;
         }
   .form-wrap .tabs-content {
-    padding: 1.5em; 
+    padding: 1.5em;
 }
     .form-wrap .tabs-content div[id$="tab-content"] {
-      display: none; 
+      display: none;
     }
     .form-wrap .tabs-content .active {
-      display: block !important; 
-      
+      display: block !important;
+
     }
   .form-wrap form .input {
     box-sizing: border-box;
@@ -71,7 +81,7 @@ input {
     text-transform: uppercase;
  }
     /* .form-wrap form .button:hover {
-      background-color: #4FDA8C; 
+      background-color: #4FDA8C;
     } */
   .form-wrap form .checkbox {
     visibility: hidden;
@@ -80,7 +90,7 @@ input {
     .form-wrap form .checkbox:checked + label:after {
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
       filter: alpha(opacity=100);
-      opacity: 1; 
+      opacity: 1;
     }
   .form-wrap form label[for] {
     position: relative;
@@ -97,7 +107,7 @@ input {
       width: 17px;
       height: 17px;
       top: 0px;
-      left: -14px; 
+      left: -14px;
     }
     .form-wrap form label[for]:after {
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -117,5 +127,5 @@ input {
       -moz-transform: rotate(-45deg);
       -o-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
-      transform: rotate(-45deg); 
+      transform: rotate(-45deg);
     }
