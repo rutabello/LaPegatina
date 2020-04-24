@@ -68,8 +68,6 @@ class PlayerCountdown extends Component {
         // const { history } = this.props;
 
         if (value === 0 && currentAttempt < totalAttempts) {
-        // return <button type="button" className="next-button" onClick={this.playMusicStartTimer}>{texts[language].newSong}</button>;
-        // eslint-disable-next-line jsx-a11y/click-events-have-key-events
             return (
                 <div id="next-button" onClick={this.playMusicStartTimer}>
                     <img src={next2} alt="next" type="button" className="next-button" />

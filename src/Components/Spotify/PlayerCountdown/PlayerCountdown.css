@@ -45,6 +45,16 @@
   border-radius: 35px;
 }
 
+#next-button {
+  bottom: 6vh;
+  position: fixed;
+  background-color: #312C71;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+}
+
 .next-button:hover {
   outline: none;
   cursor: pointer;
@@ -85,19 +95,9 @@
   background-color: rgba(0, 33, 66, 0.9);
 }
 
-#next-button {
-  bottom: 10vh;
-  position: fixed;
-  background-color: #312C71;
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  border-radius: 25px;
-}
-
 @media only screen and (max-width: 750px) {
   #next-button {
-    width: 80%;
+    width: 73%;
     bottom: 5vh;
   }
 }
