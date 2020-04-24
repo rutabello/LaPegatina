@@ -8,6 +8,7 @@ import Spotify from '../../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 // import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
+import texts from '../../../texts.json';
 
 
 class SpotifyRoundOne extends React.Component {
@@ -218,6 +219,9 @@ render() {
                                     currentAttempt={currentAttempt}
                                     totalAttempts={this.NUMBER_OF_SONGS_TO_PLAY_WITH}
                                 />
+                            </div>
+                            <div className="spotify-game-question">
+                                <p>{texts[language].spotifyRoundOneQuestion}</p>
                             </div>
                             <div className={`FourButtons ${hideResults ? 'forceGrayColor' : ''}`}>
                                 {songNames.map((songName) => (

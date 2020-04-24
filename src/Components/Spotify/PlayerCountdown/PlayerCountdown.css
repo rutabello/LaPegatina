@@ -3,7 +3,7 @@
   width: 80px;
   height: 60px;
 }
- 
+
 .time-wrapper .time {
   position: absolute;
   left:0;
@@ -17,12 +17,12 @@
   opacity: 1;
   transition: all .2s;
 }
- 
+
 .time-wrapper .time.up {
   opacity: 0;
   transform: translateY(-100%)
 }
- 
+
 .time-wrapper .time.down {
   opacity: 0;
   transform: translateY(100%)
@@ -80,13 +80,13 @@
   border-style: solid;
   border-width: 26px 0 26px 40px;
 }
-  
+
 #play-button:hover {
   background-color: rgba(0, 33, 66, 0.9);
 }
 
 #next-button {
-  bottom: 16vh;
+  bottom: 10vh;
   position: fixed;
   background-color: #312C71;
   width: 60%;
@@ -98,6 +98,6 @@
 @media only screen and (max-width: 750px) {
   #next-button {
     width: 80%;
-    bottom: 16vh;
+    bottom: 5vh;
   }
 }

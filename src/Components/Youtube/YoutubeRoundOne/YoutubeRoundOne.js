@@ -1,11 +1,12 @@
+/* eslint-disable max-len */
 /* eslint-disable react/no-unescaped-entities */
 import React, { Component } from 'react';
 import '../Youtube.css';
 import { Link } from 'react-router-dom';
-import Register from '../../Register/Register';
+// import Register from '../../Register/Register';
 import YTGame from '../YTGame/YTGame';
-import {MyContext} from '../../../context/MyProvider';
-import UserForm from '../../Register/User/UserForm/UserForm'
+import { MyContext } from '../../../context/MyProvider';
+import UserForm from '../../Register/User/UserForm/UserForm';
 
 class YoutubeRoundOne extends Component {
 
@@ -24,13 +25,15 @@ class YoutubeRoundOne extends Component {
 
     render() {
 
-        const { gameStatus, name } = this.state;
+        const { gameStatus } = this.state;
+
+        const { language } = this.props;
 
         if (gameStatus === 'playing') {
             return (
                 <div>
                     {/* <p>Sandra's YouTube Round One component will go here</p> */}
-                    <YTGame stopPlaying={this.stopPlaying} />
+                    <YTGame language={language} stopPlaying={this.stopPlaying} />
                     {/* <button
                         type="button"
                         onClick={() => this.stopPlaying()}
@@ -46,22 +49,23 @@ class YoutubeRoundOne extends Component {
                 </div>
             );
         }
+
         if (gameStatus === 'gameOver') {
-        return (
-            <MyContext.Consumer>
-            {(context)=>(
-                <div>
-                <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
-                 
-                    {context.state.name ?
-                        <Link to="youtuberoundtwo"><button onClick= {()=>context.addPoints(this.counter)}>Juega una segunda ronda</button></Link>
-                    :
-                    <UserForm />
-                    }
-                    </div>
-            )}
-            </MyContext.Consumer>
-                )}
+            return (
+                <MyContext.Consumer>
+                    {(context) => (
+                        <div>
+                            <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
+                            {context.state.name
+                                ? <Link to="youtuberoundtwo"><button type="button" onClick={() => context.addPoints(this.counter)}>Juega una segunda ronda</button></Link>
+                                : <UserForm />}
+                        </div>
+                    )}
+                </MyContext.Consumer>
+            );
+        }
+
+        return null;
     }
 }
 
@@ -82,6 +86,6 @@ class YoutubeRoundOne extends Component {
 //         return null;
 //     }
 // }
-                
+
 
 export default YoutubeRoundOne;

@@ -3,10 +3,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import {MyContext} from '../../context/MyProvider'
-import UserForm from '../Register/User/UserForm/UserForm'
-
-import texts from '../../texts.json';
+import { MyContext } from '../../context/MyProvider';
+import UserForm from '../Register/User/UserForm/UserForm';
 import './Navbar.css';
 
 import homebtn from '../../Pictures/home45.png';
@@ -15,7 +13,7 @@ import spanish from '../../Pictures/bandera_spanish_small.png';
 import english from '../../Pictures/bandera_english_small.png';
 import french from '../../Pictures/bandera_french_small.png';
 
-import userbtn from '../../Pictures/user45.png'
+import userbtn from '../../Pictures/user45.png';
 
 const languagesAvailable = [
     { language: 'catalan', flag: catalan },
@@ -26,10 +24,8 @@ const languagesAvailable = [
 
 
 class Navbar extends React.Component {
-    
 
     state = {
-        selectedLanguage: 'spanish',
         selectedFlag: spanish,
 
     }
@@ -39,33 +35,36 @@ class Navbar extends React.Component {
         const { onChangeLanguage } = this.props;
 
         this.setState({
-            selectedLanguage: lang,
             selectedFlag: flag,
         });
 
         // Notify the parent that the language has been updated
         onChangeLanguage(lang);
     }
-    
+
 
     render() {
-        const { selectedLanguage, selectedFlag } = this.state;
-        
+        const { selectedFlag } = this.state;
+
+        const { pagein } = this.props;
+
         return (
             <nav id="topnavbar">
                 <div>
-                    <Link className="backToStart" to="/">
-                        <img src={homebtn} alt="home button" />
-                    </Link>
+                    {pagein === "home"
+                        ? <div />
+                        : (
+                            <Link className="backToStart" to="/">
+                                <img src={homebtn} alt="home button" />
+                            </Link>
+                        )}
                 </div>
-               
                 <div className="language-dropdown">
                     <button
                         type="button"
                         className="dropbtn"
                     >
                         <img src={selectedFlag} alt="language flag" />
-                        {texts[selectedLanguage].languageButton}
                     </button>
 
                     <div className="dropdown-content">
@@ -79,24 +78,30 @@ class Navbar extends React.Component {
                         ))}
                     </div>
                 </div>
-                <div className='space' />
-
+                <div className="space" />
                 <div>
-                <Link className="user-profile" to="/user">
-            <img src={userbtn} alt='user-profile' />
-          </Link> 
-          </div>
-          <div className='nav-username'>
-          <MyContext.Consumer>
-            {(context)=>(
-                context.state.name 
-                ?
-                <p>{context.state.username} {context.state.points} puntos</p>
-                : 
-                <UserForm mainpage='navbar'/>
-)}
-</MyContext.Consumer>
-          </div>
+                    <Link className="user-profile" to="/user">
+                        <img src={userbtn} alt="user profile" />
+                    </Link>
+                </div>
+                <div className="nav-username">
+                    <MyContext.Consumer>
+                        {(context) => (
+                            context.state.name
+                                ? (
+                                    <p>
+                                        {context.state.username}
+                                        {' '}
+                                        <br />
+                                        {context.state.points}
+                                        {' '}
+                                        puntos
+                                    </p>
+                                )
+                                : <UserForm mainpage="navbar" />
+                        )}
+                    </MyContext.Consumer>
+                </div>
             </nav>
         );
     }

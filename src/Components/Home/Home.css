@@ -42,10 +42,6 @@ body {
   opacity: 1;
 }
 
-.home-play-buttons {
-  display: flex;
-}
-
 /* Start game button */
 
 .btn-game {
@@ -68,7 +64,7 @@ body {
   margin:  5px 15px;
   display: flex;
   align-items: center;
-}       
+}
 
 
 .btn-game:hover {
@@ -76,14 +72,21 @@ body {
   opacity: 1;
 }
 
+.home-play-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 750px) {
   .btn-game {
     font-size: .8rem;
     box-shadow: inset 0px 0px 5px 3px #9fb4f2;
-    border-radius: 8px;
+    border-radius: 20px;
     padding: 5px 9px;
-    margin: 10px;
-    flex-basis: 30%;
+    margin: 8px 0 8px 0;
+    height: 40px;
+    justify-content: center;
   }
 
   .playWith {
@@ -96,11 +99,14 @@ body {
 
   .main {
     padding: 80px 0px;
+    height: 100%;
   }
 
   .home-play-buttons {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
   }
 }
 
