@@ -19,6 +19,13 @@ class YoutubeRoundOne extends Component {
         this.setState({ gameStatus: 'gameOver' });
     }
     
+    restartYoutube =()=>{
+        this.setState ({
+            gameStatus:'playing'
+        })
+    }
+        
+    
 
     // registerUser = () => {
     //     this.setState({ name: 'Rut' });
@@ -57,6 +64,7 @@ class YoutubeRoundOne extends Component {
                     {(context) => (
                         <div>
                             <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
+                            <button type="button" className='navbar-btn' onClick={this.restartYoutube}>Vuelve a jugar</button>
                             {context.state.name
                                 ? <Link to="youtuberoundtwo"><button className = 'navbar-btn' type="button" onClick={() => context.addPoints(this.counter)}>Juega una segunda ronda</button></Link>
                                 : <UserForm />}

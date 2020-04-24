@@ -108,7 +108,7 @@ const videoDataObject = [
             },
             {
                 question: 'En qué año salió esta canción?',
-                answers: [2013, 2009, 2015, 2018],
+                answers: ['2013', '2009', '2015', '2018'],
             },
             {
                 question: 'Quién toca la guitarra española en esta canción?',
