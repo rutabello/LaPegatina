@@ -140,6 +140,7 @@ class InstagramRoundOne extends Component {
                     <div className="imageAndLocationsContainer">
                         <h1>{texts[language].whosTaggedQuestionText}</h1>
                         <div className="imageDisplayedContainer">
+                            <h1>{texts[language].instagramRoundOneQuestion}</h1>
                             <div className="imageDisplayed">
                                 <img src={randomImageSrc} alt="radom capture from the user's instagram feed" />
                             </div>

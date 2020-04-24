@@ -6,7 +6,7 @@ export const MyContext = React.createContext();
 class MyProvider extends Component {
 
     state = {
-        name: '',
+        name: 'Rut',
         username: 'Alecsundra',
         age: 20,
         points: 0,

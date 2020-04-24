@@ -4,6 +4,7 @@ import Button from '../Button/Button_YT';
 import Shuffle from '../../Utils/Shuffle';
 import './YTPlayer.css';
 import QuizYT from '../QuizYT/QuizYT';
+import texts from '../../../texts.json';
 // import YTCountdown from '../YTCountdown/YTCountdown';
 // let info=props.info
 // // console.log(props.det)
@@ -32,7 +33,7 @@ class YTPlayer extends Component {
             player: event.target,
         });
 
-    // that prints in consolecthe name of the song
+    // that prints in console the name of the song
     // this.setState({
     //   data :{
     //     info: event.target.playerInfo.videoData.title, //stored the title into a const
@@ -74,6 +75,7 @@ class YTPlayer extends Component {
         // console.log(info);
 
         const threeTitlesArr = det;
+
         // push inside the name of the title that is playing now
 
         threeTitlesArr.push(titleState);
@@ -117,7 +119,7 @@ class YTPlayer extends Component {
             },
         };
 
-        const { videoId, questions, stopPlaying } = this.props;
+        const { videoId, questions, stopPlaying, language } = this.props;
 
         const { showButtons, fourShuffledSongsTitles, title } = this.state;
 
@@ -138,15 +140,18 @@ class YTPlayer extends Component {
                 {/* <span className= 'text-btn-see-video'>See full video on Youtube</span></button> */}
                 {showButtons
                     ? (
-                        <div className="btn-4-YT">
-                            {fourShuffledSongsTitles.map((songTitle) => (
-                                <Button
-                                    unmute={this.unmuteVideo}
-                                    key={songTitle}
-                                    displayedSong={songTitle}
-                                    currentSong={title}
-                                />
-                            ))}
+                        <div>
+                            <p>{texts[language].youtubeQuestion}</p>
+                            <div className="btn-4-YT">
+                                {fourShuffledSongsTitles.map((songTitle) => (
+                                    <Button
+                                        unmute={this.unmuteVideo}
+                                        key={songTitle}
+                                        displayedSong={songTitle}
+                                        currentSong={title}
+                                    />
+                                ))}
+                            </div>
                         </div>
                     )
                     //  /* : <YTCountdown questions={this.props.questions}/> } */}

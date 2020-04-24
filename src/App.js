@@ -42,12 +42,23 @@ render() {
                         path="/"
                         render={(props) => (
                             <div>
-                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <Navbar pagein="home" onChangeLanguage={this.setLanguage} />
                                 <Home language={selectedLanguage} {...props} />
+                                <div className="social-media-follow-buttons">
+                                    <SocialMedia language={selectedLanguage} {...props} />
+                                </div>
                             </div>
                         )}
                     />
-                    <Route path="/spotifyroundone" render={(props) => <SpotifyRoundOne language={selectedLanguage} {...props} />} />
+                    <Route
+                        path="/spotifyroundone"
+                        render={(props) => (
+                            <div>
+                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <SpotifyRoundOne language={selectedLanguage} {...props} />
+                            </div>
+                        )}
+                    />
                     <Route path="/spotifyroundtwo" render={(props) => <SpotifyRoundTwo language={selectedLanguage} {...props} />} />
                     <Route path="/listenedsongs" render={(props) => <ListenedSongs language={selectedLanguage} {...props} />} />
                     <Route path="/team" render={(props) => <Team language={selectedLanguage} {...props} />} />
@@ -58,10 +69,6 @@ render() {
                     <Route path="/members" render={(props) => <MembersAccounts language={selectedLanguage} {...props} />} />
                     <Route path="/user" render={(props) => <User language={selectedLanguage} {...props} />} />
                 </Switch>
-
-                <div className="social-media-follow-buttons">
-                    <SocialMedia language={selectedLanguage} />
-                </div>
             </div>
         </MyProvider>
     );

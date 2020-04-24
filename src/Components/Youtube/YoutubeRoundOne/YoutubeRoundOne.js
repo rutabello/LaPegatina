@@ -27,11 +27,13 @@ class YoutubeRoundOne extends Component {
 
         const { gameStatus } = this.state;
 
+        const { language } = this.props;
+
         if (gameStatus === 'playing') {
             return (
                 <div>
                     {/* <p>Sandra's YouTube Round One component will go here</p> */}
-                    <YTGame stopPlaying={this.stopPlaying} />
+                    <YTGame language={language} stopPlaying={this.stopPlaying} />
                     {/* <button
                         type="button"
                         onClick={() => this.stopPlaying()}

@@ -4,7 +4,7 @@ const videoDataObject = [
         id: 0,
         title: 'Gat Rumberu',
         videoId: 'XYKeFkKmSt4',
-        VideoURL: ' https://www.youtube.com/watch?v=XYKeFkKmSt4',
+        VideoURL: 'https://www.youtube.com/watch?v=XYKeFkKmSt4',
         questions: [
             {
                 question: 'Quién compuso la canción? ',

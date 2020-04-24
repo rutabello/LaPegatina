@@ -48,13 +48,13 @@ class YTGame extends Component {
 
         // create the random from one videoid
         const randomVideoId = arrayPlaylist[Math.floor(Math.random() * arrayPlaylist.length)];
+
         this.setState({
             randomVideoId,
             questions: newdata[arrayPlaylist.indexOf(randomVideoId)].questions,
             currentTitle: newdata[arrayPlaylist.indexOf(randomVideoId)].title,
             // currentSongTitle:
         });
-
 
         // create the array with the title of the songs for the button shuffle(tu put in other buttons)
         const arraySongTitles = [];
@@ -82,7 +82,9 @@ class YTGame extends Component {
 
     render() {
 
-        const { fourNonShuffledSongsTitles, randomVideoId, data, currentTitle, questions, stopPlaying } = this.state;
+        const { fourNonShuffledSongsTitles, randomVideoId, data, currentTitle, questions } = this.state;
+
+        const { language, stopPlaying } = this.props;
 
         return (
             <div className="yt-all">
@@ -97,6 +99,7 @@ class YTGame extends Component {
                         title={currentTitle}
                         questions={questions}
                         stopPlaying={stopPlaying}
+                        language={language}
                     />
                 </div>
             </div>

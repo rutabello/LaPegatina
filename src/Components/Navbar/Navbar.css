@@ -1,18 +1,18 @@
 nav {
     background-color: rgb(49, 44, 113);
 }
-  
+
 #topnavbar {
     display: flex;
     height: 6vh;
     align-items: center;
 }
-  
+
 .backToStart img {
     margin-left: 15px;
     width: 33px;
 }
-  
+
 /* Language Dropdown */
 /* Dropdown Button */
 .dropbtn {
@@ -73,12 +73,36 @@ nav {
     width: 150px;
     text-decoration: none;
     border: 1px solid white;
-    display: flex; 
+    display: flex;
     text-align: center;
     padding-left: 20px;
     position: fixed;
     top: 0;
     opacity: .7;
+}
+
+/* the user icon */
+.user-profile img {
+    margin-right:2vh;
+    width:30px;
+
+}
+.space {
+    flex:3;
+
+}
+
+.nav-username {
+    margin-right: 5vh;
+    font-weight: bold;
+    font-size:18px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-username p {
+    margin: 0 0 0 0;
+    font-size: 14px;
 }
 
 @media only screen and (max-width: 750px) {
@@ -102,19 +126,19 @@ nav {
         width: 10px;
         margin: 5px;
     }
-}
-/* the user icon */
-.user-profile img {
-    margin-right:2vh;
-    width:30px;
-   
-}
-.space {
-    flex:3;
-    
-}
-.nav-username {
-    margin-right: 5vh;
-    font-weight: bold;
-    font-size:18px
+
+    .nav-username {
+        margin-right: 1vh;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .nav-username p {
+        font-size: 10px;
+    }
+
+    .user-profile img {
+        margin-right: 1vh;
+        width: 30px;
+    }
 }

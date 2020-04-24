@@ -155,7 +155,7 @@ class InstagramRoundTwo extends Component {
             return (
                 <div className="instagram-game">
                     <div className="imageAndLocationsContainer">
-                        <h1>{texts[language].instagramQuestion}</h1>
+                        <h1>{texts[language].instagramRoundTwoQuestion}</h1>
                         <div className="imageDisplayedContainer">
                             <div className="imageDisplayed">
                                 <img src={randomImageSrc} alt="radom capture from the user's instagram feed" />
@@ -192,7 +192,7 @@ class InstagramRoundTwo extends Component {
 
         if (gameStatus === 'gameOver') {
             return (
-                <GameEnded  points ={this.counter} changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
+                <GameEnded points={this.counter} changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
             );
         }
 

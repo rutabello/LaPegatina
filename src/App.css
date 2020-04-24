@@ -33,7 +33,7 @@
 }
 
 .social-icon {
-  width: 32px; 
+  width: 32px;
   height: 32px;
   margin: 0 5px 0 5px;
 }
@@ -71,7 +71,7 @@ p {
 
   .social-media-follow-buttons p {
     font-size: 12px;
-    margin: 0 0 0 0;
+    margin: 5px 0 0 0;
   }
 
   .social-icon {

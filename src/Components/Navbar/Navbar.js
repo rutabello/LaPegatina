@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 import { MyContext } from '../../context/MyProvider';
 import UserForm from '../Register/User/UserForm/UserForm';
-
-import texts from '../../texts.json';
 import './Navbar.css';
 
 import homebtn from '../../Pictures/home45.png';
@@ -28,7 +26,6 @@ const languagesAvailable = [
 class Navbar extends React.Component {
 
     state = {
-        selectedLanguage: 'spanish',
         selectedFlag: spanish,
 
     }
@@ -38,7 +35,6 @@ class Navbar extends React.Component {
         const { onChangeLanguage } = this.props;
 
         this.setState({
-            selectedLanguage: lang,
             selectedFlag: flag,
         });
 
@@ -48,14 +44,20 @@ class Navbar extends React.Component {
 
 
     render() {
-        const { selectedLanguage, selectedFlag } = this.state;
+        const { selectedFlag } = this.state;
+
+        const { pagein } = this.props;
 
         return (
             <nav id="topnavbar">
                 <div>
-                    <Link className="backToStart" to="/">
-                        <img src={homebtn} alt="home button" />
-                    </Link>
+                    {pagein === "home"
+                        ? <div />
+                        : (
+                            <Link className="backToStart" to="/">
+                                <img src={homebtn} alt="home button" />
+                            </Link>
+                        )}
                 </div>
                 <div className="language-dropdown">
                     <button
@@ -63,7 +65,6 @@ class Navbar extends React.Component {
                         className="dropbtn"
                     >
                         <img src={selectedFlag} alt="language flag" />
-                        {texts[selectedLanguage].languageButton}
                     </button>
 
                     <div className="dropdown-content">
@@ -91,6 +92,7 @@ class Navbar extends React.Component {
                                     <p>
                                         {context.state.username}
                                         {' '}
+                                        <br />
                                         {context.state.points}
                                         {' '}
                                         puntos
