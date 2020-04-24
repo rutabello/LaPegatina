@@ -53,7 +53,6 @@ class YTPlayer extends Component {
 
         const { title, det } = this.props;
 
-        const { title: titleState } = this.state;
         // since we have something called "title" in props and in state, we give a new name to the title in the state
 
         // access to player in all event handlers via event.target
@@ -78,7 +77,7 @@ class YTPlayer extends Component {
 
         // push inside the name of the title that is playing now
 
-        threeTitlesArr.push(titleState);
+        threeTitlesArr.push(title);
         // suffle all titles
         const fourShuffledSongsTitles = Shuffle(threeTitlesArr);
         // keep the new array , where is included the title of the playing song in the state
