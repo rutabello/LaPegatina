@@ -141,7 +141,7 @@ class YTPlayer extends Component {
                 {showButtons
                     ? (
                         <div>
-                            <p>{texts[language].youtubeQuestion}</p>
+                            <h4 className="quiz-text">{texts[language].youtubeQuestion}</h4>
                             <div className="btn-4-YT">
                                 {fourShuffledSongsTitles.map((songTitle) => (
                                     <Button

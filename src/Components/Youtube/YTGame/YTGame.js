@@ -63,7 +63,7 @@ class YTGame extends Component {
             return arraySongTitles;
         });
         // removed from the array the title of the song that is playing so it wont dublicate in the buttons
-        // const removed = arraySongTitles.splice(arrayPlaylist.indexOf(randomVideoId), 1);
+        const removed = arraySongTitles.splice(arrayPlaylist.indexOf(randomVideoId), 1);
 
         // shuffle function that reorganize the order of the song title
         const suffledArraySongTitles = Shuffle(arraySongTitles);
