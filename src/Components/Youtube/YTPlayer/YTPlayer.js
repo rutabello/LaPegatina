@@ -157,7 +157,7 @@ class YTPlayer extends Component {
                     : (
                         <QuizYT
                             questions={questions}
-                            stopPlaying={stopPlaying}
+                            stopPlaying={this.props.stopPlaying}
                         />
                     )}
             </div>

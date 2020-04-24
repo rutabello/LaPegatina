@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import MyProvider from "../../../context/MyProvider"
-import UserForm from './UserForm/UserForm';
+// import UserForm from './UserForm/UserForm';
 import UserPofile from './UserProfile/UserProfile';
 import './User.css';
 
@@ -16,7 +16,7 @@ class User extends Component {
                     <UserPofile />
                 </div>
                 <div>
-                    <UserForm />
+                    {/* <UserForm /> */}
                 </div>
             </div>
         );

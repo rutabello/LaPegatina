@@ -128,15 +128,15 @@ const UserForm = ({ mainpage }) => (
             <div>
                 <button
                     type="button"
-                    className="btn btn-primary"
+                    className="navbar-btn"
                     data-toggle="modal"
-                    data-target="#sharethissong"
+                    data-target="#register"
                 >
-                    Keep playing, go to round two
+                    Keep playing, go to round 
                 </button>
                 <div
                     className="modal fade"
-                    id="sharethissong"
+                    id="register"
                     tabIndex="-1"
                     role="dialog"
                     aria-labelledby="exampleModalCenterTitle"
@@ -148,7 +148,7 @@ const UserForm = ({ mainpage }) => (
                     >
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="sharesongs">Welcome, keep playing!</h5>
+                                <h5 className="modal-title" id="register">Welcome, keep playing!</h5>
                                 <button
                                     type="button"
                                     className="close"
@@ -179,6 +179,7 @@ const UserForm = ({ mainpage }) => (
                                     </FormPanel>
                                 </MyProvider>
                             </div>
+                            );
                         </div>
                     </div>
                 </div>

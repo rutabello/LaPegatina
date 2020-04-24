@@ -98,7 +98,7 @@ class YTGame extends Component {
                         info={data}
                         title={currentTitle}
                         questions={questions}
-                        stopPlaying={stopPlaying}
+                        stopPlaying={this.props.stopPlaying}
                         language={language}
                     />
                 </div>
