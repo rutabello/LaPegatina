@@ -129,3 +129,47 @@ input {
       -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
     }
+
+
+    /* modal */
+    .navbar-btn {
+      background-color: #766dca;
+      border-color: #766dca;
+      min-width: 30%;
+      border-radius: .25rem;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 13px;
+      padding: 10px 30px;
+      font-weight: 600;
+      /* margin-top: 6px; */
+  }
+  
+  .navbar-btn:hover {
+      background-color: rgb(49, 44, 113);
+      border-color: rgb(49, 44, 113);
+  }
+  
+  .navbar-btn:focus {
+      background-color: rgb(49, 44, 113);
+      border-color: rgb(49, 44, 113);
+      box-shadow: 0 0 0 0.2rem rgb(49, 44, 113);
+  }
+  
+  .navbar-btn:active {
+      background-color: rgb(49, 44, 113);
+      border-color: rgb(49, 44, 113);
+      box-shadow: 0 0 0 0.2rem rgb(49, 44, 113);
+  }
+ 
+  
+  @media only screen and (max-width: 750px) {
+  
+  
+      .navbar-btn {
+          padding: 4px 10px;
+          margin-top: 4px;
+      }
+  
+  
+  }

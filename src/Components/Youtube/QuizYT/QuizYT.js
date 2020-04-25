@@ -67,9 +67,9 @@ state={
                             value={item}
                             onClick={(e) => this.checkIf(e)}
                             key={index}
-                            className="myButtonYT buttonYT"
+                            className="myButtonYT buttonYT titleColorYT"
                         >
-                            <span className="titleColorYT">{item}</span>
+                        {item}
                         </button>
                     ))}
                 </div>

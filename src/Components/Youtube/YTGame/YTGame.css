@@ -10,7 +10,9 @@
 .yt-player {
         display:flex;
         margin: 0 auto;
+        width: 100%;
         justify-content: center;
+        
       
       } 
 /* .yt-all {

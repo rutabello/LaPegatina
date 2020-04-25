@@ -19,7 +19,7 @@ const ListenedSongs = ({ language, unknownSongs, score }) => (
             <div>
                 <h2 className="instruct">{texts[language].score.replace('%points', score)}</h2>
                 {context.state.name
-                    ? <Link to="spotifyRoundTwo"><button type="button" onClick={() => context.addPoints(score)}>Add the score and keep playing </button></Link>
+                    ? <Link to="spotifyRoundTwo"><button className = 'navbar-btn' type="button" onClick={() => context.addPoints(score)}>Add the score and keep playing </button></Link>
                     : <UserForm />}
                 <button
                     type="button"
