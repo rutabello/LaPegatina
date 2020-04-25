@@ -2,6 +2,10 @@ nav {
     background-color: rgb(49, 44, 113);
 }
 
+.transparent-navbar {
+    background-color: transparent;
+}
+
 #topnavbar {
     display: flex;
     height: 6vh;

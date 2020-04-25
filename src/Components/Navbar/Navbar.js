@@ -48,8 +48,12 @@ class Navbar extends React.Component {
 
         const { pagein } = this.props;
 
+        const navbarClass = (pagein === 'home')
+            ? 'color-navbar'
+            : 'transparent-navbar';
+
         return (
-            <nav id="topnavbar">
+            <nav className={navbarClass} id="topnavbar">
                 <div>
                     {pagein === 'home'
                         ? <div />
