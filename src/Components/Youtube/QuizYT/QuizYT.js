@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import Shuffle from '../../Utils/Shuffle';
-
+import { MyContext } from '../../../context/MyProvider'
 
 class QuizYT extends Component {
 
@@ -18,13 +18,13 @@ state={
 
     toNext = () => {
 
-        const { questions, index, points } = this.state;
+        const { questions, index } = this.state;
         // if(this.state.index > this.state.counter){
         if (index < 4) {
             this.setState({
                 index: index + 1,
                 correctAnswer: questions[index + 1].answers[0],
-                points: points + 1000,
+                // points: points + 1000,
                 // counter: this.state.counter+1
             });
         } else {
@@ -37,12 +37,15 @@ state={
 
     checkIf = (e) => {
 
-        const { correctAnswer } = this.state;
+        const { correctAnswer, points } = this.state;
 
         const displayedAnswer = e.target.value;
 
         if (displayedAnswer === correctAnswer) {
-            this.toNext();
+           this.setState({
+               points: points + 1000,
+           })
+            // this.toNext();
         }
     }
     // IF CONDITION FOR THE GAME ENDING
@@ -52,6 +55,8 @@ state={
         const { questions, index, points } = this.state;
 
         return (
+            <MyContext.Consumer>
+                    {(context) => (
             <div className="the-yt-quiz">
                 <div className="quiz-text">
                     <h4>{questions[index].question}</h4>
@@ -65,7 +70,7 @@ state={
                         <button
                             type="button"
                             value={item}
-                            onClick={(e) => this.checkIf(e)}
+                            onClick={(e)=>(this.checkIf(e), this.toNext(),context.addPoints(points))}
                             key={index}
                             className="myButtonYT buttonYT titleColorYT"
                         >
@@ -74,6 +79,8 @@ state={
                     ))}
                 </div>
             </div>
+                    )}
+            </MyContext.Consumer>
         );
     }
 }
