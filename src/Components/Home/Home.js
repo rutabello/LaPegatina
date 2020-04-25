@@ -18,10 +18,7 @@ const Home = ({ language }) => (
             <div className="home-play-buttons">
                 <p>
                     <Rounds
-                        languageSpotify={texts[language].spotifyPlayWithButton}
-                        languageYoutube={texts[language].youtubePlayWithButton}
-                        languageInstagram={texts[language].instagramPlayWithButton}
-                        languageWorld={texts[language].allmusicButton}
+                        language={language}
                     />
                 </p>
             </div>

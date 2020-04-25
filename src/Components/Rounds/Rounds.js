@@ -1,8 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Rounds.css';
 import '../../App.css';
 import '../Home/Home.css';
-import { Link } from 'react-router-dom';
+import texts from '../../texts.json';
+import photo from '../../Pictures/photo_w.png';
+import video from '../../Pictures/video_w.png';
+import music from '../../Pictures/music_w.png';
+
 
 class Rounds extends React.Component {
 
@@ -57,7 +62,7 @@ class Rounds extends React.Component {
 
         const { page, ronda1, instagram, youtube, spotify, button } = this.state;
 
-        const { languageInstagram, languageSpotify, languageYoutube } = this.props;
+        const { language } = this.props;
 
         return (
             <div>
@@ -68,9 +73,18 @@ class Rounds extends React.Component {
                     <Link className={spotify || youtube ? 'hideGame' : 'title'} to="instagramroundone">start</Link>
                 </div>
                 <div className="home-play-buttons">
-                    <button type="button" className={button} onClick={this.startSpotify}>{languageSpotify}</button>
-                    <button type="button" className={button} onClick={this.startYoutube}>{languageYoutube}</button>
-                    <button type="button" className={button} onClick={this.startInsta}>{languageInstagram}</button>
+                    <button type="button" className={button} onClick={this.startSpotify}>
+                        <img className="home-btn-image" src={music} alt="music" />
+                        {texts[language].spotifyPlayWithButton}
+                    </button>
+                    <button type="button" className={button} onClick={this.startYoutube}>
+                        <img className="home-btn-image" src={video} alt="music" />
+                        {texts[language].youtubePlayWithButton}
+                    </button>
+                    <button type="button" className={button} onClick={this.startInsta}>
+                        <img className="home-btn-image" src={photo} alt="music" />
+                        {texts[language].instagramPlayWithButton}
+                    </button>
                     {/* <button >  <a className="title" href="https://playwith.es">{this.props.languageWorld}</a></button> */}
                 </div>
             </div>
