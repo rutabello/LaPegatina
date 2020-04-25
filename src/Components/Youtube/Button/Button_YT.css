@@ -39,12 +39,13 @@
 .myButtonYT:hover {
     /* color: black!important; */
     background: transparent;
-    box-shadow: 0px 0px 5px grey, 0px 0px 25px grey;
+    box-shadow: 0px 0px 5px black, 0px 0px 25px black;
     /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);  */
 }
 
 .myButtonYT:active {
     position:relative;
+    /* color: red; */
     /* top:1px; */
     background: #312c71;
     /* box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C; */
@@ -53,7 +54,7 @@
 
 .myButtonYT:focus {
     /* outline-color: white; */
-    box-shadow: 0px 0px 5px orange, 0px 0px 25px orange;
+    box-shadow: 0px 0px 5px black, 0px 0px 25p black;
 }
 
 @media all and (max-width:30em) {
