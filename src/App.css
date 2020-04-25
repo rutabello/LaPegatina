@@ -7,7 +7,7 @@
   display: block;
 }
 
-.social-media-follow-buttons {
+/* .social-media-follow-buttons {
   position: fixed;
   bottom: 0px;
   padding-bottom: 10px;
@@ -59,9 +59,9 @@ p {
 .made-by {
   font-size: 11px;
   margin-bottom: 0px;
-}
+} */
 
-@media only screen and (max-width: 750px) {
+/* @media only screen and (max-width: 750px) {
   .social-media-follow-buttons {
     position: fixed;
     width: 100%;
@@ -79,4 +79,4 @@ p {
     height: 25px;
     width: 25px;
   }
-}
+} */

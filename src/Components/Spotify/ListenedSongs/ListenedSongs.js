@@ -23,8 +23,8 @@ const ListenedSongs = ({ language, unknownSongs, score, roundfrom }) => {
         if (name) {
             return (
                 <Link to="spotifyRoundTwo">
-                    <button className="navbar-btn" type="button" onClick={() => addPoints(score)}>
-                        Add the score and keep playing
+                    <button className="btn btn-primary" type="button" onClick={() => addPoints(score)}>
+                        Suma puntos y sigue jugando
                     </button>
                 </Link>
             );

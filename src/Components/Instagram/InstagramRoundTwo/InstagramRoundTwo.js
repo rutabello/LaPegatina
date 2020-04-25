@@ -146,6 +146,7 @@ class InstagramRoundTwo extends Component {
                 <div className="choosing">
                     <MembersAccounts
                         setSelectedMemberId={this.setSelectedMemberId}
+                        language={language}
                     />
                 </div>
             );
@@ -192,7 +193,7 @@ class InstagramRoundTwo extends Component {
 
         if (gameStatus === 'gameOver') {
             return (
-                <GameEnded points={this.counter} changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
+                <GameEnded points={this.counter * 2653} changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
             );
         }
 

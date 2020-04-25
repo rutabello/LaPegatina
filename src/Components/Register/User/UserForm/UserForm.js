@@ -72,7 +72,7 @@ const UserForm = ({ mainpage }) => (
                     data-toggle="modal"
                     data-target="#register"
                 >
-                    Enter
+                    Entra
                 </button>
                 <div
                     className="modal fade"
@@ -133,7 +133,7 @@ const UserForm = ({ mainpage }) => (
                     data-toggle="modal"
                     data-target="#register"
                 >
-                    Keep playing, go to round
+                    Regístrate y ve a la Ronda 2
                 </button>
                 <div
                     className="modal fade"

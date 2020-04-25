@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import YTGame from '../YTGame/YTGame';
 import { MyContext } from '../../../context/MyProvider';
 import UserForm from '../../Register/User/UserForm/UserForm';
+import SocialMedia from '../../SocialMedia/SocialMedia';
 
 class YoutubeRoundOne extends Component {
 
@@ -60,6 +61,11 @@ class YoutubeRoundOne extends Component {
                             {context.state.name
                                 ? <Link to="youtuberoundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(this.counter)}>Juega una segunda ronda</button></Link>
                                 : <UserForm language={language} />}
+                            <div className="social-media-follow-buttons">
+                                <SocialMedia
+                                    language={language}
+                                />
+                            </div>
                         </div>
                     )}
                 </MyContext.Consumer>

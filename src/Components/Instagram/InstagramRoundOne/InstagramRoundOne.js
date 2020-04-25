@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Shuffle from '../../Utils/Shuffle';
 import ButtonIgRoundOne from './ButtonIgRoundOne';
 import texts from '../../../texts.json';
+import SocialMedia from '../../SocialMedia/SocialMedia';
 
 import Loading from '../../Utils/Loading/Loading';
 // import Register from '../../Register/Register';
@@ -177,10 +178,22 @@ class InstagramRoundOne extends Component {
                 <MyContext.Consumer>
                     {(context) => (
                         <div>
-                            <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
+                            <h1>Te atreves con la segunda ronda?</h1>
+                            <p>
+                                Has hecho
+                                {' '}
+                                {this.counter * 1729}
+                                {' '}
+                                puntos
+                            </p>
                             {context.state.name
-                                ? <Link to="instagramroundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(this.counter)}>Juega una segunda ronda</button></Link>
+                                ? <Link to="instagramroundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(this.counter)}>Guarda los puntos y juega una segunda ronda</button></Link>
                                 : <UserForm language={language} />}
+                            <div className="social-media-follow-buttons">
+                                <SocialMedia
+                                    language={language}
+                                />
+                            </div>
                         </div>
                     )}
                 </MyContext.Consumer>
