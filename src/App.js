@@ -50,6 +50,7 @@ render() {
                             </div>
                         )}
                     />
+
                     <Route
                         path="/spotifyroundone"
                         render={(props) => (
@@ -59,14 +60,79 @@ render() {
                             </div>
                         )}
                     />
-                    <Route path="/spotifyroundtwo" render={(props) => <SpotifyRoundTwo language={selectedLanguage} {...props} />} />
+
+                    <Route
+                        path="/spotifyroundtwo"
+                        render={(props) => (
+                            <div>
+                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <SpotifyRoundTwo language={selectedLanguage} {...props} />
+                            </div>
+                        )}
+                    />
+
                     <Route path="/listenedsongs" render={(props) => <ListenedSongs language={selectedLanguage} {...props} />} />
-                    <Route path="/team" render={(props) => <Team language={selectedLanguage} {...props} />} />
-                    <Route path="/instagramroundone" render={(props) => <InstagramRoundOne language={selectedLanguage} {...props} />} />
-                    <Route path="/instagramroundtwo" render={(props) => <InstagramRoundTwo language={selectedLanguage} {...props} />} />
-                    <Route path="/youtuberoundone" render={(props) => <YoutubeRoundOne language={selectedLanguage} {...props} />} />
-                    <Route path="/youtuberoundtwo" render={(props) => <YoutubeRoundTwo language={selectedLanguage} {...props} />} />
-                    <Route path="/members" render={(props) => <MembersAccounts language={selectedLanguage} {...props} />} />
+
+                    <Route
+                        path="/team"
+                        render={(props) => (
+                            <div>
+                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <Team language={selectedLanguage} {...props} />
+                            </div>
+                        )}
+                    />
+
+                    <Route
+                        path="/instagramroundone"
+                        render={(props) => (
+                            <div>
+                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <InstagramRoundOne language={selectedLanguage} {...props} />
+                            </div>
+                        )}
+                    />
+
+                    <Route
+                        path="/instagramroundtwo"
+                        render={(props) => (
+                            <div>
+                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <InstagramRoundTwo language={selectedLanguage} {...props} />
+                            </div>
+                        )}
+                    />
+
+                    <Route
+                        path="/youtuberoundone"
+                        render={(props) => (
+                            <div>
+                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <YoutubeRoundOne language={selectedLanguage} {...props} />
+                            </div>
+                        )}
+                    />
+
+                    <Route
+                        path="/youtuberoundtwo"
+                        render={(props) => (
+                            <div>
+                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <YoutubeRoundTwo language={selectedLanguage} {...props} />
+                            </div>
+                        )}
+                    />
+
+                    <Route
+                        path="/members"
+                        render={(props) => (
+                            <div>
+                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <MembersAccounts language={selectedLanguage} {...props} />
+                            </div>
+                        )}
+                    />
+
                     <Route path="/user" render={(props) => <User language={selectedLanguage} {...props} />} />
                 </Switch>
             </div>
