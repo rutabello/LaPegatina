@@ -4,6 +4,7 @@ import Login from './Login';
 import Panel from './Panel';
 import FormPanel from './FormPanel';
 import MyProvider from '../../../../context/MyProvider';
+import texts from '../../../../texts.json';
 import './UserForm.css';
 
 const UserForm = ({ mainpage }) => (
@@ -67,11 +68,11 @@ const UserForm = ({ mainpage }) => (
             <div>
                 <button
                     type="button"
-                    className="navbar-btn"
+                    className="navbar-enter-btn"
                     data-toggle="modal"
                     data-target="#register"
                 >
-                    Register to save the points
+                    Enter
                 </button>
                 <div
                     className="modal fade"
@@ -132,7 +133,7 @@ const UserForm = ({ mainpage }) => (
                     data-toggle="modal"
                     data-target="#register"
                 >
-                    Keep playing, go to round 
+                    Keep playing, go to round
                 </button>
                 <div
                     className="modal fade"

@@ -179,8 +179,8 @@ class InstagramRoundOne extends Component {
                         <div>
                             <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
                             {context.state.name
-                                ? <Link to="instagramroundtwo"><button className = 'navbar-btn' type="button" onClick={() => context.addPoints(this.counter)}>Juega una segunda ronda</button></Link>
-                                : <UserForm />}
+                                ? <Link to="instagramroundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(this.counter)}>Juega una segunda ronda</button></Link>
+                                : <UserForm language={language} />}
                         </div>
                     )}
                 </MyContext.Consumer>

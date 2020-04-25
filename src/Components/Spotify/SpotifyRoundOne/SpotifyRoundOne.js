@@ -263,6 +263,7 @@ render() {
                         playStatus={playerState}
                         onClick={playing}
                         score={score}
+                        roundfrom="one"
                     />
                 )}
             {/* {name !== undefined

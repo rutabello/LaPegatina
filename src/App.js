@@ -42,7 +42,7 @@ render() {
                         path="/"
                         render={(props) => (
                             <div>
-                                <Navbar pagein="home" onChangeLanguage={this.setLanguage} />
+                                <Navbar language={selectedLanguage} pagein="home" onChangeLanguage={this.setLanguage} />
                                 <Home language={selectedLanguage} {...props} />
                                 <div className="social-media-follow-buttons">
                                     <SocialMedia language={selectedLanguage} {...props} />

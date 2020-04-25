@@ -10,17 +10,18 @@ import './ListenedSongs.css';
 import UserForm from '../../Register/User/UserForm/UserForm';
 // import Register from '../../Register/Register';
 import { MyContext } from '../../../context/MyProvider';
+import GameEnded from '../../GameEnded/GameEnded';
 
 const shareurl = 'https://juegaconlapegatinaenpruebas.netlify.com';
 
-const ListenedSongs = ({ language, unknownSongs, score }) => (
+const ListenedSongs = ({ language, unknownSongs, score, roundfrom }) => (
     <MyContext.Consumer>
         {(context) => (
             <div>
                 <h2 className="instruct">{texts[language].score.replace('%points', score)}</h2>
                 {context.state.name
-                    ? <Link to="spotifyRoundTwo"><button className = 'navbar-btn' type="button" onClick={() => context.addPoints(score)}>Add the score and keep playing </button></Link>
-                    : <UserForm />}
+                    ? <Link to="spotifyRoundTwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(score)}>Add the score and keep playing </button></Link>
+                    : <UserForm language={language} />}
                 <button
                     type="button"
                     className="btn btn-primary"
@@ -125,12 +126,6 @@ const ListenedSongs = ({ language, unknownSongs, score }) => (
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-                                                {/* <button className="repeat-button" onClick={this.props.onClick ? () => this.props.stopMusic()
-                                                : () => this.props.getSongUrl(song)}>
-                                                {this.props.onClick ? texts[this.props.language].pauseText : texts[this.props.language].listenAgain}
-                                                </button>  */}
                                             </li>
                                         );
                                     })}
@@ -208,12 +203,9 @@ const ListenedSongs = ({ language, unknownSongs, score }) => (
                         </div>
                     </div>
                 </div>
-
-
-                {/* {name !== undefined
-                    ? <Link to="spotifyRoundTwo">Go to Spotify round two</Link>
-                    : <Register currentGame="spotify" />} */}
-
+                {roundfrom === 'two'
+                    ? <GameEnded language={language} currentGame="spotify" />
+                    : null}
             </div>
         )}
     </MyContext.Consumer>

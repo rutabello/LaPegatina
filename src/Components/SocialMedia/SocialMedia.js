@@ -11,7 +11,7 @@ import tiktok from './icons/icon_2019_TikTok.svg';
 
 const SocialMedia = ({ language }) => (
     <div className="social-media-follow-footer">
-        <p>{texts[language].followUs}</p>
+        {/* <p>{texts[language].followUs}</p> */}
         <nav>
             <ul>
                 <li>

@@ -13,7 +13,7 @@
   padding-bottom: 10px;
   background-color: rgb(49, 44, 113);
   width: 100%;
-  height: 12vh;
+  height: 9vh;
 }
 
 .social-media-follow-buttons li {
@@ -35,7 +35,7 @@
 .social-icon {
   width: 32px;
   height: 32px;
-  margin: 0 5px 0 5px;
+  margin: 7px 5px 0 5px;
 }
 
 ul {
@@ -75,7 +75,7 @@ p {
   }
 
   .social-icon {
-    margin-top: 5px;
+    margin-top: 7px;
     height: 25px;
     width: 25px;
   }
