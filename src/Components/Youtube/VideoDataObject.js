@@ -95,7 +95,7 @@ const videoDataObject = [
         id: 3,
         title: 'Lloverá y yo veré ',
         videoId: 'EoD4zkM24tU',
-        VideoURL: '- https://www.youtube.com/watch?v=EoD4zkM24tU',
+        VideoURL: 'https://www.youtube.com/watch?v=EoD4zkM24tU',
         questions: [
             {
                 question: 'Qué palabra utilizarías para definir esta canción?',
@@ -108,7 +108,7 @@ const videoDataObject = [
             },
             {
                 question: 'En qué año salió esta canción?',
-                answers: [2013, 2009, 2015, 2018],
+                answers: ['2013', '2009', '2015', '2018'],
             },
             {
                 question: 'Quién toca la guitarra española en esta canción?',
