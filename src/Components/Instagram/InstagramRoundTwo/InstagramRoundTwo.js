@@ -102,6 +102,10 @@ class InstagramRoundTwo extends Component {
         this.setState({
             gameStatus: 'choosing',
         });
+
+        this.attempts = 0;
+
+        this.counter = 0;
     }
 
     setSelectedMemberId = (memberId) => {
@@ -146,6 +150,7 @@ class InstagramRoundTwo extends Component {
                 <div className="choosing">
                     <MembersAccounts
                         setSelectedMemberId={this.setSelectedMemberId}
+                        language={language}
                     />
                 </div>
             );
@@ -192,7 +197,7 @@ class InstagramRoundTwo extends Component {
 
         if (gameStatus === 'gameOver') {
             return (
-                <GameEnded points={this.counter} changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
+                <GameEnded points={this.counter * 2653} changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
             );
         }
 

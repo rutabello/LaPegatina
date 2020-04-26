@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SocialMedia from '../../SocialMedia/SocialMedia';
 
 class members extends Component {
 
@@ -71,20 +72,27 @@ class members extends Component {
     }
 
     render() {
-        const { setSelectedMemberId } = this.props;
+        const { setSelectedMemberId, language } = this.props;
         return (
             <div>
                 <p>Con el perfil de Instagram de qué miembro de La Pegatina quieres jugar?</p>
                 {this.membersaccounts.map((memberaccount) => (
                     <button
+                        className="btn-game"
                         type="button"
                         key={memberaccount.name}
                         onClick={() => setSelectedMemberId(memberaccount.id)}
                     >
                         {memberaccount.name}
+                        {'   '}
                         {memberaccount.username}
                     </button>
                 ))}
+                <div className="social-media-follow-buttons">
+                    <SocialMedia
+                        language={language}
+                    />
+                </div>
             </div>
         );
     }

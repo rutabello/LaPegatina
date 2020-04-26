@@ -29,7 +29,7 @@
     height: auto;
     margin: 10px auto;
     font-size: 20px;
-    text-transform: capitalize;   
+    text-transform: capitalize;
 }
 
 .instagram-option-button {
@@ -48,6 +48,11 @@
     letter-spacing: 3px;
     margin: 5px 5px ;
     display: flex;
+}
+
+.score {
+    color: #766dca;
+    font-size: 22px;
 }
 
 .red {
@@ -69,11 +74,12 @@
 .instagram-option-button:focus {
     outline: none;
 }
- 
+
 .instagram-game-button {
     border: 0;
     font-size: 17px;
     padding: 5px 15px;
+    width: 100%;
 }
 
 .instagram-game-button:focus {
@@ -83,14 +89,14 @@
 @media only screen and (max-width: 750px) {
 
     .instagram-game {
-        height: 82vh;
+        height: 100vh;
         background-color: rgba(0, 0, 0, .8);
     }
 
     .imageAndLocationsContainer h1 {
         margin-bottom: 0;
         margin-top: 0;
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 800px;
         padding-top: 12px;
         padding-bottom: 12px;
@@ -123,7 +129,6 @@
         padding: 10px;
         flex-wrap: wrap;
         margin: 0;
-        max-height: 30vh;
     }
 
     .instagram-option-button {

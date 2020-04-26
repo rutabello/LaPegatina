@@ -9,6 +9,7 @@ import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 // import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
 import texts from '../../../texts.json';
+import SocialMedia from '../../SocialMedia/SocialMedia';
 
 
 class SpotifyRoundOne extends React.Component {
@@ -147,7 +148,7 @@ checkCoincidence = () => {
     this.setState({
         hideResults: false,
         correctAnswers: this.coincidence ? (correctAnswers + 1) : correctAnswers,
-        score: this.coincidence ? (score + 100) : score,
+        score: this.coincidence ? (score + 394) : score,
     });
 }
 
@@ -255,15 +256,23 @@ render() {
                     </div>
                 )
                 : (
-                    <ListenedSongs
-                        username={name}
-                        unknownSongs={this.unknownSongs}
-                        language={language}
-                        url={songUrl}
-                        playStatus={playerState}
-                        onClick={playing}
-                        score={score}
-                    />
+                    <div>
+                        <ListenedSongs
+                            username={name}
+                            unknownSongs={this.unknownSongs}
+                            language={language}
+                            url={songUrl}
+                            playStatus={playerState}
+                            onClick={playing}
+                            score={score}
+                            roundfrom="two"
+                        />
+                        <div className="social-media-follow-buttons">
+                            <SocialMedia
+                                language={language}
+                            />
+                        </div>
+                    </div>
                 )}
             {/* {name !== undefined
                 ? <Link to='spotifyRoundTwo'>Go to Spotify round two</Link>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import texts from '../../texts.json';
+import './SocialMedia.css';
 
 import facebook from './icons/icon_2019_Facebook.svg';
 import twitter from './icons/icon_2019_Twitter.svg';
@@ -11,7 +12,7 @@ import tiktok from './icons/icon_2019_TikTok.svg';
 
 const SocialMedia = ({ language }) => (
     <div className="social-media-follow-footer">
-        <p>{texts[language].followUs}</p>
+        {/* <p>{texts[language].followUs}</p> */}
         <nav>
             <ul>
                 <li>

@@ -1,6 +1,7 @@
 {
     "catalan" : {
         "languageButton": "Tria un idioma",
+        "registerButton": "Entra",
         "playwithTitle": "Juga amb",
         "spotifyPlayWithButton": "Juga amb música",
         "instagramPlayWithButton": "Juga amb fotos",
@@ -31,6 +32,7 @@
 
     "spanish" : {
         "languageButton": "Escoge un idioma",
+        "registerButton": "Entra",
         "playwithTitle": "Juega con",
         "spotifyPlayWithButton": "Juega con música",
         "instagramPlayWithButton": "Juega con fotos",
@@ -40,7 +42,7 @@
         "backToStart": "Vuelve al inicio",
         "score": "Felicidades! Has hecho %points puntos",
         "spotifyRoundOneQuestion": "Cómo se llama la canción que suena?",
-        "spotifyRoundTwoQuestion": "Aquí va la pregunta de la 2a ronda de Spotify",
+        "spotifyRoundTwoQuestion": "Pregunta de la 2a ronda de Spotify",
         "instagramRoundTwoQuestion": "Dónde tomamos esta foto?",
         "youtubeQuestion": "De qué canción es este videoclip?",
         "endText": "Has llegado al final!",
@@ -61,6 +63,7 @@
 
     "english" : {
         "languageButton": "Choose a language",
+        "registerButton": "Log in",
         "playwithTitle": "Play with",
         "spotifyPlayWithButton": "Play with music",
         "instagramPlayWithButton": "Play with photos",
@@ -91,6 +94,7 @@
 
     "french": {
         "languageButton": "Choisissez une langue",
+        "registerButton": "Entrer",
         "playwithTitle": "Joue avec",
         "spotifyPlayWithButton": "Jouer avec la musique",
         "instagramPlayWithButton": "Jouer avec images",

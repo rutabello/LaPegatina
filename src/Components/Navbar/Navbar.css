@@ -30,7 +30,7 @@ nav {
 
 .dropbtn img {
     display: inline-block;
-    width: 13px;
+    width: 18px;
     margin: 5px;
 }
 
@@ -83,19 +83,18 @@ nav {
 
 /* the user icon */
 .user-profile img {
-    margin-right:2vh;
-    width:30px;
-
+    margin-right: 2vh;
+    width: 25px;
 }
-.space {
-    flex:3;
 
+.space {
+    flex: 3;
 }
 
 .nav-username {
-    margin-right: 5vh;
+    margin-right: 1vh;
     font-weight: bold;
-    font-size:18px;
+    font-size: 18px;
     justify-content: center;
     align-items: center;
 }
@@ -123,7 +122,7 @@ nav {
     }
 
     .dropbtn img {
-        width: 10px;
+        width: 15px;
         margin: 5px;
     }
 
@@ -139,6 +138,6 @@ nav {
 
     .user-profile img {
         margin-right: 1vh;
-        width: 30px;
+        width: 25px;
     }
 }

@@ -13,7 +13,7 @@ import spanish from '../../Pictures/bandera_spanish_small.png';
 import english from '../../Pictures/bandera_english_small.png';
 import french from '../../Pictures/bandera_french_small.png';
 
-import userbtn from '../../Pictures/user45.png';
+import userbtn from '../../Pictures/user.png';
 
 const languagesAvailable = [
     { language: 'catalan', flag: catalan },
@@ -46,7 +46,7 @@ class Navbar extends React.Component {
     render() {
         const { selectedFlag } = this.state;
 
-        const { pagein } = this.props;
+        const { pagein, language } = this.props;
 
         return (
             <nav id="topnavbar">
@@ -98,7 +98,7 @@ class Navbar extends React.Component {
                                         puntos
                                     </p>
                                 )
-                                : <UserForm mainpage="navbar" />
+                                : <UserForm mainpage="navbar" language={language} />
                         )}
                     </MyContext.Consumer>
                 </div>
