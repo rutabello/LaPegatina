@@ -16,11 +16,9 @@ const Home = ({ language }) => (
             <p className="playWith">{texts[language].playwithTitle}</p>
             <img src={logo} alt="la pegatina logo" className="laPegatina" />
             <div className="home-play-buttons">
-                <p>
-                    <Rounds
-                        language={language}
-                    />
-                </p>
+                <Rounds
+                    language={language}
+                />
             </div>
         </div>
     </div>

@@ -139,7 +139,6 @@ class InstagramRoundOne extends Component {
             return (
                 <div className="instagram-game">
                     <div className="imageAndLocationsContainer">
-                        <h1>{texts[language].whosTaggedQuestionText}</h1>
                         <div className="imageDisplayedContainer">
                             <h1>{texts[language].instagramRoundOneQuestion}</h1>
                             <div className="imageDisplayed">
@@ -162,7 +161,7 @@ class InstagramRoundOne extends Component {
                                 </div>
                             ))}
                         </div>
-                        <p>
+                        <p className="score">
                             {texts[language].correctAnswers}
                             {this.counter}
                             /
@@ -187,7 +186,7 @@ class InstagramRoundOne extends Component {
                                 puntos
                             </p>
                             {context.state.name
-                                ? <Link to="instagramroundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(this.counter)}>Guarda los puntos y juega una segunda ronda</button></Link>
+                                ? <Link to="instagramroundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(this.counter * 1729)}>Guarda los puntos y juega una segunda ronda</button></Link>
                                 : <UserForm language={language} />}
                             <div className="social-media-follow-buttons">
                                 <SocialMedia

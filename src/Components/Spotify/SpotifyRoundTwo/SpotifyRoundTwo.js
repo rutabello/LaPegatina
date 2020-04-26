@@ -148,7 +148,7 @@ checkCoincidence = () => {
     this.setState({
         hideResults: false,
         correctAnswers: this.coincidence ? (correctAnswers + 1) : correctAnswers,
-        score: this.coincidence ? (score + 100) : score,
+        score: this.coincidence ? (score + 394) : score,
     });
 }
 

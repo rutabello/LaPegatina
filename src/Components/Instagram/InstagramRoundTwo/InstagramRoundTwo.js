@@ -102,6 +102,10 @@ class InstagramRoundTwo extends Component {
         this.setState({
             gameStatus: 'choosing',
         });
+
+        this.attempts = 0;
+
+        this.counter = 0;
     }
 
     setSelectedMemberId = (memberId) => {

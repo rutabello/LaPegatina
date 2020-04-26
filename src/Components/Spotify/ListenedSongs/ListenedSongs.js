@@ -228,7 +228,7 @@ const ListenedSongs = ({ language, unknownSongs, score, roundfrom }) => {
                         </div>
                     </div>
                     {roundfrom === 'two'
-                        ? <GameEnded language={language} currentGame="spotify" />
+                        ? <GameEnded points={score} language={language} currentGame="spotify" />
                         : null}
                 </div>
             )}
