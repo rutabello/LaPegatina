@@ -59,8 +59,8 @@ state={
                     {(context) => (
             <div className="the-yt-quiz">
                 <div className="quiz-text">
-                    <h4>{questions[index].question}</h4>
-                    <h6>
+                    <h4 className ='quiz-text'>{questions[index].question}</h4>
+                    <h6 className ='quiz-text'>
                         Score:
                         {points}
                     </h6>

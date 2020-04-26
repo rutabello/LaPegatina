@@ -70,6 +70,9 @@
         width: 65%;
         margin: 0 auto;
     }
+    .titleColorYT{
+        font-weight: 100;
+}
 }
 .btn-4-YT{
     display: flex;
