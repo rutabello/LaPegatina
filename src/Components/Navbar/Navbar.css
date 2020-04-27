@@ -8,6 +8,21 @@ nav {
     align-items: center;
 }
 
+.transparent-navbar {
+    /* background-color: transparent; */
+    background-color: rgba(0, 0, 0, .75);;
+}
+
+.fixTop {
+    margin-top: -40px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .backToStart img {
     margin-left: 15px;
     width: 33px;

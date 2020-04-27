@@ -28,7 +28,7 @@
     font-family: sans-serif;
     font-weight: 600;
     font-size: 25px;
-    color: #312C71;;
+    color: white;;
 }
 
 .hide {
@@ -45,7 +45,7 @@ li {
 }
 
 .QuestionAndAnswers  {
-    background: url(../../Pictures/background_img_left.png) left top no-repeat,url(../../Pictures/background_img_right.png) right top no-repeat #1a1b39;
+    /* background: url(../../Pictures/background_img_left.png) left top no-repeat,url(../../Pictures/background_img_right.png) right top no-repeat #1a1b39; */
     margin: 0;
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,0.7455357142857143) 0%, rgba(255,255,255,0) 100%);
@@ -109,7 +109,7 @@ li {
         font-family: sans-serif;
         font-weight: 600;
         font-size: 18px;
-        color: #312C71;;
+        color: white;
     }
 }
 

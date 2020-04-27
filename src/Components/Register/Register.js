@@ -28,7 +28,7 @@ class Register extends Component {
                 <div>
 
                     <div className={link}>
-                        <h1 className="playWith title">Eso es ronda 2</h1>
+                        <h1 className="playWith title">Ronda 2</h1>
                         <Link className="playWith" to="spotifyRoundTwo">Start</Link>
                     </div>
                     <button type="button" onClick={this.showLink}>Send and go to spotify Second Round</button>
@@ -40,7 +40,7 @@ class Register extends Component {
             return (
                 <div>
                     <div className={link}>
-                        <h1 className="playWith">Eso es ronda 2</h1>
+                        <h1 className="playWith">Ronda 2</h1>
                         <Link to="youtubeRoundTwo">Start</Link>
                     </div>
                     <button type="button" onClick={this.showLink}>Send and go to Youtube Second Round</button>
