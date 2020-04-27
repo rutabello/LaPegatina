@@ -136,7 +136,7 @@ class YTPlayer extends Component {
                             </div>
                         </div>
                     )
-                    //  /* : <YTCountdown questions={this.props.questions}/> } */}
+                    //  /* : <YTCountdown questions={this.props.questions} stopPlaying={this.props.stopPlaying}/> } */}
                     : (
                         <QuizYT
                             questions={questions}

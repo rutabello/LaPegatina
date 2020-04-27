@@ -1,7 +1,8 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import Shuffle from '../../Utils/Shuffle';
-import { MyContext } from '../../../context/MyProvider'
+import { MyContext } from '../../../context/MyProvider';
+import YTCountdown from '../YTCountdown/YTCountdown'
 
 class QuizYT extends Component {
 
@@ -24,6 +25,7 @@ state={
             this.setState({
                 index: index + 1,
                 correctAnswer: questions[index + 1].answers[0],
+
                 // points: points + 1000,
                 // counter: this.state.counter+1
             });
@@ -31,9 +33,6 @@ state={
             this.props.stopPlaying();
         }
     }
-    // checking if the button pressed is the right answer,
-    // the right answer is always the first anwer from the object array
-    // and only if it's right it goes to the next question
 
     checkIf = (e) => {
 
@@ -48,7 +47,7 @@ state={
             // this.toNext();
         }
     }
-    // IF CONDITION FOR THE GAME ENDING
+    
 
     render() {
 
@@ -57,13 +56,15 @@ state={
         return (
             <MyContext.Consumer>
                     {(context) => (
+
             <div className="the-yt-quiz">
+            <YTCountdown toNext={this.toNext}/>
                 <div className="quiz-text">
                     <h4 className ='quiz-text'>{questions[index].question}</h4>
-                    <h6 className ='quiz-text'>
+                    {/* <h6 className ='quiz-text'>
                         Score:
                         {points}
-                    </h6>
+                    </h6> */}
                 </div>
                 <div className="btn-4-YT">
                     {Shuffle(questions[index].answers).map((item, index) => (

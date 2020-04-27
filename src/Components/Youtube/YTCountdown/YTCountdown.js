@@ -2,14 +2,14 @@ import React from 'react';
 import QuizYT from '../QuizYT/QuizYT';
 
 
-function YTCountdown() {
+function YTCountdown(props) {
     const [seconds, setSeconds] = React.useState(5);
 
     React.useEffect(() => {
         if (seconds > 0) {
             setTimeout(() => setSeconds(seconds - 1), 1000);
         } else {
-            setSeconds(<QuizYT />);
+            setSeconds(props.toNext());
         }
     });
 
