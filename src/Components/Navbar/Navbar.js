@@ -46,7 +46,7 @@ class Navbar extends React.Component {
     render() {
         const { selectedFlag } = this.state;
 
-        const { pagein, language } = this.props;
+        const { pagein, language, addedClass } = this.props;
 
 
         const navbarClass = (pagein === 'game')
@@ -54,7 +54,7 @@ class Navbar extends React.Component {
             : 'color-navbar';
 
         return (
-            <nav className={navbarClass} id="topnavbar">
+            <nav className={`${navbarClass} ${addedClass}`} id="topnavbar">
                 <div>
                     {pagein === 'home'
                         ? <div />
@@ -65,7 +65,7 @@ class Navbar extends React.Component {
                         )}
                 </div>
                 <div>
-                    {pagein === 'game'
+                    {pagein !== 'home'
                         ? <div />
                         : (
                             <div className="language-dropdown">

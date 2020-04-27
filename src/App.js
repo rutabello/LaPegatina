@@ -71,7 +71,15 @@ render() {
                         )}
                     />
 
-                    <Route path="/listenedsongs" render={(props) => <ListenedSongs language={selectedLanguage} {...props} />} />
+                    {/* <Route
+                        path="/listenedsongs"
+                        render={(props) => (
+                            <div>
+                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <ListenedSongs language={selectedLanguage} {...props} />
+                            </div>
+                        )}
+                    /> */}
 
                     <Route
                         path="/team"

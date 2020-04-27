@@ -48,7 +48,8 @@
 #next-button {
   bottom: 6vh;
   position: fixed;
-  background-color: #312C71;
+  /* background-color: #312C71; */
+  background-color: rgba(118, 109, 202, 0.74);
   width: 60%;
   display: flex;
   justify-content: center;
