@@ -4,7 +4,7 @@ import Login from './Login';
 import Panel from './Panel';
 import FormPanel from './FormPanel';
 import MyProvider from '../../../../context/MyProvider';
-import texts from '../../../../texts.json';
+// import texts from '../../../../texts.json';
 import './UserForm.css';
 
 const UserForm = ({ mainpage }) => (
