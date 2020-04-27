@@ -11,77 +11,40 @@ import texts from '../../../texts.json';
 // console.log(info)
 class YTPlayer extends Component {
     state = {
-        // data: {},
         player: '',
         title: '',
-        // videoUrl: '',
-        // isMuted: true,
         fourShuffledSongsTitles: [],
-        // fourNonShuffledSongsTitles: [],
         showButtons: true,
         done:false
     }
-
+// access to player in all event handlers via event.target
     VideoOnReady = (event) => {
-    // let player = event.target;
-    console.log(event.target)
-    // console.log( event.target.playerInfo.playerState)
-    // access to player in all event handlers via event.target
-    // event.target.playVideo();
+    // console.log(event.target)
+    
+     // plays the video at 10s, in case the video has the name of the song at the start
         event.target.seekTo(20);
-        // plays the video at 10s, in case the video has the name of the song at the start
         event.target.mute();
 
         this.setState({
-            player: event.target,
-            playerState:event.target.playerInfo.playerState
+            player: event.target
         });
 
-    // that prints in console the name of the song
-    // this.setState({
-    //   data :{
-    //     info: event.target.playerInfo.videoData.title, //stored the title into a const
-    //     toString : () => {
-    //       return 'data'
-    //     }
-    //   }
-    // })
-    //  console.log(this.state.data)
     }
-    //   this.sendButtonSelection = e => {
-    //     this.setState({buttonSelection: e.target.value});
-    //     console.log(e.target.value);
-    // };
-    // onPlayerStateChange=(event)=>{
-    //     if (this.state.playerState == 0)
-    //     console.log(this.playerState)
-    //         this.props.stopPlaying()
-    //     }
-   
+//    getting the title from the object to coincide with the other names that will be in the buttons
     VideoOnPlay = (event) => {
 
         const { title, det } = this.props;
-        // console.log( event.target.playerInfo.playerState)
-        // since we have something called "title" in props and in state, we give a new name to the title in the state
-
-        // access to player in all event handlers via event.target
-        // const player = event.target
-        // const info= event.data
-        // console.log(info)
-        // alert(player)
-        // player.seekTo(20)
         // alert(event.target.playerInfo.videoData.title)
-       
+        
         this.setState({
             // title:event.target.playerInfo.videoData.title,
             // videoUrl: event.target.playerInfo.videoUrl,
             // passing the title props to be written the same way
             title,
+            
         });
        
-        // store the array with 3 random titels in a const
-        // console.log(props.det)
-        // console.log(info);
+        // store the array with 3 random titles in a const
 
         const threeTitlesArr = det;
 
@@ -98,13 +61,15 @@ class YTPlayer extends Component {
         // console.log(fourShuffledSongsTitles);
        
     }
-    
+    // when the video end it send you to the endgame screen
     VideoOnEnd = (event)=>{
         this.props.stopPlaying()
     }
 // videoOnPause =(event)=>{
 //     this.props.stopPlaying()
 // }
+
+// the video unmute when the answer is right and the button disappear
     unmuteVideo = () => {
 
         const { player } = this.state;
@@ -121,13 +86,12 @@ class YTPlayer extends Component {
         const opts = {
             height: '315',
             width: '560',
-            // 560/315
+            
             // default 640 h-390
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 autoplay: 1,
                 modestbranding: 1, // not big yt branding
                 controls: 0, // the control not displayed
-                // mute: 1,// this mutes automaticly the video(in combination with the hidden control, the user can't unmute)
                 loop: 1,
                 start: 20, // from where the video starts(at 20 s in case the title is at the beginning)
                 // end: 90,
