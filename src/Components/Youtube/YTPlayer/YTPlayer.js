@@ -19,10 +19,13 @@ class YTPlayer extends Component {
         fourShuffledSongsTitles: [],
         // fourNonShuffledSongsTitles: [],
         showButtons: true,
+        done:false
     }
 
     VideoOnReady = (event) => {
     // let player = event.target;
+    console.log(event.target)
+    // console.log( event.target.playerInfo.playerState)
     // access to player in all event handlers via event.target
     // event.target.playVideo();
         event.target.seekTo(20);
@@ -31,6 +34,7 @@ class YTPlayer extends Component {
 
         this.setState({
             player: event.target,
+            playerState:event.target.playerInfo.playerState
         });
 
     // that prints in console the name of the song
@@ -48,11 +52,16 @@ class YTPlayer extends Component {
     //     this.setState({buttonSelection: e.target.value});
     //     console.log(e.target.value);
     // };
-
-    VideoOnPlay = () => {
+    // onPlayerStateChange=(event)=>{
+    //     if (this.state.playerState == 0)
+    //     console.log(this.playerState)
+    //         this.props.stopPlaying()
+    //     }
+   
+    VideoOnPlay = (event) => {
 
         const { title, det } = this.props;
-
+        // console.log( event.target.playerInfo.playerState)
         // since we have something called "title" in props and in state, we give a new name to the title in the state
 
         // access to player in all event handlers via event.target
@@ -62,13 +71,14 @@ class YTPlayer extends Component {
         // alert(player)
         // player.seekTo(20)
         // alert(event.target.playerInfo.videoData.title)
-
+       
         this.setState({
             // title:event.target.playerInfo.videoData.title,
             // videoUrl: event.target.playerInfo.videoUrl,
             // passing the title props to be written the same way
             title,
         });
+       
         // store the array with 3 random titels in a const
         // console.log(props.det)
         // console.log(info);
@@ -86,8 +96,15 @@ class YTPlayer extends Component {
             fourShuffledSongsTitles,
         });
         // console.log(fourShuffledSongsTitles);
+       
     }
-
+    
+    VideoOnEnd = (event)=>{
+        this.props.stopPlaying()
+    }
+// videoOnPause =(event)=>{
+//     this.props.stopPlaying()
+// }
     unmuteVideo = () => {
 
         const { player } = this.state;
@@ -98,7 +115,7 @@ class YTPlayer extends Component {
             showButtons: false,
         });
     }
-
+  
 
     render() {
         const opts = {
@@ -130,6 +147,8 @@ class YTPlayer extends Component {
                         opts={opts}
                         onReady={this.VideoOnReady}
                         onPlay={this.VideoOnPlay}
+                        // onPause={this.videoOnPause}
+                        onEnd={this.VideoOnEnd}
                     />
                 </div>
 
