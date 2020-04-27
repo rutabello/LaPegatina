@@ -8,6 +8,12 @@ nav {
     align-items: center;
 }
 
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .backToStart img {
     margin-left: 15px;
     width: 33px;

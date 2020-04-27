@@ -59,48 +59,62 @@ class Navbar extends React.Component {
                             </Link>
                         )}
                 </div>
-                <div className="language-dropdown">
-                    <button
-                        type="button"
-                        className="dropbtn"
-                    >
-                        <img src={selectedFlag} alt="language flag" />
-                    </button>
+                <div>
+                    {pagein === 'game'
+                        ? <div />
+                        : (
+                            <div className="language-dropdown">
+                                <button
+                                    type="button"
+                                    className="dropbtn"
+                                >
+                                    <img src={selectedFlag} alt="language flag" />
+                                </button>
 
-                    <div className="dropdown-content">
-                        {languagesAvailable.map((lang) => (
-                            <img
-                                key={lang.language}
-                                src={lang.flag}
-                                onClick={() => this.setLanguage(lang.language, lang.flag)}
-                                alt={lang.language}
-                            />
-                        ))}
-                    </div>
+                                <div className="dropdown-content">
+                                    {languagesAvailable.map((lang) => (
+                                        <img
+                                            key={lang.language}
+                                            src={lang.flag}
+                                            onClick={() => this.setLanguage(lang.language, lang.flag)}
+                                            alt={lang.language}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                 </div>
                 <div className="space" />
                 <div>
-                    <Link className="user-profile" to="/user">
-                        <img src={userbtn} alt="user profile" />
-                    </Link>
-                </div>
-                <div className="nav-username">
-                    <MyContext.Consumer>
-                        {(context) => (
-                            context.state.name
-                                ? (
-                                    <p>
-                                        {context.state.username}
-                                        {' '}
-                                        <br />
-                                        {context.state.points}
-                                        {' '}
-                                        puntos
-                                    </p>
-                                )
-                                : <UserForm mainpage="navbar" language={language} />
+                    {pagein === 'game'
+                        ? <div />
+                        : (
+                            <div className="profile">
+                                <div>
+                                    <Link className="user-profile" to="/user">
+                                        <img src={userbtn} alt="user profile" />
+                                    </Link>
+                                </div>
+                                <div className="nav-username">
+                                    <MyContext.Consumer>
+                                        {(context) => (
+                                            context.state.name
+                                                ? (
+                                                    <p>
+                                                        {context.state.username}
+                                                        {' '}
+                                                        <br />
+                                                        {context.state.points}
+                                                        {' '}
+                                                        puntos
+                                                    </p>
+                                                )
+                                                : <UserForm mainpage="navbar" language={language} />
+                                        )}
+                                    </MyContext.Consumer>
+                                </div>
+                            </div>
                         )}
-                    </MyContext.Consumer>
                 </div>
             </nav>
         );

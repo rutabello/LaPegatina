@@ -55,7 +55,7 @@ render() {
                         path="/spotifyroundone"
                         render={(props) => (
                             <div>
-                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
                                 <SpotifyRoundOne language={selectedLanguage} {...props} />
                             </div>
                         )}
@@ -65,7 +65,7 @@ render() {
                         path="/spotifyroundtwo"
                         render={(props) => (
                             <div>
-                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
                                 <SpotifyRoundTwo language={selectedLanguage} {...props} />
                             </div>
                         )}
@@ -87,7 +87,7 @@ render() {
                         path="/instagramroundone"
                         render={(props) => (
                             <div>
-                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
                                 <InstagramRoundOne language={selectedLanguage} {...props} />
                             </div>
                         )}
@@ -97,7 +97,7 @@ render() {
                         path="/instagramroundtwo"
                         render={(props) => (
                             <div>
-                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
                                 <InstagramRoundTwo language={selectedLanguage} {...props} />
                             </div>
                         )}
@@ -107,7 +107,7 @@ render() {
                         path="/youtuberoundone"
                         render={(props) => (
                             <div>
-                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
                                 <YoutubeRoundOne language={selectedLanguage} {...props} />
                             </div>
                         )}
@@ -117,7 +117,7 @@ render() {
                         path="/youtuberoundtwo"
                         render={(props) => (
                             <div>
-                                <Navbar onChangeLanguage={this.setLanguage} />
+                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
                                 <YoutubeRoundTwo language={selectedLanguage} {...props} />
                             </div>
                         )}
