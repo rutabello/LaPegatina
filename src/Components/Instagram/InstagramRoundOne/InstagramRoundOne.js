@@ -11,6 +11,7 @@ import Loading from '../../Utils/Loading/Loading';
 
 import { MyContext } from '../../../context/MyProvider';
 import UserForm from '../../Register/User/UserForm/UserForm';
+import Navbar from '../../Navbar/Navbar';
 import '../Instagram.css';
 
 class InstagramRoundOne extends Component {
@@ -177,6 +178,7 @@ class InstagramRoundOne extends Component {
                 <MyContext.Consumer>
                     {(context) => (
                         <div>
+                            <Navbar addedClass="fixTop" />
                             <h1>Te atreves con la segunda ronda?</h1>
                             <p>
                                 Has hecho

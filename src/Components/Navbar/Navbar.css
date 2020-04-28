@@ -14,7 +14,7 @@ nav {
 }
 
 .fixTop {
-    margin-top: -40px;
+    margin-top: -46px;
 }
 
 .profile {
@@ -154,5 +154,9 @@ nav {
     .user-profile img {
         margin-right: 1vh;
         width: 25px;
+    }
+
+    .fixTop {
+        margin-top: -40px;
     }
 }
