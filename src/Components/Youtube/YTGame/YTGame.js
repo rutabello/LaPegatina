@@ -82,9 +82,9 @@ class YTGame extends Component {
 
     render() {
 
-        const { fourNonShuffledSongsTitles, randomVideoId, data, currentTitle, questions, stopPlaying } = this.state;
+        const { fourNonShuffledSongsTitles, randomVideoId, data, currentTitle, questions } = this.state;
 
-        const { language } = this.props;
+        const { language, stopPlaying } = this.props;
 
         return (
             <div className="yt-all">
@@ -98,7 +98,7 @@ class YTGame extends Component {
                         info={data}
                         title={currentTitle}
                         questions={questions}
-                        stopPlaying={this.props.stopPlaying}
+                        stopPlaying={stopPlaying}
                         language={language}
                     />
                 </div>

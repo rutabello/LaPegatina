@@ -15,35 +15,34 @@ class YTPlayer extends Component {
         title: '',
         fourShuffledSongsTitles: [],
         showButtons: true,
-        done:false
+        // done: false,
     }
-// access to player in all event handlers via event.target
+
+    // access to player in all event handlers via event.target
     VideoOnReady = (event) => {
     // console.log(event.target)
-    
-     // plays the video at 10s, in case the video has the name of the song at the start
+    // plays the video at 10s, in case the video has the name of the song at the start
         event.target.seekTo(20);
         event.target.mute();
 
         this.setState({
-            player: event.target
+            player: event.target,
         });
-
     }
-//    getting the title from the object to coincide with the other names that will be in the buttons
-    VideoOnPlay = (event) => {
+
+    // getting the title from the object to coincide with the other names that will be in the buttons
+    VideoOnPlay = () => {
 
         const { title, det } = this.props;
         // alert(event.target.playerInfo.videoData.title)
-        
+
         this.setState({
             // title:event.target.playerInfo.videoData.title,
             // videoUrl: event.target.playerInfo.videoUrl,
             // passing the title props to be written the same way
             title,
-            
         });
-       
+
         // store the array with 3 random titles in a const
 
         const threeTitlesArr = det;
@@ -59,17 +58,20 @@ class YTPlayer extends Component {
             fourShuffledSongsTitles,
         });
         // console.log(fourShuffledSongsTitles);
-       
     }
-    // when the video end it send you to the endgame screen
-    VideoOnEnd = (event)=>{
-        this.props.stopPlaying()
-    }
-// videoOnPause =(event)=>{
-//     this.props.stopPlaying()
-// }
 
-// the video unmute when the answer is right and the button disappear
+    // when the video end it send you to the endgame screen
+    VideoOnEnd = () => {
+
+        const { stopPlaying } = this.props;
+
+        stopPlaying();
+    }
+    // videoOnPause =(event)=>{
+    //     this.props.stopPlaying()
+    // }
+
+    // the video unmute when the answer is right and the button disappear
     unmuteVideo = () => {
 
         const { player } = this.state;
@@ -80,13 +82,13 @@ class YTPlayer extends Component {
             showButtons: false,
         });
     }
-  
+
 
     render() {
         const opts = {
             height: '315',
             width: '560',
-            
+
             // default 640 h-390
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 autoplay: 1,
@@ -140,7 +142,7 @@ class YTPlayer extends Component {
                     : (
                         <QuizYT
                             questions={questions}
-                            stopPlaying={this.props.stopPlaying}
+                            stopPlaying={stopPlaying}
                         />
                     )}
             </div>

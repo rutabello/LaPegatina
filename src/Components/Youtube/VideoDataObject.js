@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // always the first question is the right one
 const videoDataObject = [
     {

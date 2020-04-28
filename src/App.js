@@ -10,7 +10,6 @@ import Team from './Components/Team/Team';
 import Navbar from './Components/Navbar/Navbar';
 import YoutubeRoundOne from './Components/Youtube/YoutubeRoundOne/YoutubeRoundOne';
 import YoutubeRoundTwo from './Components/Youtube/YoutubeRoundTwo/YoutubeRoundTwo';
-import ListenedSongs from './Components/Spotify/ListenedSongs/ListenedSongs';
 import User from './Components/Register/User/User';
 import MyProvider from './context/MyProvider';
 import MembersAccounts from './Components/Instagram/InstagramRoundTwo/MembersAccounts';
