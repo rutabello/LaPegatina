@@ -54,6 +54,17 @@ state={
         }
     }
 
+    shuffledQuestions = () => {
+
+        const { questions } = this.state;
+
+        Shuffle(questions);
+
+        this.setState({
+            questions,
+        });
+    }
+
 
     render() {
 
@@ -80,7 +91,7 @@ state={
                                         </h6> */}
                                     </div>
                                     <div className="btn-4-YT">
-                                        {Shuffle(questions[index].answers).map((item, index) => (
+                                        {questions[index].answers.map((item, index) => (
                                             <button
                                                 type="button"
                                                 value={item}
