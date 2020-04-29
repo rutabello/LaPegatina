@@ -5,6 +5,7 @@ import texts from '../../../texts.json';
 import Loading from '../../Utils/Loading/Loading';
 import GameEnded from '../../GameEnded/GameEnded';
 import MembersAccounts from './MembersAccounts';
+import Navbar from '../../Navbar/Navbar';
 import '../Instagram.css';
 
 
@@ -197,7 +198,10 @@ class InstagramRoundTwo extends Component {
 
         if (gameStatus === 'gameOver') {
             return (
-                <GameEnded points={this.counter * 2653} changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
+                <div>
+                    <Navbar addedClass="fixTop" />
+                    <GameEnded points={this.counter * 2653} changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
+                </div>
             );
         }
 
