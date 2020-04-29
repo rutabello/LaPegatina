@@ -25,7 +25,7 @@ const GameEnded = ({ currentGame, language, changeBandMember, points }) => (
                 if (currentGame === 'youtube') {
                     return (
                         <div>
-                            <p>This game ends here. You can now play with</p>
+                            <p>{texts[language].gameEnded}</p>
                             <br />
                             <Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>Música</button></Link>
                             <br />
