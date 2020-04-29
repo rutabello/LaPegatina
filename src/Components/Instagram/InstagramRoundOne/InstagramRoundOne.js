@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Shuffle from '../../Utils/Shuffle';
 import ButtonIgRoundOne from './ButtonIgRoundOne';
 import texts from '../../../texts.json';
@@ -188,7 +188,7 @@ class InstagramRoundOne extends Component {
                                 puntos
                             </p>
                             {context.state.name
-                                ? <Register currentGame="instagram"/>
+                                ? <Register currentGame="instagram" />
                                 : <UserForm language={language} />}
                             <div className="social-media-follow-buttons">
                                 <SocialMedia

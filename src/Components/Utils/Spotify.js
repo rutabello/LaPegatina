@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 // !!! IMPORTANT: No push to github as long as the clientId is visible in the files!
 // import { TOKEN } from './token'
 const clientId = '5a36a3d1f9bc4712b321e760813bb8f6';
@@ -46,32 +47,33 @@ const Spotify = {
 
     savePlaylist(name, trackUris) {
         if (!name || !trackUris.length) {
-          return;
+            return;
         }
-    
+
         const accessToken = Spotify.getaccessToken();
         const headers = { Authorization: `Bearer ${accessToken}` };
         let userId;
-    
-        return fetch('https://api.spotify.com/v1/me', {headers: headers}
-        ).then(response => response.json()
-        ).then(jsonResponse => {
-          userId = jsonResponse.id;
-          return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
-            headers: headers,
-            method: 'POST',
-            body: JSON.stringify({name: name})
-          }).then(response => response.json()
-          ).then(jsonResponse => {
-            const playlistId = jsonResponse.id;
-            return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
-              headers: headers,
-              method: 'POST',
-              body: JSON.stringify({uris: trackUris})
+
+        return fetch('https://api.spotify.com/v1/me', { headers })
+            .then((response) => response.json())
+            .then((jsonResponse) => {
+                userId = jsonResponse.id;
+                return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
+                    headers,
+                    method: 'POST',
+                    body: JSON.stringify({ name }),
+                })
+                    .then((response) => response.json())
+                    .then((jsonResponse) => {
+                        const playlistId = jsonResponse.id;
+                        return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
+                            headers,
+                            method: 'POST',
+                            body: JSON.stringify({ uris: trackUris }),
+                        });
+                    });
             });
-          });
-        });
-      }
+    },
 };
 
 // This way you can access the returned object. "collaborative" is just the first property that appears,

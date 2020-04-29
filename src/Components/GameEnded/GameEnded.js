@@ -38,11 +38,11 @@ const GameEnded = ({ currentGame, language, changeBandMember, points }) => (
                     return (
                         <div>
                             <p>
-                                `Sumamos
+                                Sumamos
                                 {' '}
                                 {points}
                                 {' '}
-                                puntos a tu perfil. Ahora puedes seguir jugando con`
+                                puntos a tu perfil. Ahora puedes seguir jugando con
                             </p>
                             <br />
                             <Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>Música</button></Link>

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { EmailShareButton, FacebookShareButton,
     TwitterShareButton, WhatsappShareButton, EmailIcon,
     FacebookIcon, TwitterIcon, WhatsappIcon } from 'react-share';
@@ -14,13 +14,13 @@ import GameEnded from '../../GameEnded/GameEnded';
 
 const shareurl = 'https://juegaconlapegatinaenpruebas.netlify.com';
 
-const ListenedSongs = ({ save, naming, adding, noTracks, playlistTracks , playlistName, language, unknownSongs, score, roundfrom }) => {
+const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSongs, score, roundfrom }) => {
 
     const loginComp = (context) => {
 
-        const { state: { name }, addPoints } = context;
+        const { state: { name } } = context;
 
-     /*   if (name) {
+        /*   if (name) {
             return (
                 <Link to="spotifyRoundTwo">
                     <button className="btn btn-primary" type="button" onClick={() => addPoints(score)}>
@@ -29,12 +29,10 @@ const ListenedSongs = ({ save, naming, adding, noTracks, playlistTracks , playli
                 </Link>
             );
         } */
-        
+
         if (name) {
             return (
-                <Register currentGame="spotify"/>
-                   
-                    
+                <Register currentGame="spotify" />
             );
         }
 
@@ -74,10 +72,10 @@ const ListenedSongs = ({ save, naming, adding, noTracks, playlistTracks , playli
                                 </div>
                                 <div className="modal-body">
                                     <ul id="mistakes" className="instruct">
-                                    <div>
-                                    <input id="playlistName" className="repeat-button" onChange={naming} defaultValue={playlistName} />
-                                    <button id="playlistSave" className="btn btn-primary" onClick={save}>Guardar</button>
-                                    </div>
+                                        <div>
+                                            <input id="playlistName" className="repeat-button" onChange={naming} defaultValue={playlistName} />
+                                            <button type="button" id="playlistSave" className="btn btn-primary" onClick={save}>Guardar</button>
+                                        </div>
                                         {unknownSongs.map((song, index) => {
                                             const url = song.uri.replace(/:/g, '/').replace('spotify', 'https://open.spotify.com');
                                             return (

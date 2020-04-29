@@ -25,7 +25,7 @@
     "import/no-cycle": "off",
     "react/jsx-indent": ["error", 4],
     "react/jsx-indent-props": ["error", 4],
-    "max-len": ["error", { "code": 140 }],
+    "max-len": ["error", { "code": 150 }],
     "indent": ["error", 4],
     "semi": ["error", "always"],
     "global-require": "off",
