@@ -7,7 +7,7 @@ import texts from '../../../texts.json';
 import SocialMedia from '../../SocialMedia/SocialMedia';
 
 import Loading from '../../Utils/Loading/Loading';
-// import Register from '../../Register/Register';
+import Register from '../../Register/Register';
 
 import { MyContext } from '../../../context/MyProvider';
 import UserForm from '../../Register/User/UserForm/UserForm';
@@ -188,7 +188,7 @@ class InstagramRoundOne extends Component {
                                 puntos
                             </p>
                             {context.state.name
-                                ? <Link to="instagramroundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(this.counter * 1729)}>Guarda los puntos y juega una segunda ronda</button></Link>
+                                ? <Register currentGame="instagram"/>
                                 : <UserForm language={language} />}
                             <div className="social-media-follow-buttons">
                                 <SocialMedia

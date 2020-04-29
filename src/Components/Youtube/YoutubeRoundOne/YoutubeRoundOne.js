@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import '../Youtube.css';
 import { Link } from 'react-router-dom';
-// import Register from '../../Register/Register';
+import Register from '../../Register/Register';
 import YTGame from '../YTGame/YTGame';
 import { MyContext } from '../../../context/MyProvider';
 import UserForm from '../../Register/User/UserForm/UserForm';
@@ -63,6 +63,24 @@ class YoutubeRoundOne extends Component {
                 <MyContext.Consumer>
                     {(context) => (
                         <div>
+                            <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
+                            {context.state.name
+                                ? <Register currentGame="youtube"/>
+                                /*<Link to="youtuberoundtwo"><button className = 'navbar-btn' type="button" onClick={() => context.addPoints(this.counter)}>Juega una segunda ronda</button></Link> */
+                                : <UserForm />}
+                        </div>
+                    )}
+                </MyContext.Consumer>
+            );
+        }
+
+        return null;
+
+   /*     if (gameStatus === 'gameOver') {
+            return (
+                <MyContext.Consumer>
+                    {(context) => (
+                        <div>
                             <h1>Has llegado al final de esta ronda. Te atreves con la segunda?</h1>
                             <button type="button" className="navbar-btn" onClick={this.restartYoutube}>Vuelve a jugar</button>
                             {context.state.name
@@ -79,7 +97,7 @@ class YoutubeRoundOne extends Component {
             );
         }
 
-        return null;
+        return null;*/
     }
 }
 

@@ -52,6 +52,15 @@ class SpotifyRoundOne extends React.Component {
       playing: false,
       playlistID: '37i9dQZF1DZ06evO2EUrsw',
       currentAttempt: 0,
+
+       //create a playlist array to save the chosen tracks from the user
+    playlistTracks : [],
+    noTracks: true,
+    songList: [],
+    playlistName: "Mis favoritos",
+    addedSong: false,
+    buttonText: "Ponla en tu playlist!",
+    buttonText2: "Ya ésta en tú lista!"
   }
 
   // API call to get the playlist data.
@@ -153,6 +162,62 @@ checkCoincidence = () => {
     });
 }
 
+//all the logic concerning a individual user playlist
+
+addTrack = (track) => {
+
+    const songIndex = track.target.id;
+    const selectedSong = this.unknownSongs[songIndex];
+
+   let mySongs = [...this.state.playlistTracks];
+   mySongs.push(selectedSong);
+
+   this.setState({
+
+     playlistTracks: mySongs,
+     noTracks: false,
+     addedSong: true
+   });
+ }
+
+ removeTrack = (track) => {
+
+    let newTracks = [...this.state.playlistTracks];    
+    let index = track.target.id;
+
+     newTracks.splice(index, 1);
+
+     this.setState({
+       playlistTracks: newTracks
+      }); 
+}
+
+updatePlaylistName = (name) => {
+
+    let newName = name.target.value;
+  
+    this.setState({
+      playlistName: newName
+    });
+  }
+
+  savePlaylist = () => {
+
+    const trackUris = this.state.playlistTracks.map(track => track.uri);
+
+    Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
+
+      this.setState({
+
+        playlistName: 'Pegatinas Best',
+        playlistTracks: [],
+        
+      });
+    });
+  }
+
+//"normal" game logic continues
+
 showAnswerCount = () => {
     this.answerCountShow = true;
 }
@@ -199,7 +264,7 @@ setPlayingToFalse = () => {
 
 render() {
 
-    const { score, currentSong, hideResults, songNames, name, songUrl, playerState, playing, currentAttempt } = this.state;
+    const { adding, remove, naming, save, playlistName, noTracks, playlistTracks, score, currentSong, hideResults, songNames, name, songUrl, playerState, playing, currentAttempt } = this.state;
 
     const { language } = this.props;
 
@@ -268,6 +333,13 @@ render() {
                             onClick={playing}
                             score={score}
                             roundfrom="one"
+                            adding={this.addTrack}
+                            remove= {this.removeTrack}
+                            naming={this.updatePlaylistName}
+                            save={this.savePlaylist}
+                            playlistName={playlistName}
+                            noTracks={noTracks}
+                            playlistTracks={playlistTracks}
                         />
                         <div className="social-media-follow-buttons">
                             <SocialMedia
