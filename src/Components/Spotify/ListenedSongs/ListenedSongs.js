@@ -50,7 +50,11 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
                                 {loginComp(context)}
                             </div>
                         )
-                        : null }
+                        : (
+                            <div>
+                                <h2 className="instruct">{texts[language].score.replace('%points', score)}</h2>
+                            </div>
+                        )}
 
                     <button
                         type="button"
