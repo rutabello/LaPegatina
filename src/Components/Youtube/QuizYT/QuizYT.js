@@ -6,26 +6,29 @@ import YTCountdown from '../YTCountdown/YTCountdown';
 
 class QuizYT extends Component {
 
-state={
-    questions: this.props.questions,
-    index: 0,
-    // gameStatus: "playing",
-    correctAnswer: this.props.questions[0].answers[0],
-    points: 0,
-    display: 'question',
-    // counter: 0
-    // clicked: false
-}
-// function the is passing to the next question{by increasing the index} and adding points for the right ones
+    state={
+        index: 0,
+        // gameStatus: "playing",
+        correctAnswer: this.props.questions[0].answers[0],
+        answers: Shuffle(this.props.questions[0].answers),
+        points: 0,
+        display: 'question',
+        // counter: 0
+        // clicked: false
+    }
+    // function the is passing to the next question{by increasing the index} and adding points for the right ones
+
 
     toNext = () => {
+        const { questions } = this.props;
+        const { index } = this.state;
 
-        const { questions, index } = this.state;
         // if(this.state.index > this.state.counter){
         if (index < 4) {
             this.setState({
                 index: index + 1,
                 correctAnswer: questions[index + 1].answers[0],
+                answers: Shuffle(questions[index + 1].answers),
                 display: 'question',
 
                 // points: points + 1000,
@@ -54,21 +57,10 @@ state={
         }
     }
 
-    shuffledQuestions = () => {
-
-        const { questions } = this.state;
-
-        Shuffle(questions);
-
-        this.setState({
-            questions,
-        });
-    }
-
-
     render() {
 
-        const { questions, index, points, display } = this.state;
+        const { questions } = this.props;
+        const { index, points, display, answers } = this.state;
 
         return (
             <MyContext.Consumer>
@@ -91,7 +83,7 @@ state={
                                         </h6> */}
                                     </div>
                                     <div className="btn-4-YT">
-                                        {questions[index].answers.map((item, index) => (
+                                        {answers.map((item, index) => (
                                             <button
                                                 type="button"
                                                 value={item}

@@ -136,7 +136,7 @@ const videoDataObject = [
                 answers: ['Mario Díaz', 'Amaral', 'La gran Pegatina', 'Rayden'],
             },
             {
-                question: ' Dónde se grabó este videoclip?',
+                question: 'Dónde se grabó este videoclip?',
                 answers: ['Madrid', 'Granada', 'Bilbao', 'Santiago de Compostela'],
             },
             {
