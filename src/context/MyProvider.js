@@ -11,6 +11,7 @@ class MyProvider extends Component {
         age: 20,
         points: 0,
         activePanel: 'login',
+        language: 'spanish',
     }
 
     render() {

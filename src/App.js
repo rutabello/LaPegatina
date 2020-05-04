@@ -12,7 +12,7 @@ import YoutubeRoundOne from './Components/Youtube/YoutubeRoundOne/YoutubeRoundOn
 import YoutubeRoundTwo from './Components/Youtube/YoutubeRoundTwo/YoutubeRoundTwo';
 // import ListenedSongs from './Components/Spotify/ListenedSongs/ListenedSongs';
 import User from './Components/Register/User/User';
-import MyProvider from './context/MyProvider';
+import MyProvider, { MyContext } from './context/MyProvider';
 import MembersAccounts from './Components/Instagram/InstagramRoundTwo/MembersAccounts';
 import './App.css';
 
@@ -35,115 +35,131 @@ render() {
 
     return (
         <MyProvider>
+            <MyContext.Consumer>
+                {(context) => (
+
+                    <div>
+                        <Switch>
+                            <Route
+                                exact
+                                path="/"
+                                render={(props) => (
+                                    <div>
+                                        <Navbar language={context.state.language} pagein="home" onChangeLanguage={this.setLanguage} />
+                                        <Home language={selectedLanguage} {...props} />
+                                        <div className="social-media-follow-buttons">
+                                            <SocialMedia language={selectedLanguage} {...props} />
+                                        </div>
+                                    </div>
+                                )}
+                            />
+
+                            <Route
+                                path="/spotifyroundone"
+                                render={(props) => (
+                                    <div>
+                                        <Navbar pagein="game" />
+                                        <SpotifyRoundOne language={selectedLanguage} {...props} />
+                                    </div>
+                                )}
+                            />
+
+                            <Route
+                                path="/spotifyroundtwo"
+                                render={(props) => (
+                                    <div>
+                                        <Navbar pagein="game" />
+                                        <SpotifyRoundTwo language={selectedLanguage} {...props} />
+                                    </div>
+                                )}
+                            />
+
+                            {/* <Route
+        path="/listenedsongs"
+        render={(props) => (
             <div>
-                <Switch>
-                    <Route
-                        exact
-                        path="/"
-                        render={(props) => (
-                            <div>
-                                <Navbar language={selectedLanguage} pagein="home" onChangeLanguage={this.setLanguage} />
-                                <Home language={selectedLanguage} {...props} />
-                                <div className="social-media-follow-buttons">
-                                    <SocialMedia language={selectedLanguage} {...props} />
-                                </div>
-                            </div>
-                        )}
-                    />
-
-                    <Route
-                        path="/spotifyroundone"
-                        render={(props) => (
-                            <div>
-                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
-                                <SpotifyRoundOne language={selectedLanguage} {...props} />
-                            </div>
-                        )}
-                    />
-
-                    <Route
-                        path="/spotifyroundtwo"
-                        render={(props) => (
-                            <div>
-                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
-                                <SpotifyRoundTwo language={selectedLanguage} {...props} />
-                            </div>
-                        )}
-                    />
-
-                    {/* <Route
-                        path="/listenedsongs"
-                        render={(props) => (
-                            <div>
-                                <Navbar onChangeLanguage={this.setLanguage} />
-                                <ListenedSongs language={selectedLanguage} {...props} />
-                            </div>
-                        )}
-                    /> */}
-
-                    <Route
-                        path="/team"
-                        render={(props) => (
-                            <div>
-                                <Navbar onChangeLanguage={this.setLanguage} />
-                                <Team language={selectedLanguage} {...props} />
-                            </div>
-                        )}
-                    />
-
-                    <Route
-                        path="/instagramroundone"
-                        render={(props) => (
-                            <div>
-                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
-                                <InstagramRoundOne language={selectedLanguage} {...props} />
-                            </div>
-                        )}
-                    />
-
-                    <Route
-                        path="/instagramroundtwo"
-                        render={(props) => (
-                            <div>
-                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
-                                <InstagramRoundTwo language={selectedLanguage} {...props} />
-                            </div>
-                        )}
-                    />
-
-                    <Route
-                        path="/youtuberoundone"
-                        render={(props) => (
-                            <div>
-                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
-                                <YoutubeRoundOne language={selectedLanguage} {...props} />
-                            </div>
-                        )}
-                    />
-
-                    <Route
-                        path="/youtuberoundtwo"
-                        render={(props) => (
-                            <div>
-                                <Navbar pagein="game" onChangeLanguage={this.setLanguage} />
-                                <YoutubeRoundTwo language={selectedLanguage} {...props} />
-                            </div>
-                        )}
-                    />
-
-                    <Route
-                        path="/members"
-                        render={(props) => (
-                            <div>
-                                <Navbar onChangeLanguage={this.setLanguage} />
-                                <MembersAccounts language={selectedLanguage} {...props} />
-                            </div>
-                        )}
-                    />
-
-                    <Route path="/user" render={(props) => <User language={selectedLanguage} {...props} />} />
-                </Switch>
+                <Navbar onChangeLanguage={this.setLanguage} />
+                <ListenedSongs language={selectedLanguage} {...props} />
             </div>
+        )}
+    /> */}
+
+                            <Route
+                                path="/team"
+                                render={(props) => (
+                                    <div>
+                                        <Navbar />
+                                        <Team language={selectedLanguage} {...props} />
+                                    </div>
+                                )}
+                            />
+
+                            <Route
+                                path="/instagramroundone"
+                                render={(props) => (
+                                    <div>
+                                        <Navbar pagein="game" />
+                                        <InstagramRoundOne language={selectedLanguage} {...props} />
+                                    </div>
+                                )}
+                            />
+
+                            <Route
+                                path="/instagramroundtwo"
+                                render={(props) => (
+                                    <div>
+                                        <Navbar pagein="game" />
+                                        <InstagramRoundTwo language={selectedLanguage} {...props} />
+                                    </div>
+                                )}
+                            />
+
+                            <Route
+                                path="/youtuberoundone"
+                                render={(props) => (
+                                    <div>
+                                        <Navbar pagein="game" />
+                                        <YoutubeRoundOne language={selectedLanguage} {...props} />
+                                    </div>
+                                )}
+                            />
+
+                            <Route
+                                path="/youtuberoundtwo"
+                                render={(props) => (
+                                    <div>
+                                        <Navbar pagein="game" />
+                                        <YoutubeRoundTwo language={selectedLanguage} {...props} />
+                                    </div>
+                                )}
+                            />
+
+                            <Route
+                                path="/members"
+                                render={(props) => (
+                                    <div>
+                                        <Navbar />
+                                        <MembersAccounts language={selectedLanguage} {...props} />
+                                    </div>
+                                )}
+                            />
+
+                            <Route
+                                path="/user"
+                                render={(props) => (
+                                    <div>
+                                        <Navbar />
+                                        <User language={selectedLanguage} {...props} />
+                                    </div>
+                                )}
+                            />
+                        </Switch>
+                    </div>
+
+                )}
+
+
+            </MyContext.Consumer>
         </MyProvider>
     );
 }
