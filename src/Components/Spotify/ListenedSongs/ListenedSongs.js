@@ -32,7 +32,7 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
 
         if (name) {
             return (
-                <Register currentGame="spotify" />
+                <Register score={score} currentGame="spotify" />
             );
         }
 

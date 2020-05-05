@@ -21,7 +21,7 @@ class Register extends Component {
 
     render() {
 
-        const { currentGame } = this.props;
+        const { currentGame, score } = this.props;
 
         const { link } = this.state;
 
@@ -32,7 +32,7 @@ class Register extends Component {
                         <div>
                             <div className={link}>
                                 <h1 className="playWith title">Ronda 2</h1>
-                                <Link to="spotifyRoundTwo"><button className="btn btn-primary" type="button" onClick={() => context.addPoints(this.counter)}>Start</button></Link>
+                                <Link to="spotifyRoundTwo"><button className="btn btn-primary" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
                             </div>
                             <button type="button" onClick={this.showLink}>Suma puntos y sigue jugando</button>
                         </div>
@@ -50,7 +50,7 @@ class Register extends Component {
                             <div className={link}>
                                 <h1 className="playWith">Ronda 2</h1>
                                 <p>Instrucciones</p>
-                                <Link to="youtuberoundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(this.counter)}>Start</button></Link>
+                                <Link to="youtuberoundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
                             </div>
                             <button type="button" onClick={this.showLink}>Juega una segunda ronda</button>
                         </div>
@@ -66,7 +66,7 @@ class Register extends Component {
                         <div>
                             <div className={link}>
                                 <h1 className="playWith">Ronda 2</h1>
-                                <Link to="instagramroundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(this.counter)}>Start</button></Link>
+                                <Link to="instagramroundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
                             </div>
                             <button type="button" onClick={this.showLink}>Juega una segunda Ronda</button>
                         </div>
