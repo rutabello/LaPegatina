@@ -12,6 +12,7 @@ class MyProvider extends Component {
         points: 0,
         activePanel: 'login',
         language: 'spanish',
+        authed: true,
     }
 
     render() {

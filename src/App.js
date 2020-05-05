@@ -1,5 +1,7 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import PrivateRoute from './Components/PrivateRoute';
 import SpotifyRoundOne from './Components/Spotify/SpotifyRoundOne/SpotifyRoundOne';
 import SpotifyRoundTwo from './Components/Spotify/SpotifyRoundTwo/SpotifyRoundTwo';
 import Home from './Components/Home/Home';
@@ -10,7 +12,6 @@ import Team from './Components/Team/Team';
 import Navbar from './Components/Navbar/Navbar';
 import YoutubeRoundOne from './Components/Youtube/YoutubeRoundOne/YoutubeRoundOne';
 import YoutubeRoundTwo from './Components/Youtube/YoutubeRoundTwo/YoutubeRoundTwo';
-// import ListenedSongs from './Components/Spotify/ListenedSongs/ListenedSongs';
 import User from './Components/Register/User/User';
 import MyProvider, { MyContext } from './context/MyProvider';
 import MembersAccounts from './Components/Instagram/InstagramRoundTwo/MembersAccounts';
@@ -64,25 +65,16 @@ render() {
                                 )}
                             />
 
-                            <Route
+                            <PrivateRoute
+                                authed={context.state.authed}
                                 path="/spotifyroundtwo"
-                                render={(props) => (
+                                component={(props) => (
                                     <div>
-                                        <Navbar pagein="game" />
-                                        <SpotifyRoundTwo language={selectedLanguage} {...props} />
+                                        <Navbar {...props} pagein="game" language={selectedLanguage} />
+                                        <SpotifyRoundTwo {...props} language={selectedLanguage} />
                                     </div>
                                 )}
                             />
-
-                            {/* <Route
-        path="/listenedsongs"
-        render={(props) => (
-            <div>
-                <Navbar onChangeLanguage={this.setLanguage} />
-                <ListenedSongs language={selectedLanguage} {...props} />
-            </div>
-        )}
-    /> */}
 
                             <Route
                                 path="/team"
@@ -104,15 +96,19 @@ render() {
                                 )}
                             />
 
-                            <Route
+                            <PrivateRoute
+                                authed={context.state.authed}
                                 path="/instagramroundtwo"
-                                render={(props) => (
+                                component={(props) => (
                                     <div>
-                                        <Navbar pagein="game" />
-                                        <InstagramRoundTwo language={selectedLanguage} {...props} />
+                                        <Navbar {...props} pagein="game" language={selectedLanguage} />
+                                        <InstagramRoundTwo {...props} language={selectedLanguage} />
                                     </div>
                                 )}
                             />
+
+                            {/* explanation video here https://www.youtube.com/watch?v=By7vJuSPaYo */}
+                            {/* explanation code here https://stackoverflow.com/questions/43164554/how-to-implement-authenticated-routes-in-react-router-4 */}
 
                             <Route
                                 path="/youtuberoundone"
@@ -124,12 +120,13 @@ render() {
                                 )}
                             />
 
-                            <Route
+                            <PrivateRoute
+                                authed={context.state.authed}
                                 path="/youtuberoundtwo"
-                                render={(props) => (
+                                component={(props) => (
                                     <div>
-                                        <Navbar pagein="game" />
-                                        <YoutubeRoundTwo language={selectedLanguage} {...props} />
+                                        <Navbar {...props} pagein="game" language={selectedLanguage} />
+                                        <YoutubeRoundTwo {...props} language={selectedLanguage} />
                                     </div>
                                 )}
                             />

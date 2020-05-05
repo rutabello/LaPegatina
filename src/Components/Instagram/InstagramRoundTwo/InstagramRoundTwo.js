@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { Component } from 'react';
 import Confetti from 'react-confetti';
 import Shuffle from '../../Utils/Shuffle';
