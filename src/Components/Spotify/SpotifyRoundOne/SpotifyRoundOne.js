@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import Confetti from 'react-confetti';
 import '../../../App.css';
 import '../Spotify.css';
 import Sound from 'react-sound';
@@ -60,6 +61,7 @@ class SpotifyRoundOne extends React.Component {
         // addedSong: false,
         // buttonText: 'Ponla en tu playlist!',
         // buttonText2: 'Ya ésta en tu lista!',
+        giveMeConfetti: false,
     }
 
     // API call to get the playlist data.
@@ -100,6 +102,7 @@ class SpotifyRoundOne extends React.Component {
 
         this.setState({
             songNames: this.getSongsToDisplay(currentSong.name),
+
         });
     }
 
@@ -134,6 +137,7 @@ class SpotifyRoundOne extends React.Component {
             hideResults: true,
             playerState: Sound.status.STOPPED,
             currentAttempt: currentAttempt + 1,
+            giveMeConfetti: false, // Not sure this shoud be here. Check?
         });
     }
 
@@ -160,6 +164,8 @@ class SpotifyRoundOne extends React.Component {
             correctAnswers: this.coincidence ? (correctAnswers + 1) : correctAnswers,
             score: this.coincidence ? (score + 167) : score,
         });
+
+        this.coincidence && this.showConfetti();
     }
 
     // all the logic concerning a individual user playlist
@@ -264,10 +270,16 @@ class SpotifyRoundOne extends React.Component {
         });
     }
 
+    showConfetti = () => {
+        this.setState({
+            giveMeConfetti: true,
+        });
+    }
+
 
     render() {
 
-        const { playlistName, noTracks, playlistTracks, score, currentSong, hideResults, songNames, name, songUrl, playerState, playing, currentAttempt } = this.state;
+        const { giveMeConfetti, playlistName, noTracks, playlistTracks, score, currentSong, hideResults, songNames, name, songUrl, playerState, playing, currentAttempt } = this.state;
 
         const { language } = this.props;
 
@@ -295,15 +307,31 @@ class SpotifyRoundOne extends React.Component {
                                 </div>
                                 <div className={`FourButtons ${hideResults ? 'forceGrayColor' : ''}`}>
                                     {songNames.map((songName) => (
-                                        <Button
-                                            key={songName}
-                                            printedSong={songName}
-                                            // We write it like this so the function writeChoosenSong isn't executed when the button is
-                                            // rendered but when the button is clicked. Different than what we're doing some lines
-                                            // above in the onMusicPlays, setNewRandomSong or songURL
-                                            onClick={() => this.writeChosenSong(songName)}
-                                            currentSong={currentSong.name}
-                                        />
+                                        <div>
+                                            {
+                                            // CONFETTI logic to show the confetti component, we only show the confetti component if (and only if) the confetti variable is true
+                                            // CONFETTI check the confetti package and the demo related on their webpage to understand and play around with the props I used
+                                                giveMeConfetti
+                                                && (
+                                                    <Confetti
+                                                        width={window.innerWidth}
+                                                        height={window.innerHeight}
+                                                        recycle={false}
+                                                        gravity={0.6}
+                                                    />
+                                                )
+                                            }
+                                            <Button
+                                                key={songName}
+                                                printedSong={songName}
+                                                // We write it like this so the function writeChoosenSong isn't executed when the button is
+                                                // rendered but when the button is clicked. Different than what we're doing some lines
+                                                // above in the onMusicPlays, setNewRandomSong or songURL
+                                                onClick={() => this.writeChosenSong(songName)}
+                                                currentSong={currentSong.name}
+                                                showConfetti={this.showConfetti}
+                                            />
+                                        </div>
                                     ))}
                                 </div>
                                 <div id="counter" className="instruct">

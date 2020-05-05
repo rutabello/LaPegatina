@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Button.css';
 
-const Button = ({ printedSong, currentSong, onClick }) => {
+const Button = ({ printedSong, currentSong, onClick, showConfetti }) => {
 
     const [hasBeenClicked, makeButtonClicked] = useState(false);
 
@@ -12,6 +12,8 @@ const Button = ({ printedSong, currentSong, onClick }) => {
         makeButtonClicked(true);
 
         onClick();
+
+        // isCorrect && showConfetti();
     };
 
     let colorClass = 'colorClass';
