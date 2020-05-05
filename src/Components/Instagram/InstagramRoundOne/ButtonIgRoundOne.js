@@ -20,7 +20,7 @@ const ButtonIgRoundOne = (props) => {
         props.userHasClicked();
 
         if (props.value === props.currentTags) {
-
+            props.showConfetti();
             setColorClass('green');
             props.addToCounter();
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Confetti from 'react-confetti';
 import Shuffle from '../../Utils/Shuffle';
 import ButtonIgRoundTwo from './ButtonIgRoundTwo';
 import texts from '../../../texts.json';
@@ -22,6 +23,7 @@ class InstagramRoundTwo extends Component {
         data: [],
         gameStatus: 'choosing',
         userClicked: false,
+        giveMeConfetti: false,
     }
 
     numberOfPosts = '100';
@@ -77,6 +79,7 @@ class InstagramRoundTwo extends Component {
             locationOptions: threeRandomPlusCorrectLocationArr,
             gameStatus: 'playing',
             userClicked: false,
+            giveMeConfetti: false,
         });
 
         this.attempts += 1;
@@ -109,6 +112,12 @@ class InstagramRoundTwo extends Component {
         this.counter = 0;
     }
 
+    showConfetti = () => {
+        this.setState({
+            giveMeConfetti: true,
+        });
+    }
+
     setSelectedMemberId = (memberId) => {
 
         this.setState({
@@ -134,7 +143,7 @@ class InstagramRoundTwo extends Component {
 
     render() {
 
-        const { randomImageSrc, locationOptions, userClicked, gameStatus, randomImageLocation } = this.state;
+        const { giveMeConfetti, randomImageSrc, locationOptions, userClicked, gameStatus, randomImageLocation } = this.state;
 
         const { language } = this.props;
 
@@ -170,6 +179,19 @@ class InstagramRoundTwo extends Component {
                         <div className="instagram-location-buttons">
                             {locationOptions.map((option, index) => (
                                 <div key={index} className="instagram-option-button">
+                                    {
+                                        // CONFETTI logic to show the confetti component, we only show the confetti component if (and only if) the confetti variable is true
+                                        // CONFETTI check the confetti package and the demo related on their webpage to understand and play around with the props I used
+                                        giveMeConfetti
+                                    && (
+                                        <Confetti
+                                            width={window.innerWidth}
+                                            height={window.innerHeight}
+                                            recycle={false}
+                                            gravity={0.6}
+                                        />
+                                    )
+                                    }
                                     <ButtonIgRoundTwo
                                         value={option}
                                         currentLocation={randomImageLocation}
@@ -178,6 +200,7 @@ class InstagramRoundTwo extends Component {
                                         setRandomImageAndLocations={this.setRandomImageAndLocations}
                                         userClicked={userClicked}
                                         userHasClicked={this.userHasClicked}
+                                        showConfetti={this.showConfetti}
                                     />
                                 </div>
                             ))}
