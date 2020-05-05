@@ -22,6 +22,30 @@ class YTPlayer extends Component {
     VideoOnReady = (event) => {
     // console.log(event.target)
     // plays the video at 10s, in case the video has the name of the song at the start
+    const { title, det } = this.props;
+    // alert(event.target.playerInfo.videoData.title)
+
+    this.setState({
+        // title:event.target.playerInfo.videoData.title,
+        // videoUrl: event.target.playerInfo.videoUrl,
+        // passing the title props to be written the same way
+        title,
+    });
+
+    // store the array with 3 random titles in a const
+
+    const threeTitlesArr = det;
+
+    // push inside the name of the title that is playing now
+
+    threeTitlesArr.push(title);
+    // suffle all titles
+    const fourShuffledSongsTitles = Shuffle(threeTitlesArr);
+    // keep the new array , where is included the title of the playing song in the state
+
+    this.setState({
+        fourShuffledSongsTitles,
+    });
         event.target.seekTo(20);
         event.target.mute();
 
@@ -31,34 +55,34 @@ class YTPlayer extends Component {
     }
 
     // getting the title from the object to coincide with the other names that will be in the buttons
-    VideoOnPlay = () => {
+    // VideoOnPlay = () => {
 
-        const { title, det } = this.props;
-        // alert(event.target.playerInfo.videoData.title)
+    //     const { title, det } = this.props;
+    //     // alert(event.target.playerInfo.videoData.title)
 
-        this.setState({
-            // title:event.target.playerInfo.videoData.title,
-            // videoUrl: event.target.playerInfo.videoUrl,
-            // passing the title props to be written the same way
-            title,
-        });
+    //     this.setState({
+    //         // title:event.target.playerInfo.videoData.title,
+    //         // videoUrl: event.target.playerInfo.videoUrl,
+    //         // passing the title props to be written the same way
+    //         title,
+    //     });
 
-        // store the array with 3 random titles in a const
+    //     // store the array with 3 random titles in a const
 
-        const threeTitlesArr = det;
+    //     const threeTitlesArr = det;
 
-        // push inside the name of the title that is playing now
+    //     // push inside the name of the title that is playing now
 
-        threeTitlesArr.push(title);
-        // suffle all titles
-        const fourShuffledSongsTitles = Shuffle(threeTitlesArr);
-        // keep the new array , where is included the title of the playing song in the state
+    //     threeTitlesArr.push(title);
+    //     // suffle all titles
+    //     const fourShuffledSongsTitles = Shuffle(threeTitlesArr);
+    //     // keep the new array , where is included the title of the playing song in the state
 
-        this.setState({
-            fourShuffledSongsTitles,
-        });
-        // console.log(fourShuffledSongsTitles);
-    }
+    //     this.setState({
+    //         fourShuffledSongsTitles,
+    //     });
+    //     // console.log(fourShuffledSongsTitles);
+    // }
 
     // when the video end it send you to the endgame screen
     VideoOnEnd = () => {
@@ -67,9 +91,13 @@ class YTPlayer extends Component {
 
         stopPlaying();
     }
-    // videoOnPause =(event)=>{
-    //     this.props.stopPlaying()
-    // }
+    // video can't be paused, it automaticlly plays the video
+    VideoOnPause =(event)=>{
+        const { player } = this.state;
+
+        player.playVideo();
+      
+    }
 
     // the video unmute when the answer is right and the button disappear
     unmuteVideo = () => {
@@ -113,7 +141,7 @@ class YTPlayer extends Component {
                         opts={opts}
                         onReady={this.VideoOnReady}
                         onPlay={this.VideoOnPlay}
-                        // onPause={this.videoOnPause}
+                        onPause={this.VideoOnPause}
                         onEnd={this.VideoOnEnd}
                     />
                 </div>
