@@ -66,6 +66,7 @@ class YoutubeRoundOne extends Component {
                         <div>
                             <Navbar addedClass="fixTop" />
                             <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
+                            <button className='navbar-btn' onClick={this.restartYoutube}>Vuelve a jugar</button>
                             {context.state.name
                                 ? <Register currentGame="youtube" />
                                 /* <Link to="youtuberoundtwo"><button className = 'navbar-btn' type="button" onClick={() => context.addPoints(this.counter)}>Juega una segunda ronda</button></Link> */
