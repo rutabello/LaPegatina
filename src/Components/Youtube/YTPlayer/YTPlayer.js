@@ -48,6 +48,7 @@ class YTPlayer extends Component {
     });
         event.target.seekTo(20);
         event.target.mute();
+        event.target.playVideo();
 
         this.setState({
             player: event.target,
@@ -120,9 +121,11 @@ class YTPlayer extends Component {
             // default 640 h-390
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 autoplay: 1,
+                playsinline:1,//no full screen on mobile
                 modestbranding: 1, // not big yt branding
                 controls: 0, // the control not displayed
                 loop: 1,
+                muted:1,
                 start: 20, // from where the video starts(at 20 s in case the title is at the beginning)
                 // end: 90,
                 rel: 0, // getting only related videos from the channel
