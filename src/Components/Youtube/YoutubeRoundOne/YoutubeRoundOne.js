@@ -9,6 +9,7 @@ import { MyContext } from '../../../context/MyProvider';
 import UserForm from '../../Register/User/UserForm/UserForm';
 import SocialMedia from '../../SocialMedia/SocialMedia';
 import Navbar from '../../Navbar/Navbar';
+import Loading from '../../Utils/Loading/Loading'
 
 class YoutubeRoundOne extends Component {
 
@@ -37,6 +38,8 @@ class YoutubeRoundOne extends Component {
         const { gameStatus } = this.state;
 
         const { language } = this.props;
+
+      
 
         if (gameStatus === 'playing') {
             return (

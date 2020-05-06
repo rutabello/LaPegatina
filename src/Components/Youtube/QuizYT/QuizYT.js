@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Shuffle from '../../Utils/Shuffle';
 import { MyContext } from '../../../context/MyProvider';
-import YTCountdown from '../YTCountdown/YTCountdown';
+import  YTCountdown from '../YTCountdown/YTCountdown';
 
 class QuizYT extends Component {
 
@@ -70,7 +70,8 @@ class QuizYT extends Component {
                         {display === 'timer'
                             ? (
                                 <div>
-                                    <YTCountdown toNext={this.toNext} />
+                                    <YTCountdown 
+                                    toNext={this.toNext} />
                                 </div>
                             )
                             : (

@@ -1,17 +1,23 @@
 .cover-title{
-      width: 100em;
+      width: 560px;
       height: 9vh;
+      margin-left:5.2em;
+      /* justify-content: center; */
       /* background-color: #312c71;
        */
        background-color: black;
-      margin: 0 auto;
+      /* margin: 0 auto; */
       position: absolute;
+      /* align-items: center; */
     }
 .yt-player {
         display:flex;
         margin: 0 auto;
         width: 100%;
         justify-content: center;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .7);
+       
         
       
       } 
@@ -19,3 +25,13 @@
     display:flex;
     margin-bottom: 15vh;
 }          */
+@media all and (max-width:30em){
+.cover-title{  
+/* top:0;
+left: 0; */
+width: 50vh;
+margin-left: 1.3em;
+/* height: 40vh; */
+/* display: block; */
+}
+}
