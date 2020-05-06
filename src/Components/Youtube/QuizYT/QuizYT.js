@@ -53,7 +53,7 @@ class QuizYT extends Component {
 
             setTimeout(() => {
                 this.toNext();
-            }, 5000);
+            }, 4000);
         }
     }
 
