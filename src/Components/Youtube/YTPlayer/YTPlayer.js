@@ -5,6 +5,7 @@ import Shuffle from '../../Utils/Shuffle';
 import './YTPlayer.css';
 import QuizYT from '../QuizYT/QuizYT';
 import texts from '../../../texts.json';
+import Confetti from 'react-confetti';
 // import YTCountdown from '../YTCountdown/YTCountdown';
 // let info=props.info
 // // console.log(props.det)
@@ -15,6 +16,7 @@ class YTPlayer extends Component {
         title: '',
         fourShuffledSongsTitles: [],
         showButtons: true,
+        giveMeConfetti: false
         // done: false,
     }
 
@@ -52,9 +54,14 @@ class YTPlayer extends Component {
 
         this.setState({
             player: event.target,
+            giveMeConfetti: false
         });
     }
-
+    showConfetti = () => {
+        this.setState({
+            giveMeConfetti: true,
+        });
+    }
     // getting the title from the object to coincide with the other names that will be in the buttons
     // VideoOnPlay = () => {
 
@@ -106,9 +113,9 @@ class YTPlayer extends Component {
         const { player } = this.state;
 
         player.unMute();
-
         this.setState({
             showButtons: false,
+            giveMeConfetti:true
         });
     }
 
@@ -134,7 +141,7 @@ class YTPlayer extends Component {
 
         const { videoId, questions, stopPlaying, language } = this.props;
 
-        const { showButtons, fourShuffledSongsTitles, title } = this.state;
+        const { showButtons, fourShuffledSongsTitles, title, giveMeConfetti } = this.state;
 
         return (
             <div className="thegame">
@@ -158,23 +165,42 @@ class YTPlayer extends Component {
                         <div>
                             <h4 className="quiz-text">{texts[language].youtubeQuestion}</h4>
                             <div className="btn-4-YT">
+                                  {giveMeConfetti &&
+                                    <Confetti
+                                      width={window.innerWidth}
+                                      height={window.innerHeight}
+                                      recycle={false}
+                                      gravity={0.6}
+                                    />}
                                 {fourShuffledSongsTitles.map((songTitle) => (
+                                  
                                     <Button
                                         unmute={this.unmuteVideo}
                                         key={songTitle}
                                         displayedSong={songTitle}
                                         currentSong={title}
+                                        showConfetti={this.showConfetti}
                                     />
                                 ))}
                             </div>
-                        </div>
+                            </div>
                     )
                     //  /* : <YTCountdown questions={this.props.questions} stopPlaying={this.props.stopPlaying}/> } */}
                     : (
+                        <div>
+                        {giveMeConfetti &&
+                                    <Confetti
+                                      width={window.innerWidth}
+                                      height={window.innerHeight}
+                                      recycle={false}
+                                      gravity={0.6}
+                                    />}
                         <QuizYT
                             questions={questions}
                             stopPlaying={stopPlaying}
+                            showConfetti={this.showConfetti}
                         />
+                </div>
                     )}
             </div>
         );

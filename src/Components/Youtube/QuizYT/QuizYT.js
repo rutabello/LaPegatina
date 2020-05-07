@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Shuffle from '../../Utils/Shuffle';
 import { MyContext } from '../../../context/MyProvider';
 import  YTCountdown from '../YTCountdown/YTCountdown';
+import Confetti from 'react-confetti';
 
 class QuizYT extends Component {
 
@@ -13,6 +14,7 @@ class QuizYT extends Component {
         answers: Shuffle(this.props.questions[0].answers),
         points: 0,
         display: 'question',
+        giveMeConfetti:true,
         // counter: 0
         // clicked: false
     }
@@ -30,10 +32,13 @@ class QuizYT extends Component {
                 correctAnswer: questions[index + 1].answers[0],
                 answers: Shuffle(questions[index + 1].answers),
                 display: 'question',
+                giveMeConfetti:true,
 
                 // points: points + 1000,
                 // counter: this.state.counter+1
             });
+            // this.props.showConfetti();
+
         } else {
             this.props.stopPlaying();
         }
@@ -41,7 +46,7 @@ class QuizYT extends Component {
 
     checkIf = (e) => {
 
-        const { correctAnswer, points } = this.state;
+        const { correctAnswer, points, showConfetti } = this.state;
 
         const displayedAnswer = e.target.value;
 
@@ -50,7 +55,7 @@ class QuizYT extends Component {
                 points: points + 1000,
                 display: 'timer',
             });
-
+            this.props.showConfetti();
             setTimeout(() => {
                 this.toNext();
             }, 4000);
@@ -60,7 +65,7 @@ class QuizYT extends Component {
     render() {
 
         const { questions } = this.props;
-        const { index, points, display, answers } = this.state;
+        const { index, points, display, answers, giveMeConfetti } = this.state;
 
         return (
             <MyContext.Consumer>
@@ -70,8 +75,16 @@ class QuizYT extends Component {
                         {display === 'timer'
                             ? (
                                 <div>
+                                {giveMeConfetti &&
+                                    <Confetti
+                                      width={window.innerWidth}
+                                      height={window.innerHeight}
+                                      recycle={false}
+                                      gravity={0.6}
+                                    />}
                                     <YTCountdown 
-                                    toNext={this.toNext} />
+                                    toNext={this.toNext} 
+                                    />
                                 </div>
                             )
                             : (
@@ -82,6 +95,7 @@ class QuizYT extends Component {
                                             Score:
                                             {points}
                                         </h6> */}
+                                    
                                     </div>
                                     <div className="btn-4-YT">
                                         {answers.map((item, index) => (
@@ -94,9 +108,10 @@ class QuizYT extends Component {
                                             >
                                                 {item}
                                             </button>
+                                            
                                         ))}
                                     </div>
-                                </div>
+                                    </div>
                             )}
 
                     </div>
