@@ -45,6 +45,15 @@ const Spotify = {
             ));
     },
 
+    getDisc(discId) {
+        const accessToken = Spotify.getaccessToken();
+        const headers = { Authorization: `Bearer ${accessToken}` };
+
+        return fetch(`https://api.spotify.com/v1/albums/${discId}`, { headers })
+            .then((response) => (response.json()
+            ));
+    },
+
     savePlaylist(name, trackUris) {
         if (!name || !trackUris.length) {
             return;

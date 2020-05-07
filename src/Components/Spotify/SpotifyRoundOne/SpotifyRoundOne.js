@@ -8,7 +8,6 @@ import Button from '../Button/Button';
 import Shuffle from '../../Utils/Shuffle';
 import Spotify from '../../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
-// import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
 import texts from '../../../texts.json';
 import SocialMedia from '../../SocialMedia/SocialMedia';
@@ -33,7 +32,7 @@ class SpotifyRoundOne extends React.Component {
     // All the songs that the user guessed wrong are pushed into this array
     unknownSongs= [];
 
-    NUMBER_OF_SONGS_TO_PLAY_WITH = 3
+    NUMBER_OF_SONGS_TO_PLAY_WITH = 0
 
 
     state = {
@@ -137,7 +136,7 @@ class SpotifyRoundOne extends React.Component {
             hideResults: true,
             playerState: Sound.status.STOPPED,
             currentAttempt: currentAttempt + 1,
-            giveMeConfetti: false, // Not sure this shoud be here. Check?
+            giveMeConfetti: false,
         });
     }
 
@@ -379,10 +378,6 @@ class SpotifyRoundOne extends React.Component {
                             </div>
                         </div>
                     )}
-                {/* {name !== undefined
-                    ? <Link to='spotifyRoundTwo'>Go to Spotify round two</Link>
-                    : <Register />
-                } */}
             </section>
         );
     }
