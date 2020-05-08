@@ -13,7 +13,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const logUser = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         fetch('//localhost:5000/log', {
             method: 'POST',
             headers: new Headers({
@@ -23,6 +23,7 @@ const Login = () => {
         }).then((res) => {
             if (res.status === 200) {
                 // context.logUser(res);
+                console.log('result in front hereeeee', res);
                 alert('logged in!');
                 return res.json();
             }

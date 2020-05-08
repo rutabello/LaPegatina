@@ -20,6 +20,31 @@ connection.connect(function (err) {
         console.error('error connecting: ' + err.stack);
         return;
     }
+    console.log('connected as id ' + connection.threadId);
+});
+
+app.get('/', (req, res) => {
+    res.send('it worksss!')
+})
+
+app.post('/user', (req, res) => {
+
+    const formData = {
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        username: req.body.username,
+        birth_date: req.body.birthdate,
+        email: req.body.email,
+        password: req.body.password,
+        repeat_password: req.body.password,
+    }
+    connection.query('INSERT INTO user SET ?', formData, (err) => {
+        if(err){
+            res.status(500).send('Error registering your user')
+        } else {
+            res.sendStatus(200)
+        }
+    })
 });
 
 
@@ -37,6 +62,7 @@ app.post('/log', (req, res) => {
             req.session.login = true;
             req.session.username = req.body.username;
             res.json(results)
+            console.log('results hereeeee', results)
         });
     }})
 })

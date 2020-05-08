@@ -1,19 +1,18 @@
-import React from 'react';
 import React, { Fragment, useEffect, useState } from 'react';
 import { MyContext } from '../../../../context/MyProvider';
 
 const SignUp = () => {
 
     // const { logUserIntoContext } = React.useContext(MyContext);
-    const [users, updateUsers] = useState([])
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [username, setUsername] = useState('')
-    const [birthdate, setBirthDate] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    let [users, updateUsers] = useState([])
+    let [firstName, setFirstName] = useState('')
+    let [lastName, setLastName] = useState('')
+    let [username, setUsername] = useState('')
+    let [birthdate, setBirthDate] = useState('')
+    let [email, setEmail] = useState('')
+    let [password, setPassword] = useState('')
     // let [repeatedPassword, setRepeatedPassword] = useState('')
-    const [posted, setPosted] = useState(false)
+    let [posted, setPosted] = useState(false)
 
     const postProfile = e => {
         e.preventDefault()
