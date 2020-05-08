@@ -30,6 +30,18 @@ class MyProvider extends Component {
                     points: pointsState + points,
 
                 }),
+
+                clearUser: () => this.setState({
+                    name: '',
+                    username: '',
+                    age: '',
+                    points: '',
+                    activePanel: 'login',
+                    language: 'spanish',
+                    authed: false,
+                }),
+
+
                 // login sign up switch
                 activePanel,
                 actions: {

@@ -1,3 +1,6 @@
+/* eslint-disable react/style-prop-object */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
@@ -27,8 +30,8 @@ class Navbar extends React.Component {
 
     state = {
         selectedFlag: spanish,
-
     }
+
 
     setLanguage = (lang, flag) => {
 
@@ -95,28 +98,50 @@ class Navbar extends React.Component {
                         ? <div />
                         : (
                             <div className="profile">
-                                <div>
-                                    <Link className="user-profile" to="/user">
-                                        <img src={userbtn} alt="user profile" />
-                                    </Link>
-                                </div>
-                                <div className="nav-username">
-                                    <MyContext.Consumer>
-                                        {(context) => (
-                                            context.state.name
-                                                ? (
-                                                    <p>
-                                                        {context.state.username}
-                                                        {' '}
-                                                        <br />
-                                                        {context.state.points}
-                                                        {' '}
-                                                        puntos
-                                                    </p>
-                                                )
-                                                : <UserForm mainpage="navbar" language={language} />
-                                        )}
-                                    </MyContext.Consumer>
+
+                                {/* <div className="user-dropdown">
+                                    <ul>
+                                        <li><button type="button">Mi perfil</button></li>
+                                        <li><button type="button">Salir</button></li>
+                                    </ul>
+                                </div> */}
+
+                                <div className="user-dropdown">
+                                    <button type="button" className="user-dropdown-btn" style={{ float: 'right' }}>
+                                        <div className="picture-points">
+                                            <div className="user-profile">
+                                                <img src={userbtn} alt="user profile" />
+                                            </div>
+                                            <div className="nav-username">
+                                                <MyContext.Consumer>
+                                                    {(context) => (
+                                                        context.state.name
+                                                            ? (
+                                                                <p>
+                                                                    {context.state.username}
+                                                                    {' '}
+                                                                    <br />
+                                                                    {context.state.points}
+                                                                    {' '}
+                                                                    puntos
+                                                                </p>
+                                                            )
+                                                            : <UserForm mainpage="navbar" language={language} />
+                                                    )}
+                                                </MyContext.Consumer>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <div className="user-dropdown-content">
+                                        <MyContext.Consumer>
+                                            {(context) => (
+                                                <div>
+                                                    <a href="/user">Mi perfil</a>
+                                                    <a onClick={() => context.clearUser()}>Salir</a>
+                                                </div>
+                                            )}
+                                        </MyContext.Consumer>
+                                    </div>
                                 </div>
                             </div>
                         )}
