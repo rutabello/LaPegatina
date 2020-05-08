@@ -21,13 +21,14 @@ import './App.css';
 class App extends React.Component {
 
   state = {
-      selectedLanguage: 'spanish',
+      selectedLanguage: localStorage.language || 'spanish',
   }
 
 setLanguage = (lang) => {
     this.setState({
         selectedLanguage: lang,
     });
+    localStorage.setItem('language', lang);
 }
 
 render() {
