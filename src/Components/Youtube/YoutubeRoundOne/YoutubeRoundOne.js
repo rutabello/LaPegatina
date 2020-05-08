@@ -9,7 +9,6 @@ import { MyContext } from '../../../context/MyProvider';
 import UserForm from '../../Register/User/UserForm/UserForm';
 import SocialMedia from '../../SocialMedia/SocialMedia';
 import Navbar from '../../Navbar/Navbar';
-import Loading from '../../Utils/Loading/Loading'
 
 class YoutubeRoundOne extends Component {
 
