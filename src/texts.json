@@ -2,6 +2,8 @@
     "catalan" : {
         "languageButton": "Tria un idioma",
         "registerButton": "Entra",
+        "profileButton": "El meu perfil",
+        "logOutButton": "Sortir",
         "playwithTitle": "Juga amb",
         "spotifyPlayWithButton": "Juga amb música",
         "instagramPlayWithButton": "Juga amb fotos",
@@ -20,12 +22,10 @@
         "followUs": "Segueix-nos a...",
         "madeWithText": "Fet amb ",
         "byText": " per l'equip de Wild Code School",
-
         "shareTheSongButton": "Comparteix-la",
         "whereToShareText" : "On vols compartir-la?",
         "songSharedText" : "M'ha agradat molt aquesta cançó de La Pegatina. Escolta-la",
         "doneText": "Fet!",
-
         "gameEnded": "Aquest joc acaba aquí. Ara pots jugar amb:",
         "changeBandMember": "O pots tornar a jugar però amb les fotos d'un altre membre de La Pegatina"
     },
@@ -33,6 +33,8 @@
     "spanish" : {
         "languageButton": "Escoge un idioma",
         "registerButton": "Entra",
+        "profileButton": "Mi perfil",
+        "logOutButton": "Salir",
         "playwithTitle": "Juega con",
         "spotifyPlayWithButton": "Juega con música",
         "instagramPlayWithButton": "Juega con fotos",
@@ -51,12 +53,10 @@
         "followUs": "Síguenos en...",
         "madeWithText": "Hecho con ",
         "byText": " por el equipo de Wild Code School",
-
         "shareTheSongButton": "Compártela",
         "whereToShareText" : "Dónde quieres compartirla?",
         "songSharedText" : "Me ha gustado mucho esta canción de La Pegatina. Escúchala:",
         "doneText": "Hecho!",
-
         "gameEnded": "Este juego termina aquí. Ahora puedes jugar con:",
         "changeBandMember": "O puedes volver a jugar pero con las fotos de otro miembro de La Pegatina"
     },
@@ -64,6 +64,8 @@
     "english" : {
         "languageButton": "Choose a language",
         "registerButton": "Log in",
+        "profileButton": "My profile",
+        "logOutButton": "Log out",
         "playwithTitle": "Play with",
         "spotifyPlayWithButton": "Play with music",
         "instagramPlayWithButton": "Play with photos",
@@ -82,12 +84,10 @@
         "followUs": "Follow us on...",
         "madeWithText": "Made with ",
         "byText": " by Wild Code School team",
-
         "shareTheSongButton": "Share it",
         "whereToShareText" : "Where do you want to share it?",
         "songSharedText" : "I really enjoyed this song from La Pegatina. Listen to it:",
         "doneText": "Done!",
-
         "gameEnded": "This game ends here. You can now play with:",
         "changeBandMember": "Or you can play again with the pictures of another member of La Pegatina"
     },
@@ -95,6 +95,8 @@
     "french": {
         "languageButton": "Choisissez une langue",
         "registerButton": "Entrer",
+        "profileButton": "My profile",
+        "logOutButton": "Log out",
         "playwithTitle": "Joue avec",
         "spotifyPlayWithButton": "Jouer avec la musique",
         "instagramPlayWithButton": "Jouer avec images",

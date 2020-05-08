@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 import { MyContext } from '../../context/MyProvider';
 import UserForm from '../Register/User/UserForm/UserForm';
+import texts from '../../texts.json';
 import './Navbar.css';
 
 import homebtn from '../../Pictures/home45.png';
@@ -98,14 +99,6 @@ class Navbar extends React.Component {
                         ? <div />
                         : (
                             <div className="profile">
-
-                                {/* <div className="user-dropdown">
-                                    <ul>
-                                        <li><button type="button">Mi perfil</button></li>
-                                        <li><button type="button">Salir</button></li>
-                                    </ul>
-                                </div> */}
-
                                 <div className="user-dropdown">
                                     <button type="button" className="user-dropdown-btn" style={{ float: 'right' }}>
                                         <div className="picture-points">
@@ -136,8 +129,8 @@ class Navbar extends React.Component {
                                         <MyContext.Consumer>
                                             {(context) => (
                                                 <div>
-                                                    <a href="/user">Mi perfil</a>
-                                                    <a onClick={() => context.clearUser()}>Salir</a>
+                                                    <a href="/user">{texts[language].profileButton}</a>
+                                                    <a onClick={() => context.clearUser()}>{texts[language].logOutButton}</a>
                                                 </div>
                                             )}
                                         </MyContext.Consumer>
