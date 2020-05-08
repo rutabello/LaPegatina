@@ -1,17 +1,20 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import Confetti from 'react-confetti';
 import Shuffle from '../../Utils/Shuffle';
 import ButtonIgRoundOne from './ButtonIgRoundOne';
 import texts from '../../../texts.json';
 import SocialMedia from '../../SocialMedia/SocialMedia';
 
 import Loading from '../../Utils/Loading/Loading';
-// import Register from '../../Register/Register';
+import Register from '../../Register/Register';
 
 import { MyContext } from '../../../context/MyProvider';
 import UserForm from '../../Register/User/UserForm/UserForm';
+import Navbar from '../../Navbar/Navbar';
 import '../Instagram.css';
+
 
 class InstagramRoundOne extends Component {
 
@@ -26,6 +29,7 @@ class InstagramRoundOne extends Component {
         data: [],
         gameStatus: 'loading',
         userClicked: false,
+        giveMeConfetti: false,
     }
 
     attempts= 0;
@@ -96,6 +100,7 @@ class InstagramRoundOne extends Component {
             tagsOptions: threeRandomPlusCorrectTagsArr,
             gameStatus: 'playing',
             userClicked: false,
+            giveMeConfetti: false,
         });
 
         this.attempts += 1;
@@ -118,6 +123,12 @@ class InstagramRoundOne extends Component {
         });
     }
 
+    showConfetti = () => {
+        this.setState({
+            giveMeConfetti: true,
+        });
+    }
+
     formatOptions = (arrayOfTaggedPeople) => arrayOfTaggedPeople.map((person) => `@${person}`).join(', ')
 
 
@@ -125,7 +136,7 @@ class InstagramRoundOne extends Component {
 
         const { language } = this.props;
 
-        const { randomImageSrc, tagsOptions, userClicked, gameStatus, randomImageTags } = this.state;
+        const { giveMeConfetti, randomImageSrc, tagsOptions, userClicked, gameStatus, randomImageTags } = this.state;
 
         if (gameStatus === 'loading') {
             return (
@@ -149,6 +160,19 @@ class InstagramRoundOne extends Component {
                         <div className="instagram-location-buttons">
                             {tagsOptions.map((option, index) => (
                                 <div key={index} className="instagram-option-button">
+                                    {
+                                        // CONFETTI logic to show the confetti component, we only show the confetti component if (and only if) the confetti variable is true
+                                        // CONFETTI check the confetti package and the demo related on their webpage to understand and play around with the props I used
+                                        giveMeConfetti
+                                    && (
+                                        <Confetti
+                                            width={window.innerWidth}
+                                            height={window.innerHeight}
+                                            recycle={false}
+                                            gravity={0.6}
+                                        />
+                                    )
+                                    }
                                     <ButtonIgRoundOne
                                         value={this.formatOptions(option)}
                                         currentTags={this.formatOptions(randomImageTags)}
@@ -157,6 +181,7 @@ class InstagramRoundOne extends Component {
                                         setRandomImageAndTags={this.setRandomImageAndTags}
                                         userClicked={userClicked}
                                         userHasClicked={this.userHasClicked}
+                                        showConfetti={this.showConfetti}
                                     />
                                 </div>
                             ))}
@@ -177,6 +202,7 @@ class InstagramRoundOne extends Component {
                 <MyContext.Consumer>
                     {(context) => (
                         <div>
+                            <Navbar addedClass="fixTop" />
                             <h1>Te atreves con la segunda ronda?</h1>
                             <p>
                                 Has hecho
@@ -186,7 +212,7 @@ class InstagramRoundOne extends Component {
                                 puntos
                             </p>
                             {context.state.name
-                                ? <Link to="instagramroundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(this.counter * 1729)}>Guarda los puntos y juega una segunda ronda</button></Link>
+                                ? <Register score={this.counter * 1729} currentGame="instagram" />
                                 : <UserForm language={language} />}
                             <div className="social-media-follow-buttons">
                                 <SocialMedia

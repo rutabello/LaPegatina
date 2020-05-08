@@ -1,0 +1,31 @@
+/* PROGRESS RAINBOW BAR */
+
+ #myProgress {
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 30px;
+     background-color: rgb(221, 221, 221); 
+   } 
+  
+  #myBar {
+    position: absolute;
+    width: 1%;
+    height: 30px;
+    background-color: #4CAF50;
+   
+  }
+ /* .bar-res{
+    position: relative;
+    display: flex;
+    width: 560px;
+
+  }  */
+
+  /* #label {
+    text-align: center;
+    /* line-height: 30px; */
+    /* color: white */
+    
+  /* } */ 
+  

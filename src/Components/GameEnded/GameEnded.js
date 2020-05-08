@@ -15,9 +15,9 @@ const GameEnded = ({ currentGame, language, changeBandMember, points }) => (
                         <div>
                             <p>{texts[language].gameEnded}</p>
                             <br />
-                            <Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>Fotos</button></Link>
+                            <Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].photosText}</button></Link>
                             <br />
-                            <Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>Vídeos</button></Link>
+                            <Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].videosText}</button></Link>
                         </div>
                     );
                 }
@@ -25,11 +25,11 @@ const GameEnded = ({ currentGame, language, changeBandMember, points }) => (
                 if (currentGame === 'youtube') {
                     return (
                         <div>
-                            <p>This game ends here. You can now play with</p>
+                            <p>{texts[language].gameEnded}</p>
                             <br />
-                            <Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>Música</button></Link>
+                            <Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>
                             <br />
-                            <Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>Fotos</button></Link>
+                            <Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].photosText}</button></Link>
                         </div>
                     );
                 }
@@ -38,16 +38,16 @@ const GameEnded = ({ currentGame, language, changeBandMember, points }) => (
                     return (
                         <div>
                             <p>
-                                `Sumamos
+                                Sumamos
                                 {' '}
                                 {points}
                                 {' '}
-                                puntos a tu perfil. Ahora puedes seguir jugando con`
+                                puntos a tu perfil. Ahora puedes seguir jugando con
                             </p>
                             <br />
-                            <Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>Música</button></Link>
+                            <Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>
                             <br />
-                            <Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>Vídeos</button></Link>
+                            <Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].videosText}</button></Link>
                             <br />
                             {/* <Link to="instagramroundtwo">{texts[language].changeBandMember}</Link> */}
                             <button className="navbar-btn" onClick={changeBandMember} type="button">{texts[language].changeBandMember}</button>

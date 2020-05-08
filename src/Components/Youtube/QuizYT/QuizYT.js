@@ -2,35 +2,43 @@
 import React, { Component } from 'react';
 import Shuffle from '../../Utils/Shuffle';
 import { MyContext } from '../../../context/MyProvider';
-import YTCountdown from '../YTCountdown/YTCountdown';
+import  YTCountdown from '../YTCountdown/YTCountdown';
+import Confetti from 'react-confetti';
 
 class QuizYT extends Component {
 
-state={
-    questions: this.props.questions,
-    index: 0,
-    // gameStatus: "playing",
-    correctAnswer: this.props.questions[0].answers[0],
-    points: 0,
-    display: 'question',
-    // counter: 0
-    // clicked: false
-}
-// function the is passing to the next question{by increasing the index} and adding points for the right ones
+    state={
+        index: 0,
+        // gameStatus: "playing",
+        correctAnswer: this.props.questions[0].answers[0],
+        answers: Shuffle(this.props.questions[0].answers),
+        points: 0,
+        display: 'question',
+        giveMeConfetti:true,
+        // counter: 0
+        // clicked: false
+    }
+    // function the is passing to the next question{by increasing the index} and adding points for the right ones
+
 
     toNext = () => {
+        const { questions } = this.props;
+        const { index } = this.state;
 
-        const { questions, index } = this.state;
         // if(this.state.index > this.state.counter){
         if (index < 4) {
             this.setState({
                 index: index + 1,
                 correctAnswer: questions[index + 1].answers[0],
+                answers: Shuffle(questions[index + 1].answers),
                 display: 'question',
+                giveMeConfetti:true,
 
                 // points: points + 1000,
                 // counter: this.state.counter+1
             });
+            // this.props.showConfetti();
+
         } else {
             this.props.stopPlaying();
         }
@@ -38,7 +46,7 @@ state={
 
     checkIf = (e) => {
 
-        const { correctAnswer, points } = this.state;
+        const { correctAnswer, points, showConfetti } = this.state;
 
         const displayedAnswer = e.target.value;
 
@@ -47,28 +55,17 @@ state={
                 points: points + 1000,
                 display: 'timer',
             });
-
+            this.props.showConfetti();
             setTimeout(() => {
                 this.toNext();
-            }, 5000);
+            }, 4000);
         }
     }
 
-    shuffledQuestions = () => {
-
-        const { questions } = this.state;
-
-        Shuffle(questions);
-
-        this.setState({
-            questions,
-        });
-    }
-
-
     render() {
 
-        const { questions, index, points, display } = this.state;
+        const { questions } = this.props;
+        const { index, points, display, answers, giveMeConfetti } = this.state;
 
         return (
             <MyContext.Consumer>
@@ -78,7 +75,16 @@ state={
                         {display === 'timer'
                             ? (
                                 <div>
-                                    <YTCountdown toNext={this.toNext} />
+                                {giveMeConfetti &&
+                                    <Confetti
+                                      width={window.innerWidth}
+                                      height={window.innerHeight}
+                                      recycle={false}
+                                      gravity={0.6}
+                                    />}
+                                    <YTCountdown 
+                                    toNext={this.toNext} 
+                                    />
                                 </div>
                             )
                             : (
@@ -89,9 +95,10 @@ state={
                                             Score:
                                             {points}
                                         </h6> */}
+                                    
                                     </div>
                                     <div className="btn-4-YT">
-                                        {questions[index].answers.map((item, index) => (
+                                        {answers.map((item, index) => (
                                             <button
                                                 type="button"
                                                 value={item}
@@ -101,9 +108,10 @@ state={
                                             >
                                                 {item}
                                             </button>
+                                            
                                         ))}
                                     </div>
-                                </div>
+                                    </div>
                             )}
 
                     </div>

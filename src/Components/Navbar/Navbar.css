@@ -14,7 +14,7 @@ nav {
 }
 
 .fixTop {
-    margin-top: -40px;
+    margin-top: -46px;
 }
 
 .profile {
@@ -117,7 +117,85 @@ nav {
 .nav-username p {
     margin: 0 0 0 0;
     font-size: 14px;
+    font-family: sans-serif;
 }
+
+
+
+/* Profile dropdown */
+.picture-points {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-dropdown-btn {
+    background-color: rgb(49, 44, 113);
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    height: 6vh;
+  }
+
+  .user-dropdown-btn:focus {
+    outline: none;
+  }
+
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.user-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgb(49, 44, 113, 0.75);
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: right;
+}
+
+.user-dropdown-content:hover {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgb(49, 44, 113, 0.75);
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.user-dropdown-content a {
+    color: white;
+    padding: 6px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.user-dropdown-content a:hover {
+    background-color: rgb(49, 44, 113, 0);
+    width: 2000px;
+}
+
+.user-dropdown:hover .user-dropdown-content {
+    margin-top: 6vh;
+    display: block;
+    transition: linear;
+    width: 2000px;
+}
+
+.user-dropdown:hover .user-dropdown-btn {
+    background-color: rgb(49, 44, 113);
+}
+/* END PROFILE DROPDOWN */
+
+
+
 
 @media only screen and (max-width: 750px) {
     .link {
@@ -154,5 +232,17 @@ nav {
     .user-profile img {
         margin-right: 1vh;
         width: 25px;
+    }
+
+    .fixTop {
+        margin-top: -40px;
+    }
+
+    .user-dropdown-content a {
+        font-size: 14px;
+    }
+
+    .user-dropdown-content {
+        min-width: 114px;
     }
 }

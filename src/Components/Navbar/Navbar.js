@@ -1,3 +1,6 @@
+/* eslint-disable react/style-prop-object */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
@@ -5,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 import { MyContext } from '../../context/MyProvider';
 import UserForm from '../Register/User/UserForm/UserForm';
+import texts from '../../texts.json';
 import './Navbar.css';
 
 import homebtn from '../../Pictures/home45.png';
@@ -26,9 +30,10 @@ const languagesAvailable = [
 class Navbar extends React.Component {
 
     state = {
-        selectedFlag: spanish,
-
+        selectedFlag: localStorage.flag || spanish,
+        userLanguage: localStorage.language || 'spanish',
     }
+
 
     setLanguage = (lang, flag) => {
 
@@ -36,15 +41,18 @@ class Navbar extends React.Component {
 
         this.setState({
             selectedFlag: flag,
+            userLanguage: `${lang}`,
         });
 
+        localStorage.setItem('flag', flag);
+
         // Notify the parent that the language has been updated
-        onChangeLanguage(lang);
+        onChangeLanguage(lang, flag);
     }
 
 
     render() {
-        const { selectedFlag } = this.state;
+        const { selectedFlag, userLanguage } = this.state;
 
         const { pagein, language, addedClass } = this.props;
 
@@ -95,28 +103,42 @@ class Navbar extends React.Component {
                         ? <div />
                         : (
                             <div className="profile">
-                                <div>
-                                    <Link className="user-profile" to="/user">
-                                        <img src={userbtn} alt="user profile" />
-                                    </Link>
-                                </div>
-                                <div className="nav-username">
-                                    <MyContext.Consumer>
-                                        {(context) => (
-                                            context.state.name
-                                                ? (
-                                                    <p>
-                                                        {context.state.username}
-                                                        {' '}
-                                                        <br />
-                                                        {context.state.points}
-                                                        {' '}
-                                                        puntos
-                                                    </p>
-                                                )
-                                                : <UserForm mainpage="navbar" language={language} />
-                                        )}
-                                    </MyContext.Consumer>
+                                <div className="user-dropdown">
+                                    <button type="button" className="user-dropdown-btn" style={{ float: 'right' }}>
+                                        <div className="picture-points">
+                                            <div className="user-profile">
+                                                <img src={userbtn} alt="user profile" />
+                                            </div>
+                                            <div className="nav-username">
+                                                <MyContext.Consumer>
+                                                    {(context) => (
+                                                        context.state.name
+                                                            ? (
+                                                                <p>
+                                                                    {context.state.username}
+                                                                    {' '}
+                                                                    <br />
+                                                                    {context.state.points}
+                                                                    {' '}
+                                                                    {texts[userLanguage].pointsText}
+                                                                </p>
+                                                            )
+                                                            : <UserForm mainpage="navbar" language={language} />
+                                                    )}
+                                                </MyContext.Consumer>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <div className="user-dropdown-content">
+                                        <MyContext.Consumer>
+                                            {(context) => (
+                                                <div>
+                                                    <a href="/user">{texts[userLanguage].profileButton}</a>
+                                                    <a onClick={() => context.clearUser()}>{texts[userLanguage].logOutButton}</a>
+                                                </div>
+                                            )}
+                                        </MyContext.Consumer>
+                                    </div>
                                 </div>
                             </div>
                         )}

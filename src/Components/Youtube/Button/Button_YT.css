@@ -1,6 +1,7 @@
 
 .titleColorYT{
-    color:#f1c500;
+    /* color:#f1c500; */
+    color:white;
     font-family: 'Barlow';
     font-style: normal;
     font-weight: 200;
@@ -12,17 +13,17 @@
     display: block !important;
     height: auto;
     margin: 5px auto;
-    padding: 5px 15px;
+    /* padding: 5px 15px; */
     font-size: 20px;
     text-decoration: none;
-    min-height: 5em;
-    border-radius: 25px;
+    /* min-height: 5em; */
+    border-radius: 7px;
     /* margin-right: 20vh; */
     margin-top: 2vh
 }
 
 .buttonYT {
-    background-color: transparent;
+    background-color: grey;
 }
 
 @media (max-width:700px) {
@@ -47,7 +48,8 @@
     position:relative;
     /* color: red; */
     /* top:1px; */
-    background: #312c71;
+    /* background: #312c71; */
+    background: orange;
     /* box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C; */
     /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);  */
 }
@@ -79,7 +81,8 @@
     /* justify-content: space-around; */
     /* align-items: center; */
     flex-wrap: wrap;
-    margin-top:2em
+    margin-top:2em;
+    justify-content: space-evenly;
     /* height: 25vh;
     margin-left: 15vh;
     margin-right: 15vh;

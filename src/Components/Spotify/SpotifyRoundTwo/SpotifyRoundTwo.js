@@ -10,6 +10,7 @@ import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
 import texts from '../../../texts.json';
 import SocialMedia from '../../SocialMedia/SocialMedia';
+import Navbar from '../../Navbar/Navbar';
 
 
 class SpotifyRoundOne extends React.Component {
@@ -257,6 +258,7 @@ render() {
                 )
                 : (
                     <div>
+                        <Navbar addedClass="fixTop" pagein="any" />
                         <ListenedSongs
                             username={name}
                             unknownSongs={this.unknownSongs}

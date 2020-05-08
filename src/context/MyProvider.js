@@ -6,11 +6,13 @@ export const MyContext = React.createContext();
 class MyProvider extends Component {
 
     state = {
-        name: '',
+        name: 'rut',
         username: 'Alecsundra',
         age: 20,
         points: 0,
         activePanel: 'login',
+        language: 'spanish',
+        authed: true,
     }
 
     render() {
@@ -28,6 +30,18 @@ class MyProvider extends Component {
                     points: pointsState + points,
 
                 }),
+
+                clearUser: () => this.setState({
+                    name: '',
+                    username: '',
+                    age: '',
+                    points: '',
+                    activePanel: 'login',
+                    language: 'spanish',
+                    authed: false,
+                }),
+
+
                 // login sign up switch
                 activePanel,
                 actions: {

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { EmailShareButton, FacebookShareButton,
     TwitterShareButton, WhatsappShareButton, EmailIcon,
     FacebookIcon, TwitterIcon, WhatsappIcon } from 'react-share';
@@ -8,25 +8,31 @@ import { EmailShareButton, FacebookShareButton,
 import texts from '../../../texts.json';
 import './ListenedSongs.css';
 import UserForm from '../../Register/User/UserForm/UserForm';
-// import Register from '../../Register/Register';
+import Register from '../../Register/Register';
 import { MyContext } from '../../../context/MyProvider';
 import GameEnded from '../../GameEnded/GameEnded';
 
 const shareurl = 'https://juegaconlapegatinaenpruebas.netlify.com';
 
-const ListenedSongs = ({ language, unknownSongs, score, roundfrom }) => {
+const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSongs, score, roundfrom }) => {
 
     const loginComp = (context) => {
 
-        const { state: { name }, addPoints } = context;
+        const { state: { name } } = context;
 
-        if (name) {
+        /*   if (name) {
             return (
                 <Link to="spotifyRoundTwo">
                     <button className="btn btn-primary" type="button" onClick={() => addPoints(score)}>
                         Suma puntos y sigue jugando
                     </button>
                 </Link>
+            );
+        } */
+
+        if (name) {
+            return (
+                <Register score={score} currentGame="spotify" />
             );
         }
 
@@ -44,7 +50,11 @@ const ListenedSongs = ({ language, unknownSongs, score, roundfrom }) => {
                                 {loginComp(context)}
                             </div>
                         )
-                        : null }
+                        : (
+                            <div>
+                                <h2 className="instruct">{texts[language].score.replace('%points', score)}</h2>
+                            </div>
+                        )}
 
                     <button
                         type="button"
@@ -66,14 +76,18 @@ const ListenedSongs = ({ language, unknownSongs, score, roundfrom }) => {
                                 </div>
                                 <div className="modal-body">
                                     <ul id="mistakes" className="instruct">
-                                        {unknownSongs.map((song) => {
+                                        <div>
+                                            <input id="playlistName" className="repeat-button" onChange={naming} defaultValue={playlistName} />
+                                            <button type="button" id="playlistSave" className="btn btn-primary" onClick={save}>Guardar</button>
+                                        </div>
+                                        {unknownSongs.map((song, index) => {
                                             const url = song.uri.replace(/:/g, '/').replace('spotify', 'https://open.spotify.com');
                                             return (
                                                 <li key={song.uri} className="mistake-list">
                                                     <div className="song-name">
                                                         {song.name}
                                                     </div>
-
+                                                    <button type="button" id={index} onClick={adding} className="btn btn-primary">Añadir a mi lista</button>
                                                     {/* <-- Button trigger modal --> */}
                                                     <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#sharethissong">
                                                         {texts[language].shareTheSongButton}

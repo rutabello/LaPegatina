@@ -18,7 +18,7 @@ const ButtonIgRoundTwo = (props) => {
         props.userHasClicked();
 
         if (props.value === props.currentLocation) {
-
+            props.showConfetti();
             setColorClass('green');
             props.addToCounter();
 

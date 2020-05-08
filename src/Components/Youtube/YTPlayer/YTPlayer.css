@@ -1,4 +1,4 @@
-.btn-see-video {
+/* .btn-see-video {
     cursor: pointer;
     background-color:#312c71 ;
     width: 30%;
@@ -9,7 +9,7 @@
 }
 .btn-see-video:hover{
     box-shadow: 0px 0px 5px grey, 0px 0px 25px grey;
-}
+} */
 .text-btn-see-video{
 font-family: 'Barlow';
 font-style: normal;

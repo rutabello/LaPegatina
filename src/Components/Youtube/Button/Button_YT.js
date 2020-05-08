@@ -7,9 +7,12 @@ const ButtonYT = (props) => {
 
     const checkIt = () => {
         if (props.displayedSong === props.currentSong) {
+            props.showConfetti();
             props.unmute();
         }
+    
     };
+    
 
     return (
         <button
