@@ -179,14 +179,14 @@ nav {
 
 .user-dropdown-content a:hover {
     background-color: rgb(49, 44, 113, 0);
-    width: 1000px;
+    width: 2000px;
 }
 
 .user-dropdown:hover .user-dropdown-content {
     margin-top: 6vh;
     display: block;
     transition: linear;
-    width: 1000px;
+    width: 2000px;
 }
 
 .user-dropdown:hover .user-dropdown-btn {
