@@ -24,11 +24,12 @@ class App extends React.Component {
       selectedLanguage: localStorage.language || 'spanish',
   }
 
-setLanguage = (lang) => {
+setLanguage = (lang, flag) => {
     this.setState({
         selectedLanguage: lang,
     });
     localStorage.setItem('language', lang);
+    localStorage.setItem('flag', flag);
 }
 
 render() {

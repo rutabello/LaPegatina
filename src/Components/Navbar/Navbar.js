@@ -30,8 +30,8 @@ const languagesAvailable = [
 class Navbar extends React.Component {
 
     state = {
-        selectedFlag: spanish,
-        userLanguage: 'spanish',
+        selectedFlag: localStorage.flag || spanish,
+        userLanguage: localStorage.language || 'spanish',
     }
 
 
@@ -44,8 +44,10 @@ class Navbar extends React.Component {
             userLanguage: `${lang}`,
         });
 
+        localStorage.setItem('flag', flag);
+
         // Notify the parent that the language has been updated
-        onChangeLanguage(lang);
+        onChangeLanguage(lang, flag);
     }
 
 
