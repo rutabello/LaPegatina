@@ -5,7 +5,8 @@
     "browser": true
   },
   "plugins": [
-    "react"
+    "react",
+    "react-hooks"
   ],
   "ecmaFeatures": {
     "jsx": true
@@ -42,6 +43,8 @@
             "classes": true,
             "variables": false
         }
-    ]
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }

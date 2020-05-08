@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
 import './Button.css';
 
@@ -13,7 +14,7 @@ const Button = ({ printedSong, currentSong, onClick, showConfetti }) => {
 
         onClick();
 
-        // isCorrect && showConfetti();
+        isCorrect && showConfetti();
     };
 
     let colorClass = 'colorClass';
