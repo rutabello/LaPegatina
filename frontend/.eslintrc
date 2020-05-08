@@ -1,0 +1,50 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "react/prop-types": "off",
+    "react/no-array-index-key": "off",
+    "react/state-in-constructor": "off",
+    "react/no-did-mount-set-state": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-props-no-spreading": "off",
+    "no-undef": "error",
+    "no-shadow": "off",
+    "comma-dangle": "error",
+    "import/no-cycle": "off",
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "max-len": ["error", { "code": 150 }],
+    "indent": ["error", 4],
+    "semi": ["error", "always"],
+    "global-require": "off",
+    "padded-blocks": "off",
+    "arrow-parens": "error",
+    "react/jsx-no-bind": "error",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-no-duplicate-props": "error",
+    "object-curly-newline": ["error", { "ImportDeclaration": "never", "ExportDeclaration": "never" }],
+    "no-use-before-define": [
+        "error",
+        {
+            "functions": true,
+            "classes": true,
+            "variables": false
+        }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}
