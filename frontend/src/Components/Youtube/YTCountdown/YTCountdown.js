@@ -10,7 +10,7 @@ import '../YTCountdown/YTCountdown.css'
             speed: 6,
             color: "#ff08050"
           }
-          
+
           componentDidMount() {
             console.clear();
             this.interval = setInterval(() => this.frame(), 1);
@@ -23,11 +23,9 @@ import '../YTCountdown/YTCountdown.css'
                 color: "#" + this.red() + this.green() + "50"
               }));
               console.log(this.state.color);
-              
-              
             }
           }
-      
+
           componentWillUnmount() {
             clearInterval(this.interval);
           }
@@ -56,11 +54,11 @@ import '../YTCountdown/YTCountdown.css'
               </div>
                {/* <div id="label">Next question in {this.state.progress}</div>  */}
             </div>);
-        }  
+        }
       }
 //       SIMPLE COUNTDOWN
 //     const [seconds, setSeconds] = React.useState(5);
-  
+
 //     React.useEffect(() => {
 //         if (seconds > 0) {
 //             setTimeout(() => setSeconds(seconds - 1), 1000);
