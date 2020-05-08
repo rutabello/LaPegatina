@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable max-len */
 import React from 'react';
 import Confetti from 'react-confetti';

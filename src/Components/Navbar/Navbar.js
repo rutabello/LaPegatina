@@ -31,6 +31,7 @@ class Navbar extends React.Component {
 
     state = {
         selectedFlag: spanish,
+        userLanguage: 'spanish',
     }
 
 
@@ -40,6 +41,7 @@ class Navbar extends React.Component {
 
         this.setState({
             selectedFlag: flag,
+            userLanguage: `${lang}`,
         });
 
         // Notify the parent that the language has been updated
@@ -48,7 +50,7 @@ class Navbar extends React.Component {
 
 
     render() {
-        const { selectedFlag } = this.state;
+        const { selectedFlag, userLanguage } = this.state;
 
         const { pagein, language, addedClass } = this.props;
 
@@ -116,7 +118,7 @@ class Navbar extends React.Component {
                                                                     <br />
                                                                     {context.state.points}
                                                                     {' '}
-                                                                    puntos
+                                                                    {texts[userLanguage].pointsText}
                                                                 </p>
                                                             )
                                                             : <UserForm mainpage="navbar" language={language} />
@@ -129,8 +131,8 @@ class Navbar extends React.Component {
                                         <MyContext.Consumer>
                                             {(context) => (
                                                 <div>
-                                                    <a href="/user">{texts[language].profileButton}</a>
-                                                    <a onClick={() => context.clearUser()}>{texts[language].logOutButton}</a>
+                                                    <a href="/user">{texts[userLanguage].profileButton}</a>
+                                                    <a onClick={() => context.clearUser()}>{texts[userLanguage].logOutButton}</a>
                                                 </div>
                                             )}
                                         </MyContext.Consumer>
