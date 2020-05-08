@@ -6,10 +6,18 @@ export const MyContext = React.createContext();
 class MyProvider extends Component {
 
     state = {
-        name: 'rut',
-        username: 'Alecsundra',
-        age: 20,
-        points: 0,
+        first_name: 'Rut',
+        last_name: '',
+        username: 'Ruteta',
+        birth_date: '1987-09-14',
+        email: 'rut.abello@gmail.com',
+        points_spotify_round_one: '',
+        points_spotify_round_two: '',
+        points_instagram_round_one: '',
+        points_instagram_round_two: '',
+        points_youtube_round_one: '',
+        points_youtube_round_two: '',
+
         activePanel: 'login',
         language: 'spanish',
         authed: true,
@@ -25,21 +33,37 @@ class MyProvider extends Component {
         return (
             <MyContext.Provider value={{
                 state: this.state,
-                // addPoints: function(points) { this.state.score += points; }
                 addPoints: (points) => this.setState({
                     points: pointsState + points,
-
                 }),
 
                 clearUser: () => this.setState({
-                    name: '',
+                    first_name: '',
+                    last_name: '',
                     username: '',
-                    age: '',
-                    points: '',
+                    birth_date: '',
+                    email: '',
+                    points_spotify_round_one: '',
+                    points_spotify_round_two: '',
+                    points_instagram_round_one: '',
+                    points_instagram_round_two: '',
+                    points_youtube_round_one: '',
+                    points_youtube_round_two: '',
                     activePanel: 'login',
                     language: 'spanish',
                     authed: false,
                 }),
+
+                // logUserIntoContext: (first_name, last_name, usermame, birth_date, email) => this.setState({
+                //     first_name,
+                //     last_name,
+                //     username,
+                //     birth_date,
+                //     email,
+                //     activePanel: 'login',
+                //     language: 'spanish',
+                //     authed: true,
+                // }),
 
 
                 // login sign up switch

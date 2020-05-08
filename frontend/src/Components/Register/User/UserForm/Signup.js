@@ -1,29 +1,102 @@
 import React from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import { MyContext } from '../../../../context/MyProvider';
 
-const SignUp = () => (
-    <div id="signup-tab-content" className="active tabs-content">
-        <form className="signup-form" action="" method="post">
-            <input
-                type="email"
-                className="input"
-                id="user_email"
-                placeholder="Email"
-            />
-            <input
-                type="text"
-                className="input"
-                id="user_name"
-                placeholder="Username"
-            />
-            <input
-                type="password"
-                className="input"
-                id="user_pass"
-                placeholder="Password"
-            />
-            <input type="submit" className="button" value="Sign Up" />
-        </form>
-    </div>
-);
+const SignUp = () => {
+
+    // const { logUserIntoContext } = React.useContext(MyContext);
+    const [users, updateUsers] = useState([])
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [username, setUsername] = useState('')
+    const [birthdate, setBirthDate] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    // let [repeatedPassword, setRepeatedPassword] = useState('')
+    const [posted, setPosted] = useState(false)
+
+    const postProfile = e => {
+        e.preventDefault()
+
+        fetch('//localhost:5000/user', {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
+            body: JSON.stringify({ firstName, lastName, username, birthdate, email, password })
+        }).then(res => {
+            if(res) {
+                setPosted(!posted)
+                alert("Registered!")
+            }
+        })
+
+        setFirstName(firstName = "")
+        setLastName(lastName = "")
+        setUsername(username = "")
+        setBirthDate(birthdate = "")
+        setEmail(email = "")
+        setPassword(password = "")
+    }
+
+    return(
+        <div id="signup-tab-content" className="active tabs-content">
+            <form className="signup-form" onSubmit={postProfile}>
+                <input
+                    value={firstName}
+                    onChange={e => setFirstName(e.target.value)}
+                    name="first_name"
+                    placeholder="nombre"
+                />
+                <br />
+                <input
+                    value={lastName}
+                    onChange={e => setLastName(e.target.value)}
+                    name="last_name"
+                    placeholder="apellidos"
+                />
+                <br />
+                <input
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
+                    name="username"
+                    placeholder="username"
+                    type="text"
+                    className="input"
+                    id="user_name"
+                />
+                <br />
+                <input
+                    value={birthdate}
+                    onChange={e => setBirthDate(e.target.value)}
+                    name="birth_date"
+                    placeholder="birth date"
+                />
+                <br />
+                <input
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    name="mail"
+                    placeholder="e-mail"
+                    type="email"
+                    className="input"
+                    id="user_email"
+                />
+                <br />
+                <input
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                    name="password"
+                    placeholder="password"
+                    type="password"
+                    className="input"
+                    id="user_pass"
+                />
+                <br />
+                <button type="submit">Registrarme</button>
+            </form>
+        </div>
+    )
+};
 
 export default SignUp;

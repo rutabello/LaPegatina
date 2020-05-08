@@ -8,60 +8,6 @@ import MyProvider from '../../../../context/MyProvider';
 import './UserForm.css';
 
 const UserForm = ({ mainpage }) => (
-// constructor(props) {
-//   super(props);
-
-    //   this.state = {
-    //       lastname: '',
-    //       firstname: '',
-    //       email: '',
-    //       notLogged: true,
-    //     };
-
-    //   this.onChange = this.onChange.bind(this);
-    //   this.onClick = this.onClick.bind(this);
-    //   this.submitForm = this.submitForm.bind(this);
-    //   this.apiURL = this.apiURL.bind(this);
-    // }
-    // apiURL() {
-    //   const url = "";
-    //   const config = {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(this.state)
-    //   };
-
-    //   fetch(url, config)
-    //     .then(res => res.json())
-    //     .then(res => {
-    //       if (res.error) {
-    //         alert(res.error);
-    //       } else {
-    //         alert(`Benvingut! Los puntos son guardados!`);
-    //       }
-    //     })
-    //     .catch(e => {
-    //       console.error(e);
-    //       alert("Prova otra vez");
-    //     });
-    // }
-    // onChange(e) {
-    //   this.setState({
-    //     [e.target.name]: e.target.value
-    //   });
-    // }
-    // onClick(e) {
-    //   this.apiURL();
-    // }
-    // submitForm(e) {
-    //   e.preventDefault();
-    //   this.setState({
-    //     notLogged:false
-    //   })
-    // }
-
 
     mainpage
         ? (
