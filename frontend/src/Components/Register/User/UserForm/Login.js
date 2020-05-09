@@ -9,27 +9,32 @@ import { MyContext } from '../../../../context/MyProvider';
 
 const Login = () => {
 
+    const { logUserIntoContext } = React.useContext(MyContext);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const logUser = (e) => {
-        // e.preventDefault();
+        e.preventDefault()
+        console.log('username and password', username, password)
         fetch('//localhost:5000/log', {
             method: 'POST',
             headers: new Headers({
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             }),
-            body: JSON.stringify({ username, password }),
-        }).then((res) => {
-            if (res.status === 200) {
-                // context.logUser(res);
-                console.log('result in front hereeeee', res);
-                alert('logged in!');
-                return res.json();
+            body: JSON.stringify({ username, password })
+        }).then(res => {
+            console.log('response', res)
+            if(res.status === 200) {
+                alert('logged in!')
+                console.log('logggggged innnn')
+                return res.json()
             }
-            return null;
-        }).then((data) => logUser(data));
-    };
+        }).then(data => {
+            console.log("data you pass to the context", data)
+            logUserIntoContext(data)
+        })
+    }
+
     return (
         <div>
             <MyContext.Consumer>

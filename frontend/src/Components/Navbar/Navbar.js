@@ -112,13 +112,13 @@ class Navbar extends React.Component {
                                             <div className="nav-username">
                                                 <MyContext.Consumer>
                                                     {(context) => (
-                                                        context.state.name
+                                                        context.state.username
                                                             ? (
                                                                 <p>
                                                                     {context.state.username}
                                                                     {' '}
                                                                     <br />
-                                                                    {context.state.points}
+                                                                    {context.state.total_app_points || 0}
                                                                     {' '}
                                                                     {texts[userLanguage].pointsText}
                                                                 </p>
@@ -134,7 +134,7 @@ class Navbar extends React.Component {
                                             {(context) => (
                                                 <div>
                                                     <a href="/user">{texts[userLanguage].profileButton}</a>
-                                                    <a onClick={() => context.clearUser()}>{texts[userLanguage].logOutButton}</a>
+                                                    <a onClick={() => {context.clearUser(); console.log('clicked') }}>{texts[userLanguage].logOutButton}</a>
                                                 </div>
                                             )}
                                         </MyContext.Consumer>

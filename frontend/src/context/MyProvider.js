@@ -6,17 +6,18 @@ export const MyContext = React.createContext();
 class MyProvider extends Component {
 
     state = {
-        first_name: 'Rut',
+        first_name: '',
         last_name: '',
-        username: 'Ruteta',
-        birth_date: '1987-09-14',
-        email: 'rut.abello@gmail.com',
+        username: '',
+        birth_date: '',
+        email: '',
         points_spotify_round_one: '',
         points_spotify_round_two: '',
         points_instagram_round_one: '',
         points_instagram_round_two: '',
         points_youtube_round_one: '',
         points_youtube_round_two: '',
+        total_app_points: '',
 
         activePanel: 'login',
         language: 'spanish',
@@ -25,7 +26,7 @@ class MyProvider extends Component {
 
     render() {
 
-        const { points: pointsState, activePanel } = this.state;
+        const { points: total_app_points, activePanel } = this.state;
         // We rename points so we can after do 'points: this.state.points + points' without problems
 
         const { children } = this.props;
@@ -34,7 +35,7 @@ class MyProvider extends Component {
             <MyContext.Provider value={{
                 state: this.state,
                 addPoints: (points) => this.setState({
-                    points: pointsState + points,
+                    points: total_app_points + points,
                 }),
 
                 clearUser: () => this.setState({
@@ -49,21 +50,22 @@ class MyProvider extends Component {
                     points_instagram_round_two: '',
                     points_youtube_round_one: '',
                     points_youtube_round_two: '',
+                    total_app_points: '',
                     activePanel: 'login',
                     language: 'spanish',
                     authed: false,
                 }),
 
-                // logUserIntoContext: (first_name, last_name, usermame, birth_date, email) => this.setState({
-                //     first_name,
-                //     last_name,
-                //     username,
-                //     birth_date,
-                //     email,
-                //     activePanel: 'login',
-                //     language: 'spanish',
-                //     authed: true,
-                // }),
+                logUserIntoContext: (data) => this.setState({
+                    first_name: data[0].first_name,
+                    last_name: data[0].last_name,
+                    username: data[0].username,
+                    birth_date: data[0].birth_date,
+                    email: data[0].email,
+                    activePanel: 'login',
+                    language: 'spanish',
+                    authed: true,
+                }),
 
 
                 // login sign up switch
