@@ -46,7 +46,7 @@ class QuizYT extends Component {
 
     checkIf = (e) => {
 
-        const { correctAnswer, points, showConfetti } = this.state;
+        const { correctAnswer, points } = this.state;
 
         const displayedAnswer = e.target.value;
 
@@ -82,8 +82,8 @@ class QuizYT extends Component {
                                       recycle={false}
                                       gravity={0.6}
                                     />}
-                                    <YTCountdown 
-                                    toNext={this.toNext} 
+                                    <YTCountdown
+                                    toNext={this.toNext}
                                     />
                                 </div>
                             )
@@ -95,7 +95,7 @@ class QuizYT extends Component {
                                             Score:
                                             {points}
                                         </h6> */}
-                                    
+
                                     </div>
                                     <div className="btn-4-YT">
                                         {answers.map((item, index) => (
@@ -108,7 +108,7 @@ class QuizYT extends Component {
                                             >
                                                 {item}
                                             </button>
-                                            
+
                                         ))}
                                     </div>
                                     </div>

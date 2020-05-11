@@ -138,7 +138,7 @@ class SpotifyRoundOne extends React.Component {
             hideResults: true,
             playerState: Sound.status.STOPPED,
             currentAttempt: currentAttempt + 1,
-            giveMeConfetti: false, // Not sure this shoud be here. Check?
+            giveMeConfetti: false,
         });
     }
 
@@ -330,7 +330,6 @@ class SpotifyRoundOne extends React.Component {
                                                 // above in the onMusicPlays, setNewRandomSong or songURL
                                                 onClick={() => this.writeChosenSong(songName)}
                                                 currentSong={currentSong.name}
-                                                showConfetti={this.showConfetti}
                                             />
                                         </div>
                                     ))}

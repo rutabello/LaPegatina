@@ -1,10 +1,10 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { MyContext } from '../../../../context/MyProvider';
+import React, { useState } from 'react';
+// import { MyContext } from '../../../../context/MyProvider';
 
 const SignUp = () => {
 
     // const { logUserIntoContext } = React.useContext(MyContext);
-    let [users, updateUsers] = useState([])
+    // let [users, updateUsers] = useState([])
     let [firstName, setFirstName] = useState('')
     let [lastName, setLastName] = useState('')
     let [username, setUsername] = useState('')

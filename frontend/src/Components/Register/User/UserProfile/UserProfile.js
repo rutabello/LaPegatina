@@ -77,12 +77,12 @@ const UserPofile = () => {
                                     className="input"
                                     id="user_pass"
                                 />
-                                <label
+                                {/* <label
                                     className="remember"
                                     htmlFor="remember_me"
                                 >
                                     Remember me
-                                </label>
+                                </label> */}
                                 <button type="submit">Log in!</button>
                             </form>
                         </div>

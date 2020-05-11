@@ -13,8 +13,6 @@ const Button = ({ printedSong, currentSong, onClick, showConfetti }) => {
         makeButtonClicked(true);
 
         onClick();
-
-        isCorrect && showConfetti();
     };
 
     let colorClass = 'colorClass';
