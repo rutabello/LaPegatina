@@ -1,61 +1,27 @@
 import React from 'react';
 // import QuizYT from '../QuizYT/QuizYT';
-import '../YTCountdown/YTCountdown.css'
+import '../YTCountdown/YTCountdown.css';
+
+import { useState, useEffect } from 'react';
 
 
-    // PROGRESS RAINBOW BAR
-    class YTCountdown extends React.Component{
-    state = {
-            progress: 0,
-            speed: 6,
-            color: "#ff08050"
-          }
+const YTCountdown=  ({width, percent}) => {
+ 
+  const [value, setValue] = React.useState(0);
 
-          componentDidMount() {
-            console.clear();
-            this.interval = setInterval(() => this.frame(), 1);
-          }
-          //works perfect for iphone6/7/8
-          frame() {
-            if (this.state.progress < 331){
-              this.setState((prevState, props) => ({
-                progress: prevState.progress + this.state.speed,
-                color: "#" + this.red() + this.green() + "50"
-              }));
-              console.log(this.state.color);
-            }
-          }
+  React.useEffect(() => {
+    setValue(percent * width);
+  });
 
-          componentWillUnmount() {
-            clearInterval(this.interval);
-          }
-          green() {
-            let progress = this.state.progress;
-            progress *= 2.55;
-            progress = Math.round(progress);
-            progress = progress.toString(16);
-            return progress;
-          }
-          red() {
-            let progress = this.state.progress;
-            progress *= 2.55;
-            progress = Math.round(progress);
-            progress = 150 - progress;
-            progress = progress.toString(16);
-            return progress;
-          }
-        render(){
-          return (
-              <div id='myProgress'>
-            <div id="myBar" style={{
-                width: this.state.progress ,
-                backgroundColor: this.state.color
-              }}>
-              </div>
-               {/* <div id="label">Next question in {this.state.progress}</div>  */}
-            </div>);
-        }
-      }
+  return (
+    <div>
+      <div className="progress-div" style={{ width: width }}>
+        <div style={{ width: `${value}px` }} className="progress" />
+      </div>
+    </div>
+  );
+};
+
 //       SIMPLE COUNTDOWN
 //     const [seconds, setSeconds] = React.useState(5);
 

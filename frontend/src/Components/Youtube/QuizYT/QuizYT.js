@@ -9,6 +9,7 @@ class QuizYT extends Component {
 
     state={
         index: 0,
+        percent: 1,
         // gameStatus: "playing",
         correctAnswer: this.props.questions[0].answers[0],
         answers: Shuffle(this.props.questions[0].answers),
@@ -19,7 +20,9 @@ class QuizYT extends Component {
         // clicked: false
     }
     // function the is passing to the next question{by increasing the index} and adding points for the right ones
-
+    updateProgress = (field, val) => {
+        this.setState({ [field]: val });
+      };
 
     toNext = () => {
         const { questions } = this.props;
@@ -38,7 +41,7 @@ class QuizYT extends Component {
                 // counter: this.state.counter+1
             });
             // this.props.showConfetti();
-
+            
         } else {
             this.props.stopPlaying();
         }
@@ -56,9 +59,10 @@ class QuizYT extends Component {
                 display: 'timer',
             });
             this.props.showConfetti();
+            // this.updateProgress("percent", this.state.percent + 1)
             setTimeout(() => {
                 this.toNext();
-            }, 4000);
+            }, 5000);
         }
     }
 
@@ -82,8 +86,9 @@ class QuizYT extends Component {
                                       recycle={false}
                                       gravity={0.6}
                                     />}
-                                    <YTCountdown
+                                    <YTCountdown 
                                     toNext={this.toNext}
+                                    width={560} percent={this.state.percent}
                                     />
                                 </div>
                             )
