@@ -128,8 +128,8 @@ class YTPlayer extends Component {
 
     render() {
         const opts = {
-            height: '315',
-            width: '560',
+            // height: '315',
+            // width: '560',
 
             // default 640 h-390
             playerVars: { // https://developers.google.com/youtube/player_parameters
@@ -157,12 +157,13 @@ class YTPlayer extends Component {
                         <Loading />
                     </div>
 
-                    <div className={`theYTPlayer ${playerDisplayClass}`}>
+                    <div style={{ position: 'relative' }} className={`theYTPlayer ${playerDisplayClass}`}>
+                        <div className="cover-bar"></div>
                         <YouTube
                             videoId={videoId}
                             opts={opts}
                             onReady={this.VideoOnReady}
-                            onPlay={this.VideoOnPlay}
+                            // onPlay={this.VideoOnPlay}
                             onPause={this.VideoOnPause}
                             onEnd={this.VideoOnEnd}
                         />
