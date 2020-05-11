@@ -88,7 +88,7 @@ class QuizYT extends Component {
                                     />}
                                     <YTCountdown 
                                     toNext={this.toNext}
-                                    width={560} percent={this.state.percent}
+                                    width={640} percent={this.state.percent}
                                     />
                                 </div>
                             )
