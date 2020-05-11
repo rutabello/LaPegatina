@@ -33,7 +33,15 @@ src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.google
         margin: 0 auto;
         margin-top: 1em;
         /* font-size: 1.5em; */
-        
+
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
 }
 
 @media all and (max-width:30em){
@@ -50,7 +58,7 @@ src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.google
     width: 50vh;
     height: 40vh;
     display: block;
-    
+
 }
 }
 

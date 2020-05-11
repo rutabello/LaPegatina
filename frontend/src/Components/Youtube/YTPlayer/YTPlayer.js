@@ -6,6 +6,8 @@ import './YTPlayer.css';
 import QuizYT from '../QuizYT/QuizYT';
 import texts from '../../../texts.json';
 import Confetti from 'react-confetti';
+import Loading from '../../Utils/Loading/Loading';
+
 // import YTCountdown from '../YTCountdown/YTCountdown';
 // let info=props.info
 // // console.log(props.det)
@@ -16,7 +18,9 @@ class YTPlayer extends Component {
         title: '',
         fourShuffledSongsTitles: [],
         showButtons: true,
-        giveMeConfetti: false
+        giveMeConfetti: false,
+        loadingDisplayClass: 'show',
+        playerDisplayClass: 'hide'
         // done: false,
     }
 
@@ -32,6 +36,8 @@ class YTPlayer extends Component {
         // videoUrl: event.target.playerInfo.videoUrl,
         // passing the title props to be written the same way
         title,
+        loadingDisplayClass: 'hide',
+        playerDisplayClass: 'show'
     });
 
     // store the array with 3 random titles in a const
@@ -104,7 +110,7 @@ class YTPlayer extends Component {
         const { player } = this.state;
 
         player.playVideo();
-      
+
     }
 
     // the video unmute when the answer is right and the button disappear
@@ -141,69 +147,76 @@ class YTPlayer extends Component {
 
         const { videoId, questions, stopPlaying, language } = this.props;
 
-        const { showButtons, fourShuffledSongsTitles, title, giveMeConfetti } = this.state;
+        const { showButtons, fourShuffledSongsTitles, title, giveMeConfetti, loadingDisplayClass, playerDisplayClass } = this.state;
 
-        return (
-            <div className="thegame">
-                <div className="theYTPlayer">
-                    <YouTube
-                        videoId={videoId}
-                        opts={opts}
-                        onReady={this.VideoOnReady}
-                        onPlay={this.VideoOnPlay}
-                        onPause={this.VideoOnPause}
-                        onEnd={this.VideoOnEnd}
-                    />
-                </div>
+        //
 
-                {/* <p>Hello {this.state.title}</p> */}
-                {/* the button that redirect on the yt page */}
-                {/* <button className='btn-see-video' onClick={()=> window.open(this.state.videoUrl, "_blank")}> */}
-                {/* <span className= 'text-btn-see-video'>See full video on Youtube</span></button> */}
-                {showButtons
-                    ? (
-                        <div>
-                            <h4 className="quiz-text">{texts[language].youtubeQuestion}</h4>
-                            <div className="btn-4-YT">
-                                  {giveMeConfetti &&
-                                    <Confetti
-                                      width={window.innerWidth}
-                                      height={window.innerHeight}
-                                      recycle={false}
-                                      gravity={0.6}
-                                    />}
-                                {fourShuffledSongsTitles.map((songTitle) => (
-                                  
-                                    <Button
-                                        unmute={this.unmuteVideo}
-                                        key={songTitle}
-                                        displayedSong={songTitle}
-                                        currentSong={title}
-                                        showConfetti={this.showConfetti}
-                                    />
-                                ))}
-                            </div>
-                            </div>
-                    )
-                    //  /* : <YTCountdown questions={this.props.questions} stopPlaying={this.props.stopPlaying}/> } */}
-                    : (
-                        <div>
-                        {giveMeConfetti &&
-                                    <Confetti
-                                      width={window.innerWidth}
-                                      height={window.innerHeight}
-                                      recycle={false}
-                                      gravity={0.6}
-                                    />}
-                        <QuizYT
-                            questions={questions}
-                            stopPlaying={stopPlaying}
-                            showConfetti={this.showConfetti}
+            return (
+                <div className="thegame">
+                    <div className={`loading ${loadingDisplayClass}`}>
+                        <Loading />
+                    </div>
+
+                    <div className={`theYTPlayer ${playerDisplayClass}`}>
+                        <YouTube
+                            videoId={videoId}
+                            opts={opts}
+                            onReady={this.VideoOnReady}
+                            onPlay={this.VideoOnPlay}
+                            onPause={this.VideoOnPause}
+                            onEnd={this.VideoOnEnd}
                         />
+                    </div>
+
+                    {/* <p>Hello {this.state.title}</p> */}
+                    {/* the button that redirect on the yt page */}
+                    {/* <button className='btn-see-video' onClick={()=> window.open(this.state.videoUrl, "_blank")}> */}
+                    {/* <span className= 'text-btn-see-video'>See full video on Youtube</span></button> */}
+                    {showButtons
+                        ? (
+                            <div>
+                                <h4 className="quiz-text">{texts[language].youtubeQuestion}</h4>
+                                <div className="btn-4-YT">
+                                    {giveMeConfetti &&
+                                        <Confetti
+                                        width={window.innerWidth}
+                                        height={window.innerHeight}
+                                        recycle={false}
+                                        gravity={0.6}
+                                        />}
+                                    {fourShuffledSongsTitles.map((songTitle) => (
+
+                                        <Button
+                                            unmute={this.unmuteVideo}
+                                            key={songTitle}
+                                            displayedSong={songTitle}
+                                            currentSong={title}
+                                            showConfetti={this.showConfetti}
+                                        />
+                                    ))}
+                                </div>
+                                </div>
+                        )
+                        //  /* : <YTCountdown questions={this.props.questions} stopPlaying={this.props.stopPlaying}/> } */}
+                        : (
+                            <div>
+                            {giveMeConfetti &&
+                                        <Confetti
+                                        width={window.innerWidth}
+                                        height={window.innerHeight}
+                                        recycle={false}
+                                        gravity={0.6}
+                                        />}
+                            <QuizYT
+                                questions={questions}
+                                stopPlaying={stopPlaying}
+                                showConfetti={this.showConfetti}
+                            />
+                    </div>
+                        )}
                 </div>
-                    )}
-            </div>
-        );
+            );
+        // }
     }
 }
 
