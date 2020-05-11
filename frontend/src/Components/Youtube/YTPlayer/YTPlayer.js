@@ -175,7 +175,7 @@ class YTPlayer extends Component {
                     {/* <span className= 'text-btn-see-video'>See full video on Youtube</span></button> */}
                     {showButtons
                         ? (
-                            <div>
+                            <div className={`${playerDisplayClass}`}>
                                 <h4 className="quiz-text">{texts[language].youtubeQuestion}</h4>
                                 <div className="btn-4-YT">
                                     {giveMeConfetti &&
