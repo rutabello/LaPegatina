@@ -61,12 +61,6 @@ const Login = () => {
                                     className="input"
                                     id="user_pass"
                                 />
-                                <label
-                                    className="remember"
-                                    htmlFor="remember_me"
-                                >
-                                    Remember me
-                                </label>
                                 <button type="submit">Log in!</button>
                             </form>
                         </div>

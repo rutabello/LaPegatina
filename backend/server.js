@@ -54,7 +54,11 @@ app.post('/log', (req, res) => {
     connection.query('SELECT * FROM user WHERE username = ? AND password = ?', [req.body.username, req.body.password], (err, results) => {
         if (err){
             console.log('error', err)
-            res.status(500).send('No such user in the database')
+            res.status(500).send('Error logging in')
+        }
+
+        if (!results.username) {
+            res.status(404).send('No such user in the database')
         }
 
         if (results){

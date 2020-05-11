@@ -18,7 +18,7 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
 
     const loginComp = (context) => {
 
-        const { state: { name } } = context;
+        const { state: { username } } = context;
 
         /*   if (name) {
             return (
@@ -30,7 +30,7 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
             );
         } */
 
-        if (name) {
+        if (username) {
             return (
                 <Register score={score} currentGame="spotify" />
             );

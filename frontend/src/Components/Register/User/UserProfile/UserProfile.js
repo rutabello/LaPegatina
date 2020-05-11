@@ -19,6 +19,10 @@ const UserPofile = () => {
             body: JSON.stringify({ username, password })
         }).then(res => {
             console.log('response', res)
+            if (res.status === 404) {
+                alert('invalid username or password')
+            }
+
             if(res.status === 200) {
                 alert('logged in!')
                 console.log('logggggged innnn')
@@ -29,6 +33,7 @@ const UserPofile = () => {
             logUserIntoContext(data)
         })
     }
+
 
     return(
         <div>
