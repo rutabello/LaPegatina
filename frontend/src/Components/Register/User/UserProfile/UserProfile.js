@@ -30,7 +30,7 @@ const UserPofile = () => {
             }
         }).then(data => {
             console.log("data you pass to the context", data)
-            logUserIntoContext(data)
+            data.username && logUserIntoContext(data)
             setUsername('');
             setPassword('');
         })
