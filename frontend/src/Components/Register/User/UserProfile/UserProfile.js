@@ -19,9 +19,9 @@ const UserPofile = () => {
             body: JSON.stringify({ username, password })
         }).then(res => {
             console.log('response', res)
-            if (res.status === 404) {
-                alert('invalid username or password')
-            }
+            // if (res.status === 404) {
+            //     alert('invalid username or password')
+            // }
 
             if(res.status === 200) {
                 alert('logged in!')
@@ -31,6 +31,8 @@ const UserPofile = () => {
         }).then(data => {
             console.log("data you pass to the context", data)
             logUserIntoContext(data)
+            setUsername('');
+            setPassword('');
         })
     }
 

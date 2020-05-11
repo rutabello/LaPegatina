@@ -57,9 +57,9 @@ app.post('/log', (req, res) => {
             res.status(500).send('Error logging in')
         }
 
-        if (!results.username) {
-            res.status(404).send('No such user in the database')
-        }
+        // if (!results.username) {
+        //     res.status(404).send('No such user in the database')
+        // }
 
         if (results){
             req.session.regenerate( ()=>{
