@@ -58,12 +58,16 @@ input {
     display: block !important;
 }
 
+input {
+    padding: .8em 0 10px .8em;
+    width: 100%;
+}
+
 .form-wrap form .input {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     color:  #666;
     font-family: inherit;
-    padding: .8em 0 10px .8em;
     border: 1px solid #CFCFCF;
     outline: 0;
     display: inline-block;

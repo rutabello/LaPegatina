@@ -19,10 +19,6 @@ const UserPofile = () => {
             body: JSON.stringify({ username, password })
         }).then(res => {
             console.log('response', res)
-            // if (res.status === 404) {
-            //     alert('invalid username or password')
-            // }
-
             if(res.status === 200) {
                 alert('logged in!')
                 console.log('logggggged innnn')
@@ -30,13 +26,9 @@ const UserPofile = () => {
             }
         }).then(data => {
             console.log("data you pass to the context", data)
-            // data.username && logUserIntoContext(data)
             logUserIntoContext(data)
-            setUsername('');
-            setPassword('');
         })
     }
-
 
     return(
         <div>
@@ -80,12 +72,12 @@ const UserPofile = () => {
                                     className="input"
                                     id="user_pass"
                                 />
-                                {/* <label
+                                <label
                                     className="remember"
                                     htmlFor="remember_me"
                                 >
                                     Remember me
-                                </label> */}
+                                </label>
                                 <button type="submit">Log in!</button>
                             </form>
                         </div>
