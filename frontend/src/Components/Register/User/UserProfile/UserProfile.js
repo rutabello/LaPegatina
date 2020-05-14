@@ -29,11 +29,13 @@ const UserPofile = () => {
             }
         }).then(data => {
             console.log("data you pass to the context", data)
+            // data.username && logUserIntoContext(data)
             logUserIntoContext(data)
             setUsername('');
             setPassword('');
         })
     }
+
 
     return(
         <div>
