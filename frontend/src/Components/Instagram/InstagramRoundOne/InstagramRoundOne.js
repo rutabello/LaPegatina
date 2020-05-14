@@ -211,7 +211,7 @@ class InstagramRoundOne extends Component {
                                 {' '}
                                 puntos
                             </p>
-                            {context.state.name
+                            {context.state.username
                                 ? <Register score={this.counter * 1729} currentGame="instagram" />
                                 : <UserForm language={language} />}
                             <div className="social-media-follow-buttons">
