@@ -140,7 +140,8 @@
         "repeatPassword": "Repeat password",
         "signUp": "Sign Up",
         "login": "Log In",
-        "register": "Register"
+        "register": "Register",
+        "instructions": "To play the game tip on the right answer with your finger (mobile) or click on it with your mouse (desktop)"
     },
 
     "french": {

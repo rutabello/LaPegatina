@@ -70,10 +70,12 @@ class Rounds extends React.Component {
         return (
             <div>
                 <div className={page}>
-                    <p className="playWith title">{texts[language].roundOneText}</p>
-                    <Link className={youtube || instagram ? 'hideGame' : 'title'} to="spotifyroundone">{texts[language].startText}</Link>
-                    <Link className={spotify || instagram ? 'hideGame' : 'title'} to="youtuberoundone">{texts[language].startText}</Link>
-                    <Link className={spotify || youtube ? 'hideGame' : 'title'} to="instagramroundone">{texts[language].startText}</Link>
+                <p className="title">{texts[language].roundOneText}</p>
+                    <p><b>Guess the right song!</b></p>
+                    <p>{texts[language].instructions}</p>
+                    <Link className={youtube || instagram ? 'hideGame' : 'title'} to="spotifyroundone"><button className="button1" type="button">{texts[language].startText}</button></Link>
+                    <Link className={spotify || instagram ? 'hideGame' : 'title'} to="youtuberoundone"><button className="button1" type="button">{texts[language].startText}</button></Link>
+                    <Link className={spotify || youtube ? 'hideGame' : 'title'} to="instagramroundone"><button classname="button1" type="button">{texts[language].startText}</button></Link> 
                 </div>
                 <div className="home-play-buttons">
                     <button type="button" className={button} onClick={this.startSpotify}>

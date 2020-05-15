@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react';
-import './Register.css';
+//import './Register.css';
+import '../Rounds/Rounds.css';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../../context/MyProvider';
 import '../Home/Home.css';
@@ -15,7 +16,8 @@ class Register extends Component {
     showLink = () => {
 
         this.setState({
-            link: 'showIt',
+           // link: 'showIt',
+           link: "screen"
         });
     }
 
@@ -31,8 +33,8 @@ class Register extends Component {
                     {(context) => (
                         <div>
                             <div className={link}>
-                                <h1 className="playWith title">Ronda 2</h1>
-                                <Link to="spotifyRoundTwo"><button className="btn btn-primary" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
+                                <h1 className="title">Ronda 2</h1>
+                                <Link to="spotifyRoundTwo"><button className="button1" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
                             </div>
                             <button type="button" onClick={this.showLink}>Suma puntos y sigue jugando</button>
                         </div>
@@ -41,6 +43,21 @@ class Register extends Component {
             );
         }
 
+        if (currentGame === 'spotify1') {
+            return (
+                <MyContext.Consumer>
+                    {(context) => (
+                        <div>
+                            <div className={link}>
+                                <h1 className="playWith title">Ronda 1</h1>
+                                <Link to="spotifyroundone"><button className="button1" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
+                            </div>
+                            <button type="button" onClick={this.showLink}>Juega con Música</button>
+                        </div>
+                    )}
+                </MyContext.Consumer>
+            );
+        }
 
         if (currentGame === 'youtube') {
             return (
@@ -50,9 +67,26 @@ class Register extends Component {
                             <div className={link}>
                                 <h1 className="playWith">Ronda 2</h1>
                                 <p>Instrucciones</p>
-                                <Link to="youtuberoundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
+                                <Link to="youtuberoundone"><button className="button1" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
                             </div>
                             <button type="button" onClick={this.showLink}>Juega una segunda ronda</button>
+                        </div>
+                    )}
+                </MyContext.Consumer>
+            );
+        }
+
+        if (currentGame === 'youtube1') {
+            return (
+                <MyContext.Consumer>
+                    {(context) => (
+                        <div>
+                            <div className={link}>
+                                <h1 className="playWith">Ronda 1</h1>
+                                <p>Instrucciones</p>
+                                <Link to="youtuberoundone"><button className="button1" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
+                            </div>
+                            <button type="button" onClick={this.showLink}>Juega con Videos</button>
                         </div>
                     )}
                 </MyContext.Consumer>
@@ -66,9 +100,25 @@ class Register extends Component {
                         <div>
                             <div className={link}>
                                 <h1 className="playWith">Ronda 2</h1>
-                                <Link to="instagramroundtwo"><button className="navbar-btn" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
+                                <Link to="instagramroundtwo"><button className="button1" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
                             </div>
                             <button type="button" onClick={this.showLink}>Juega una segunda Ronda</button>
+                        </div>
+                    )}
+                </MyContext.Consumer>
+            );
+        }
+
+        if (currentGame === 'instagram1') {
+            return (
+                <MyContext.Consumer>
+                    {(context) => (
+                        <div>
+                            <div className={link}>
+                                <h1 className="playWith">Ronda 1</h1>
+                                <Link to="instagramroundone"><button className="button1" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
+                            </div>
+                            <button type="button" onClick={this.showLink}>Juega con Fotos</button>
                         </div>
                     )}
                 </MyContext.Consumer>
