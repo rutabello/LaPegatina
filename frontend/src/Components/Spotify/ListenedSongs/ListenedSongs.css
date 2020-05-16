@@ -7,7 +7,7 @@
     padding-left: 0;
     padding-bottom: 8px;
 }
-  
+
 .song-name {
     font-weight: 400;
     font-size: 16px;
@@ -17,7 +17,7 @@
     min-width: 50%;
     color: #766dca;
 }
-  
+
 .mistake-list {
     display: flex;
     flex-direction: column;
@@ -37,6 +37,8 @@
 
 .instruct  {
     text-align: center;
+    display: block;
+    margin-top: 15vh;
 }
 
 .instruct p {
@@ -93,6 +95,36 @@
 
 .modal-title {
     color: rgb(49, 44, 113)!important;
+}
+
+.color-navbar .fixTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.listened-songs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-primary {
+    width: 30em;
+    margin: 10px 0 10px 0;
+    height: 8vh;
+}
+
+.user-form {
+    width: 30em;
+}
+
+.navbar-btn {
+    width: 100%;
+    margin: 40px 0 10px 0;
+    height: 8vh;
+    font-size: 22px;
 }
 
 

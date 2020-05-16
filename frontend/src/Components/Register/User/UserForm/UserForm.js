@@ -74,7 +74,7 @@ const UserForm = ({ mainpage, language }) => (
             </div>
         )
         : (
-            <div>
+            <div className="user-form">
                 <button
                     type="button"
                     className="navbar-btn"
