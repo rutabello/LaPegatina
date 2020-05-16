@@ -1,13 +1,13 @@
 /* eslint-disable react/no-did-mount-set-state */
 import React, { Component } from 'react';
-import YTPlayer from '../YTPlayer/YTPlayer';
-import './YTGame.css';
+import YTPlayer2 from './YTPlayer2';
+import '../YTGame/YTGame.css';
 // import getPlayListItems from '../Api/Api';
 import Shuffle from '../../Utils/Shuffle';
 import videoDataObject from '../VideoDataObject';
 // console.log (getPlayListItems())
 
-class YTGame extends Component {
+class YTGame2 extends Component {
 
     state = {
         data: {},
@@ -78,21 +78,23 @@ class YTGame extends Component {
             fourNonShuffledSongsTitles,
         });
     }
-    
+
 
     render() {
 
         const { fourNonShuffledSongsTitles, randomVideoId, data, currentTitle, questions } = this.state;
-        console.log(data)
+
         const { language, stopPlaying } = this.props;
 
         return (
             <div className="yt-all">
                 <div className="cover-title">
-                    <span className="instuctionsYT" />
+                    {/* {data.map(card)=>{
+                        data.videoURL
+                    }} */}
                 </div>
                 <div className="yt-player">
-                    <YTPlayer
+                    <YTPlayer2
                         det={fourNonShuffledSongsTitles}
                         videoId={randomVideoId}
                         info={data}
@@ -107,4 +109,4 @@ class YTGame extends Component {
     }
 }
 
-export default YTGame;
+export default YTGame2;

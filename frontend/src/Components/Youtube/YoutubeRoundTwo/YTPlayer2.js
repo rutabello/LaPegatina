@@ -1,22 +1,22 @@
+
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import Button from '../Button/Button_YT';
 import Shuffle from '../../Utils/Shuffle';
-import './YTPlayer.css';
-import QuizYT from '../QuizYT/QuizYT';
+import '../YTPlayer/YTPlayer.css';
+import QuizYT2 from './QuizYT2';
 import texts from '../../../texts.json';
 import Confetti from 'react-confetti';
 import Loading from '../../Utils/Loading/Loading';
 
 // import YTCountdown from '../YTCountdown/YTCountdown';
 // let info=props.info
-// // console.log(props.det)
-// console.log(info)
-class YTPlayer extends Component {
+
+class YTPlayer2 extends Component {
     state = {
         player: '',
-        title: '',
-        fourShuffledSongsTitles: [],
+        // title: '',
+        // fourShuffledSongsTitles: [],
         showButtons: true,
         giveMeConfetti: false,
         loadingDisplayClass: 'show',
@@ -26,34 +26,35 @@ class YTPlayer extends Component {
 
     // access to player in all event handlers via event.target
     VideoOnReady = (event) => {
-    console.log(event.target)
+    // console.log(event.target)
     // plays the video at 10s, in case the video has the name of the song at the start
-    const { title, det } = this.props;
-    
+    const { data,videoId } = this.props;
+    // alert(event.target.playerInfo.videoData.title)
 
     this.setState({
         // title:event.target.playerInfo.videoData.title,
         // videoUrl: event.target.playerInfo.videoUrl,
         // passing the title props to be written the same way
-        title,
+        // title,
         loadingDisplayClass: 'hide',
-        playerDisplayClass: 'show'
+        playerDisplayClass: 'show',
+        // questions:data[data.indexOf(videoId)].questions,
     });
 
     // store the array with 3 random titles in a const
 
-    const threeTitlesArr = det;
+    // const threeTitlesArr = det;
 
-    // push inside the name of the title that is playing now
+    // // push inside the name of the title that is playing now
 
-    threeTitlesArr.push(title);
-    // suffle all titles
-    const fourShuffledSongsTitles = Shuffle(threeTitlesArr);
+    // threeTitlesArr.push(title);
+    // // suffle all titles
+    // const fourShuffledSongsTitles = Shuffle(threeTitlesArr);
     // keep the new array , where is included the title of the playing song in the state
 
-    this.setState({
-        fourShuffledSongsTitles,
-    });
+    // this.setState({
+    //     fourShuffledSongsTitles,
+    // });
         event.target.seekTo(20);
         event.target.mute();
         event.target.playVideo();
@@ -68,6 +69,7 @@ class YTPlayer extends Component {
             giveMeConfetti: true,
         });
     }
+
     // getting the title from the object to coincide with the other names that will be in the buttons
     // VideoOnPlay = () => {
 
@@ -114,16 +116,16 @@ class YTPlayer extends Component {
     }
 
     // the video unmute when the answer is right and the button disappear
-    unmuteVideo = () => {
+    // unmuteVideo = () => {
 
-        const { player } = this.state;
+    //     const { player } = this.state;
 
-        player.unMute();
-        this.setState({
-            showButtons: false,
-            giveMeConfetti:true
-        });
-    }
+    //     player.unMute();
+    //     this.setState({
+    //         showButtons: false,
+    //         giveMeConfetti:true
+    //     });
+    // }
 
 
     render() {
@@ -147,7 +149,7 @@ class YTPlayer extends Component {
 
         const { videoId, questions, stopPlaying, language } = this.props;
 
-        const { showButtons, fourShuffledSongsTitles, title, giveMeConfetti, loadingDisplayClass, playerDisplayClass } = this.state;
+        const {  giveMeConfetti, loadingDisplayClass, playerDisplayClass } = this.state;
 
         //
 
@@ -159,6 +161,7 @@ class YTPlayer extends Component {
 
                     <div style={{ position: 'relative' }} className={`theYTPlayer ${playerDisplayClass}`}>
                         <div className="cover-bar"></div>
+                        
                         <YouTube
                             videoId={videoId}
                             opts={opts}
@@ -173,7 +176,7 @@ class YTPlayer extends Component {
                     {/* the button that redirect on the yt page */}
                     {/* <button className='btn-see-video' onClick={()=> window.open(this.state.videoUrl, "_blank")}> */}
                     {/* <span className= 'text-btn-see-video'>See full video on Youtube</span></button> */}
-                    {showButtons
+                    {/* {showButtons
                         ? (
                             <div>
                                 <h4 className="quiz-text">{texts[language].youtubeQuestion}</h4>
@@ -199,8 +202,8 @@ class YTPlayer extends Component {
                                 </div>
                         )
                         //  /* : <YTCountdown questions={this.props.questions} stopPlaying={this.props.stopPlaying}/> } */}
-                        : (
-                            <div>
+                    
+                            {/* <div>
                             {giveMeConfetti &&
                                         <Confetti
                                         width={window.innerWidth}
@@ -208,12 +211,12 @@ class YTPlayer extends Component {
                                         recycle={false}
                                         gravity={0.6}
                                         />}
-                            <QuizYT
+                            <QuizYT2
                                 questions={questions}
                                 stopPlaying={stopPlaying}
                                 showConfetti={this.showConfetti}
                             />
-                    </div>
+                    </div> */}
                         )}
                 </div>
             );
@@ -222,4 +225,4 @@ class YTPlayer extends Component {
 }
 
 
-export default YTPlayer;
+export default YTPlayer2;
