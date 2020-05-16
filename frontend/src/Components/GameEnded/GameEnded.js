@@ -1,23 +1,26 @@
 /* eslint-disable max-len */
 import React from 'react';
 import './GameEnded.css';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import texts from '../../texts.json';
 import { MyContext } from '../../context/MyProvider';
 import SocialMedia from '../SocialMedia/SocialMedia';
+import Register from '../Register/Register';
 
-const GameEnded = ({ currentGame, language, changeBandMember, points }) => (
+const GameEnded = ({ score, currentGame, language, changeBandMember, points }) => (
     <div>
-        <MyContext.Consumer>
+         <MyContext.Consumer>
             {(context) => {
                 if (currentGame === 'spotify') {
                     return (
                         <div>
                             <p>{texts[language].gameEnded}</p>
                             <br />
-                            <Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].photosText}</button></Link>
+                             <Register score={score} currentGame="instagram1"/>
+                            {/*<Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].photosText}</button></Link>*/}
                             <br />
-                            <Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].videosText}</button></Link>
+                            <Register score={score} currentGame="youtube1"/>
+                           {/*<Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].videosText}</button></Link>*/}
                         </div>
                     );
                 }
@@ -27,9 +30,11 @@ const GameEnded = ({ currentGame, language, changeBandMember, points }) => (
                         <div>
                             <p>{texts[language].gameEnded}</p>
                             <br />
-                            <Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>
+                            <Register score={score} currentGame="spotify1"/>
+                           { /*<Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>*/}
                             <br />
-                            <Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].photosText}</button></Link>
+                            <Register score={score} currentGame="instagram1"/>
+                            {/*<Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].photosText}</button></Link>*/}
                         </div>
                     );
                 }
@@ -45,11 +50,12 @@ const GameEnded = ({ currentGame, language, changeBandMember, points }) => (
                                 puntos a tu perfil. Ahora puedes seguir jugando con
                             </p>
                             <br />
-                            <Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>
+                            <Register score={score} currentGame="spotify1"/>
+                            {/*<Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>*/}
                             <br />
-                            <Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].videosText}</button></Link>
+                           {/* <Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].videosText}</button></Link>*/}
                             <br />
-                            {/* <Link to="instagramroundtwo">{texts[language].changeBandMember}</Link> */}
+                            <Register score={score} currentGame="youtube1"/>
                             <button className="navbar-btn" onClick={changeBandMember} type="button">{texts[language].changeBandMember}</button>
                         </div>
                     );
