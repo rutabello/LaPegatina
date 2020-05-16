@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { Fragment } from 'react';
+import React from 'react';
 // import { Link } from 'react-router-dom';
 import { EmailShareButton, FacebookShareButton,
     TwitterShareButton, WhatsappShareButton, EmailIcon,
@@ -18,19 +18,10 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
 
     const loginComp = (context) => {
 
-        const { state: { username } } = context;
-
-        /*   if (name) {
-            return (
-                <Link to="spotifyRoundTwo">
-                    <button className="btn btn-primary" type="button" onClick={() => addPoints(score)}>
-                        Suma puntos y sigue jugando
-                    </button>
-                </Link>
-            );
-        } */
+        const { state: { username }, addPoints } = context;
 
         if (username) {
+            // addPoints(score, 'spotify', 'one');
             return (
                 <Register score={score} currentGame="spotify" />
             );

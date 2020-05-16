@@ -63,7 +63,7 @@ const UserForm = ({ mainpage, language }) => (
                                     </FormPanel>
 
                                     <FormPanel isActive="signup">
-                                        <SignUp language={language}/>
+                                        <SignUp language={language} />
                                     </FormPanel>
                                 </MyProvider>
                             </div>
