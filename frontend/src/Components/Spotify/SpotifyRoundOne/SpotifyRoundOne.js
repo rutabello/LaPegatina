@@ -14,6 +14,7 @@ import ListenedSongs from '../ListenedSongs/ListenedSongs';
 import texts from '../../../texts.json';
 import SocialMedia from '../../SocialMedia/SocialMedia';
 import Navbar from '../../Navbar/Navbar';
+import { MyContext } from '../../../context/MyProvider';
 
 
 class SpotifyRoundOne extends React.Component {
@@ -69,10 +70,17 @@ class SpotifyRoundOne extends React.Component {
     async componentDidMount() {
 
         const { playlistID } = this.state;
+        const { replaceState } = this.context;
 
         this.spotifyObject = await Spotify.getPlaylist(playlistID);
         this.filterRightSongsFromSpotifyObject();
         this.setNewRandomSong();
+
+        const savedState = JSON.parse(localStorage.savedState);
+
+        if (savedState !== undefined) {
+            replaceState(savedState.state);
+        }
     }
 
     /**
@@ -387,5 +395,7 @@ class SpotifyRoundOne extends React.Component {
         );
     }
 }
+
+SpotifyRoundOne.contextType = MyContext;
 
 export default SpotifyRoundOne;

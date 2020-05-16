@@ -7,6 +7,7 @@ import '../Home/Home.css';
 import photo from '../../Pictures/photo_w.png';
 import video from '../../Pictures/video_w.png';
 import music from '../../Pictures/music_w.png';
+import { MyContext } from '../../context/MyProvider';
 
 
 class Rounds extends React.Component {
@@ -57,9 +58,8 @@ class Rounds extends React.Component {
     }
 
     componentDidMount = () => {
-
+        localStorage.setItem('savedState', JSON.stringify(this.context));
     }
-
 
     render() {
 
@@ -95,5 +95,7 @@ class Rounds extends React.Component {
         );
     }
 }
+
+Rounds.contextType = MyContext;
 
 export default Rounds;

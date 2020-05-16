@@ -67,6 +67,7 @@ class MyProvider extends Component {
                     authed: true,
                 }),
 
+                replaceState: (newState) => this.setState(newState),
 
                 // login sign up switch
                 activePanel,
