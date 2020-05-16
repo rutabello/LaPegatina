@@ -34,7 +34,17 @@
         "songSharedText" : "M'ha agradat molt aquesta cançó de La Pegatina. Escolta-la",
         "doneText": "Fet!",
         "gameEnded": "Aquest joc acaba aquí. Ara pots jugar amb:",
-        "changeBandMember": "O pots tornar a jugar però amb les fotos d'un altre membre de La Pegatina"
+        "changeBandMember": "O pots tornar a jugar però amb les fotos d'un altre membre de La Pegatina",
+        "firstName": "Nom",
+        "lastName": "Cognom",
+        "username": "Nom d'usuari",
+        "birth_date": "Data de naixement",
+        "mail": "Correu electrònic",
+        "password": "Contrasenya",
+        "repeatPassword": "Repeteix la contrassenya",
+        "signUp": "Registra't",
+        "login": "Iniciar Sessió",
+        "register": "Registrar"
     },
 
     "spanish" : {
@@ -72,7 +82,17 @@
         "songSharedText" : "Me ha gustado mucho esta canción de La Pegatina. Escúchala:",
         "doneText": "Hecho!",
         "gameEnded": "Este juego termina aquí. Ahora puedes jugar con:",
-        "changeBandMember": "O puedes volver a jugar pero con las fotos de otro miembro de La Pegatina"
+        "changeBandMember": "O puedes volver a jugar pero con las fotos de otro miembro de La Pegatina",
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "username": "Nombre de usuario",
+        "birth_date": "Fecha de nacimiento",
+        "mail": "Correo electrónico",
+        "password": "Contraseña",
+        "repeatPassword": "Repetir contraseña",
+        "signUp": "Registrarse",
+        "login": "Iniciar Sesión",
+        "register": "Registrarme"
     },
 
     "english" : {
@@ -110,7 +130,18 @@
         "songSharedText" : "I really enjoyed this song from La Pegatina. Listen to it:",
         "doneText": "Done!",
         "gameEnded": "This game ends here. You can now play with:",
-        "changeBandMember": "Or you can play again with the pictures of another member of La Pegatina"
+        "changeBandMember": "Or you can play again with the pictures of another member of La Pegatina",
+        "firstName": "Name",
+        "lastName": "Last Name",
+        "username": "Username",
+        "birth_date": "Birth date",
+        "mail": "E-mail",
+        "password": "Password",
+        "repeatPassword": "Repeat password",
+        "signUp": "Sign Up",
+        "login": "Log In",
+        "register": "Register",
+        "instructions": "To play the game tip on the right answer with your finger (mobile) or click on it with your mouse (desktop)"
     },
 
     "french": {
@@ -143,12 +174,21 @@
         "followUs": "Suivez-nous sur...",
         "madeWithText": "Fait avec ",
         "byText": " par Wild Code School équipe",
-
         "shareTheSongButton": "Partagez-le",
         "whereToShareText" : "Où voulez-vous le partager?",
         "songSharedText" : "J'ai vraiment apprécié cette chanson de La Pegatina. Écoute lea",
         "doneText": "Fait!",
         "gameEnded": "Ce jeu se termine ici. Vous pouvez ensuite jouer avec:",
-        "changeBandMember": "Ou vous pouvez jouer à nouveau avec les photos d'un autre membre de La Pegatina"
+        "changeBandMember": "Ou vous pouvez jouer à nouveau avec les photos d'un autre membre de La Pegatina",
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "username": "Nom d'utilisateur",
+        "birth_date": "Date de naissance",
+        "mail": "Email",
+        "password": "Mot de passe",
+        "repeatPassword": "Répéter le mot de passe",
+        "signUp": "S'inscrire",
+        "login": "S'identifier",
+        "register": "S'inscrire"
     }
 }

@@ -20,9 +20,8 @@ const UserPofile = () => {
         }).then(res => {
             console.log('response', res)
             // if (res.status === 404) {
-            //     alert('invalid username or password')
+            //    alert('invalid username or password')
             // }
-
             if(res.status === 200) {
                 alert('logged in!')
                 console.log('logggggged innnn')
@@ -30,7 +29,8 @@ const UserPofile = () => {
             }
         }).then(data => {
             console.log("data you pass to the context", data)
-            data.username && logUserIntoContext(data)
+            // data.username && logUserIntoContext(data)
+            logUserIntoContext(data)
             setUsername('');
             setPassword('');
         })
@@ -88,9 +88,6 @@ const UserPofile = () => {
                                 <button type="submit">Log in!</button>
                             </form>
                         </div>
-
-
-
                     </Fragment>
                 )}
             </MyContext.Consumer>

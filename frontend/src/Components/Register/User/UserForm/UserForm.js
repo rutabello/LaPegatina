@@ -7,7 +7,7 @@ import MyProvider from '../../../../context/MyProvider';
 // import texts from '../../../../texts.json';
 import './UserForm.css';
 
-const UserForm = ({ mainpage }) => (
+const UserForm = ({ mainpage, language }) => (
 
     mainpage
         ? (
@@ -49,10 +49,12 @@ const UserForm = ({ mainpage }) => (
                                 <MyProvider>
                                     <div className="tabs">
                                         <Panel id="login">
-                                            <h2 className="login-tab">Login</h2>
+                                            {/* <h2 className="login-tab">{texts[language].login}</h2> */}
+                                            Log in
                                         </Panel>
                                         <Panel id="signup">
-                                            <h2 className="signup-tab">Sign Up</h2>
+                                            {/* <h2 className="signup-tab">{texts[language].signUp}</h2> */}
+                                            Sign up
                                         </Panel>
                                     </div>
 
@@ -61,7 +63,7 @@ const UserForm = ({ mainpage }) => (
                                     </FormPanel>
 
                                     <FormPanel isActive="signup">
-                                        <SignUp />
+                                        <SignUp language={language}/>
                                     </FormPanel>
                                 </MyProvider>
                             </div>
@@ -110,10 +112,12 @@ const UserForm = ({ mainpage }) => (
                                 <MyProvider>
                                     <div className="tabs">
                                         <Panel id="login">
-                                            <h2 className="login-tab">Login</h2>
+                                            {/* <h2 className="login-tab">{texts[language].login}</h2> */}
+                                            Log in
                                         </Panel>
                                         <Panel id="signup">
-                                            <h2 className="signup-tab">Sign Up</h2>
+                                            {/* <h2 className="signup-tab">{texts[language].signUp}</h2> */}
+                                            Sign up
                                         </Panel>
                                     </div>
 
@@ -122,7 +126,7 @@ const UserForm = ({ mainpage }) => (
                                     </FormPanel>
 
                                     <FormPanel isActive="signup">
-                                        <SignUp />
+                                        <SignUp language={language} />
                                     </FormPanel>
                                 </MyProvider>
                             </div>
