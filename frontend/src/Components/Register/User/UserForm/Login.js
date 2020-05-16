@@ -14,26 +14,26 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const logUser = (e) => {
-        e.preventDefault()
-        console.log('username and password', username, password)
+        e.preventDefault();
+        console.log('username and password', username, password);
         fetch('//localhost:5000/log', {
             method: 'POST',
             headers: new Headers({
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             }),
-            body: JSON.stringify({ username, password })
-        }).then(res => {
-            console.log('response', res)
-            if(res.status === 200) {
-                alert('logged in!')
-                console.log('logggggged innnn')
-                return res.json()
+            body: JSON.stringify({ username, password }),
+        }).then((res) => {
+            console.log('response', res);
+            if (res.status === 200) {
+                alert('logged in!');
+                console.log('logggggged innnn');
+                return res.json();
             }
-        }).then(data => {
-            console.log("data you pass to the context", data)
-            logUserIntoContext(data)
-        })
-    }
+        }).then((data) => {
+            console.log('data you pass to the context', data);
+            logUserIntoContext(data);
+        });
+    };
 
     return (
         <div>

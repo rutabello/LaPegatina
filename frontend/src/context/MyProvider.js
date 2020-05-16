@@ -19,14 +19,14 @@ class MyProvider extends Component {
         points_youtube_round_two: '',
         total_app_points: '',
 
-        activePanel: 'login',
+        activePanel: 'signup',
         language: 'spanish',
         authed: true,
     }
 
     render() {
 
-        const { points: total_app_points, activePanel } = this.state;
+        const { points: activePanel } = this.state;
         // We rename points so we can after do 'points: this.state.points + points' without problems
 
         const { children } = this.props;
@@ -34,9 +34,13 @@ class MyProvider extends Component {
         return (
             <MyContext.Provider value={{
                 state: this.state,
-                addPoints: (points) => this.setState({
-                    points: total_app_points + points,
-                }),
+
+                addPoints: (newPoints, gameName, roundIn) => {
+
+                    this.setState({
+                        [`points_${gameName}_round_${roundIn}`]: newPoints,
+                    });
+                },
 
                 clearUser: () => this.setState({
                     first_name: '',
@@ -62,11 +66,16 @@ class MyProvider extends Component {
                     username: data[0].username,
                     birth_date: data[0].birth_date,
                     email: data[0].email,
+                    points_spotify_round_one: data[0].points_spotify_round_one,
+                    points_spotify_round_two: data[0].points_spotify_round_two,
+                    points_instagram_round_one: data[0].points_instagram_round_one,
+                    points_instagram_round_two: data[0].points_instagram_round_two,
+                    points_youtube_round_one: data[0].points_youtube_round_one,
+                    points_youtube_round_two: data[0].points_youtube_round_two,
                     activePanel: 'login',
                     language: 'spanish',
                     authed: true,
                 }),
-
 
                 // login sign up switch
                 activePanel,
