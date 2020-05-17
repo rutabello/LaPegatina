@@ -1,3 +1,4 @@
+/*
 #showGame {
 
 display: flex;
@@ -10,7 +11,7 @@ display: flex;
 
 .showIt {
 
-   /* display: flex; */
+    display: flex;
     position: absolute;
     padding:0;
     margin:0;
@@ -32,4 +33,46 @@ display: flex;
 #hideGame {
 
     display: none;
+}
+
+*/
+
+
+
+/* JAIMES CSS */
+.screenDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.screenDiv__firstDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.allAlbumsDiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.blackBorder{
+    width: 200px;
+    margin: 20px;
+    border: 3px solid black;
+}
+
+.buttonAlbum{
+    border: none;
+    transition: all .2s ease-in-out;
+    padding: 0;
+}
+
+.buttonAlbum:hover {
+    transform: scale(1.1);
 }
