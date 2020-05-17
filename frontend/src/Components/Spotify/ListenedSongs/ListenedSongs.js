@@ -18,7 +18,7 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
 
     const loginComp = (context) => {
 
-        const { state: { username }, addPoints } = context;
+        const { state: { username } } = context;
 
         if (username) {
             // addPoints(score, 'spotify', 'one');
