@@ -8,7 +8,7 @@ class MyProvider extends Component {
     state = {
         first_name: '',
         last_name: '',
-        username: 'ale',
+        username: '',
         birth_date: '',
         email: '',
         points_spotify_round_one: '',
@@ -19,7 +19,7 @@ class MyProvider extends Component {
         points_youtube_round_two: '',
         total_app_points: '',
 
-        activePanel: 'login',
+        activePanel: 'signup',
         language: 'spanish',
         authed: true,
     }
@@ -51,7 +51,7 @@ class MyProvider extends Component {
                     points_youtube_round_one: '',
                     points_youtube_round_two: '',
                     total_app_points: '',
-                    activePanel: 'login',
+                    // activePanel: 'login',
                     language: 'spanish',
                     authed: false,
                 }),
@@ -62,7 +62,7 @@ class MyProvider extends Component {
                     username: data[0].username,
                     birth_date: data[0].birth_date,
                     email: data[0].email,
-                    activePanel: 'login',
+                    // activePanel: 'login',
                     language: 'spanish',
                     authed: true,
                 }),

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import '../Youtube.css';
 import GameEnded from '../../GameEnded/GameEnded';
-import YTPlayer2 from './YTPlayer2';
+import YTPlayer from '../YTPlayer/YTPlayer';
 import videoDataObject from '../VideoDataObject'
 
 class YoutubeRoundTwo extends Component {
  
 
         state= {
-            gameStatus: 'select',
+            gameStatus: 'playing',
             data: [],
             videoId: '',
             // displayPlayer: false
@@ -21,8 +21,8 @@ class YoutubeRoundTwo extends Component {
         this.setState({
             data: newdata,
         });
-console.log (this.state.data)
-console.log (newdata)
+// console.log (this.state.data)
+// console.log (newdata)
        const arrayPlaylist = [];
        newdata.map((element) => {
        // here be the if statement
@@ -35,16 +35,8 @@ console.log (newdata)
            // currentSongTitle:
        });
     }
-    selectConcert=()=>{
-       this.setState({
-           gameStatus: 'playing'
-       })
-    }
-    setSelectedMemberId = (videoId) => {
-
-        const { setSelectedMemberId } = this.props;
-
-        setSelectedMemberId(videoId);
+    stopPlaying = () => {
+        this.setState({ gameStatus: 'gameOver' });
     }
     
         restartYoutube = () => {
@@ -52,16 +44,23 @@ console.log (newdata)
                 gameStatus: 'playing',
             });
         }
-
+        renderPlayer = () => {
+            const { data } = this.state;
+            return data.map( (item, index) =>
+               <YTPlayer
+                   key={index}
+                   type={item.videoId}
+                   data={data}
+               />
+            );
+           }
         render() {
 
-            const { gameStatus, data} = this.state;
+            const { gameStatus, data } = this.state;
     
             const { language } = this.props;
     
-          
-    
-            if (gameStatus === 'select') {
+            if (gameStatus === 'playing') {
                 return (
                     <div>
                     <p>Con que concerto de La Pegatina quieres jugar?</p>
@@ -72,7 +71,7 @@ console.log (newdata)
                             className="btn-nav"
                             type="button"
                             // key={data.title}
-                            onClick={() => this.setSelectedMemberId(name.videoId)}
+                            onClick={() => this.renderPlayer(name.videoId)}
                         >
                             {name.title}
                        
@@ -81,12 +80,6 @@ console.log (newdata)
                     </div>
                     </div>
                     )}
-                    if (gameStatus === 'playing') {
-                        return(
-                    <div>
-                        <YTPlayer2 data={data} language={language} stopPlaying={this.stopPlaying} />
-                    </div>
-                        )}
             if (gameStatus === 'gameOver') {
                 return (
                     <div>
@@ -94,7 +87,7 @@ console.log (newdata)
                     </div>
                 )
             }
-        }
-    }
+          }
+          }
 
 export default YoutubeRoundTwo;
