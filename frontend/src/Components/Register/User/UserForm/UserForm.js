@@ -20,6 +20,9 @@ const UserForm = ({ mainpage, language, score, gameIn }) => (
                 >
                     Entra
                 </button>
+
+
+
                 <div
                     className="modal fade"
                     id="register"
@@ -37,7 +40,7 @@ const UserForm = ({ mainpage, language, score, gameIn }) => (
                                 {/* <h5 className="modal-title" id="register">Welcome, keep playing!</h5> */}
                                 <button
                                     type="button"
-                                    className="close"
+                                    className="close modalClosingButton"
                                     data-dismiss="modal"
                                     aria-label="Close"
                                 >
@@ -46,7 +49,7 @@ const UserForm = ({ mainpage, language, score, gameIn }) => (
                             </div>
                             {/* <div className="modal-body" /> */}
                             <div className="form-wrap">
-                                <MyProvider>
+                                {/* <MyProvider> */}
                                     <div className="tabs">
                                         <Panel id="login">
                                             {/* <h2 className="login-tab">{texts[language].login}</h2> */}
@@ -54,7 +57,7 @@ const UserForm = ({ mainpage, language, score, gameIn }) => (
                                         </Panel>
                                         <Panel id="signup">
                                             {/* <h2 className="signup-tab">{texts[language].signUp}</h2> */}
-                                            <h2 className="signup-tab">signUp</h2> 
+                                            <h2 className="signup-tab">signUp</h2>
                                         </Panel>
                                     </div>
 
@@ -65,7 +68,7 @@ const UserForm = ({ mainpage, language, score, gameIn }) => (
                                     <FormPanel isActive="signup">
                                         <SignUp language={language} />
                                     </FormPanel>
-                                </MyProvider>
+                                {/* </MyProvider> */}
                             </div>
                         </div>
                     </div>
@@ -80,8 +83,11 @@ const UserForm = ({ mainpage, language, score, gameIn }) => (
                     data-toggle="modal"
                     data-target="#register"
                 >
-                    Regístrate y ve a la Ronda 2
+                    Regístrate/loguéate y ve a la Ronda 2
                 </button>
+
+
+
                 <div
                     className="modal fade"
                     id="register"
@@ -99,7 +105,7 @@ const UserForm = ({ mainpage, language, score, gameIn }) => (
                                 {/* <h5 className="modal-title" id="register">Welcome, keep playing!</h5> */}
                                 <button
                                     type="button"
-                                    className="close"
+                                    className="close modalClosingButton"
                                     data-dismiss="modal"
                                     aria-label="Close"
                                 >
@@ -108,7 +114,7 @@ const UserForm = ({ mainpage, language, score, gameIn }) => (
                             </div>
                             <div className="modal-body" />
                             <div className="form-wrap">
-                                <MyProvider>
+                                {/* <MyProvider> */}
                                     <div className="tabs">
                                         <Panel id="login">
                                             {/* <h2 className="login-tab">{texts[language].login}</h2> */}
@@ -127,7 +133,7 @@ const UserForm = ({ mainpage, language, score, gameIn }) => (
                                     <FormPanel isActive="signup">
                                         <SignUp language={language} score={score} />
                                     </FormPanel>
-                                </MyProvider>
+                                {/* </MyProvider> */}
                             </div>
                         </div>
                     </div>

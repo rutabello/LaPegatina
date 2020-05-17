@@ -13,6 +13,11 @@ const Login = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    const closeModal = () => {
+        const closeModalButton = document.querySelector('.modalClosingButton');
+        closeModalButton.click();
+    }
+
     const logUser = (e) => {
         e.preventDefault();
         console.log('username and password', username, password);
@@ -25,7 +30,8 @@ const Login = (props) => {
         }).then((res) => {
             console.log('response', res);
             if (res.status === 200) {
-                alert('logged in!');
+                // alert('logged in!');
+                closeModal();
                 console.log('logggggged innnn');
                 return res.json();
             }
