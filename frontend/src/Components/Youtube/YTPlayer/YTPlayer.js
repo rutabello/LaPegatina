@@ -26,10 +26,10 @@ class YTPlayer extends Component {
 
     // access to player in all event handlers via event.target
     VideoOnReady = (event) => {
-    // console.log(event.target)
+    console.log(event.target)
     // plays the video at 10s, in case the video has the name of the song at the start
     const { title, det } = this.props;
-    // alert(event.target.playerInfo.videoData.title)
+    
 
     this.setState({
         // title:event.target.playerInfo.videoData.title,

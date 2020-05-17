@@ -78,12 +78,12 @@ class YTGame extends Component {
             fourNonShuffledSongsTitles,
         });
     }
-
+    
 
     render() {
 
         const { fourNonShuffledSongsTitles, randomVideoId, data, currentTitle, questions } = this.state;
-
+        console.log(data)
         const { language, stopPlaying } = this.props;
 
         return (

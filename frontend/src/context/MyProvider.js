@@ -78,7 +78,7 @@ class MyProvider extends Component {
                     points_youtube_round_one: '',
                     points_youtube_round_two: '',
                     total_app_points: '',
-                    activePanel: 'login',
+                    // activePanel: 'login',
                     language: 'spanish',
                     authed: false,
                 }),

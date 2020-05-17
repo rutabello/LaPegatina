@@ -40,42 +40,42 @@ const Login = (props) => {
 
     return (
         <div>
-            <MyContext.Consumer>
-                {(context) => (
-                    <Fragment>
-                        <div id="login-tab-content" className="active tabs-content">
-                            <form className="login-form" onSubmit={logUser}>
-                                <input
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    name="username"
-                                    placeholder="usuario"
-                                    type="text"
-                                    className="input"
-                                    id="user_login"
-                                />
-                                <br />
-                                <input
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    name="password"
-                                    placeholder="contraseña"
-                                    type="password"
-                                    className="input"
-                                    id="user_pass"
-                                />
-                                <label
+            {/* <MyContext.Consumer>
+                {(context) => ( */}
+            <Fragment>
+                <div id="login-tab-content" className="active tabs-content">
+                    <form className="login-form" onSubmit={logUser}>
+                        <input
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            name="username"
+                            placeholder="usuario"
+                            type="text"
+                            className="input"
+                            id="user_login"
+                        />
+                        <br />
+                        <input
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            name="password"
+                            placeholder="contraseña"
+                            type="password"
+                            className="input"
+                            id="user_pass"
+                        />
+                        {/* <label
                                     className="remember"
                                     htmlFor="remember_me"
                                 >
                                     Remember me
-                                </label>
-                                <button type="submit">Log in!</button>
-                            </form>
-                        </div>
-                    </Fragment>
-                )}
-            </MyContext.Consumer>
+                                </label> */}
+                        <button className="form-btn" type="submit">Entra!</button>
+                    </form>
+                </div>
+            </Fragment>
+            {/* )}
+            </MyContext.Consumer> */}
         </div>
     );
 };
