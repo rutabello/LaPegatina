@@ -14,7 +14,7 @@ nav {
 }
 
 .fixTop {
-    margin-top: -46px;
+    margin-top: -6vh;
 }
 
 .profile {
@@ -235,7 +235,7 @@ nav {
     }
 
     .fixTop {
-        margin-top: -40px;
+        margin-top: -6vh;
     }
 
     .user-dropdown-content a {

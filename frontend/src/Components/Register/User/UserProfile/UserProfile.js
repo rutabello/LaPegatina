@@ -9,35 +9,35 @@ const UserPofile = () => {
     const [password, setPassword] = useState('');
 
     const logUser = (e) => {
-        e.preventDefault()
-        console.log('username and password', username, password)
+        e.preventDefault();
+        console.log('username and password', username, password);
         fetch('//localhost:5000/log', {
             method: 'POST',
             headers: new Headers({
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             }),
-            body: JSON.stringify({ username, password })
-        }).then(res => {
-            console.log('response', res)
+            body: JSON.stringify({ username, password }),
+        }).then((res) => {
+            console.log('response', res);
             // if (res.status === 404) {
             //    alert('invalid username or password')
             // }
-            if(res.status === 200) {
-                alert('logged in!')
-                console.log('logggggged innnn')
-                return res.json()
+            if (res.status === 200) {
+                alert('logged in!');
+                console.log('logggggged innnn');
+                return res.json();
             }
-        }).then(data => {
-            console.log("data you pass to the context", data)
+        }).then((data) => {
+            console.log('data you pass to the context', data);
             // data.username && logUserIntoContext(data)
-            logUserIntoContext(data)
+            logUserIntoContext(data);
             setUsername('');
             setPassword('');
-        })
-    }
+        });
+    };
 
 
-    return(
+    return (
         <div>
             <MyContext.Consumer>
                 {(context) => (
@@ -53,10 +53,24 @@ const UserPofile = () => {
                             {context.state.username}
                         </h6>
                         <h6>
-                            Puntos:
+                            Puntos totales:
                             {context.state.total_app_points}
                         </h6>
-
+                        <h6>Puntos Música</h6>
+                        <p>Ronda 1:</p>
+                        {context.state.points_spotify_round_one}
+                        <p>Ronda 2:</p>
+                        {context.state.points_spotify_round_two}
+                        <h6>Puntos vídeos</h6>
+                        <p>Ronda 1:</p>
+                        {context.state.points_youtube_round_one}
+                        <p>Ronda 2:</p>
+                        {context.state.points_youtube_round_two}
+                        <h6>Puntos fotos</h6>
+                        <p>Ronda 1:</p>
+                        {context.state.points_instagram_round_one}
+                        <p>Ronda 2:</p>
+                        {context.state.points_instagram_round_two}
 
                         <div>
                             <form onSubmit={logUser}>
@@ -92,7 +106,7 @@ const UserPofile = () => {
                 )}
             </MyContext.Consumer>
         </div>
-    )
+    );
 };
 
 export default UserPofile;

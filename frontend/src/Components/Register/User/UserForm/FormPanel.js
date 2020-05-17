@@ -3,7 +3,7 @@ import { MyContext } from '../../../../context/MyProvider';
 
 const FormPanel = (props) => (
     <MyContext.Consumer>
-        {({ activePanel }) => (activePanel === props.isActive ? props.children : null)}
+        {({ state }) => (state.activePanel === props.isActive ? props.children : null)}
     </MyContext.Consumer>
 );
 

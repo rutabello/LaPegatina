@@ -14,6 +14,7 @@ import ListenedSongs from '../ListenedSongs/ListenedSongs';
 import texts from '../../../texts.json';
 import SocialMedia from '../../SocialMedia/SocialMedia';
 import Navbar from '../../Navbar/Navbar';
+import { MyContext } from '../../../context/MyProvider';
 
 
 class SpotifyRoundOne extends React.Component {
@@ -34,7 +35,7 @@ class SpotifyRoundOne extends React.Component {
     // All the songs that the user guessed wrong are pushed into this array
     unknownSongs= [];
 
-    NUMBER_OF_SONGS_TO_PLAY_WITH = 3
+    NUMBER_OF_SONGS_TO_PLAY_WITH = 1
 
 
     state = {
@@ -69,10 +70,17 @@ class SpotifyRoundOne extends React.Component {
     async componentDidMount() {
 
         const { playlistID } = this.state;
+        const { replaceState } = this.context;
 
         this.spotifyObject = await Spotify.getPlaylist(playlistID);
         this.filterRightSongsFromSpotifyObject();
         this.setNewRandomSong();
+
+        const savedState = JSON.parse(localStorage.savedState);
+
+        if (savedState !== undefined) {
+            replaceState(savedState.state);
+        }
     }
 
     /**
@@ -95,16 +103,6 @@ class SpotifyRoundOne extends React.Component {
         const fourShuffledSongsArr = Shuffle(fourNonShuffledSongsArr);
 
         return fourShuffledSongsArr;
-    }
-
-    chooseSongs = () => {
-
-        const { currentSong } = this.state;
-
-        this.setState({
-            songNames: this.getSongsToDisplay(currentSong.name),
-
-        });
     }
 
     setNewRandomSong = () => {
@@ -294,7 +292,6 @@ class SpotifyRoundOne extends React.Component {
                                 <div className="Countdown">
                                     <PlayerCountdown
                                         language={language}
-                                        onMusicPlays={this.chooseSongs}
                                         setNewRandomSong={this.setNewRandomSong}
                                         songURL={currentSong.preview_url}
                                         coincidence={this.checkCoincidence}
@@ -387,5 +384,7 @@ class SpotifyRoundOne extends React.Component {
         );
     }
 }
+
+SpotifyRoundOne.contextType = MyContext;
 
 export default SpotifyRoundOne;
