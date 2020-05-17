@@ -49,12 +49,12 @@ const UserForm = ({ mainpage, language }) => (
                                 <MyProvider>
                                     <div className="tabs">
                                         <Panel id="login">
-                                            <h2 className="login-tab">{texts[language].login}</h2>
-                                            {/* <h2 className="login-tab">login</h2> */}
+                                            {/* <h2 className="login-tab">{texts[language].login}</h2> */}
+                                            <h2 className="login-tab">login</h2>
                                         </Panel>
                                         <Panel id="signup">
-                                            <h2 className="signup-tab">{texts[language].signUp}</h2>
-                                            {/* <h2 className="signup-tab">signUp</h2>  */}
+                                            {/* <h2 className="signup-tab">{texts[language].signUp}</h2> */}
+                                            <h2 className="signup-tab">signUp</h2> 
                                         </Panel>
                                     </div>
 
