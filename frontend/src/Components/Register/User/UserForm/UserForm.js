@@ -7,7 +7,7 @@ import MyProvider from '../../../../context/MyProvider';
 // import texts from '../../../../texts.json';
 import './UserForm.css';
 
-const UserForm = ({ mainpage, language }) => (
+const UserForm = ({ mainpage, language, score, gameIn }) => (
 
     mainpage
         ? (
@@ -59,7 +59,7 @@ const UserForm = ({ mainpage, language }) => (
                                     </div>
 
                                     <FormPanel isActive="login">
-                                        <Login />
+                                        <Login pageIn="between-rounds" />
                                     </FormPanel>
 
                                     <FormPanel isActive="signup">
@@ -122,11 +122,11 @@ const UserForm = ({ mainpage, language }) => (
                                     </div>
 
                                     <FormPanel isActive="login">
-                                        <Login />
+                                        <Login pageIn="between-rounds" gameIn={gameIn} score={score} />
                                     </FormPanel>
 
                                     <FormPanel isActive="signup">
-                                        <SignUp language={language} />
+                                        <SignUp language={language} score={score} />
                                     </FormPanel>
                                 </MyProvider>
                             </div>

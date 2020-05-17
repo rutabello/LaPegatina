@@ -27,7 +27,7 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
             );
         }
 
-        return <UserForm language={language} />;
+        return <UserForm language={language} score={score} gameIn="spotify" />;
     };
 
     return (

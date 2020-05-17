@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 export const MyContext = React.createContext();
 
+
 class MyProvider extends Component {
 
     state = {
@@ -24,6 +25,27 @@ class MyProvider extends Component {
         authed: true,
     }
 
+    updateTotalPoints = () => {
+        const keysArray = [
+            'points_spotify_round_one',
+            'points_spotify_round_two',
+            'points_instagram_round_one',
+            'points_instagram_round_two',
+            'points_youtube_round_one',
+            'points_youtube_round_two',
+        ];
+
+        let total = 0;
+
+        keysArray.forEach((key) => {
+            total += this.state[key];
+        });
+
+        this.setState({
+            total_app_points: total,
+        });
+    };
+
     render() {
 
         const { points: activePanel } = this.state;
@@ -36,10 +58,11 @@ class MyProvider extends Component {
                 state: this.state,
 
                 addPoints: (newPoints, gameName, roundIn) => {
-
-                    this.setState({
-                        [`points_${gameName}_round_${roundIn}`]: newPoints,
-                    });
+                    if (newPoints >= this.state[`points_${gameName}_round_${roundIn}`]) {
+                        this.setState({
+                            [`points_${gameName}_round_${roundIn}`]: newPoints,
+                        }, this.updateTotalPoints);
+                    }
                 },
 
                 clearUser: () => this.setState({

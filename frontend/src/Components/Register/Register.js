@@ -13,8 +13,11 @@ class Register extends Component {
         link: 'hide',
     }
 
-    showLink = () => {
+    showLink = (context, newPoints, gameName, roundIn) => {
 
+        console.log('context', context);
+
+        context.addPoints(newPoints, gameName, roundIn);
         this.setState({
            // link: 'showIt',
            link: "screen"
@@ -34,9 +37,9 @@ class Register extends Component {
                         <div>
                             <div className={link}>
                                 <h1 className="title">Ronda 2</h1>
-                                <Link to="spotifyRoundTwo"><button className="button1" type="button" onClick={() => context.addPoints(score)}>Start</button></Link>
+                                <Link to="spotifyRoundTwo"><button className="button1" type="button">Start</button></Link>
                             </div>
-                            <button type="button" onClick={this.showLink}>Suma puntos y sigue jugando</button>
+                            <button type="button" onClick={() => this.showLink(context, score, 'spotify', 'one')}>Suma puntos y sigue jugando</button>
                         </div>
                     )}
                 </MyContext.Consumer>

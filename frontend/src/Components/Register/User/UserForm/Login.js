@@ -7,9 +7,9 @@ import { MyContext } from '../../../../context/MyProvider';
 // import '../UserProfile/Userprofile.css';
 
 
-const Login = () => {
+const Login = (props) => {
 
-    const { logUserIntoContext } = React.useContext(MyContext);
+    const { logUserIntoContext, addPoints } = React.useContext(MyContext);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -33,6 +33,9 @@ const Login = () => {
             console.log('data you pass to the context', data);
             logUserIntoContext(data);
         });
+        if (props.pageIn === 'between-rounds') {
+            addPoints(props.score, 'spotify', 'one');
+        }
     };
 
     return (
