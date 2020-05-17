@@ -72,8 +72,6 @@ const UserPofile = () => {
                         <p>Ronda 2:</p>
                         {context.state.points_instagram_round_two}
 
-
-
                         <div>
                             <form onSubmit={logUser}>
                                 <input

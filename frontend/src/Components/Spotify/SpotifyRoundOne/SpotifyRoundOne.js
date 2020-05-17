@@ -105,16 +105,6 @@ class SpotifyRoundOne extends React.Component {
         return fourShuffledSongsArr;
     }
 
-    chooseSongs = () => {
-
-        const { currentSong } = this.state;
-
-        this.setState({
-            songNames: this.getSongsToDisplay(currentSong.name),
-
-        });
-    }
-
     setNewRandomSong = () => {
 
         const { currentAttempt } = this.state;
@@ -302,7 +292,6 @@ class SpotifyRoundOne extends React.Component {
                                 <div className="Countdown">
                                     <PlayerCountdown
                                         language={language}
-                                        onMusicPlays={this.chooseSongs}
                                         setNewRandomSong={this.setNewRandomSong}
                                         songURL={currentSong.preview_url}
                                         coincidence={this.checkCoincidence}
