@@ -1,51 +1,69 @@
-/* a {
+ a {
   color: #666;
   text-decoration: none;
 }
 
   a:hover {
     color: #4FDA8C;
-}  */
+}  
 
 input {
     font: 16px/26px
 }
 
-/* body {
+body {
   color: #666;
   background-color: #f1f2f2;
   font: 16px/26px "Raleway", sans-serif;
-} */
-
+}
+/*all form*/
 .form-wrap {
-    background-color: #fff;
+    background-color: #6d999c;
     width: 320px;
-    margin: 3em auto;
+    margin: 1em auto;
     box-shadow: 0px 1px 8px #BEBEBE;
     -webkit-box-shadow: 0px 1px 8px #BEBEBE;
     -moz-box-shadow: 0px 1px 8px #BEBEBE;
+    /* border-radius: 5%; */
 }
 
 .tabs {
     overflow: hidden;
 }
-
+.tabs h2 :active{
+    background-color:#766dca
+}
 .tabs h2 {
-    padding: 0.5em 0;
+    padding: 1em 0;
     text-align: center;
-    font-weight: 400;
-    background-color: #e6e7e8;
+    font-weight: 500;
+    background-color: #1a1b39;
+    border-radius: 5%;
     display: block;
-    color: #666;
+    color: #fff;
     cursor: pointer;
     float: left;
     width: 50%;
+    font-size: 1.2em;
+    /* font-family: 'Barlow';
+    font-style: normal;
+    src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.googleapis.com/css?family=Barlow&display=swap') format('woff2'); */
 }
 
-.tabs h2 a.active {
-    background-color: #fff;
+.modal-content{
+    background:rgba(26, 25, 41, 0.75);
 }
 
+.form-btn {
+     background-color:#1a1b39;
+    /* background-color: #f1c500; */
+    min-width: 30%;
+    border-radius: .25rem;
+    text-align: center;
+    color: white
+ 
+ 
+}
 .form-wrap .tabs-content {
     padding: 1.5em;
 }
@@ -72,8 +90,8 @@ input {
     outline: 0;
     display: inline-block;
     margin: 0 0 .8em 0;
-    padding-right: 2em;
-    width: 100%;
+    padding: 0.3em;
+    width: 90%;
 }
 
 .form-wrap form .button {

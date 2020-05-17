@@ -62,7 +62,7 @@ class MyProvider extends Component {
                     username: data[0].username,
                     birth_date: data[0].birth_date,
                     email: data[0].email,
-                    // activePanel: 'login',
+                    activePanel: 'login',
                     language: 'spanish',
                     authed: true,
                 }),

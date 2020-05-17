@@ -32,13 +32,15 @@ const Login = () => {
         }).then(data => {
             console.log("data you pass to the context", data)
             logUserIntoContext(data)
+            setUsername('');
+            setPassword('');
         })
     }
 
     return (
         <div>
-            <MyContext.Consumer>
-                {(context) => (
+            {/* <MyContext.Consumer>
+                {(context) => ( */}
                     <Fragment>
                         <div id="login-tab-content" className="active tabs-content">
                             <form className="login-form" onSubmit={logUser}>
@@ -61,18 +63,18 @@ const Login = () => {
                                     className="input"
                                     id="user_pass"
                                 />
-                                <label
+                                {/* <label
                                     className="remember"
                                     htmlFor="remember_me"
                                 >
                                     Remember me
-                                </label>
-                                <button type="submit">Log in!</button>
+                                </label> */}
+                                <button className='form-btn' type="submit">Entra!</button>
                             </form>
                         </div>
                     </Fragment>
-                )}
-            </MyContext.Consumer>
+                {/* )}
+            </MyContext.Consumer> */}
         </div>
     );
 };

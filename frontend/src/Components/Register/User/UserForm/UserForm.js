@@ -4,7 +4,7 @@ import Login from './Login';
 import Panel from './Panel';
 import FormPanel from './FormPanel';
 import MyProvider from '../../../../context/MyProvider';
-// import texts from '../../../../texts.json';
+import texts from '../../../../texts.json';
 import './UserForm.css';
 
 const UserForm = ({ mainpage, language }) => (
@@ -34,7 +34,7 @@ const UserForm = ({ mainpage, language }) => (
                     >
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="register">Welcome, keep playing!</h5>
+                                {/* <h5 className="modal-title" id="register">Welcome, keep playing!</h5> */}
                                 <button
                                     type="button"
                                     className="close"
@@ -44,17 +44,17 @@ const UserForm = ({ mainpage, language }) => (
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div className="modal-body" />
+                            {/* <div className="modal-body" /> */}
                             <div className="form-wrap">
                                 <MyProvider>
                                     <div className="tabs">
                                         <Panel id="login">
-                                            {/* <h2 className="login-tab">{texts[language].login}</h2> */}
-                                            Log in
+                                            <h2 className="login-tab">{texts[language].login}</h2>
+                                            {/* <h2 className="login-tab">login</h2> */}
                                         </Panel>
                                         <Panel id="signup">
-                                            {/* <h2 className="signup-tab">{texts[language].signUp}</h2> */}
-                                            Sign up
+                                            <h2 className="signup-tab">{texts[language].signUp}</h2>
+                                            {/* <h2 className="signup-tab">signUp</h2>  */}
                                         </Panel>
                                     </div>
 
@@ -67,7 +67,6 @@ const UserForm = ({ mainpage, language }) => (
                                     </FormPanel>
                                 </MyProvider>
                             </div>
-                            );
                         </div>
                     </div>
                 </div>
@@ -97,7 +96,7 @@ const UserForm = ({ mainpage, language }) => (
                     >
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="register">Welcome, keep playing!</h5>
+                                {/* <h5 className="modal-title" id="register">Welcome, keep playing!</h5> */}
                                 <button
                                     type="button"
                                     className="close"
@@ -130,7 +129,6 @@ const UserForm = ({ mainpage, language }) => (
                                     </FormPanel>
                                 </MyProvider>
                             </div>
-                            );
                         </div>
                     </div>
                 </div>
