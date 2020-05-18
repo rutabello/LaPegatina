@@ -4,8 +4,7 @@
 const clientId = '5a36a3d1f9bc4712b321e760813bb8f6';
 
 let accessToken;
-// for connection with the map: connect playlist id to the markers and save it in a const to insert it later in the
-// getplaylist() method.
+
 
 const Spotify = {
 	getaccessToken() {
@@ -37,8 +36,8 @@ const Spotify = {
 		return false;
 	},
 
-	getPlaylist(country) {
-		const ID = country;
+	getPlaylist(list) {
+		const ID = list;
 		const accessToken = Spotify.getaccessToken();
 		const headers = { Authorization: `Bearer ${accessToken}` };
 

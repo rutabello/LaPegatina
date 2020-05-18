@@ -49,7 +49,7 @@ const GameEnded = ({ score, currentGame, language, changeBandMember, points }) =
                     if (currentGame === 'youtube') {
                         return (
                             <div>
-                                <p>{texts[language].gameEnded}</p>
+                                {/* <p>{texts[language].gameEnded}</p> */}
                                 <br />
                                 <Register score={score} currentGame="spotify1"/>
                                 { /*<Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>*/}
@@ -87,11 +87,11 @@ const GameEnded = ({ score, currentGame, language, changeBandMember, points }) =
                     return null;
                 }}
             </MyContext.Consumer>
-            <div className="social-media-follow-buttons">
+            {/* <div className="social-media-follow-buttons">
                 <SocialMedia
                     language={language}
                 />
-            </div>
+            </div> */}
         </div>
 
     )

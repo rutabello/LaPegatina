@@ -1,7 +1,7 @@
 
 .titleColorYT{
     /* color:#f1c500; */
-    color:white;
+    color:white!important;
     font-family: 'Barlow';
     font-style: normal;
     font-weight: 200;
@@ -74,6 +74,7 @@
     }
     .titleColorYT{
         font-weight: 100;
+        color: white;
 }
 }
 .btn-4-YT{

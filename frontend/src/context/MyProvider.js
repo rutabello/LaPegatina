@@ -9,7 +9,7 @@ class MyProvider extends Component {
     state = {
         first_name: '',
         last_name: '',
-        username: '',
+        username: 'lena',
         birth_date: '',
         email: '',
         points_spotify_round_one: '',

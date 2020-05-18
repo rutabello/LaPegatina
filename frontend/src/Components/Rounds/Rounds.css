@@ -1,12 +1,32 @@
 .title {
     color: white;
     text-decoration: none;
-    margin-top: 240px;
-    font-size: 40px;
+    font-family: sans-serif;
+    margin-top: 33vh;
+    padding: 2vh;
+    font-size: 20px;
+}
+
+.instructions {
+
+    font-family: sans-serif, cursive;
+    color: white;
+    padding: 7vh;
+   
+
+}
+
+.button1 {
+
+    font-family: sans-serif;
+    padding: 2vh;
+    width: 30vh;
+    border-radius: 4em;
 }
 
 .screen {
     position: absolute;
+    display: block;
     padding:0;
     margin:0;
     top:0;

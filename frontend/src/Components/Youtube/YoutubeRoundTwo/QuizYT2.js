@@ -11,8 +11,8 @@ class QuizYT2 extends Component {
         index: 0,
         percent: 1,
         // gameStatus: "playing",
-        correctAnswer: this.props.questions[0].answers[0],
-        answers: Shuffle(this.props.questions[0].answers),
+        // correctAnswer: this.props.questions[0].answers[0],
+        // answers: Shuffle(this.props.questions[0].answers),
         points: 0, 
         display: 'question',
         giveMeConfetti:true,
@@ -95,14 +95,15 @@ class QuizYT2 extends Component {
                             : (
                                 <div>
                                     <div className="quiz-text">
-                                        <h4 className="quiz-text">{questions[index].question}</h4>
+                                    <p>HELLOOOOOOOOOO WHERE ARE YOU PROPS </p>
+                                        {/* <h4 className="quiz-text">{questions[index].question}</h4> */}
                                         {/* <h6 className ='quiz-text'>
                                             Score:
                                             {points}
                                         </h6> */}
 
                                     </div>
-                                    <div className="btn-4-YT">
+                                    {/* <div className="btn-4-YT">
                                         {answers.map((item, index) => (
                                             <button
                                                 type="button"
@@ -115,7 +116,7 @@ class QuizYT2 extends Component {
                                             </button>
 
                                         ))}
-                                    </div>
+                                    </div> */}
                                     </div>
                             )}
 

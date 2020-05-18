@@ -44,7 +44,9 @@
         "repeatPassword": "Repeteix la contrassenya",
         "signUp": "Registra't",
         "login": "Iniciar Sessió",
-        "register": "Registrar"
+        "register": "Registrar",
+        "guessSong": "",
+        "instructions": ""
     },
 
     "spanish" : {
@@ -92,7 +94,9 @@
         "repeatPassword": "Repetir contraseña",
         "signUp": "Registrarse",
         "login": "Iniciar Sesión",
-        "register": "Registrarme"
+        "register": "Registrarme",
+        "guessSong": "Adivina la canción correcta",
+        "instructions": "Para jugar el juego, presiona la respuesta correcta con tu dedo (movil), o haz clic con el mouse (desktop)."
     },
 
     "english" : {
@@ -189,6 +193,8 @@
         "repeatPassword": "Répéter le mot de passe",
         "signUp": "S'inscrire",
         "login": "S'identifier",
-        "register": "S'inscrire"
+        "register": "S'inscrire",
+        "guessSong": "Devine la chanson",
+        "instructions": ""
     }
 }
