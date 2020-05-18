@@ -1,26 +1,26 @@
-// import React from 'react';
-// // import QuizYT from '../QuizYT/QuizYT';
-// import '../YTCountdown/YTCountdown.css';
+import React from 'react';
+// import QuizYT from '../QuizYT/QuizYT';
+import '../YTCountdown/YTCountdown.css';
 
-// // import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
-// const YTCountdown=  ({width, percent}) => {
+const YTCountdown=  ({width, percent}) => {
 
-//   // const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0);
 
-//   // React.useEffect(() => {
-//   //   setValue(percent * width);
-//   // });
+  React.useEffect(() => {
+    setValue(percent * width);
+  });
 
-//   return (
-//     <div>
-//       <div className="progress-div" style={{ width: width }}>
-//         <div style={{ width: `${value}px` }} className="progress" />
-//       </div>
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      <div className="progress-div" style={{ width: width }}>
+        <div style={{ width: `${value}px` }} className="progress" />
+      </div>
+    </div>
+  );
+};
 
 // //       SIMPLE COUNTDOWN
 // //     const [seconds, setSeconds] = React.useState(5);
@@ -41,4 +41,4 @@
 // //     );
 // // }
 
-// export default YTCountdown;
+export default YTCountdown;

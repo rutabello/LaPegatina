@@ -8,12 +8,16 @@ import { MyContext } from '../../context/MyProvider';
 import '../Home/Home.css';
 import './Register.css';
 import Spotify from '../Utils/Spotify';
+import videoDataObject from '../Youtube/VideoDataObject'
 
 class Register extends Component {
     state = {
         link: 'hide',
         albums: [],
         selectedAlbum: '',
+        data: [],
+        videoId: '',
+        questions:[]
     };
 
     async getSpotifyAlbums() {
@@ -75,6 +79,14 @@ class Register extends Component {
 
         if (currentGame === 'spotify') {
             this.getSpotifyAlbums();
+        }
+        if (currentGame === 'youtube') {
+            const json = JSON.stringify(videoDataObject);
+            const newdata = JSON.parse(json);
+    
+            this.setState({
+                data: newdata,
+            });
         }
     }
 
@@ -158,18 +170,51 @@ class Register extends Component {
                     {(context) => (
                         <div>
                             <div className={link}>
+                            <div className="screenDiv">
+                                    <div className="screenDiv__firstDiv">
                                 <h1 className="playWith">Ronda 2</h1>
                                 <p>Instrucciones</p>
-                                <Link to="youtuberoundone">
+                                <p>Con que concerto de La Pegatina quieres jugar?</p>
+                                        <Link to={{ pathname: '/youtuberoundtwo', state: { videoId: this.state.videoId, 
+                                        data:this.state.data} }}>
+                                            <button
+                                                className="button1"
+                                                type="button"
+                                                onClick={() => this.showLink(context, localStorage.yt_points_1, 'youtube', 'one')}
+                                            >
+                                                Start
+                                            </button>
+                                        </Link>
+                                    </div>
+                                    <div className="btn-concert">
+                                            {this.state.data.map((name) => (
+                                                <button
+                                                    className="btn-nav"
+                                                    type="button"
+                                                    key={name.title}
+                                                    onClick={(e) => this.setState({videoId:name.videoId})}
+                                               
+                                                >
+                                                 <img className='img_concert'
+                                                    src='https://comoexplicarte.files.wordpress.com/2018/08/img_20180810_214227-e1534105981107.jpg?w=1120'
+                                                />
+                                                    {name.title}
+                                            
+                                                </button>
+                                            ))}
+                                            </div>
+                                            </div>
+                                            </div>
+                                {/* <Link to="youtuberoundone">
                                     <button className="button1" type="button" onClick={() => context.addPoints(score)}>
                                         Start
                                     </button>
-                                </Link>
-                            </div>
-                            <button type="button" onClick={this.showLink}>
+                                </Link> */}
+                            {/* </div> */}
+                          <button type="button" onClick={() => this.showLink(context, localStorage.yt_points_1, 'youtube', 'one')}>
                                 Juega una segunda ronda
-                            </button>
-                        </div>
+                            </button> 
+                         </div> 
                     )}
                 </MyContext.Consumer>
             );
