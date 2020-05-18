@@ -76,3 +76,8 @@ display: flex;
 .buttonAlbum:hover {
     transform: scale(1.1);
 }
+
+.img_concert{
+    width: 5em;
+    
+}

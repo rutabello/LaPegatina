@@ -58,11 +58,14 @@ class QuizYT extends Component {
                 points: points + 1000,
                 display: 'timer',
             });
+            
             this.props.showConfetti();
             // this.updateProgress("percent", this.state.percent + 1)
             setTimeout(() => {
                 this.toNext();
             }, 5000);
+            localStorage.setItem ('yt_points_1', this.state.points)
+            console.log(localStorage.yt_points_1)
         }
     }
 
@@ -107,7 +110,7 @@ class QuizYT extends Component {
                                             <button
                                                 type="button"
                                                 value={item}
-                                                onClick={(e) => { this.checkIf(e); context.addPoints(points); }}
+                                                onClick={(e) => {this.checkIf(e)}}
                                                 key={index}
                                                 className="myButtonYT buttonYT titleColorYT"
                                             >

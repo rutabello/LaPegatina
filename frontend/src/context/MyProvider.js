@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 
 export const MyContext = React.createContext();
 
-
 class MyProvider extends Component {
 
     state = {
         first_name: '',
         last_name: '',
-        username: 'ele',
+        username: '',
         birth_date: '',
         email: '',
         points_spotify_round_one: '',
@@ -25,30 +24,9 @@ class MyProvider extends Component {
         authed: true,
     }
 
-    updateTotalPoints = () => {
-        const keysArray = [
-            'points_spotify_round_one',
-            'points_spotify_round_two',
-            'points_instagram_round_one',
-            'points_instagram_round_two',
-            'points_youtube_round_one',
-            'points_youtube_round_two',
-        ];
-
-        let total = 0;
-
-        keysArray.forEach((key) => {
-            total += this.state[key];
-        });
-
-        this.setState({
-            total_app_points: total,
-        });
-    };
-
     render() {
 
-        const { points: activePanel } = this.state;
+        const { points: total_app_points, activePanel } = this.state;
         // We rename points so we can after do 'points: this.state.points + points' without problems
 
         const { children } = this.props;
@@ -56,14 +34,9 @@ class MyProvider extends Component {
         return (
             <MyContext.Provider value={{
                 state: this.state,
-
-                addPoints: (newPoints, gameName, roundIn) => {
-                    if (newPoints >= this.state[`points_${gameName}_round_${roundIn}`]) {
-                        this.setState({
-                            [`points_${gameName}_round_${roundIn}`]: newPoints,
-                        }, this.updateTotalPoints);
-                    }
-                },
+                addPoints: (points) => this.setState({
+                    points: total_app_points + points,
+                }),
 
                 clearUser: () => this.setState({
                     first_name: '',
@@ -89,18 +62,11 @@ class MyProvider extends Component {
                     username: data[0].username,
                     birth_date: data[0].birth_date,
                     email: data[0].email,
-                    points_spotify_round_one: data[0].points_spotify_round_one,
-                    points_spotify_round_two: data[0].points_spotify_round_two,
-                    points_instagram_round_one: data[0].points_instagram_round_one,
-                    points_instagram_round_two: data[0].points_instagram_round_two,
-                    points_youtube_round_one: data[0].points_youtube_round_one,
-                    points_youtube_round_two: data[0].points_youtube_round_two,
                     activePanel: 'login',
                     language: 'spanish',
                     authed: true,
                 }),
 
-                replaceState: (newState) => this.setState(newState),
 
                 // login sign up switch
                 activePanel,

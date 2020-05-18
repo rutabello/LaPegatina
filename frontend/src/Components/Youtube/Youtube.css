@@ -34,6 +34,7 @@
         flex-wrap: wrap;
     }
     .quiz-text{
+        color:white;
         margin-top: 1em;
         width: 65%;
             margin: 0 auto;
