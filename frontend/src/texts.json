@@ -46,7 +46,11 @@
         "login": "Iniciar Sessió",
         "register": "Registrar",
         "guessSong": "",
-        "instructions": ""
+        "instructions": "",
+        "saveList": "",
+        "playlistInstruct": "",
+        "addToList": "",
+        "playlistName": ""
     },
 
     "spanish" : {
@@ -96,7 +100,11 @@
         "login": "Iniciar Sesión",
         "register": "Registrarme",
         "guessSong": "Adivina la canción correcta",
-        "instructions": "Para jugar el juego, presiona la respuesta correcta con tu dedo (movil), o haz clic con el mouse (desktop)."
+        "instructions": "Para jugar el juego, presiona la respuesta correcta con tu dedo (movil), o haz clic con el mouse (desktop).",
+         "saveList": "Guardar",
+         "playlistInstruct": "Te gusta lo que escuchaste? Puedes crear una lista ahora y guardarlo en Spotify!",
+         "addToList": "Añadir a mi lista",
+         "playlistName": "Dale un nombre a tu lista para guardarlo en Spotify"
     },
 
     "english" : {
@@ -145,7 +153,11 @@
         "signUp": "Sign Up",
         "login": "Log In",
         "register": "Register",
-        "instructions": "To play the game tip on the right answer with your finger (mobile) or click on it with your mouse (desktop)"
+        "instructions": "To play the game tip on the right answer with your finger (mobile) or click on it with your mouse (desktop)",
+        "saveList": "Save",
+        "playlistInstruct": "Like what you hear? You can create a Spotify Playlist with it now!",
+        "addToList": "Add to Playlist",
+        "playlistName": "Name your list to save it to your Spotify account"
     },
 
     "french": {
@@ -195,6 +207,10 @@
         "login": "S'identifier",
         "register": "S'inscrire",
         "guessSong": "Devine la chanson",
-        "instructions": ""
+        "instructions": "",
+        "saveList": "",
+        "playlistInstruct": "Like what you hear? You can create a Spotify Playlist with it now!",
+        "addToList": "Añadir a mi lista",
+        "playlistName": ""
     }
 }
