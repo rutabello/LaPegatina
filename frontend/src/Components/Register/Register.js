@@ -8,12 +8,16 @@ import { MyContext } from '../../context/MyProvider';
 import '../Home/Home.css';
 import './Register.css';
 import Spotify from '../Utils/Spotify';
+import videoDataObject from '../Youtube/VideoDataObject'
 
 class Register extends Component {
     state = {
         link: 'hide',
         albums: [],
         selectedAlbum: '',
+        data: [],
+        videoId: '',
+        questions:[]
     };
 
     async getSpotifyAlbums() {
@@ -58,10 +62,30 @@ class Register extends Component {
         });
 
     }
+    componentDidMount = () => {
+        const json = JSON.stringify(videoDataObject);
+        const newdata = JSON.parse(json);
 
+        this.setState({
+            data: newdata,
+        });
+// console.log (this.state.data)
+// console.log (newdata)
+    //    const arrayPlaylist = [];
+    //    newdata.map((element) => {
+    //    // here be the if statement
+    //        arrayPlaylist.push(element.videoId);
+    //        return arrayPlaylist;
+    //    });
+    //    this.setState({
+    //     //    questions: newdata[arrayPlaylist.indexOf(arrayPlaylist.videoId)].questions,
+    //     //    currentTitle: newdata[arrayPlaylist.indexOf(randomVideoId)].title,
+    //        // currentSongTitle:
+    //    });
+    }
     showLink = (context, newPoints, gameName, roundIn) => {
 
-        context.addPoints(newPoints, gameName, roundIn);
+        // context.addPoints(newPoints, gameName, roundIn);
 
         this.setState({
             // link: 'showIt',
@@ -158,18 +182,46 @@ class Register extends Component {
                     {(context) => (
                         <div>
                             <div className={link}>
+                            <div className="screenDiv">
+                                    <div className="screenDiv__firstDiv">
                                 <h1 className="playWith">Ronda 2</h1>
                                 <p>Instrucciones</p>
-                                <Link to="youtuberoundone">
+                                <p>Con que concerto de La Pegatina quieres jugar?</p>
+                                        <Link to={{ pathname: '/youtuberoundtwo', state: { videoId: this.state.videoId} }}>
+                                            <button
+                                                className="button1"
+                                                type="button"
+                                                onClick={() => this.showLink()}
+                                            >
+                                                Start
+                                            </button>
+                                        </Link>
+                                    </div>
+                                    <div className="btn-concert">
+                                            {this.state.data.map((name) => (
+                                                <button
+                                                    className="btn-nav"
+                                                    type="button"
+                                                    // key={data.title}
+                                                    onClick={(e) => this.setState({videoId:name.videoId})}
+                                                >
+                                                    {name.title}
+                                            
+                                                </button>
+                                            ))}
+                                            </div>
+                                            </div>
+                                            </div>
+                                {/* <Link to="youtuberoundone">
                                     <button className="button1" type="button" onClick={() => context.addPoints(score)}>
                                         Start
                                     </button>
-                                </Link>
-                            </div>
-                            <button type="button" onClick={this.showLink}>
+                                </Link> */}
+                            {/* </div> */}
+                          <button type="button" onClick={this.showLink}>
                                 Juega una segunda ronda
-                            </button>
-                        </div>
+                            </button> 
+                         </div> 
                     )}
                 </MyContext.Consumer>
             );

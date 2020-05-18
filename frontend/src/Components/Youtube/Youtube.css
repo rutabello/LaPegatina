@@ -3,3 +3,68 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+/* .btn-see-video {
+    cursor: pointer;
+    background-color:#312c71 ;
+    width: 30%;
+    font-size: 15px;
+    text-decoration: none;
+    min-height: 3em;
+    border-radius: 25px;
+}
+.btn-see-video:hover{
+    box-shadow: 0px 0px 5px grey, 0px 0px 25px grey;
+} */
+.text-btn-see-video{
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.googleapis.com/css?family=Barlow&display=swap') format('woff2');
+    }
+    .thegame{
+        margin-bottom: 15vh;
+        justify-content: center;
+    }
+    
+    .theYTPlayer{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .quiz-text{
+        margin-top: 1em;
+        width: 65%;
+            margin: 0 auto;
+            margin-top: 1em;
+            /* font-size: 1.5em; */
+    
+    }
+    
+    .show {
+        display: block;
+    }
+    
+    .hide {
+        display: none;
+    }
+    
+    @media all and (max-width:30em){
+    .quiz-text {
+        width: 90%;
+            margin: 0 auto;
+            margin-top: 1em;
+            font-size: 1em;
+    }
+    
+        .theYTPlayer iframe {
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 40vh;
+            display: block;
+        }
+    }
+    
+    
