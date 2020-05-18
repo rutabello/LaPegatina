@@ -4,6 +4,7 @@ import './GameEnded.css';
 //import { Link } from 'react-router-dom';
 import texts from '../../texts.json';
 import { MyContext } from '../../context/MyProvider';
+import { Link } from 'react-router-dom';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import Register from '../Register/Register';
 
@@ -16,7 +17,7 @@ const GameEnded = ({ score, currentGame, language, changeBandMember, points }) =
     //     addPoints(score, currentGame, 'two')
     // }, [])
 
-    const { addPoints } = useContext(MyContext);
+    const { addPoints, points_spotify_round_two } = useContext(MyContext);
 
     const addPointsToContext = () => {
         console.log('score i current game', score, currentGame)
@@ -31,13 +32,16 @@ const GameEnded = ({ score, currentGame, language, changeBandMember, points }) =
                         return (
                             <div>
                                 <p>{texts[language].gameEnded}</p>
-                                <button type="button" onClick={() => addPointsToContext()}>Sumar puntos al perfil</button>
+                                <p>{`Has hecho ${score} puntos, y tu récord es de ${points_spotify_round_two}, así que`}</p>
+                                <Link to="/"><button type="button" onClick={addPointsToContext}>Suma puntos al perfil y sigue jugando</button></Link>
                                 <br />
                                 <Register score={score} currentGame="instagram1"/>
                                 {/*<Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].photosText}</button></Link>*/}
+
                                 <br />
                                 <Register score={score} currentGame="youtube1"/>
-                            {/*<Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].videosText}</button></Link>*/}
+                                {/*<Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].videosText}</button></Link>*/}
+
                             </div>
                         );
                     }
@@ -48,10 +52,12 @@ const GameEnded = ({ score, currentGame, language, changeBandMember, points }) =
                                 <p>{texts[language].gameEnded}</p>
                                 <br />
                                 <Register score={score} currentGame="spotify1"/>
-                            { /*<Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>*/}
+                                { /*<Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>*/}
+
                                 <br />
                                 <Register score={score} currentGame="instagram1"/>
                                 {/*<Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].photosText}</button></Link>*/}
+
                             </div>
                         );
                     }
@@ -69,8 +75,9 @@ const GameEnded = ({ score, currentGame, language, changeBandMember, points }) =
                                 <br />
                                 <Register score={score} currentGame="spotify1"/>
                                 {/*<Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>*/}
-                                <br />
-                            {/* <Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].videosText}</button></Link>*/}
+                                {/* <Link to="youtuberoundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].videosText}</button></Link>*/}
+
+
                                 <br />
                                 <Register score={score} currentGame="youtube1"/>
                                 <button className="navbar-btn" onClick={changeBandMember} type="button">{texts[language].changeBandMember}</button>

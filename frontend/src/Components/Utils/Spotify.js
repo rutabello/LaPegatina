@@ -134,7 +134,7 @@ const Spotify = {
 	},
 
 	getAlbumID(albumIDInt) {
-        
+
         let albumID;
 
 		switch (albumIDInt) {
@@ -163,7 +163,7 @@ const Spotify = {
 				albumID = '4GDvxuvYI9ZrnBOiE8of32';
 				break;
         }
-        
+
         return albumID;
 	}
 

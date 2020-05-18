@@ -54,15 +54,8 @@ class spotifyRoundTwo extends React.Component {
         playing: false,
         // albumID: '0KHcK2Qehfh1imPj5NJXZz',
         currentAttempt: 0,
-
-        // create a playlist array to save the chosen tracks from the user
-        playlistTracks: [],
         noTracks: true,
-        // songList: [],
         playlistName: 'Mis favoritos',
-        // addedSong: false,
-        // buttonText: 'Ponla en tu playlist!',
-        // buttonText2: 'Ya ésta en tu lista!',
         giveMeConfetti: false,
         selectedAlbum: this.props.location.state.selectedAlbum,
     };
@@ -280,19 +273,14 @@ class spotifyRoundTwo extends React.Component {
     render() {
         const {
             giveMeConfetti,
-            playlistName,
-            noTracks,
-            playlistTracks,
             score,
             currentSong,
             hideResults,
             songNames,
-            name,
-            songUrl,
-            playerState,
-            playing,
             currentAttempt,
         } = this.state;
+
+        console.log('paco', 'render again spotifyRound 2')
 
         const { language } = this.props;
 

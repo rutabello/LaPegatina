@@ -56,21 +56,40 @@ const UserPofile = () => {
                             Puntos totales:
                             {context.state.total_app_points}
                         </h6>
-                        <h6>Puntos Música</h6>
-                        <p>Ronda 1:</p>
-                        {context.state.points_spotify_round_one}
-                        <p>Ronda 2:</p>
-                        {context.state.points_spotify_round_two}
-                        <h6>Puntos vídeos</h6>
-                        <p>Ronda 1:</p>
-                        {context.state.points_youtube_round_one}
-                        <p>Ronda 2:</p>
-                        {context.state.points_youtube_round_two}
-                        <h6>Puntos fotos</h6>
-                        <p>Ronda 1:</p>
-                        {context.state.points_instagram_round_one}
-                        <p>Ronda 2:</p>
-                        {context.state.points_instagram_round_two}
+                        <h6>
+                            Puntos Música
+                        </h6>
+                        <p>
+                            Ronda 1:
+                            {context.state.points_spotify_round_one}
+                        </p>
+
+                        <p>
+                            Ronda 2:
+                            {context.state.points_spotify_round_two}
+                        </p>
+                        <h6>
+                            Puntos vídeos
+                        </h6>
+                        <p>
+                            Ronda 1:
+                            {context.state.points_youtube_round_one}
+                        </p>
+                        <p>
+                            Ronda 2:
+                            {context.state.points_youtube_round_two}
+                        </p>
+                        <h6>
+                            Puntos fotos
+                        </h6>
+                        <p>
+                            Ronda 1:
+                            {context.state.points_instagram_round_one}
+                        </p>
+                        <p>
+                            Ronda 2:
+                            {context.state.points_instagram_round_two}
+                        </p>
 
                         <div>
                             <form onSubmit={logUser}>

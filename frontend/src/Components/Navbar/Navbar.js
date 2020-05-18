@@ -133,7 +133,7 @@ class Navbar extends React.Component {
                                         <MyContext.Consumer>
                                             {(context) => (
                                                 <div>
-                                                    <a href="/user">{texts[userLanguage].profileButton}</a>
+                                                    <Link to="/user">{texts[userLanguage].profileButton}</Link>
                                                     <a onClick={() => { context.clearUser(); console.log('clicked'); }}>{texts[userLanguage].logOutButton}</a>
                                                 </div>
                                             )}
