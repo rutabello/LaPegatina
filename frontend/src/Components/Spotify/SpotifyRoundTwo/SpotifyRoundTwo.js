@@ -13,7 +13,8 @@ import Shuffle from '../../Utils/Shuffle';
 import Spotify from '../../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
 // import ShareTheGame from '../../ShareTheGame/ShareTheGame';
-import ListenedSongs from '../ListenedSongs/ListenedSongs';
+// import ListenedSongs from '../ListenedSongs/ListenedSongs';
+import GameEnded from '../../GameEnded/GameEnded';
 import texts from '../../../texts.json';
 import SocialMedia from '../../SocialMedia/SocialMedia';
 import Navbar from '../../Navbar/Navbar';
@@ -362,7 +363,8 @@ class spotifyRoundTwo extends React.Component {
                 ) : (
                     <div>
                         <Navbar addedClass="fixTop" pagein="any" />
-                        <ListenedSongs
+                        <GameEnded score={score} currentGame="spotify" language={language} />
+                        {/* <ListenedSongs
                             username={name}
                             unknownSongs={this.unknownSongs}
                             language={language}
@@ -378,16 +380,12 @@ class spotifyRoundTwo extends React.Component {
                             playlistName={playlistName}
                             noTracks={noTracks}
                             playlistTracks={playlistTracks}
-                        />
+                        /> */}
                         <div className="social-media-follow-buttons">
                             <SocialMedia language={language} />
                         </div>
                     </div>
                 )}
-                {/* {name !== undefined
-                    ? <Link to='spotifyRoundTwo'>Go to Spotify round two</Link>
-                    : <Register />
-                } */}
             </section>
         );
     }

@@ -35,7 +35,7 @@ class SpotifyRoundOne extends React.Component {
     // All the songs that the user guessed wrong are pushed into this array
     unknownSongs= [];
 
-    NUMBER_OF_SONGS_TO_PLAY_WITH = 1
+    NUMBER_OF_SONGS_TO_PLAY_WITH = 2
 
 
     state = {
@@ -77,6 +77,8 @@ class SpotifyRoundOne extends React.Component {
         this.setNewRandomSong();
 
         const savedState = JSON.parse(localStorage.savedState);
+
+        console.log('spotifyRoundOne didmount', savedState)
 
         if (savedState !== undefined) {
             replaceState(savedState.state);

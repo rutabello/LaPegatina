@@ -26,6 +26,8 @@ class Rounds extends React.Component {
         const spotStart = true;
         const start = 'screen';
 
+        localStorage.setItem('savedState', JSON.stringify(this.context));
+
         this.setState({
             spotify: spotStart,
             page: start,
@@ -57,9 +59,6 @@ class Rounds extends React.Component {
         });
     }
 
-    componentDidMount = () => {
-        localStorage.setItem('savedState', JSON.stringify(this.context));
-    }
 
     render() {
 

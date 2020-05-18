@@ -40,29 +40,43 @@ class Register extends Component {
         // Al carrer
         const alCarrer = await Spotify.getAlbumsImages('4GDvxuvYI9ZrnBOiE8of32');
 
+        const albums = [
+            unSecretoAVoces,
+            ahoraONunca,
+            laPegatinaLive2016,
+            revulsiu,
+            eureka,
+            xapomelon,
+            viaMandarina,
+            alCarrer,
+        ]
+
+        console.log(albums)
+
         this.setState({
-            albums: [
-                unSecretoAVoces,
-                ahoraONunca,
-                laPegatinaLive2016,
-                revulsiu,
-                eureka,
-                xapomelon,
-                viaMandarina,
-                alCarrer,
-            ],
+            albums,
         });
+
     }
 
     showLink = (context, newPoints, gameName, roundIn) => {
 
         context.addPoints(newPoints, gameName, roundIn);
+
         this.setState({
             // link: 'showIt',
             link: 'screen',
         });
     }
 
+    componentDidMount() {
+
+        const { currentGame } = this.props;
+
+        if (currentGame === 'spotify') {
+            this.getSpotifyAlbums();
+        }
+    }
 
     render() {
         const { currentGame, score } = this.props;
@@ -70,7 +84,7 @@ class Register extends Component {
         const { link, albums } = this.state;
 
         if (currentGame === 'spotify') {
-            this.getSpotifyAlbums();
+
             return (
                 <MyContext.Consumer>
                     {(context) => (
@@ -107,7 +121,7 @@ class Register extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" onClick={this.showLink}>
+                            <button type="button" onClick={() => this.showLink(context, score, 'spotify', 'one')}>
                                 Suma puntos y sigue jugando
                             </button>
                         </div>
