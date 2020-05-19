@@ -7,7 +7,7 @@
 }
 
 .FourButtons {
-    text-transform: capitalize; 
+    text-transform: capitalize;
     letter-spacing: 1px;
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@ button {
 }
 
 .gray {
-    background:gray;
+    background:rgb(49, 44, 113);
     border:4px solid black;
     color: white;
     border-radius: 7px;

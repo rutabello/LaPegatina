@@ -1,12 +1,12 @@
-
 .titleColorYT{
     /* color:#f1c500; */
     color:white!important;
     font-family: 'Barlow';
     font-style: normal;
-    font-weight: 200;
+    font-weight: 700;
     src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.googleapis.com/css?family=Barlow&display=swap') format('woff2');
 }
+
 .buttonYT {
     cursor: pointer;
     width: 60%;
@@ -19,15 +19,12 @@
     /* min-height: 5em; */
     border-radius: 7px;
     /* margin-right: 20vh; */
-    margin-top: 2vh
-}
-
-.buttonYT {
-    background-color: grey;
+    margin-top: 2vh;
+    background-color: rgb(49, 44, 113);
 }
 
 @media (max-width:700px) {
-     .buttonYT.myButtonYT.buttonYT{
+    .buttonYT.myButtonYT.buttonYT{
         margin: 0.4em auto;
     }
 }

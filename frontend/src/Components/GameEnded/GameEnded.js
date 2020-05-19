@@ -26,26 +26,20 @@ const GameEnded = ({ score, currentGame, language, points }) => {
                 {(context) => {
                     if (currentGame === 'spotify') {
                         return (
-                            <div>
+                            <div className="game-ended-container">
                                 <h1>{texts[language].score.replace('%points', score)}</h1>
-                                <h2>{texts[language].gameEnded}</h2>
-                                <Link to="/"><button type="button" onClick={addPointsToContext}>{texts[language].keepPointsPlayMoreText}</button></Link>
+                                <h3>{texts[language].gameEnded}</h3>
+                                <Link to="/"><button type="button" className="suma-puntos-button" onClick={addPointsToContext}>{texts[language].keepPointsPlayMoreText}</button></Link>
                             </div>
                         );
                     }
 
                     if (currentGame === 'youtube') {
                         return (
-                            <div>
-                                {/* <p>{texts[language].gameEnded}</p> */}
-                                <br />
-                                <Register score={score} currentGame="spotify1"/>
-                                { /*<Link to="spotifyroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].musicText}</button></Link>*/}
-
-                                <br />
-                                <Register score={score} currentGame="instagram1"/>
-                                {/*<Link to="instagramroundone"><button className="navbar-btn" type="button" onClick={() => context.addPoints(points)}>{texts[language].photosText}</button></Link>*/}
-
+                            <div className="game-ended-container">
+                                {/* <h1>{texts[language].score.replace('%points', points)}</h1> */}
+                                <h3>{texts[language].gameEnded}</h3>
+                                <Link to="/"><button type="button" className="suma-puntos-button" onClick={addPointsToContext}>{texts[language].keepPointsPlayMoreText}</button></Link>
                             </div>
                         );
                     }
@@ -53,10 +47,10 @@ const GameEnded = ({ score, currentGame, language, points }) => {
                     if (currentGame === 'instagram') {
                         return (
 
-                            <div>
+                            <div className="game-ended-container">
                                 <h1>{texts[language].score.replace('%points', points)}</h1>
-                                <h2>{texts[language].gameEnded}</h2>
-                                <Link to="/"><button type="button" onClick={addPointsToContext}>{texts[language].keepPointsPlayMoreText}</button></Link>
+                                <h3>{texts[language].gameEnded}</h3>
+                                <Link to="/"><button type="button" className="suma-puntos-button" onClick={addPointsToContext}>{texts[language].keepPointsPlayMoreText}</button></Link>
                             </div>
                         );
                     }

@@ -9,7 +9,7 @@ class MyProvider extends Component {
     state = {
         first_name: '',
         last_name: '',
-        username: '',
+        username: 'dzsaSFDA',
         birth_date: '',
         email: '',
         points_spotify_round_one: '',
@@ -35,7 +35,7 @@ class MyProvider extends Component {
             'points_youtube_round_two',
         ];
 
-        let total = 0;
+        let total = '';
 
         keysArray.forEach((key) => {
             total += this.state[key];

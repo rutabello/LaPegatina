@@ -16,24 +16,34 @@ font-style: normal;
 font-weight: 200;
 src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.googleapis.com/css?family=Barlow&display=swap') format('woff2');
 }
+
 .thegame{
     margin-bottom: 15vh;
     justify-content: center;
 }
 
-.theYTPlayer{
+.theYTPlayer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
+
 .quiz-text{
     margin-top: 1em;
     width: 65%;
-        margin: 0 auto;
-        margin-top: 1em;
-        /* font-size: 1.5em; */
+    margin: 0 auto;
+    margin-top: 1em;
+    text-align: center;
+    color: white!important;
+    font-weight: 700;
+    font-size: 1.5em!important;
+}
 
+.theYTPlayer .show {
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
 }
 
 .show {
@@ -45,12 +55,12 @@ src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.google
 }
 
 @media all and (max-width:30em){
-.quiz-text {
-    width: 90%;
+    .quiz-text {
+        width: 90%;
         margin: 0 auto;
         margin-top: 1em;
         font-size: 1em;
-}
+    }
 
     .theYTPlayer iframe {
         top:0;

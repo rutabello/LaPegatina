@@ -199,14 +199,9 @@ class InstagramRoundTwo extends Component {
                                 </div>
                             ))}
                         </div>
-                        <p>
+                        <p className="score">
                             {texts[language].correctAnswers}
-                            {' '}
-                            {this.counter}
-                            {' '}
-                            /
-                            {' '}
-                            {this.OFICIAL_NUMBER_OF_ATTEMPTS}
+                            {`${this.counter} / ${this.OFICIAL_NUMBER_OF_ATTEMPTS}`}
                         </p>
                     </div>
                 </div>

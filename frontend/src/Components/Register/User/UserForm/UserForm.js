@@ -83,7 +83,7 @@ const UserForm = ({ mainpage, language, score, gameIn }) => (
                     data-toggle="modal"
                     data-target="#register"
                 >
-                    Regístrate/loguéate y ve a la Ronda 2
+                    Regístrate / loguéate y ve a la Ronda 2
                 </button>
 
 

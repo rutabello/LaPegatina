@@ -5,16 +5,16 @@
 
   a:hover {
     color: #4FDA8C;
-}  
+}
 
 input {
     font: 16px/26px
 }
 
 body {
-  color: #666;
-  background-color: #f1f2f2;
-  font: 16px/26px "Raleway", sans-serif;
+    /* color: #666; */
+    background-color: #f1f2f2;
+    font: 16px/26px "Raleway", sans-serif;
 }
 /*all form*/
 .form-wrap {
@@ -61,8 +61,8 @@ body {
     border-radius: .25rem;
     text-align: center;
     color: white
- 
- 
+
+
 }
 .form-wrap .tabs-content {
     padding: 1.5em;
@@ -169,7 +169,7 @@ input {
     border-radius: .25rem;
     text-align: center;
     font-family: sans-serif;
-    font-size: 13px;
+    font-size: 1.2em;
     padding: 10px 30px;
     font-weight: 600;
     border: none;

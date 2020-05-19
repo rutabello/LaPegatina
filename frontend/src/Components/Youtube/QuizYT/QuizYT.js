@@ -41,7 +41,7 @@ class QuizYT extends Component {
                 // counter: this.state.counter+1
             });
             // this.props.showConfetti();
-            
+
         } else {
             this.props.stopPlaying();
         }
@@ -58,7 +58,7 @@ class QuizYT extends Component {
                 points: points + 1000,
                 display: 'timer',
             });
-            
+
             this.props.showConfetti();
             // this.updateProgress("percent", this.state.percent + 1)
             setTimeout(() => {
@@ -89,7 +89,7 @@ class QuizYT extends Component {
                                       recycle={false}
                                       gravity={0.6}
                                     />}
-                                    <YTCountdown 
+                                    <YTCountdown
                                     toNext={this.toNext}
                                     width={640} percent={this.state.percent}
                                     />
@@ -97,7 +97,7 @@ class QuizYT extends Component {
                             )
                             : (
                                 <div>
-                                    <div className="quiz-text">
+                                    <div className="show">
                                         <h4 className="quiz-text">{questions[index].question}</h4>
                                         {/* <h6 className ='quiz-text'>
                                             Score:

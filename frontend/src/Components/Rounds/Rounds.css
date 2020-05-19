@@ -2,26 +2,23 @@
     color: white;
     text-decoration: none;
     font-family: sans-serif;
-    margin-top: 33vh;
+    margin-top: 15vh;
     padding: 2vh;
     font-size: 20px;
 }
 
 .instructions {
-
     font-family: sans-serif, cursive;
     color: white;
     padding: 7vh;
-
-
 }
 
 .button1 {
-
     font-family: sans-serif;
     padding: 2vh;
     width: 30vh;
     border-radius: 4em;
+    font-weight: 700;
 }
 
 .screen {
@@ -37,6 +34,7 @@
     background-color: black;
     z-index: 1;
     align-items: center;
+    justify-content: center;
 }
 
 .btns {
@@ -47,4 +45,8 @@
 .home-btn-image {
     height: 20px;
     margin-right: 10px;
+}
+
+h4 {
+    font-size: 1.25rem;
 }

@@ -5,6 +5,7 @@
     /* margin-top: 30px; */
     font-family: sans-serif;
     font-size: 30px;
+    font-weight: 700;
 }
 
 .imageAndLocationsContainer p {
@@ -50,9 +51,23 @@
     display: flex;
 }
 
+.instagram-game-over {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 94vh;
+}
+
+.instagram-game-over h1 {
+    margin-bottom: 34px;
+    font-weight: 700!important;
+}
+
 .score {
     color: #766dca;
     font-size: 22px;
+    font-weight: 700;
 }
 
 .red {
@@ -68,7 +83,7 @@
 }
 
 .gray {
-    background-color: gray;
+    background-color: rgb(49, 44, 113);
 }
 
 .instagram-option-button:focus {
@@ -85,6 +100,7 @@
     font-size: 17px;
     padding: 5px 15px;
     width: 100%;
+    font-weight: 800;
 }
 
 .instagram-game-button:focus {

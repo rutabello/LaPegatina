@@ -39,6 +39,9 @@
     text-align: center;
     display: block;
     margin-top: 15vh;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 11vh;
 }
 
 .instruct p {
@@ -68,6 +71,8 @@
     background-color: #766dca;
     border-color: #766dca;
     min-width: 30%;
+    font-weight: 700;
+    font-size: 1.2em;
     /* margin-top: 6px; */
 }
 

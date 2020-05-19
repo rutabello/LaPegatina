@@ -73,7 +73,7 @@ class Register extends Component {
         context.addPoints(newPoints, gameName, roundIn);
 
         this.setState({
-           
+
             link: 'screen',
         });
     }
@@ -146,7 +146,7 @@ class Register extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" onClick={() => this.showLink(context, score, 'spotify', 'one')}>
+                            <button className="suma-puntos-button" type="button" onClick={() => this.showLink(context, score, 'spotify', 'one')}>
                                 {texts[language].keepPointsPlayMoreText}
                             </button>
                         </div>
@@ -161,13 +161,14 @@ class Register extends Component {
                     {(context) => (
                         <div>
                             <div className={link}>
-                            <div className="screenDiv">
+                                <div className="screenDiv">
                                     <div className="screenDiv__firstDiv">
-                                <h1 className="playWith">{texts[language].roundTwoText}</h1>
-                                <p>Instrucciones</p>
-                                <p>Con que concerto de La Pegatina quieres jugar?</p>
+                                        <h1 className="playWith">{texts[language].roundTwoText}</h1>
+                                        <p>Instrucciones</p>
+                                        <p>Con que concerto de La Pegatina quieres jugar?</p>
                                         <Link to={{ pathname: '/youtuberoundtwo', state: { videoId: this.state.videoId,
-                                        data:this.state.data} }}>
+                                            data:this.state.data} }}
+                                        >
                                             <button
                                                 className="button1"
                                                 type="button"
@@ -178,29 +179,28 @@ class Register extends Component {
                                         </Link>
                                     </div>
                                     <div className="btn-concert">
-                                            {this.state.data.map((name) => (
-                                                <button
-                                                    className="btn-nav"
-                                                    type="button"
-                                                    key={name.title}
-                                                    onClick={(e) => this.setState({videoId:name.videoId})}
+                                        {this.state.data.map((name) => (
+                                            <button
+                                                className="btn-nav"
+                                                type="button"
+                                                key={name.title}
+                                                onClick={(e) => this.setState({videoId:name.videoId})}
 
-                                                >
-                                                 <img className='img_concert'
-                                                    src='https://comoexplicarte.files.wordpress.com/2018/08/img_20180810_214227-e1534105981107.jpg?w=1120'
-                                                />
-                                                    {name.title}
+                                            >
+                                                <img className='img_concert'
+                                                src='https://comoexplicarte.files.wordpress.com/2018/08/img_20180810_214227-e1534105981107.jpg?w=1120'
+                                            />
+                                                {name.title}
 
-                                                </button>
-                                            ))}
-                                            </div>
-                                            </div>
-                                            </div>
-
-                          <button type="button" onClick={() => this.showLink(context, localStorage.yt_points_1, 'youtube', 'one')}>
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                            <button className="suma-puntos-button" type="button" onClick={() => this.showLink(context, localStorage.yt_points_1, 'youtube', 'one')}>
                                 {texts[language].keepPointsPlayMoreText}
                             </button>
-                         </div>
+                        </div>
                     )}
                 </MyContext.Consumer>
             );
@@ -226,8 +226,8 @@ class Register extends Component {
                                     </button>
                                 </Link>
                             </div>
-                            <div className="">
-                                <button type="button" onClick={() => this.showLink(context, score, 'instagram', 'one')}>
+                            <div>
+                                <button className="suma-puntos-button" type="button" onClick={() => this.showLink(context, score, 'instagram', 'one')}>
                                     {texts[language].keepPointsPlayMoreText}
                                 </button>
                             </div>

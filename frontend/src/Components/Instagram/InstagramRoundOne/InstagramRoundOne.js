@@ -188,9 +188,7 @@ class InstagramRoundOne extends Component {
                         </div>
                         <p className="score">
                             {texts[language].correctAnswers}
-                            {this.counter}
-                            /
-                            {this.OFICIAL_NUMBER_OF_ATTEMPTS}
+                            {`${this.counter} / ${this.OFICIAL_NUMBER_OF_ATTEMPTS}`}
                         </p>
                     </div>
                 </div>
@@ -203,10 +201,12 @@ class InstagramRoundOne extends Component {
                     {(context) => (
                         <div>
                             <Navbar addedClass="fixTop" />
-                            <h3>{`Has hecho ${this.counter * 1729} puntos`}</h3>
-                            {context.state.username
-                                ? <Register score={this.counter * 1729} currentGame="instagram" language={language} />
-                                : <UserForm language={language} />}
+                            <div className="instagram-game-over">
+                                <h1>{`Has hecho ${this.counter * 1729} puntos`}</h1>
+                                {context.state.username
+                                    ? <Register score={this.counter * 1729} currentGame="instagram" language={language} />
+                                    : <UserForm language={language} />}
+                            </div>
                             <div className="social-media-follow-buttons">
                                 <SocialMedia
                                     language={language}
