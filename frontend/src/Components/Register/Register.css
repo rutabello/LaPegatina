@@ -37,6 +37,11 @@ display: flex;
 
 */
 
+.header {
+
+    font-family: sans-serif;
+}
+
 /* JAIMES CSS */
 .screenDiv {
     display: flex;

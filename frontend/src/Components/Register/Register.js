@@ -73,7 +73,7 @@ class Register extends Component {
         context.addPoints(newPoints, gameName, roundIn);
 
         this.setState({
-            // link: 'showIt',
+           
             link: 'screen',
         });
     }
@@ -155,28 +155,6 @@ class Register extends Component {
             );
         }
 
-        if (currentGame === 'spotify1') {
-            return (
-                <MyContext.Consumer>
-                    {(context) => (
-                        <div>
-                            <div className={link}>
-                                <h1 className="playWith title">{texts[language].roundOneText}</h1>
-                                <Link to="spotifyroundone">
-                                    <button className="button1" type="button" onClick={() => context.addPoints(score)}>
-                                        Start
-                                    </button>
-                                </Link>
-                            </div>
-                            <button type="button" onClick={this.showLink}>
-                                {texts[language].spotifyPlayWithButton}
-                            </button>
-                        </div>
-                    )}
-                </MyContext.Consumer>
-            );
-        }
-
         if (currentGame === 'youtube') {
             return (
                 <MyContext.Consumer>
@@ -218,39 +196,11 @@ class Register extends Component {
                                             </div>
                                             </div>
                                             </div>
-                                {/* <Link to="youtuberoundone">
-                                    <button className="button1" type="button" onClick={() => context.addPoints(score)}>
-                                        Start
-                                    </button>
-                                </Link> */}
-                            {/* </div> */}
+
                           <button type="button" onClick={() => this.showLink(context, localStorage.yt_points_1, 'youtube', 'one')}>
                                 {texts[language].keepPointsPlayMoreText}
                             </button>
                          </div>
-                    )}
-                </MyContext.Consumer>
-            );
-        }
-
-        if (currentGame === 'youtube1') {
-            return (
-                <MyContext.Consumer>
-                    {(context) => (
-                        <div>
-                            <div className={link}>
-                                <h1 className="playWith">{texts[language].roundOneText}</h1>
-                                <p>Instrucciones</p>
-                                <Link to="youtuberoundone">
-                                    <button className="button1" type="button" onClick={() => context.addPoints(score)}>
-                                        Start
-                                    </button>
-                                </Link>
-                            </div>
-                            <button type="button" onClick={this.showLink}>
-                                {texts[language].youtubePlayWithButton}
-                            </button>
-                        </div>
                     )}
                 </MyContext.Consumer>
             );
@@ -262,7 +212,7 @@ class Register extends Component {
                     {(context) => (
                         <div className="instagram-round">
                             <div className={link}>
-                                <h1 className="playWith">{texts[language].roundTwoText}</h1>
+                                <h1 className="header">{texts[language].roundTwoText}</h1>
                                 <div>
                                     <MembersAccounts
                                         setSelectedMemberId={this.setSelectedMemberId}
@@ -288,27 +238,6 @@ class Register extends Component {
             );
         }
 
-        if (currentGame === 'instagram1') {
-            return (
-                <MyContext.Consumer>
-                    {(context) => (
-                        <div>
-                            <div className={link}>
-                                <h1 className="playWith">{texts[language].roundOneText}</h1>
-                                <Link to="instagramroundone">
-                                    <button className="button1" type="button" onClick={() => context.addPoints(score)}>
-                                        Start
-                                    </button>
-                                </Link>
-                            </div>
-                            <button type="button" onClick={this.showLink}>
-                                {texts[language].instagramPlayWithButton}
-                            </button>
-                        </div>
-                    )}
-                </MyContext.Consumer>
-            );
-        }
         return null;
     }
 }
