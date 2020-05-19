@@ -23,7 +23,7 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
         if (username) {
             // addPoints(score, 'spotify', 'one');
             return (
-                <Register score={score} currentGame="spotify" />
+                <Register score={score} currentGame="spotify" language={language} />
             );
         }
 
@@ -229,10 +229,11 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
                             )
                             : (
                                 <div />
-                            )}
-                        {roundfrom === 'two'
+                            )
+                        }
+                        {/* {roundfrom === 'two'
                             ? <GameEnded points={score} language={language} currentGame="spotify" />
-                            : null}
+                            : null} */}
                     </div>
                 </>
             )}

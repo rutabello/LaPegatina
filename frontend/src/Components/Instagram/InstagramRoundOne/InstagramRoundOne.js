@@ -203,16 +203,9 @@ class InstagramRoundOne extends Component {
                     {(context) => (
                         <div>
                             <Navbar addedClass="fixTop" />
-                            <h1>Te atreves con la segunda ronda?</h1>
-                            <p>
-                                Has hecho
-                                {' '}
-                                {this.counter * 1729}
-                                {' '}
-                                puntos
-                            </p>
+                            <h3>{`Has hecho ${this.counter * 1729} puntos`}</h3>
                             {context.state.username
-                                ? <Register score={this.counter * 1729} currentGame="instagram" />
+                                ? <Register score={this.counter * 1729} currentGame="instagram" language={language} />
                                 : <UserForm language={language} />}
                             <div className="social-media-follow-buttons">
                                 <SocialMedia
@@ -224,18 +217,6 @@ class InstagramRoundOne extends Component {
                 </MyContext.Consumer>
             );
         }
-        // if (gameStatus === 'gameOver' && name !== undefined) {
-        //     return (
-        //         <div>
-        //             <h1>Has llegado al final de esta ronda. Te atreves con la segunda? </h1>
-        //             <Link to="instagramroundtwo">Juega una segunda ronda</Link>
-        //         </div>
-        //     );
-        // }
-
-        // return (
-        //     <Register currentGame="instagram" />
-        // );
         return null;
     }
 }

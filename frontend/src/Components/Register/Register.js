@@ -1,14 +1,15 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable max-len */
 import React, { Component } from 'react';
-// import './Register.css';
 import '../Rounds/Rounds.css';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../../context/MyProvider';
 import '../Home/Home.css';
 import './Register.css';
 import Spotify from '../Utils/Spotify';
-import videoDataObject from '../Youtube/VideoDataObject'
+import videoDataObject from '../Youtube/VideoDataObject';
+import texts from '../../texts.json';
+import MembersAccounts from '../Instagram/InstagramRoundTwo/MembersAccounts';
 
 class Register extends Component {
     state = {
@@ -17,7 +18,8 @@ class Register extends Component {
         selectedAlbum: '',
         data: [],
         videoId: '',
-        questions:[]
+        questions:[],
+        setSelectedMemberId: '',
     };
 
     async getSpotifyAlbums() {
@@ -73,6 +75,13 @@ class Register extends Component {
         });
     }
 
+    setSelectedMemberId = (id) => {
+        this.setState ({
+            setSelectedMemberId: id,
+        })
+        localStorage.setItem('memberId', id)
+    }
+
     componentDidMount() {
 
         const { currentGame } = this.props;
@@ -83,7 +92,7 @@ class Register extends Component {
         if (currentGame === 'youtube') {
             const json = JSON.stringify(videoDataObject);
             const newdata = JSON.parse(json);
-    
+
             this.setState({
                 data: newdata,
             });
@@ -91,7 +100,7 @@ class Register extends Component {
     }
 
     render() {
-        const { currentGame, score } = this.props;
+        const { currentGame, score, language } = this.props;
 
         const { link, albums } = this.state;
 
@@ -104,8 +113,9 @@ class Register extends Component {
                             <div className={link}>
                                 <div className="screenDiv">
                                     <div className="screenDiv__firstDiv">
-                                        <h1 className="round2Title">Ronda 2</h1>
-                                        <h2>Choose the album you want to play with!</h2>
+                                        <h1 className="round2Title">{texts[language].roundTwoText}</h1>
+                                        <h2>{texts[language].spotifyRoundTwoQuestion}</h2>
+                                        <h2>{texts[language].chooseAlbumText}</h2>
                                         <Link to={{ pathname: '/spotifyRoundTwo', state: { selectedAlbum: this.state.selectedAlbum } }}>
                                             <button
                                                 className="button1"
@@ -134,7 +144,7 @@ class Register extends Component {
                                 </div>
                             </div>
                             <button type="button" onClick={() => this.showLink(context, score, 'spotify', 'one')}>
-                                Suma puntos y sigue jugando
+                                {texts[language].keepPointsPlayMoreText}
                             </button>
                         </div>
                     )}
@@ -148,7 +158,7 @@ class Register extends Component {
                     {(context) => (
                         <div>
                             <div className={link}>
-                                <h1 className="playWith title">Ronda 1</h1>
+                                <h1 className="playWith title">{texts[language].roundOneText}</h1>
                                 <Link to="spotifyroundone">
                                     <button className="button1" type="button" onClick={() => context.addPoints(score)}>
                                         Start
@@ -156,7 +166,7 @@ class Register extends Component {
                                 </Link>
                             </div>
                             <button type="button" onClick={this.showLink}>
-                                Juega con Música
+                                {texts[language].spotifyPlayWithButton}
                             </button>
                         </div>
                     )}
@@ -172,10 +182,10 @@ class Register extends Component {
                             <div className={link}>
                             <div className="screenDiv">
                                     <div className="screenDiv__firstDiv">
-                                <h1 className="playWith">Ronda 2</h1>
+                                <h1 className="playWith">{texts[language].roundTwoText}</h1>
                                 <p>Instrucciones</p>
                                 <p>Con que concerto de La Pegatina quieres jugar?</p>
-                                        <Link to={{ pathname: '/youtuberoundtwo', state: { videoId: this.state.videoId, 
+                                        <Link to={{ pathname: '/youtuberoundtwo', state: { videoId: this.state.videoId,
                                         data:this.state.data} }}>
                                             <button
                                                 className="button1"
@@ -193,13 +203,13 @@ class Register extends Component {
                                                     type="button"
                                                     key={name.title}
                                                     onClick={(e) => this.setState({videoId:name.videoId})}
-                                               
+
                                                 >
                                                  <img className='img_concert'
                                                     src='https://comoexplicarte.files.wordpress.com/2018/08/img_20180810_214227-e1534105981107.jpg?w=1120'
                                                 />
                                                     {name.title}
-                                            
+
                                                 </button>
                                             ))}
                                             </div>
@@ -212,9 +222,9 @@ class Register extends Component {
                                 </Link> */}
                             {/* </div> */}
                           <button type="button" onClick={() => this.showLink(context, localStorage.yt_points_1, 'youtube', 'one')}>
-                                Juega una segunda ronda
-                            </button> 
-                         </div> 
+                                {texts[language].keepPointsPlayMoreText}
+                            </button>
+                         </div>
                     )}
                 </MyContext.Consumer>
             );
@@ -226,7 +236,7 @@ class Register extends Component {
                     {(context) => (
                         <div>
                             <div className={link}>
-                                <h1 className="playWith">Ronda 1</h1>
+                                <h1 className="playWith">{texts[language].roundOneText}</h1>
                                 <p>Instrucciones</p>
                                 <Link to="youtuberoundone">
                                     <button className="button1" type="button" onClick={() => context.addPoints(score)}>
@@ -235,7 +245,7 @@ class Register extends Component {
                                 </Link>
                             </div>
                             <button type="button" onClick={this.showLink}>
-                                Juega con Videos
+                                {texts[language].youtubePlayWithButton}
                             </button>
                         </div>
                     )}
@@ -249,15 +259,22 @@ class Register extends Component {
                     {(context) => (
                         <div>
                             <div className={link}>
-                                <h1 className="playWith">Ronda 2</h1>
+                                <h1 className="playWith">{texts[language].roundTwoText}</h1>
+                                <div>
+                                    <MembersAccounts
+                                        setSelectedMemberId={this.setSelectedMemberId}
+                                        language={language}
+                                    />
+                                </div>
+
                                 <Link to="instagramroundtwo">
                                     <button className="button1" type="button" onClick={() => context.addPoints(score)}>
                                         Start
                                     </button>
                                 </Link>
                             </div>
-                            <button type="button" onClick={this.showLink}>
-                                Juega una segunda Ronda
+                            <button type="button" onClick={() => this.showLink(context, score, 'instagram', 'one')}>
+                                {texts[language].keepPointsPlayMoreText}
                             </button>
                         </div>
                     )}
@@ -271,7 +288,7 @@ class Register extends Component {
                     {(context) => (
                         <div>
                             <div className={link}>
-                                <h1 className="playWith">Ronda 1</h1>
+                                <h1 className="playWith">{texts[language].roundOneText}</h1>
                                 <Link to="instagramroundone">
                                     <button className="button1" type="button" onClick={() => context.addPoints(score)}>
                                         Start
@@ -279,7 +296,7 @@ class Register extends Component {
                                 </Link>
                             </div>
                             <button type="button" onClick={this.showLink}>
-                                Juega con Fotos
+                                {texts[language].instagramPlayWithButton}
                             </button>
                         </div>
                     )}

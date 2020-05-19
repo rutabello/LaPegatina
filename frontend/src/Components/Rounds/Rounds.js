@@ -69,13 +69,24 @@ class Rounds extends React.Component {
         return (
             <div>
                 <div className={page}>
-                <div className="title">
+                    <div className="title">
                        <h1 >{texts[language].roundOneText}</h1>
+                    {spotify ?
+                        (
+                                <h4><b>{texts[language].spotifyRoundOneQuestion}</b></h4>
+                        )
+                        : instagram ?
+                        (
+                                <h4><b>{texts[language].instagramRoundOneQuestion}</b></h4>
+                        )
+                        : youtube ?
+                        (
+                                <h4><b>{texts[language].youtubeQuestion}</b></h4>
+                        )
+                        : null
+                    }
+                        <h4>{texts[language].instructions}</h4>
                     </div>
-                        <div className="instructions">
-                            <h4><b>{texts[language].guessSong}</b></h4>
-                            <h4>{texts[language].instructions}</h4>
-                        </div>
                     <Link className={youtube || instagram ? 'hideGame' : 'title'} to="spotifyroundone"><button className="button1" type="button">{texts[language].startText}</button></Link>
                     <Link className={spotify || instagram ? 'hideGame' : 'title'} to="youtuberoundone"><button className="button1" type="button">{texts[language].startText}</button></Link>
                     <Link className={spotify || youtube ? 'hideGame' : 'title'} to="instagramroundone"><button className="button1" type="button">{texts[language].startText}</button></Link>

@@ -157,14 +157,7 @@ class InstagramRoundTwo extends Component {
         }
 
         if (gameStatus === 'choosing') {
-            return (
-                <div className="choosing">
-                    <MembersAccounts
-                        setSelectedMemberId={this.setSelectedMemberId}
-                        language={language}
-                    />
-                </div>
-            );
+            {this.setSelectedMemberId(localStorage.memberId)}
         }
 
         if (gameStatus === 'playing') {
@@ -224,7 +217,7 @@ class InstagramRoundTwo extends Component {
             return (
                 <div>
                     <Navbar addedClass="fixTop" />
-                    <GameEnded points={this.counter * 2653} changeBandMember={this.chooseAgain} language={language} currentGame="instagram" />
+                    <GameEnded points={this.counter * 2653} language={language} currentGame="instagram" />
                 </div>
             );
         }
