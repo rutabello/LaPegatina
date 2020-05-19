@@ -12,7 +12,7 @@ import Register from '../Register/Register';
 const GameEnded = ({ score, currentGame, language, points }) => {
 
 
-    const { addPoints, points_spotify_round_two } = useContext(MyContext);
+    const { addPoints } = useContext(MyContext);
 
     const addPointsToContext = () => {
         console.log('score i current game', score, currentGame)

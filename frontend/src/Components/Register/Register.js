@@ -20,7 +20,10 @@ class Register extends Component {
         videoId: '',
         questions:[],
         setSelectedMemberId: '',
+        picData: []
     };
+
+
 
     async getSpotifyAlbums() {
         const unSecretoAVoces = await Spotify.getAlbumsImages('0KHcK2Qehfh1imPj5NJXZz');
@@ -257,7 +260,7 @@ class Register extends Component {
             return (
                 <MyContext.Consumer>
                     {(context) => (
-                        <div>
+                        <div className="instagram-round">
                             <div className={link}>
                                 <h1 className="playWith">{texts[language].roundTwoText}</h1>
                                 <div>
@@ -268,14 +271,17 @@ class Register extends Component {
                                 </div>
 
                                 <Link to="instagramroundtwo">
-                                    <button className="button1" type="button" onClick={() => context.addPoints(score)}>
+                                    <button className="button1 instagram-start-button" type="button" onClick={() => context.addPoints(score)}>
                                         Start
                                     </button>
                                 </Link>
                             </div>
-                            <button type="button" onClick={() => this.showLink(context, score, 'instagram', 'one')}>
-                                {texts[language].keepPointsPlayMoreText}
-                            </button>
+                            <div className="">
+                                <button type="button" onClick={() => this.showLink(context, score, 'instagram', 'one')}>
+                                    {texts[language].keepPointsPlayMoreText}
+                                </button>
+                            </div>
+
                         </div>
                     )}
                 </MyContext.Consumer>

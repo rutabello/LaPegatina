@@ -12,7 +12,7 @@
     font-family: sans-serif, cursive;
     color: white;
     padding: 7vh;
-   
+
 
 }
 
@@ -26,15 +26,17 @@
 
 .screen {
     position: absolute;
-    display: block;
-    padding:0;
-    margin:0;
-    top:0;
-    left:0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: black;
     z-index: 1;
+    align-items: center;
 }
 
 .btns {

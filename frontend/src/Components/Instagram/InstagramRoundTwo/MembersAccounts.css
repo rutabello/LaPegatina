@@ -1,0 +1,79 @@
+.playWith {
+    text-align: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.instagram-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.round-questions {
+    text-align: center;
+    justify-content: center;
+}
+
+.band-member img {
+    border-radius: 160px;
+    width: 140px;
+    margin: 20px 20px 40px;
+    /* border: solid 2px gray; */
+}
+
+.band-member img:hover {
+    transform: scale(1.1);
+}
+
+.band-member button {
+    border: none;
+}
+
+.band-members {
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 750px) {
+    h2 {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        padding: 0 20px;
+    }
+
+    .band-member img {
+        border-radius: 160px;
+        width: 88px;
+        margin: 8px;
+        /* border: solid 2px gray; */
+    }
+
+    .band-member button {
+        padding: 0px;
+    }
+
+    .playWith {
+        font-size: 10vw;
+        margin: 15px;
+    }
+
+    .band-members {
+        width: 90%;
+    }
+
+    .instagram-start-button {
+        margin-top: 30px;
+    }
+
+    .round-questions {
+        margin-bottom: 30px;
+    }
+}
