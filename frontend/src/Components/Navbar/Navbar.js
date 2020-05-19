@@ -114,14 +114,17 @@ class Navbar extends React.Component {
                                                     {(context) => (
                                                         context.state.username
                                                             ? (
-                                                                <p>
-                                                                    {context.state.username}
-                                                                    {' '}
-                                                                    <br />
-                                                                    {context.state.total_app_points || 0}
-                                                                    {' '}
-                                                                    {texts[userLanguage].pointsText}
-                                                                </p>
+                                                                <div className="user-points">
+                                                                     <p>
+                                                                        {context.state.username}
+                                                                        {' '}
+                                                                    </p>
+                                                                    <p>
+                                                                        {context.state.total_app_points || 0}
+                                                                        {' '}
+                                                                        {texts[userLanguage].pointsText}
+                                                                    </p>
+                                                                </div>
                                                             )
                                                             : <UserForm mainpage="navbar" language={language} />
                                                     )}

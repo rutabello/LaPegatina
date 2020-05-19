@@ -127,6 +127,12 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 6vh;
+}
+
+.user-points {
+    padding: 9px 0 15px;
+    text-align: right;
 }
 
 .user-dropdown-btn {
