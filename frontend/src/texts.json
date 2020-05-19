@@ -50,7 +50,11 @@
         "chooseAlbumText": "Tria amb quin disc vols jugar",
         "chooseBandMemnberText": "Amb quin membre de La Pegatina vols jugar?",
         "chooseConcertText": "Amb quin concert vols jugar?",
-        "keepPointsPlayMoreText": "Suma els punts i segueix jugant"
+        "keepPointsPlayMoreText": "Suma els punts i segueix jugant",
+        "saveList": "",
+        "playlistInstruct": "",
+        "addToList": "",
+        "playlistName": ""
     },
 
     "spanish" : {
@@ -104,7 +108,11 @@
         "chooseAlbumText": "Con qué disco quieres jugar?",
         "chooseBandMemnberText": "Con qué miembro de La Pegatina quieres jugar?",
         "chooseConcertText": "Con qué concierto quieres jugar?",
-        "keepPointsPlayMoreText": "Suma los puntos y sigue jugando"
+        "keepPointsPlayMoreText": "Suma los puntos y sigue jugando",
+        "saveList": "Guardar",
+        "playlistInstruct": "Te gusta lo que escuchaste? Puedes crear una lista ahora y guardarlo en Spotify!",
+        "addToList": "Añadir a mi lista",
+        "playlistName": "Dale un nombre a tu lista para guardarlo en Spotify"
     },
 
     "english" : {
@@ -157,7 +165,10 @@
         "chooseAlbumText": "Which album do you want to play with?",
         "chooseBandMemnberText": "Which member of La Pegatina do you want to play with?",
         "chooseConcertText": "Which concert do you want to play with?",
-        "keepPointsPlayMoreText": "Keep your points and keep playing"
+        "keepPointsPlayMoreText": "Keep your points and keep playing",
+        "playlistInstruct": "Like what you hear? You can create a Spotify Playlist with it now!",
+        "addToList": "Add to Playlist",
+        "playlistName": "Name your list to save it to your Spotify account"
     },
 
     "french": {
@@ -211,6 +222,10 @@
         "chooseAlbumText": "Con qué disco quieres jugar?",
         "chooseBandMemnberText": "Con qué miembro de La Pegatina quieres jugar?",
         "chooseConcertText": "Con qué concierto quieres jugar?",
-        "keepPointsPlayMoreText": "Suma los puntis y sigue jugando"
+        "keepPointsPlayMoreText": "Suma los puntis y sigue jugando",
+        "saveList": "",
+        "playlistInstruct": "Like what you hear? You can create a Spotify Playlist with it now!",
+        "addToList": "Añadir a mi lista",
+        "playlistName": ""
     }
 }

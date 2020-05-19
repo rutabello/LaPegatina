@@ -57,8 +57,9 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
                                     <div className="modal-body">
                                         <ul id="mistakes" className="instruct">
                                             <div>
-                                                <input id="playlistName" className="repeat-button" onChange={naming} defaultValue={playlistName} />
-                                                <button type="button" id="playlistSave" className="btn btn-primary" onClick={save}>Guardar</button>
+                                                    <p>{texts[language].playlistInstruct}</p>
+                                                <input id="playlistName" className="repeat-button" onChange={naming} defaultValue={texts[language].playlistName} />
+                                                    <button type="button" id="playlistSave" className="btn btn-primary" onClick={save}>{texts[language].saveList}</button>
                                             </div>
                                             {unknownSongs.map((song, index) => {
                                                 const url = song.uri.replace(/:/g, '/').replace('spotify', 'https://open.spotify.com');
@@ -67,7 +68,7 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
                                                         <div className="song-name">
                                                             {song.name}
                                                         </div>
-                                                        <button type="button" id={index} onClick={adding} className="btn btn-primary">Añadir a mi lista</button>
+                                                            <button type="button" id={index} onClick={adding} className="btn btn-primary">{texts[language].addToList}</button>
                                                         {/* <-- Button trigger modal --> */}
                                                         <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#sharethissong">
                                                             {texts[language].shareTheSongButton}
