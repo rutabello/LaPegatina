@@ -152,7 +152,7 @@ class YTPlayer extends Component {
         //
 
             return (
-                <div className="thegame">
+                <div>
                     <div className={`loading ${loadingDisplayClass}`}>
                         <Loading />
                     </div>
@@ -168,11 +168,7 @@ class YTPlayer extends Component {
                             onEnd={this.VideoOnEnd}
                         />
                     </div>
-
-                    {/* <p>Hello {this.state.title}</p> */}
-                    {/* the button that redirect on the yt page */}
-                    {/* <button className='btn-see-video' onClick={()=> window.open(this.state.videoUrl, "_blank")}> */}
-                    {/* <span className= 'text-btn-see-video'>See full video on Youtube</span></button> */}
+                    <div className='buttons-yt-pregunta'>
                     {showButtons
                         ? (
                             <div className={`${playerDisplayClass}`}>
@@ -215,6 +211,8 @@ class YTPlayer extends Component {
                             />
                     </div>
                         )}
+                    </div>
+                    
                 </div>
             );
         // }

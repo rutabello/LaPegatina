@@ -163,7 +163,7 @@ class Register extends Component {
                             <div className={link}>
                                 <div className="screenDiv">
                                     <div className="screenDiv__firstDiv">
-                                        <h1 className="playWith">{texts[language].roundTwoText}</h1>
+                                        <h1 className="header">{texts[language].roundTwoText}</h1>
                                         <p>Instrucciones</p>
                                         <p>Con que concerto de La Pegatina quieres jugar?</p>
                                         <Link to={{ pathname: '/youtuberoundtwo', state: { videoId: this.state.videoId,

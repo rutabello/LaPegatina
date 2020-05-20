@@ -1,15 +1,3 @@
-/* .cover-title{ */
-      /* width: 560px; */
-      /* height: 9vh; */
-      /* margin-left:5.2em; */
-      /* justify-content: center; */
-      /* background-color: #312c71;
-       */
-       /* background-color: black; */
-      /* margin: 0 auto; */
-      /* position: absolute; */
-      /* align-items: center; */
-/* } */
 
 .yt-player {
         display:flex;
@@ -29,17 +17,8 @@
   border-top: 9vh solid black;
 }
 
-/* .yt-all {
-    display:flex;
-    margin-bottom: 15vh;
-}          */
 /* @media all and (max-width:30em){
-.cover-title{ */
-/* top:0;
-left: 0; */
-/* width: 50vh; */
-/* margin-left: 1.3em; */
-/* height: 40vh; */
-/* display: block; */
-/* }
+.instagram-game-over h1{
+  font-size: 1.3em;
+  }
 } */

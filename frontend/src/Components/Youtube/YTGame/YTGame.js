@@ -88,9 +88,9 @@ class YTGame extends Component {
 
         return (
             <div className="yt-all">
-                <div className="cover-title">
+                {/* <div className="cover-title">
                     <span className="instuctionsYT" />
-                </div>
+                </div> */}
                 <div className="yt-player">
                     <YTPlayer
                         det={fourNonShuffledSongsTitles}

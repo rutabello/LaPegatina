@@ -121,7 +121,7 @@ console.log (this.state.data)
             };
 
             const { giveMeConfetti, loadingDisplayClass, playerDisplayClass, gameStatus, videoId, questions} = this.state;
-    
+            const { language }=this.props
     
             if (gameStatus === 'playing') {
                 return (
@@ -156,7 +156,7 @@ console.log (this.state.data)
             if (gameStatus === 'gameOver') {
                 return (
                     <div>
-                         <GameEnded currentGame="youtube" />
+                         <GameEnded currentGame="youtube" language={language}/>
                     </div>
                 )
             }
