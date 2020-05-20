@@ -29,7 +29,7 @@ class YTPlayer extends Component {
     console.log(event.target)
     // plays the video at 10s, in case the video has the name of the song at the start
     const { title, det } = this.props;
-    
+
 
     this.setState({
         // title:event.target.playerInfo.videoData.title,
@@ -128,8 +128,8 @@ class YTPlayer extends Component {
 
     render() {
         const opts = {
-            // height: '315',
-            // width: '560',
+            height: '450',
+            width: '900',
 
             // default 640 h-390
             playerVars: { // https://developers.google.com/youtube/player_parameters
@@ -152,7 +152,7 @@ class YTPlayer extends Component {
         //
 
             return (
-                <div>
+                <div className="video-and-questions">
                     <div className={`loading ${loadingDisplayClass}`}>
                         <Loading />
                     </div>
@@ -212,7 +212,7 @@ class YTPlayer extends Component {
                     </div>
                         )}
                     </div>
-                    
+
                 </div>
             );
         // }

@@ -11,10 +11,7 @@ class YTGame extends Component {
 
     state = {
         data: {},
-        // oneVideoID: '',
         randomVideoId: '',
-        // playlistItemsArr: [],
-        // currentSongTitle: '',
         fourNonShuffledSongsTitles: [],
         questions: [],
         // answers:[],
@@ -25,12 +22,6 @@ class YTGame extends Component {
     componentDidMount = () => {
         const json = JSON.stringify(videoDataObject);
         const newdata = JSON.parse(json);
-        // getting from the pending promise the data
-        // let promise = getPlayListItems();
-        // promise.then((data) => {
-        //   const modifiedData = getPlayListItems(data);
-        //   // save the data into the state
-        // console.log(json)
 
         this.setState({
             data: newdata,
@@ -39,7 +30,6 @@ class YTGame extends Component {
         // this is the question
 
         const arrayPlaylist = [];
-        // Recover the videoIDs from the data(api) and push in an array
         newdata.map((element) => {
         // here be the if statement
             arrayPlaylist.push(element.videoId);
@@ -78,7 +68,7 @@ class YTGame extends Component {
             fourNonShuffledSongsTitles,
         });
     }
-    
+
 
     render() {
 
@@ -88,9 +78,6 @@ class YTGame extends Component {
 
         return (
             <div className="yt-all">
-                {/* <div className="cover-title">
-                    <span className="instuctionsYT" />
-                </div> */}
                 <div className="yt-player">
                     <YTPlayer
                         det={fourNonShuffledSongsTitles}

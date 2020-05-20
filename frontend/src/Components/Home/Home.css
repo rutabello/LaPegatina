@@ -73,6 +73,10 @@ body {
   opacity: 1;
 }
 
+.btn-game:focus {
+  outline: none;
+}
+
 .home-play-buttons {
   display: flex;
   flex-wrap: wrap;

@@ -7,6 +7,14 @@
     font-size: 20px;
 }
 
+.title h1 {
+    font-size: 4.5rem;
+}
+
+.title h4 {
+    font-size: 2.25rem;
+}
+
 .instructions {
     font-family: sans-serif, cursive;
     color: white;
@@ -19,6 +27,10 @@
     width: 30vh;
     border-radius: 4em;
     font-weight: 700;
+}
+
+.button1:focus {
+    outline: none;
 }
 
 .screen {

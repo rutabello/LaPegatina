@@ -1,13 +1,13 @@
 
 .yt-player {
-        display:flex;
-        margin: 0 auto;
-        width: 100%;
-        justify-content: center;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, .7);
-        /* pointer-events: none; */
-      }
+  display:flex;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .7);
+  /* pointer-events: none; */
+}
 
 .cover-bar {
   width: 100%;
@@ -17,8 +17,21 @@
   border-top: 9vh solid black;
 }
 
-/* @media all and (max-width:30em){
-.instagram-game-over h1{
-  font-size: 1.3em;
-  }
-} */
+.confeti-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.youtube-game-over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 94vh;
+  width: 90%;
+  justify-content: center;
+}
+
+.youtube-game-over h3 {
+  font-size: 2.75rem;
+}

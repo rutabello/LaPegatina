@@ -35,7 +35,7 @@ const videoDataObject = [
     },
     {
         id: 1,
-        title: 'La Tempestad ',
+        title: 'La Tempestad',
         videoId: '9aEVNajprpg',
         VideoURL: ' https://www.youtube.com/watch?v=9aEVNajprpg',
         questions: [
@@ -94,7 +94,7 @@ const videoDataObject = [
     },
     {
         id: 3,
-        title: 'Lloverá y yo veré ',
+        title: 'Lloverá y yo veré',
         videoId: 'EoD4zkM24tU',
         VideoURL: 'https://www.youtube.com/watch?v=EoD4zkM24tU',
         questions: [
@@ -123,7 +123,7 @@ const videoDataObject = [
     },
     {
         id: 4,
-        title: 'Olivia (Mario Diaz)',
+        title: 'Olivia (con Mario Díaz)',
         videoId: 'kswtbCr3nDQ',
         VideoURL: 'https://www.youtube.com/watch?v=kswtbCr3nDQ',
         questions: [
@@ -151,7 +151,7 @@ const videoDataObject = [
     },
     {
         id: 5,
-        title: 'Non é facilé',
+        title: 'Non è facile',
         videoId: 'vM0gUacrp4g',
         VideoURL: 'https://www.youtube.com/watch?v=vM0gUacrp4g',
         questions: [
@@ -237,7 +237,7 @@ const videoDataObject = [
     },
     {
         id: 8,
-        title: 'Aquí es nadal i Estic Content',
+        title: 'Aquí és Nadal i estic content',
         videoId: '3LSA4xXWcUM',
         VideoURL: 'https://www.youtube.com/watch?v=3LSA4xXWcUM',
         questions: [
@@ -288,14 +288,14 @@ const videoDataObject = [
                 answers: ['Maricarmen', 'Muérdeme', 'Foxy & Billy', 'Olivia'],
             },
             {
-                question: 'Rodamos parte de este vídeo en El Cortijo del Fraile, donde. en 1928, fue cometido un crimen muy conocido que inspiró una obra de Lorca. Cuál?',
+                question: 'En El Cortijo del Fraile, en 1928, fue cometido un famoso crimen que inspiró una obra de Lorca. Cuál?',
                 answers: ['Bodas de Sangre', 'La casa de Bernarda Alba', 'Doña Rosita Soltera', 'Ninguna de las anteriores'],
             },
         ],
     },
     {
         id: 10,
-        title: 'Una mirada (Ska-P)',
+        title: 'Una mirada (con Ska-P)',
         videoId: '_JCGKGgUIuE',
         VideoURL: 'https://www.youtube.com/watch?v=_JCGKGgUIuE',
         questions: [
@@ -324,7 +324,7 @@ const videoDataObject = [
     },
     {
         id: 11,
-        title: 'Alosque (DCallaos)',
+        title: 'Alosque (con DCallaos)',
         videoId: 'XadfwGssSaU',
         VideoURL: 'https://www.youtube.com/watch?v=XadfwGssSaU',
         questions: [

@@ -1,44 +1,58 @@
 .titleColorYT{
-    /* color:#f1c500; */
     color:white!important;
-    font-family: 'Barlow';
+    /* font-family: 'Barlow'; */
+    font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
-    src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.googleapis.com/css?family=Barlow&display=swap') format('woff2');
+    outline: none!important;
+    font-size: 19px;
+    /* src: local('Barlow Regular'), local('Barlow-Regular'), url('https://fonts.googleapis.com/css?family=Barlow&display=swap') format('woff2'); */
+}
+
+.myButtonYT .buttonYT .titleColorYT {
+    font-size: 19px;
 }
 
 .buttonYT {
     cursor: pointer;
-    /* width: 60%; */
     display: block !important;
+    display: flex;
     height: auto;
-    margin: 5px ;
-    /* padding: 5px 15px; */
-    /* font-size: 20px; */
+    width: 46%;
+    margin: 5px 0;
     text-decoration: none;
-    /* min-height: 5em; */
-    border-radius: 7px;
-    /* margin-right: 20vh; */
-    margin-top: 2vh;
-    background-color: rgb(49, 44, 113);
+    box-shadow: inset 0px 0px 15px 3px #9fb4f2;
+    background: linear-gradient(to bottom, #302c71 5%, #2b2761 100%);
+    background-color: #302c71;
+    border: 1px solid #545180;
+    color: #ffffff;
+    text-shadow: 0px 1px 0px #283966;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 19px;
+    padding: 10px 30px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    align-items: center;
+    height: 66px;
+    border-radius: 30px;
 }
 
-@media (max-width:700px) {
-    .buttonYT.myButtonYT.buttonYT{
-        margin: 0.4em ;
-    }
+.buttonYT:focus {
+    outline: none!important;
 }
 
-.buttonYT {
-    flex: 2% 1;
+.btn-4-YT{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 1vh;
 }
 
 
 .myButtonYT:hover {
-    /* color: black!important; */
-    background: transparent;
-    box-shadow: 0px 0px 5px black, 0px 0px 25px black;
-    /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);  */
+    transform: scale(1.05);
 }
 
 .myButtonYT:active {
@@ -46,14 +60,13 @@
     /* color: red; */
     /* top:1px; */
     /* background: #312c71; */
-    background: orange;
+    background: #302c71;
     /* box-shadow: 0px 0px 5px #FF003C, 0px 0px 25px #FF003C, 0px 0px 50px #FF003C, 0px 0px 100px #FF003C; */
     /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);  */
 }
 
-.myButtonYT:focus {
-    /* outline-color: white; */
-    box-shadow: 0px 0px 5px black, 0px 0px 25p black;
+.buttons-yt-pregunta {
+    width: 100%;
 }
 
 @media all and (max-width:30em) {
@@ -66,23 +79,18 @@
     }
 
     .btn-4-YT{
-        width: 65%;
+        width: 100%;
         margin: 0 auto;
     }
     .titleColorYT{
         font-weight: 100;
         color: white;
+    }
+
+    .buttonYT.myButtonYT.buttonYT{
+        margin: 0.4em ;
+    }
+
 }
-}
-.btn-4-YT{
-    display: flex;
-    /* justify-content: space-around; */
-    /* align-items: center; */
-    flex-wrap: wrap;
-    margin-top:2em;
-    justify-content: space-evenly;
-    /* height: 25vh;
-    margin-left: 15vh;
-    margin-right: 15vh;
-    margin-bottom: 5vh; */
-}
+
+

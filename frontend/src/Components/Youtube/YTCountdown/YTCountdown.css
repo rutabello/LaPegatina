@@ -1,20 +1,11 @@
 .progress-div {
-  background-color: rgb(233, 233, 233);
-  /* border-radius: .5rem; */
+  /* background-color: rgb(233, 233, 233); */
+  background-color: black;
 }
 
 .progress {
-  background-color: #4CAF50;
+  background-color: rgb(118, 109, 202);
   height: 30px;
-  /* border-radius: 1rem; */
   transition: 2s ease;
   transition-delay: 1s;
 }
-
-  /* #label {
-    text-align: center;
-    /* line-height: 30px; */
-    /* color: white */
-    
-  /* } */ 
-  

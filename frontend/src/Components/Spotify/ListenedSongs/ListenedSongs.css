@@ -50,10 +50,11 @@
 }
 
 .show h4 {
-    margin-top: 30px;
+    margin-top: 14px;
     font-size: 19px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     color: #766dca;
+    width: 100%;
 }
 
 /* .repeat-button {
