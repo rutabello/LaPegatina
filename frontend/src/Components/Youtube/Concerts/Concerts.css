@@ -31,3 +31,23 @@
     transform: scale(1.1);
     outline: none;
 }
+
+@media only screen and (max-width: 750px) {
+    .concert-picture {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .concert-picture-detail {
+        border-radius: 11px;
+    }
+
+    .concert-picture-detail h6 {
+        margin-bottom: .1rem;
+    }
+
+    .header h1 {
+
+    }
+}

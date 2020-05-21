@@ -6,6 +6,6 @@
 .progress {
   background-color: rgb(118, 109, 202);
   height: 30px;
-  transition: 2s ease;
-  transition-delay: 1s;
+  transition: 5s ease;
+  /* transition-delay: 1s; */
 }

@@ -83,12 +83,24 @@
         margin: 0 auto;
     }
     .titleColorYT{
-        font-weight: 100;
+        font-weight: 500;
         color: white;
+        font-size: .9rem;
+        font-family: 'Amaranth', sans-serif;
     }
 
     .buttonYT.myButtonYT.buttonYT{
         margin: 0.4em ;
+    }
+
+    .buttonYT {
+        padding: 5px 11px;
+        height: auto;
+        min-height: 8vh;
+    }
+
+    .buttons-yt-pregunta {
+        width: 85%;
     }
 
 }

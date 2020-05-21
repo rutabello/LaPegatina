@@ -68,3 +68,13 @@
 h4 {
     font-size: 1.25rem;
 }
+
+@media all and (max-width:30em) {
+    .title h1 {
+        font-size: 3.3rem;
+    }
+
+    .title h4 {
+        font-size: 1.6rem;
+    }
+}

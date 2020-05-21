@@ -125,3 +125,15 @@ display: flex;
 .round-second-question {
     font-size: 1.7rem;
 }
+
+@media only screen and (max-width: 750px) {
+
+    .round-first-question {
+        font-size: 1.3rem;
+        margin-bottom: 5vh;
+    }
+
+    .round-second-question {
+        font-size: 1.3rem;
+    }
+}
