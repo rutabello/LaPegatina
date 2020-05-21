@@ -12,8 +12,6 @@ import Button from '../Button/Button';
 import Shuffle from '../../Utils/Shuffle';
 import Spotify from '../../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
-// import ShareTheGame from '../../ShareTheGame/ShareTheGame';
-// import ListenedSongs from '../ListenedSongs/ListenedSongs';
 import GameEnded from '../../GameEnded/GameEnded';
 import texts from '../../../texts.json';
 import SocialMedia from '../../SocialMedia/SocialMedia';
@@ -286,14 +284,12 @@ class spotifyRoundTwo extends React.Component {
 
         return (
             <section>
-                {/* <ShareTheGame score={score} /> */}
                 {currentAttempt <= this.NUMBER_OF_SONGS_TO_PLAY_WITH ? (
                     <div className="show">
                         <div className="QuestionAndAnswers">
                             <div className="Countdown">
                                 <PlayerCountdown
                                     language={language}
-                                    // onMusicPlays={this.chooseSongs}
                                     setNewRandomSong={this.setNewRandomSong}
                                     songURL={currentSong.preview_url}
                                     coincidence={this.checkCoincidence}
@@ -333,14 +329,9 @@ class spotifyRoundTwo extends React.Component {
                             </div>
                             <div id="counter" className="instruct">
                                 <p className={this.answerCountShow ? 'show' : 'hide'}>
-                                    {/* {texts[language].correctAnswers} */}
                                     {`${currentAttempt} / ${this.NUMBER_OF_SONGS_TO_PLAY_WITH}`}
                                 </p>
                                 <br />
-                                {/* <p className={this.answerCountShow ? 'show' : 'hide'}>
-                                        {texts[language].pointsText}
-                                        {score}
-                                    </p> */}
                                 <hr />
                             </div>
                         </div>
@@ -349,23 +340,7 @@ class spotifyRoundTwo extends React.Component {
                     <div>
                         <Navbar addedClass="fixTop" pagein="any" />
                         <GameEnded score={score} currentGame="spotify" language={language} />
-                        {/* <ListenedSongs
-                            username={name}
-                            unknownSongs={this.unknownSongs}
-                            language={language}
-                            url={songUrl}
-                            playStatus={playerState}
-                            onClick={playing}
-                            score={score}
-                            roundfrom="one"
-                            adding={this.addTrack}
-                            remove={this.removeTrack}
-                            naming={this.updatePlaylistName}
-                            save={this.savePlaylist}
-                            playlistName={playlistName}
-                            noTracks={noTracks}
-                            playlistTracks={playlistTracks}
-                        /> */}
+
                         <div className="social-media-follow-buttons">
                             <SocialMedia language={language} />
                         </div>
