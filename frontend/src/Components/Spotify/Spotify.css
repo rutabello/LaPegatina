@@ -29,7 +29,7 @@
     font-weight: 600;
     font-size: 25px;
     color: white;;
-    width: 90%;
+    /* width: 90%; */
     text-align: center;
 }
 
@@ -102,6 +102,11 @@ li {
 .spotify-game-question {
     display: flex;
     justify-content: center;
+    font-family: 'Amaranth', sans-serif;
+}
+
+.spotify-game-question p {
+    font-family: 'Amaranth', sans-serif;
 }
 
 

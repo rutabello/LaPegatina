@@ -26,3 +26,8 @@
 .buttonConcert:hover {
     transform: scale(1.1);
 }
+
+.buttonConcert:focus {
+    transform: scale(1.1);
+    outline: none;
+}

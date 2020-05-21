@@ -166,7 +166,7 @@ class Register extends Component {
                             <div className={link}>
                                 <div className="youtube-game-over">
                                     <h1 className="header">{texts[language].roundTwoText}</h1>
-                                    <h2 className="round-first-question">{texts[language].youtubeInstructions}</h2>
+                                    <h2 className="round-first-question">{texts[language].youtubeInstructionsR2}</h2>
                                     <h2 className="round-second-question">{texts[language].chooseConcertText}</h2>
 
                                      <Concerts />

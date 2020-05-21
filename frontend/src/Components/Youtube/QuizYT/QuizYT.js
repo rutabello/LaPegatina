@@ -26,7 +26,7 @@ class QuizYT extends Component {
         const { index } = this.state;
 
         // if(this.state.index > this.state.counter){
-        if (index < 5) {
+        if (index < 4) {
             this.setState({
                 index: index + 1,
                 correctAnswer: questions[index + 1].answers[0],

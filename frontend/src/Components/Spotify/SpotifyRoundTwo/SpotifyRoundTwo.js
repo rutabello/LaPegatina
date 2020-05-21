@@ -334,7 +334,7 @@ class spotifyRoundTwo extends React.Component {
                             <div id="counter" className="instruct">
                                 <p className={this.answerCountShow ? 'show' : 'hide'}>
                                     {/* {texts[language].correctAnswers} */}
-                                    {`${currentAttempt} / ${this.NUMBER_OF_SONGS_TO_PLAY_WITH}}`}
+                                    {`${currentAttempt} / ${this.NUMBER_OF_SONGS_TO_PLAY_WITH}`}
                                 </p>
                                 <br />
                                 {/* <p className={this.answerCountShow ? 'show' : 'hide'}>

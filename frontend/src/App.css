@@ -7,6 +7,14 @@
   display: block;
 }
 
+body {
+  font-family: 'Amaranth', sans-serif!important;
+}
+
+button {
+  font-family: 'Amaranth', sans-serif!important;
+}
+
 /* .social-media-follow-buttons {
   position: fixed;
   bottom: 0px;
