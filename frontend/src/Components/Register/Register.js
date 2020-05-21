@@ -122,15 +122,6 @@ class Register extends Component {
                                         <h1 className="round2Title">{texts[language].roundTwoText}</h1>
                                         <h2>{texts[language].spotifyRoundTwoQuestion}</h2>
                                         <h2>{texts[language].chooseAlbumText}</h2>
-                                        <Link to={{ pathname: '/spotifyRoundTwo', state: { selectedAlbum: this.state.selectedAlbum } }}>
-                                            <button
-                                                className="button1"
-                                                type="button"
-                                                onClick={() => this.showLink(context, score, 'spotify', 'one')}
-                                            >
-                                                Start
-                                            </button>
-                                        </Link>
                                     </div>
                                     <div className="allAlbumsDiv">
                                         {albums.map((albumObject) => (
@@ -147,6 +138,15 @@ class Register extends Component {
                                             </button>
                                         ))}
                                     </div>
+                                    <Link to={{ pathname: '/spotifyRoundTwo', state: { selectedAlbum: this.state.selectedAlbum } }}>
+                                            <button
+                                                className="button1"
+                                                type="button"
+                                                onClick={() => this.showLink(context, score, 'spotify', 'one')}
+                                            >
+                                                Start
+                                            </button>
+                                        </Link>
                                 </div>
                             </div>
                             <button className="suma-puntos-button" type="button" onClick={() => this.showLink(context, score, 'spotify', 'one')}>

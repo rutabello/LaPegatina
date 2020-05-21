@@ -79,6 +79,11 @@ display: flex;
     transform: scale(1.1);
 }
 
+.buttonAlbum:focus {
+    transform: scale(1.1);
+    outline: none;
+}
+
 .img_concert{
     width: 5em;
 }
