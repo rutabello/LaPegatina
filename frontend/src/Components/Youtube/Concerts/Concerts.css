@@ -7,7 +7,7 @@
 .concert-picture {
     display: flex;
     flex-direction: column;
-    width: 33%;
+    width: 31%;
 }
 
 .concert-picture-detail {
@@ -45,9 +45,5 @@
 
     .concert-picture-detail h6 {
         margin-bottom: .1rem;
-    }
-
-    .header h1 {
-
     }
 }
