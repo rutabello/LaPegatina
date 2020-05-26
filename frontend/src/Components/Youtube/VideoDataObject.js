@@ -1,38 +1,38 @@
 /* eslint-disable max-len */
 // always the first question is the right one
 const videoDataObject = [
-    {
-        id: 0,
-        title: 'Gat Rumberu',
-        videoId: 'XYKeFkKmSt4',
-        VideoURL: 'https://www.youtube.com/watch?v=XYKeFkKmSt4',
-        questions: [
-            {
-                question: 'Quién compuso la canción? ',
-                answers: ['Ferran', 'Adrià', 'Rubén', 'Romain'],
-            },
-            {
-                question: 'En qué ciudades está grabado? ',
-                answers: ['Bruselas y Mataró', 'Ámsterdam y Barcelona', 'Rennes y Barcelona',
-                    'Barcelona y Mataró'],
-            },
-            {
-                question: 'Cuáles son los dos equipos ‘raperos’ que hay? ',
-                answers: ['Ferran, Romain y Rubén VS. Adrià, Axel y Ovidi', 'Ferran, Romain y Sergi VS. Adrià, Ovidi y Rubén',
-                    'Adrià, Romain, Rubén VS. Axel, Ovidi y Sergi', 'Miki, Romain y Rubén VS. Adrià, Axel y Sergi'],
-            },
-            {
-                question: 'Qué técnico de La Pegatina sale en los créditos?',
-                answers: ['Tamu (backliner)', 'Chema (merchandising)', 'Jorge (técnico de luces)',
-                    'Abel (técnico de sonido'],
-            },
-            {
-                question: 'Qué disco contiene “Gat Rumberu”?',
-                answers: ['Via Mandarina', 'Al Carrer!', 'Xapomelon',
-                    ' Ahora o Nunca'],
-            },
-        ],
-    },
+    // {
+    //     id: 0,
+    //     title: 'Gat Rumberu',
+    //     videoId: 'XYKeFkKmSt4',
+    //     VideoURL: 'https://www.youtube.com/watch?v=XYKeFkKmSt4',
+    //     questions: [
+    //         {
+    //             question: 'Quién compuso la canción? ',
+    //             answers: ['Ferran', 'Adrià', 'Rubén', 'Romain'],
+    //         },
+    //         {
+    //             question: 'En qué ciudades está grabado? ',
+    //             answers: ['Bruselas y Mataró', 'Ámsterdam y Barcelona', 'Rennes y Barcelona',
+    //                 'Barcelona y Mataró'],
+    //         },
+    //         {
+    //             question: 'Cuáles son los dos equipos ‘raperos’ que hay? ',
+    //             answers: ['Ferran, Romain y Rubén VS. Adrià, Axel y Ovidi', 'Ferran, Romain y Sergi VS. Adrià, Ovidi y Rubén',
+    //                 'Adrià, Romain, Rubén VS. Axel, Ovidi y Sergi', 'Miki, Romain y Rubén VS. Adrià, Axel y Sergi'],
+    //         },
+    //         {
+    //             question: 'Qué técnico de La Pegatina sale en los créditos?',
+    //             answers: ['Tamu (backliner)', 'Chema (merchandising)', 'Jorge (técnico de luces)',
+    //                 'Abel (técnico de sonido'],
+    //         },
+    //         {
+    //             question: 'Qué disco contiene “Gat Rumberu”?',
+    //             answers: ['Via Mandarina', 'Al Carrer!', 'Xapomelon',
+    //                 ' Ahora o Nunca'],
+    //         },
+    //     ],
+    // },
     {
         id: 1,
         title: 'La Tempestad',
@@ -61,37 +61,38 @@ const videoDataObject = [
                 answers: ['Nubes', 'Chupa Chups', 'Bragas', 'Ositos'],
             },
         ],
-    },
-    {
-        id: 2,
-        title: 'Heridas de Guerra',
-        videoId: '0BBfw3T8Mus',
-        VideoURL: 'https://www.youtube.com/watch?v=0BBfw3T8Mus',
-        questions: [
-            {
-                question: 'En qué barrio de Barcelona está situada la terraza del videoclip?',
-                answers: ['Gràcia', 'Poble Nou', 'Sants', 'Nou Barris'],
-            },
-            {
-                question: 'Qué instrumento toca Romain que nunca toca en un escenario?',
-                answers: ['Guitarra eléctrica', 'Percusión', 'Teclado', 'Contrabajo'],
 
-            },
-            {
-                question: 'Qué elemento tiramos al principio del videoclip y nunca falta en nuestros conciertos?',
-                answers: ['Confeti', 'Camiseta', 'Humo', 'Agua'],
-            },
-            {
-                question: '“Heridas de Guerra” fue single de qué disco?',
-                answers: ['Revulsiu', 'Un secreto a voces', 'Eureka!', 'Al Carrer!'],
-            },
-            {
-                question: 'Nos encanta grabar escenas de agua en invierno. Cómo grabamos en la piscina?',
-                answers: ['El agua estaba caliente y había una ventana debajo del agua', 'El agua estaba caliente',
-                    'Había una ventana debajo del agua', 'El director es un crack de la Gopro'],
-            },
-        ],
     },
+    // {
+    //     id: 2,
+    //     title: 'Heridas de Guerra',
+    //     videoId: '0BBfw3T8Mus',
+    //     VideoURL: 'https://www.youtube.com/watch?v=0BBfw3T8Mus',
+    //     questions: [
+    //         {
+    //             question: 'En qué barrio de Barcelona está situada la terraza del videoclip?',
+    //             answers: ['Gràcia', 'Poble Nou', 'Sants', 'Nou Barris'],
+    //         },
+    //         {
+    //             question: 'Qué instrumento toca Romain que nunca toca en un escenario?',
+    //             answers: ['Guitarra eléctrica', 'Percusión', 'Teclado', 'Contrabajo'],
+
+    //         },
+    //         {
+    //             question: 'Qué elemento tiramos al principio del videoclip y nunca falta en nuestros conciertos?',
+    //             answers: ['Confeti', 'Camiseta', 'Humo', 'Agua'],
+    //         },
+    //         {
+    //             question: '“Heridas de Guerra” fue single de qué disco?',
+    //             answers: ['Revulsiu', 'Un secreto a voces', 'Eureka!', 'Al Carrer!'],
+    //         },
+    //         {
+    //             question: 'Nos encanta grabar escenas de agua en invierno. Cómo grabamos en la piscina?',
+    //             answers: ['El agua estaba caliente y había una ventana debajo del agua', 'El agua estaba caliente',
+    //                 'Había una ventana debajo del agua', 'El director es un crack de la Gopro'],
+    //         },
+    //     ],
+    // },
     {
         id: 3,
         title: 'Lloverá y yo veré',
@@ -149,34 +150,34 @@ const videoDataObject = [
             },
         ],
     },
-    {
-        id: 5,
-        title: 'Non è facile',
-        videoId: 'vM0gUacrp4g',
-        VideoURL: 'https://www.youtube.com/watch?v=vM0gUacrp4g',
-        questions: [
-            {
-                question: 'Qué idioma se utilizó para dar el nombre a esta canción?',
-                answers: ['Italiano', 'Català', 'Francés', 'Portugués'],
-            },
-            {
-                question: 'Quién colabora en esta canción?',
-                answers: ['Baciamolemani', 'Manu Chao', 'Macaco', 'Ska-P'],
-            },
-            {
-                question: 'Con qué objeto canta Adrià en esta canción?',
-                answers: ['Una bombilla', 'Un arbusto', 'Un palo de escoba', 'Un bocadillo'],
-            },
-            {
-                question: 'Esta canción salió para uno de los aniversarios del grupo. Cuál?',
-                answers: ['El décimo aniversario', 'El quince aniversario', 'El segundo aniversario', 'El quinto aniversario'],
-            },
-            {
-                question: 'Cuando salió esta canción, con cuántos miembros oficiales contaba La Pegatina?',
-                answers: ['7', '4', '5', '6'],
-            },
-        ],
-    },
+    // {
+    //     id: 5,
+    //     title: 'Non è facile',
+    //     videoId: 'vM0gUacrp4g',
+    //     VideoURL: 'https://www.youtube.com/watch?v=vM0gUacrp4g',
+    //     questions: [
+    //         {
+    //             question: 'Qué idioma se utilizó para dar el nombre a esta canción?',
+    //             answers: ['Italiano', 'Català', 'Francés', 'Portugués'],
+    //         },
+    //         {
+    //             question: 'Quién colabora en esta canción?',
+    //             answers: ['Baciamolemani', 'Manu Chao', 'Macaco', 'Ska-P'],
+    //         },
+    //         {
+    //             question: 'Con qué objeto canta Adrià en esta canción?',
+    //             answers: ['Una bombilla', 'Un arbusto', 'Un palo de escoba', 'Un bocadillo'],
+    //         },
+    //         {
+    //             question: 'Esta canción salió para uno de los aniversarios del grupo. Cuál?',
+    //             answers: ['El décimo aniversario', 'El quince aniversario', 'El segundo aniversario', 'El quinto aniversario'],
+    //         },
+    //         {
+    //             question: 'Cuando salió esta canción, con cuántos miembros oficiales contaba La Pegatina?',
+    //             answers: ['7', '4', '5', '6'],
+    //         },
+    //     ],
+    // },
     {
         id: 6,
         title: 'Miranda',
@@ -206,93 +207,93 @@ const videoDataObject = [
             },
         ],
     },
-    {
-        id: 7,
-        title: 'Penjat',
-        videoId: 'HYmWxl5MSg0',
-        VideoURL: 'https://www.youtube.com/watch?v=HYmWxl5MSg0',
-        questions: [
-            {
-                question: 'Qué grupo colabora en esta canción?',
-                answers: ['Txarango', 'Doctor Prats', 'Che Sudaka', 'Bongo Botrako'],
-            },
-            {
-                question: 'En qué lugar está grabado el videoclip?',
-                answers: ['Barcelona', 'Cerdanyola del Vallès', 'Badalona', 'Montcada i Reixac'],
+    // {
+    //     id: 7,
+    //     title: 'Penjat',
+    //     videoId: 'HYmWxl5MSg0',
+    //     VideoURL: 'https://www.youtube.com/watch?v=HYmWxl5MSg0',
+    //     questions: [
+    //         {
+    //             question: 'Qué grupo colabora en esta canción?',
+    //             answers: ['Txarango', 'Doctor Prats', 'Che Sudaka', 'Bongo Botrako'],
+    //         },
+    //         {
+    //             question: 'En qué lugar está grabado el videoclip?',
+    //             answers: ['Barcelona', 'Cerdanyola del Vallès', 'Badalona', 'Montcada i Reixac'],
 
-            },
-            {
-                question: 'Qué instrumento toca Ovidi en el vídeo?',
-                answers: ['El bombo y el cajón flamenco', 'Bombo', 'Cajón flamenco', ' Pandereta '],
-            },
-            {
-                question: 'Cuántos componentes de La Pegatina hay en el vídeo?',
-                answers: ['4', '8', '7', '5'],
-            },
-            {
-                question: 'De qué estilo de música forma parte esta canción?',
-                answers: ['Rumba', 'Salsa', 'Ska', 'Bulería'],
-            },
-        ],
-    },
-    {
-        id: 8,
-        title: 'Aquí és Nadal i estic content',
-        videoId: '3LSA4xXWcUM',
-        VideoURL: 'https://www.youtube.com/watch?v=3LSA4xXWcUM',
-        questions: [
-            {
-                question: 'Qué matrícula tiene el vehículo que sale al inicio del vídeo?',
-                answers: ['La Pegatina', 'No tiene matricula', '7270HPC', '9999LPG'],
-            },
-            {
-                question: 'Con qué bebida brindamos en el vídeo?',
-                answers: ['Cava', 'Vino', 'Agua', 'Ron'],
+    //         },
+    //         {
+    //             question: 'Qué instrumento toca Ovidi en el vídeo?',
+    //             answers: ['El bombo y el cajón flamenco', 'Bombo', 'Cajón flamenco', ' Pandereta '],
+    //         },
+    //         {
+    //             question: 'Cuántos componentes de La Pegatina hay en el vídeo?',
+    //             answers: ['4', '8', '7', '5'],
+    //         },
+    //         {
+    //             question: 'De qué estilo de música forma parte esta canción?',
+    //             answers: ['Rumba', 'Salsa', 'Ska', 'Bulería'],
+    //         },
+    //     ],
+    // },
+    // {
+    //     id: 8,
+    //     title: 'Aquí és Nadal i estic content',
+    //     videoId: '3LSA4xXWcUM',
+    //     VideoURL: 'https://www.youtube.com/watch?v=3LSA4xXWcUM',
+    //     questions: [
+    //         {
+    //             question: 'Qué matrícula tiene el vehículo que sale al inicio del vídeo?',
+    //             answers: ['La Pegatina', 'No tiene matricula', '7270HPC', '9999LPG'],
+    //         },
+    //         {
+    //             question: 'Con qué bebida brindamos en el vídeo?',
+    //             answers: ['Cava', 'Vino', 'Agua', 'Ron'],
 
-            },
-            {
-                question: 'En qué campaña de Navidad salió esta canción?',
-                answers: ['TV3-Catalunya Ràdio 2010', 'Tve 2012', 'Btv 2011', 'Ninguna de las anteriores'],
-            },
-            {
-                question: 'Quién aparece al final del video para echar al resto de La Pegatina del salón?',
-                answers: ['Tamu', 'Un Actor', 'Miki', 'No Aparece nadie al final'],
-            },
-            {
-                question: 'Qué animal aparece con Ovidi al inicio del vídeo?',
-                answers: ['Un burro', 'Un perro', 'Un gato', 'Una serpiente'],
-            },
-        ],
-    },
-    {
-        id: 9,
-        title: 'La Sorranchera',
-        videoId: 'UY7CSscOxHQ',
-        VideoURL: 'https://www.youtube.com/watch?v=UY7CSscOxHQ',
-        questions: [
-            {
-                question: 'Dónde se grabó el videoclip?',
-                answers: ['Cabo de Gata', 'Cabo Vidio', 'Cabo de Palos', 'Cabo Cañaveral'],
-            },
-            {
-                question: 'Quién se desmayó durante el rodaje?',
-                answers: ['Rubén', 'Adrià', 'Ferran', 'Sergi'],
+    //         },
+    //         {
+    //             question: 'En qué campaña de Navidad salió esta canción?',
+    //             answers: ['TV3-Catalunya Ràdio 2010', 'Tve 2012', 'Btv 2011', 'Ninguna de las anteriores'],
+    //         },
+    //         {
+    //             question: 'Quién aparece al final del video para echar al resto de La Pegatina del salón?',
+    //             answers: ['Tamu', 'Un Actor', 'Miki', 'No Aparece nadie al final'],
+    //         },
+    //         {
+    //             question: 'Qué animal aparece con Ovidi al inicio del vídeo?',
+    //             answers: ['Un burro', 'Un perro', 'Un gato', 'Una serpiente'],
+    //         },
+    //     ],
+    // },
+    // {
+    //     id: 9,
+    //     title: 'La Sorranchera',
+    //     videoId: 'UY7CSscOxHQ',
+    //     VideoURL: 'https://www.youtube.com/watch?v=UY7CSscOxHQ',
+    //     questions: [
+    //         {
+    //             question: 'Dónde se grabó el videoclip?',
+    //             answers: ['Cabo de Gata', 'Cabo Vidio', 'Cabo de Palos', 'Cabo Cañaveral'],
+    //         },
+    //         {
+    //             question: 'Quién se desmayó durante el rodaje?',
+    //             answers: ['Rubén', 'Adrià', 'Ferran', 'Sergi'],
 
-            },
-            {
-                question: 'A quién le cayó la GoPro al fondo del mar al lanzarse al agua desde 8m de altura?',
-                answers: ['Rubén', 'Ferran', 'Ovidi', 'Miki'],
-            },
-            {
-                question: 'Qué otro videoclip se grabó en la provincia de Almería?',
-                answers: ['Maricarmen', 'Muérdeme', 'Foxy & Billy', 'Olivia'],
-            },
-            {
-                question: 'En El Cortijo del Fraile, en 1928, fue cometido un famoso crimen que inspiró una obra de Lorca. Cuál?',
-                answers: ['Bodas de Sangre', 'La casa de Bernarda Alba', 'Doña Rosita Soltera', 'Ninguna de las anteriores'],
-            },
-        ],
-    },
+    //         },
+    //         {
+    //             question: 'A quién le cayó la GoPro al fondo del mar al lanzarse al agua desde 8m de altura?',
+    //             answers: ['Rubén', 'Ferran', 'Ovidi', 'Miki'],
+    //         },
+    //         {
+    //             question: 'Qué otro videoclip se grabó en la provincia de Almería?',
+    //             answers: ['Maricarmen', 'Muérdeme', 'Foxy & Billy', 'Olivia'],
+    //         },
+    //         {
+    //             question: 'En El Cortijo del Fraile, en 1928, fue cometido un famoso crimen que inspiró una obra de Lorca. Cuál?',
+    //             answers: ['Bodas de Sangre', 'La casa de Bernarda Alba', 'Doña Rosita Soltera', 'Ninguna de las anteriores'],
+    //         },
+    //     ],
+    // },
     {
         id: 10,
         title: 'Una mirada (con Ska-P)',
@@ -322,35 +323,35 @@ const videoDataObject = [
             },
         ],
     },
-    {
-        id: 11,
-        title: 'Alosque (con DCallaos)',
-        videoId: 'XadfwGssSaU',
-        VideoURL: 'https://www.youtube.com/watch?v=XadfwGssSaU',
-        questions: [
-            {
-                question: 'Dónde fue grabada la parte del baile del videoclip?',
-                answers: ['En Montcada i Reixac', 'En Sant Just Desvern', 'En Sant Joan Despí', 'En Barcelona'],
-            },
-            {
-                question: 'El videoclip de “Alosque” fue:',
-                answers: ['Ninguna de las anteriores es correcta', 'El primer videoclip del grupo', 'El único videoclip grabado en nuestro pueblo', 'El único en que sale Maribel La Canija'],
+    // {
+    //     id: 11,
+    //     title: 'Alosque (con DCallaos)',
+    //     videoId: 'XadfwGssSaU',
+    //     VideoURL: 'https://www.youtube.com/watch?v=XadfwGssSaU',
+    //     questions: [
+    //         {
+    //             question: 'Dónde fue grabada la parte del baile del videoclip?',
+    //             answers: ['En Montcada i Reixac', 'En Sant Just Desvern', 'En Sant Joan Despí', 'En Barcelona'],
+    //         },
+    //         {
+    //             question: 'El videoclip de “Alosque” fue:',
+    //             answers: ['Ninguna de las anteriores es correcta', 'El primer videoclip del grupo', 'El único videoclip grabado en nuestro pueblo', 'El único en que sale Maribel La Canija'],
 
-            },
-            {
-                question: 'La canción Alosque fue estrenada en:',
-                answers: ['Sala Apolo 2008', 'Disco “Via Mandarina”', 'Disco “Al Carrer!”', 'Sala Taboo 2008'],
-            },
-            {
-                question: 'Cómo acaba el videoclip?',
-                answers: ['Concierto improvisado acústico', 'Con el niño del cometa del inicio', 'Con Romain rompiendo el acordeón contra el suelo', 'Cada uno pa’ su casa'],
-            },
-            {
-                question: 'Dónde estaba Miki Florensa cuando estaban grabando este videoclip?',
-                answers: ['Las anteriores son correctas', 'Tocando el saxo', 'Empezando a tocar la guitarra', ' Empezando a tocar con MondoLoco'],
-            },
-        ],
-    },
+    //         },
+    //         {
+    //             question: 'La canción Alosque fue estrenada en:',
+    //             answers: ['Sala Apolo 2008', 'Disco “Via Mandarina”', 'Disco “Al Carrer!”', 'Sala Taboo 2008'],
+    //         },
+    //         {
+    //             question: 'Cómo acaba el videoclip?',
+    //             answers: ['Concierto improvisado acústico', 'Con el niño del cometa del inicio', 'Con Romain rompiendo el acordeón contra el suelo', 'Cada uno pa’ su casa'],
+    //         },
+    //         {
+    //             question: 'Dónde estaba Miki Florensa cuando estaban grabando este videoclip?',
+    //             answers: ['Las anteriores son correctas', 'Tocando el saxo', 'Empezando a tocar la guitarra', ' Empezando a tocar con MondoLoco'],
+    //         },
+    //     ],
+    // },
 
 
 ];
