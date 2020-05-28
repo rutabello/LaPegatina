@@ -2,9 +2,9 @@
 import React, { Component } from 'react';
 import './Concerts.css'
 import arenal16 from '../Concerts/Pictures/arenal2016.png';
-import arenal19 from '../Concerts/Pictures/arenal2019_.png';
+import arenal19 from '../Concerts/Pictures/arenal2019.png';
 import merce19 from '../Concerts/Pictures/merce2019.png';
-import vinarock14 from '../Concerts/Pictures/viña_rock_2014.png';
+import vinarock14 from '../Concerts/Pictures/viña_rock_2014.png';
 import bilbao18 from '../Concerts/Pictures/bilbao2018.png';
 import sanfermin13 from '../Concerts/Pictures/sanfermin2013.png';
 

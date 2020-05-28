@@ -9,7 +9,6 @@ import Button from '../Button/Button';
 import Shuffle from '../../Utils/Shuffle';
 import Spotify from '../../Utils/Spotify';
 import PlayerCountdown from '../PlayerCountdown/PlayerCountdown';
-// import ShareTheGame from '../../ShareTheGame/ShareTheGame';
 import ListenedSongs from '../ListenedSongs/ListenedSongs';
 import texts from '../../../texts.json';
 import SocialMedia from '../../SocialMedia/SocialMedia';
@@ -59,7 +58,7 @@ class SpotifyRoundOne extends React.Component {
         playlistTracks: [],
         noTracks: true,
         // songList: [],
-        playlistName: 'Mis favoritos',
+        playlistName: 'Pegatinas',
         // addedSong: false,
         // buttonText: 'Ponla en tu playlist!',
         // buttonText2: 'Ya ésta en tu lista!',
