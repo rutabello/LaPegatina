@@ -8,18 +8,21 @@ import '../Home/Home.css';
 import './Register.css';
 import Spotify from '../Utils/Spotify';
 import videoDataObject from '../Youtube/VideoDataObject';
+import Concerts from '../Youtube/Concerts/Concerts';
 import texts from '../../texts.json';
 import MembersAccounts from '../Instagram/InstagramRoundTwo/MembersAccounts';
+
 
 class Register extends Component {
     state = {
         link: 'hide',
         albums: [],
         selectedAlbum: '',
-        data: [],
-        videoId: '',
+        videoData: [],
+        // videoId: '',
         questions:[],
         setSelectedMemberId: '',
+        selectedConcert: '',
         picData: []
     };
 
@@ -92,14 +95,14 @@ class Register extends Component {
         if (currentGame === 'spotify') {
             this.getSpotifyAlbums();
         }
-        if (currentGame === 'youtube') {
-            const json = JSON.stringify(videoDataObject);
-            const newdata = JSON.parse(json);
+        // if (currentGame === 'youtube') {
+        //     const json = JSON.stringify(Concerts);
+        //     const newdata = JSON.parse(json);
 
-            this.setState({
-                data: newdata,
-            });
-        }
+        //     this.setState({
+        //         videoData: newdata,
+        //     });
+        // }
     }
 
     render() {
@@ -119,15 +122,6 @@ class Register extends Component {
                                         <h1 className="round2Title">{texts[language].roundTwoText}</h1>
                                         <h2>{texts[language].spotifyRoundTwoQuestion}</h2>
                                         <h2>{texts[language].chooseAlbumText}</h2>
-                                        <Link to={{ pathname: '/spotifyRoundTwo', state: { selectedAlbum: this.state.selectedAlbum } }}>
-                                            <button
-                                                className="button1"
-                                                type="button"
-                                                onClick={() => this.showLink(context, score, 'spotify', 'one')}
-                                            >
-                                                Start
-                                            </button>
-                                        </Link>
                                     </div>
                                     <div className="allAlbumsDiv">
                                         {albums.map((albumObject) => (
@@ -144,6 +138,15 @@ class Register extends Component {
                                             </button>
                                         ))}
                                     </div>
+                                    <Link to={{ pathname: '/spotifyRoundTwo', state: { selectedAlbum: this.state.selectedAlbum } }}>
+                                            <button
+                                                className="button1"
+                                                type="button"
+                                                onClick={() => this.showLink(context, score, 'spotify', 'one')}
+                                            >
+                                                Start
+                                            </button>
+                                        </Link>
                                 </div>
                             </div>
                             <button className="suma-puntos-button" type="button" onClick={() => this.showLink(context, score, 'spotify', 'one')}>
@@ -161,40 +164,24 @@ class Register extends Component {
                     {(context) => (
                         <div>
                             <div className={link}>
-                                <div className="screenDiv">
-                                    <div className="screenDiv__firstDiv">
-                                        <h1 className="header">{texts[language].roundTwoText}</h1>
-                                        <p>Instrucciones</p>
-                                        <p>Con que concerto de La Pegatina quieres jugar?</p>
-                                        <Link to={{ pathname: '/youtuberoundtwo', state: { videoId: this.state.videoId,
-                                            data:this.state.data} }}
+                                <div className="youtube-game-over">
+                                    <h1 className="header">{texts[language].roundTwoText}</h1>
+                                    <h2 className="round-first-question">{texts[language].youtubeInstructionsR2}</h2>
+                                    <h2 className="round-second-question">{texts[language].chooseConcertText}</h2>
+
+                                     <Concerts />
+
+                                    <Link to={{ pathname: '/youtuberoundtwo', state: { videoId: this.state.videoId,
+                                        data:this.state.data} }}
+                                    >
+                                        {/* <button
+                                            className="button1"
+                                            type="button"
+                                            onClick={() => this.showLink(context, localStorage.yt_points_1, 'youtube', 'one')}
                                         >
-                                            <button
-                                                className="button1"
-                                                type="button"
-                                                onClick={() => this.showLink(context, localStorage.yt_points_1, 'youtube', 'one')}
-                                            >
-                                                Start
-                                            </button>
-                                        </Link>
-                                    </div>
-                                    <div className="btn-concert">
-                                        {this.state.data.map((name) => (
-                                            <button
-                                                className="btn-nav"
-                                                type="button"
-                                                key={name.title}
-                                                onClick={(e) => this.setState({videoId:name.videoId})}
-
-                                            >
-                                                <img className='img_concert'
-                                                src='https://comoexplicarte.files.wordpress.com/2018/08/img_20180810_214227-e1534105981107.jpg?w=1120'
-                                            />
-                                                {name.title}
-
-                                            </button>
-                                        ))}
-                                    </div>
+                                            Start
+                                        </button> */}
+                                    </Link>
                                 </div>
                             </div>
                             <button className="suma-puntos-button" type="button" onClick={() => this.showLink(context, localStorage.yt_points_1, 'youtube', 'one')}>

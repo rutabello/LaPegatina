@@ -1,10 +1,11 @@
 .progress-div {
+  /* background-color: rgb(233, 233, 233); */
   background-color: black;
 }
 
 .progress {
-  background-color: #4CAF50;
+  background-color: rgb(118, 109, 202);
   height: 30px;
   transition: 5s ease;
+  /* transition-delay: 1s; */
 }
-

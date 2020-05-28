@@ -73,6 +73,10 @@ body {
   opacity: 1;
 }
 
+.btn-game:focus {
+  outline: none;
+}
+
 .home-play-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -95,7 +99,8 @@ body {
   }
 
   .laPegatina {
-    height: 150px;
+    /* height: 150px; */
+    height: 75px;
   }
 
   .main {

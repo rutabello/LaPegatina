@@ -59,7 +59,7 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
                                             <div>
                                                     <p>{texts[language].playlistInstruct}</p>
                                                 <input id="playlistName" className="repeat-button" onChange={naming} defaultValue={texts[language].playlistName} />
-                                                    <button type="button" id="playlistSave" className="btn btn-primary" onClick={save}>{texts[language].saveList}</button>
+                                                    {/* <button type="button" id="playlistSave" className="btn btn-primary" onClick={save}>{texts[language].saveList}</button> */}
                                             </div>
                                             {unknownSongs.map((song, index) => {
                                                 const url = song.uri.replace(/:/g, '/').replace('spotify', 'https://open.spotify.com');
@@ -68,9 +68,9 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
                                                         <div className="song-name">
                                                             {song.name}
                                                         </div>
-                                                            <button type="button" id={index} onClick={adding} className="btn btn-primary">{texts[language].addToList}</button>
+                                                            <button type="button" id={index} onClick={adding} className="btn listen">{texts[language].addToList}</button>
                                                         {/* <-- Button trigger modal --> */}
-                                                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#sharethissong">
+                                                        <button type="button" className="btn listen" data-toggle="modal" data-target="#sharethissong">
                                                             {texts[language].shareTheSongButton}
                                                         </button>
 
@@ -151,7 +151,8 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
                                         </ul>
                                     </div>
                                     <div className="modal-footer">
-                                        <button type="button" className="btn btn-primary" data-dismiss="modal">{texts[language].doneText}</button>
+                                        {/* <button type="button" className="btn btn-primary" data-dismiss="modal">{texts[language].doneText}</button> */}
+                                        <button type="button" id="playlistSave" className="btn save" data-dismiss="modal" onClick={save}>{texts[language].saveList}</button>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +218,8 @@ const ListenedSongs = ({ save, naming, adding, playlistName, language, unknownSo
                                         </div>
                                     </div>
                                     <div className="modal-footer">
-                                        <button type="button" className="btn btn-primary" data-dismiss="modal">{texts[language].doneText}</button>
+                                         <button type="button" className="btn btn-primary" data-dismiss="modal">{texts[language].doneText}</button>
+                                       
                                     </div>
                                 </div>
                             </div>

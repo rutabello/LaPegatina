@@ -7,18 +7,36 @@
     font-size: 20px;
 }
 
+.title h1 {
+    font-size: 4.5rem;
+    font-family: 'Teko', sans-serif;
+}
+
+.title h4 {
+    font-size: 2.25rem;
+    font-family: 'Teko', sans-serif;
+}
+
 .instructions {
-    font-family: sans-serif, cursive;
+    font-family: 'Teko', sans-serif;
     color: white;
     padding: 7vh;
 }
 
 .button1 {
-    font-family: sans-serif;
+    font-family: 'Teko', sans-serif;
     padding: 2vh;
     width: 30vh;
     border-radius: 4em;
     font-weight: 700;
+}
+
+.button1:hover {
+    transform: scale(1.1);
+}
+
+.button1:focus {
+    outline: none;
 }
 
 .screen {
@@ -49,4 +67,14 @@
 
 h4 {
     font-size: 1.25rem;
+}
+
+@media all and (max-width:30em) {
+    .title h1 {
+        font-size: 3.3rem;
+    }
+
+    .title h4 {
+        font-size: 1.6rem;
+    }
 }

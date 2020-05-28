@@ -49,14 +49,14 @@ class YoutubeRoundOne extends Component {
                     {(context) => (
                         <div>
                             <Navbar addedClass="fixTop" />
-                            <div className = 'instagram-game-over'>
+                            <div className="instagram-game-over youtube-game-over">
                                 <h3>{`Has hecho ${localStorage.yt_points_1} puntos`}</h3>
                                 {/* <button className='navbar-btn' onClick={this.restartYoutube}>Vuelve a jugar</button> */}
                                 {context.state.username
                                     ? <Register language={language} currentGame="youtube" roundIn= 'one'/>
                                     /* <Link to="youtuberoundtwo"><button className = 'navbar-btn' type="button" onClick={() => context.addPoints(this.counter)}>Juega una segunda ronda</button></Link> */
                                     : <UserForm language={language} />}
-                            </div>        
+                            </div>
                             <div className="social-media-follow-buttons">
                                 <SocialMedia
                                     language={language}

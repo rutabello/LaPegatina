@@ -15,6 +15,16 @@
     justify-content: center;
 }
 
+.band-member button:focus {
+    transform: scale(1.1);
+    outline: none;
+}
+
+.band-member:focus {
+    outline: none;
+    transform: scale(1.1);
+}
+
 .band-member img {
     border-radius: 160px;
     width: 140px;
@@ -24,6 +34,11 @@
 
 .band-member img:hover {
     transform: scale(1.1);
+}
+
+.band-member img:focus {
+    transform: scale(1.1);
+    outline: none;
 }
 
 .band-member button {

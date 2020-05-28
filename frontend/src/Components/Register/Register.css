@@ -38,8 +38,7 @@ display: flex;
 */
 
 .header {
-
-    font-family: sans-serif;
+    font-family: 'Teko', sans-serif;
 }
 
 /* JAIMES CSS */
@@ -80,6 +79,11 @@ display: flex;
     transform: scale(1.1);
 }
 
+.buttonAlbum:focus {
+    transform: scale(1.1);
+    outline: none;
+}
+
 .img_concert{
     width: 5em;
 }
@@ -92,4 +96,44 @@ display: flex;
     border-radius: 56px;
     border: none;
     margin-top: 30px;
+    text-decoration: none;
+    box-shadow: inset 0px 0px 15px 3px #bb8fbe;
+    background: linear-gradient(to bottom, #752d76 5%, #c835cf 100%);
+    border: 1px solid #8e4c88;
+    color: #ffffff;
+    text-shadow: 0px 1px 0px #1a0d1a;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 15px;
+    padding: 10px 30px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    align-items: center;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.suma-puntos-button:hover {
+    transform: scale(1.05);
+}
+
+.round-first-question {
+    font-size: 1.7rem;
+    margin-bottom: 5vh;
+}
+
+.round-second-question {
+    font-size: 1.7rem;
+}
+
+@media only screen and (max-width: 750px) {
+
+    .round-first-question {
+        font-size: 1.3rem;
+        margin-bottom: 5vh;
+    }
+
+    .round-second-question {
+        font-size: 1.3rem;
+    }
 }

@@ -78,8 +78,10 @@
         "backToStart": "Vuelve al inicio",
         "score": "Has hecho %points puntos",
         "spotifyRoundOneQuestion": "Cómo se llama la canción que suena?",
-        "spotifyRoundTwoQuestion": "Cuál es la siguiente canción en el disco después de esta?",
+        "spotifyRoundTwoQuestion": "Cuál es la siguiente canción en el disco después de ésta?",
         "instagramRoundTwoQuestion": "Dónde tomamos esta foto?",
+        "youtubeInstructionsR1": "Cuánto sabes de este videoclip?",
+        "youtubeInstructionsR2": "Cuánto sabes de este concierto?",
         "youtubeQuestion": "De qué canción es este videoclip?",
         "endText": "Has llegado al final!",
         "instagramRoundOneQuestion": "Quién sale en esta foto?",
@@ -110,9 +112,9 @@
         "chooseConcertText": "Con qué concierto quieres jugar?",
         "keepPointsPlayMoreText": "Suma los puntos y sigue jugando",
         "saveList": "Guardar",
-        "playlistInstruct": "Te gusta lo que escuchaste? Puedes crear una lista ahora y guardarla en Spotify!",
-        "addToList": "Añadir a mi lista",
-        "playlistName": "Dale un nombre a tu lista para guardarlo en Spotify"
+        "playlistInstruct": "Te gusta? Ponla en Spotify!",
+        "addToList": "+",
+        "playlistName": "Dale un nombre a tu lista..."
     },
 
     "english" : {

@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 // !!! IMPORTANT: No push to github as long as the clientId is visible in the files!
 // import { TOKEN } from './token'
-const clientId = '5a36a3d1f9bc4712b321e760813bb8f6';
+const clientId = '3eb5731fa4ad44c3b1ac5b8b69c2cf5d';
 
 let accessToken;
 
@@ -169,8 +169,6 @@ const Spotify = {
 	// getAlbumID
 };
 
-// This way you can access the returned object. "collaborative" is just the first property that appears,
-// probably nothing we will actually use, just as an example of how to access it.
-// const play = Spotify.getPlaylist().then((value) => {console.log(value.collaborative)});
+
 
 export default Spotify;
